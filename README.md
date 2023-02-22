@@ -1,10 +1,10 @@
 # LCOM Project
 
-LCOM Project for group T&lt;m&gt;&lt;n&gt;G&lt;p&gt;&lt;q&gt;.
+LCOM Project for group T06-G02.
 
 Group members:
 
-1. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-2. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-3. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-4. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
+1. Afonso Osorio (up202108700@edu.fe.up.pt)
+2. António Silva (up202108760@edu.fe.up.pt)
+3. Daniel Carneiro (up202108832@edu.fe.up.pt)
+4. Gonçalo Costa (up202108814@edu.fe.up.pt)
