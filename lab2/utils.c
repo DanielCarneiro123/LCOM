@@ -18,7 +18,7 @@ int (util_sys_inb)(int port, uint8_t *value) {
   if (value == NULL) return 1;
   uint32_t big_value;
   if (sys_inb(port, &big_value)) return 1;
-  printf("%d", big_value);
+  printf("\n\nread value is %d\n\n", big_value);
   *value = big_value & 0xFF;
   return 0;
 }

@@ -50,9 +50,8 @@ void (timer_int_handler)() {
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
-  if (timer != 0 && timer != 1 && timer != 2) return 1;
-  uint8_t temp = timer+1;
-  uint8_t command = BIT(7) | BIT(6) | BIT(4) | BIT(temp);
+  if (timer > 2) return 1;
+  uint8_t command = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
   sys_outb(TIMER_CTRL, command);
   if (util_sys_inb(0x40 + timer, st)) return 1;
   return 0;
