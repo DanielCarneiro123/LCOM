@@ -5,6 +5,9 @@
 
 #include "i8254.h"
 
+int hook_id = 0;
+int counter = 0;
+
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   if (timer != 0 && timer != 1 && timer != 2) return 1;
   if (freq < 19 || freq > TIMER_FREQ) return 1;
@@ -15,7 +18,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t st;
   if (timer_get_conf(timer, &st)) return 1;
   st &= 0xF;
-  st = st | BIT(4) | BIT(5); // FALTA SWITCH PARA ESCOLHER TIMER
+  st = st | BIT(4) | BIT(5);
   switch (timer) {
     case 1:
       st |= BIT(6);
@@ -31,22 +34,20 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-    /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  if (bit_no == NULL) return 1;
+  if (sys_irqsetpolicy(TIMER_IRQ, IRQ_REENABLE, &hook_id)) return 1;
+  *bit_no = hook_id;
+  return 0;
 }
 
 int (timer_unsubscribe_int)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  if (sys_irqrmpolicy(&hook_id)) return 1;
+  return 0;
 }
 
 void (timer_int_handler)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  counter++;
+  return 0;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
