@@ -1,7 +1,8 @@
-#include "keyboad.h"
+#include "keyboard.h"
+#include "i8042.h"
 
 int hook_id = 1;
-uint8_t scancode;
+uint8_t scancode = 0;
 bool error = false;
 
 int keyboard_subscribe_interrupts(uint8_t *bit_no) {
@@ -17,6 +18,6 @@ int keyboard_unsubscribe_interrupts() {
 }
 
 void kbc_ih() {
-    if (read_kbc_output(KBC_OUT_CMD, &scancode)) error = true;
+    if (read_KBC_output(KBC_OUT_CMD, &scancode)) error = true;
     else error = false;
 }

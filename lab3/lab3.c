@@ -1,7 +1,11 @@
 #include <lcom/lcf.h>
 #include <lcom/lab3.h>
+#include "i8042.h"
+#include "keyboard.h"
 
-...
+extern uint32_t cnt;
+extern bool error;
+extern uint8_t scancode;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -29,13 +33,65 @@ int main(int argc, char *argv[]) {
 
 
 int(kbd_test_scan)() {
-  ...
+  int ipc_status;
+  uint8_t irq_set;
+  message msg;
+  bool two_bytes = false;
+
+  if (keyboard_subscribe_interrupts(&irq_set) != 0)
+    return 1;
+
+  while(scancode != BREAK_ESC) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("Error");
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE:
+          if (msg.m_notify.interrupts & irq_set) {
+            kbc_ih();
+            if (error) return 1;
+            bool make = !!(scancode & MAKE_CODE);
+            if (scancode == TWO_BYTES) two_bytes = true;
+            else if (two_bytes) {
+                two_bytes = false;
+                uint8_t bytes[2];
+                bytes[0] = TWO_BYTES;
+                bytes[1] = scancode;
+                if (kbd_print_scancode(make, 2, bytes)) return 1;
+            }
+            else {
+                uint8_t bytes[1];
+                bytes[0] = scancode;
+                if (kbd_print_scancode(make, 1, bytes)) return 1;
+            }
+          }
+        }
+      }
+    }
+
+  if (keyboard_unsubscribe_interrupts() != 0)
+    return 1;
+  if (kbd_print_no_sysinb(cnt) != 0)
+    return 1;
+
+  return 0;
 }
 
 int(kbd_test_poll)() {
-  ...
+    while (scancode != ESC) {
+        kbc_ih();
+        
+    } 
+    if (kbc_restore()) return 1;
+    return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  ...
+  /* To be completed by the students */
+  printf("%s is not yet implemented!\n", __func__);
+
+  return 1;
 }
