@@ -81,11 +81,11 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-    while (scancode != ESC) {
+    while (scancode != BREAK_ESC) {
         kbc_ih();
         
     } 
-    if (kbc_restore()) return 1;
+    if (keyboard_restore()) return 1;
     return 0;
 }
 
