@@ -53,7 +53,7 @@ int(kbd_test_scan)() {
           if (msg.m_notify.interrupts & irq_set) {
             kbc_ih();
             if (error) return 1;
-            bool make = !!(scancode & MAKE_CODE);
+            bool make = !(scancode & MAKE_CODE);
             if (scancode == TWO_BYTES) two_bytes = true;
             else if (two_bytes) {
                 two_bytes = false;
@@ -81,12 +81,28 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-    while (scancode != BREAK_ESC) {
-        kbc_ih();
-        
-    } 
-    if (keyboard_restore()) return 1;
-    return 0;
+
+  bool two_bytes = false;
+  while (scancode != BREAK_ESC) {
+    kbc_ih();
+      if (error) return 1;
+      bool make = !(scancode & MAKE_CODE);
+      if (scancode == TWO_BYTES) two_bytes = true;
+      else if (two_bytes) {
+           two_bytes = false;
+          uint8_t bytes[2];
+          bytes[0] = TWO_BYTES;
+          bytes[1] = scancode;
+          if (kbd_print_scancode(make, 2, bytes)) return 1;
+      }
+      else {
+          uint8_t bytes[1];
+           bytes[0] = scancode;
+          if (kbd_print_scancode(make, 1, bytes)) return 1;
+      }
+  } 
+  if (keyboard_restore()) return 1;
+  return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
