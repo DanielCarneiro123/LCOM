@@ -27,9 +27,9 @@ int write_KBC_command(uint8_t port, uint8_t commandByte) {
     int attempts = MAX_ATTEMPTS;
     uint8_t status;
     while (attempts) {
-        if (read_kbc_status(&status)) return 1;
+        if (read_KBC_status(&status)) return 1;
         if (!(status & FULL_IN_BUFFER)) {
-            return util_sys_outb(port, commandByte);
+            return sys_outb(port, commandByte);
         }
         tickdelay(micros_to_ticks(WAIT_KBC));
         attempts--;

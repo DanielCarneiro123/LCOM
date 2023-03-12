@@ -17,12 +17,12 @@ int keyboard_unsubscribe_interrupts() {
   return 0;
 }
 
-void kbc_ih() {
+void (kbc_ih)() {
     if (read_KBC_output(KBC_OUT_CMD, &scancode)) error = true;
     else error = false;
 }
 
-int kbc_restore()
+int keyboard_restore()
 {
   uint8_t commandWord;
 
