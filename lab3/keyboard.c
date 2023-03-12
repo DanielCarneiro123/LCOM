@@ -22,6 +22,11 @@ void (kbc_ih)() {
     else error = false;
 }
 
+void (kbc_ih_poll)() {
+    if (read_KBC_output_poll(KBC_OUT_CMD, &scancode)) error = true;
+    else error = false;
+}
+
 int keyboard_restore()
 {
   uint8_t commandWord;

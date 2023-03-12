@@ -84,24 +84,26 @@ int(kbd_test_poll)() {
 
   bool two_bytes = false;
   while (scancode != BREAK_ESC) {
-    kbc_ih();
-      if (error) return 1;
-      bool make = !(scancode & MAKE_CODE);
-      if (scancode == TWO_BYTES) two_bytes = true;
-      else if (two_bytes) {
-           two_bytes = false;
-          uint8_t bytes[2];
-          bytes[0] = TWO_BYTES;
-          bytes[1] = scancode;
-          if (kbd_print_scancode(make, 2, bytes)) return 1;
-      }
-      else {
-          uint8_t bytes[1];
-           bytes[0] = scancode;
-          if (kbd_print_scancode(make, 1, bytes)) return 1;
-      }
+    kbc_ih_poll();
+    if (error) return 1;
+    bool make = !(scancode & MAKE_CODE);
+    if (scancode == TWO_BYTES) two_bytes = true;
+    else if (two_bytes) {
+         two_bytes = false;
+        uint8_t bytes[2];
+        bytes[0] = TWO_BYTES;
+        bytes[1] = scancode;
+        if (kbd_print_scancode(make, 2, bytes)) return 1;
+    }
+    else {
+        uint8_t bytes[1];
+         bytes[0] = scancode;
+        if (kbd_print_scancode(make, 1, bytes)) return 1;
+    }
   } 
   if (keyboard_restore()) return 1;
+  if (kbd_print_no_sysinb(cnt) != 0)
+    return 1;
   return 0;
 }
 

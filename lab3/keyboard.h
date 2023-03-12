@@ -10,7 +10,7 @@ int (keyboard_subscribe_interrupts)(uint8_t *bit_no);
 
 int (keyboard_unsubscribe_interrupts)();
 
-//void (kbc_ih)();
+void (kbc_ih_poll)();
 
 int (keyboard_restore)();
 
