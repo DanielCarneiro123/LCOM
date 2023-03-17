@@ -1,19 +1,19 @@
 #include "keyboard.h"
 #include "i8042.h"
 
-int hook_id = 1;
+int hook_id_kbd = 1;
 uint8_t scancode = 0;
 bool error = false;
 
 int keyboard_subscribe_interrupts(uint8_t *bit_no) {
   if (bit_no == NULL) return 1;
-  *bit_no = BIT(hook_id);
-  if (sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id)) return 1;
+  *bit_no = BIT(hook_id_kbd);
+  if (sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_kbd)) return 1;
   return 0;
 }
 
 int keyboard_unsubscribe_interrupts() {
-  if (sys_irqrmpolicy(&hook_id)) return 1;
+  if (sys_irqrmpolicy(&hook_id_kbd)) return 1;
   return 0;
 }
 
