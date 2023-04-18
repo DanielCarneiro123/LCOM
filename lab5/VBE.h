@@ -16,4 +16,7 @@
 #define BIOS_SET_VIDEOMODE 0x00
 #define BIOS_VIDEOCARD_SERV 0x10
 
+#define new_max(x,y) (((x) >= (y)) ? (x) : (y))
+#define new_min(x,y) (((x) <= (y)) ? (x) : (y))
+
 #endif
