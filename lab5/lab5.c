@@ -8,7 +8,11 @@
 
 // Any header files included below this line should have been created by you
 
+#include "keyboard.h"
+#include "i8042.h"
 #include "graphics.h"
+extern bool error;
+extern uint8_t scancode;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -46,11 +50,43 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
-  /* To be completed */
-  printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
-         __func__, mode, x, y, width, height, color);
+  if (set_frame_buffer(mode)) return 1;
+  if (set_graphic_mode(mode)) return 1;
+  if (draw_line(x, y, x + width, y, color)) return 1;
+  if (draw_line(x + width, y, x + width, y + height, color)) return 1;
+  if (draw_line(x + width, y + height, x, y + height, color)) return 1;
+  if (draw_line(x, y + height, x, y, color)) return 1;
 
-  return 1;
+  int ipc_status;
+  uint8_t irq_set;
+  message msg;
+
+  if (keyboard_subscribe_interrupts(&irq_set) != 0)
+    return 1;
+
+  while(scancode != BREAK_ESC) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("Error");
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE:
+          if (msg.m_notify.interrupts & irq_set) {
+            kbc_ih();
+            if (error) return 1;
+          }
+      }
+    }
+  }  
+
+  if (keyboard_unsubscribe_interrupts())
+    return 1;
+
+  if (vg_exit()) return 1;
+
+  return 0;
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
