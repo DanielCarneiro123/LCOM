@@ -52,10 +52,15 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
   if (set_frame_buffer(mode)) return 1;
   if (set_graphic_mode(mode)) return 1;
-  if (draw_line(x, y, x + width, y, color)) return 1;
-  if (draw_line(x + width, y, x + width, y + height, color)) return 1;
-  if (draw_line(x + width, y + height, x, y + height, color)) return 1;
-  if (draw_line(x, y + height, x, y, color)) return 1;
+  //if (draw_line(x, y, x + width, y, color)) return 1;
+  //if (draw_line(x + width, y, x + width, y + height, color)) return 1;
+  //if (draw_line(x + width, y + height, x, y + height, color)) return 1;
+  //if (draw_line(x, y + height, x, y, color)) return 1;
+  for (uint16_t i = x; i < x + width; i++) {
+    for (uint16_t j = y; j < y + height; j++) {
+      if (paint_pixel(i, j, color)) return 1;
+    }
+  }
 
   int ipc_status;
   uint8_t irq_set;
