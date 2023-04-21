@@ -94,3 +94,11 @@ int draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color
 
     return 1;
 }
+
+int fill_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+    for (uint16_t i = x; i < x + width; i++) {
+        for (uint16_t j = y; j < y + height; j++) {
+            if (paint_pixel(i, j, color)) return 1;
+        }
+    }
+}

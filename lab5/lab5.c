@@ -95,9 +95,54 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
-         mode, no_rectangles, first, step);
+  if (set_frame_buffer(mode)) return 1;
+  if (set_graphic_mode(mode)) return 1;
+  
+  vbe_mode_info_t mode_info;
+  if (get_mode_info(mode, &mode_info)) return 1;
+
+  uint16_t x = 0, y = 0;
+  uint16_t width = mode_info.XResolution / no_rectangles;
+  uint16_t height = mode_info.YResolution / no_rectangles;
+
+  for (uint8_t i = 0; i < no_rectangles; i++) {
+    //CENA ESTRANHA DE COR
+    fill_rectangle(x, y, width, height, 0);
+    x += width;
+    if (x + width > mode_info.XResolution) {
+      x = 0;
+      y += height;
+    }
+  }
+  
+  int ipc_status;
+  uint8_t irq_set;
+  message msg;
+
+  if (keyboard_subscribe_interrupts(&irq_set) != 0)
+    return 1;
+
+  while(scancode != BREAK_ESC) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("Error");
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE:
+          if (msg.m_notify.interrupts & irq_set) {
+            kbc_ih();
+            if (error) return 1;
+          }
+      }
+    }
+  }  
+
+  if (keyboard_unsubscribe_interrupts())
+    return 1;
+
+  if (vg_exit()) return 1;
 
   return 1;
 }
