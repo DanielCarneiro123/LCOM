@@ -103,3 +103,23 @@ int fill_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint
     }
     return 0;
 }
+
+int print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y) {
+  xpm_image_t img;
+  uint16_t initial_x = x;
+  uint8_t *loaded_xpm = xpm_load(xpm, XPM_INDEXED, &img);
+  if (loaded_xpm == NULL) return 1;
+
+  uint16_t num_pixels = img.width * img.height;
+
+  for (uint16_t i = 0; i < num_pixels; i++) {
+    if (paint_pixel(x, y, loaded_xpm[i])) return 1;
+    x = (x + 1) % (img.width + initial_x);
+    if (x == 0) {
+      y++;
+      x = initial_x;
+    }
+  }
+
+  return 0;
+}
