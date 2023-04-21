@@ -144,14 +144,59 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
 
   if (vg_exit()) return 1;
 
-  return 1;
+  return 0;
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u): under construction\n", __func__, xpm, x, y);
+  if (set_frame_buffer(VBE_768p_INDEXED)) return 1;
+  if (set_graphic_mode(VBE_768p_INDEXED)) return 1;
 
-  return 1;
+  xpm_image_t img;
+  uint16_t initial_x = x;
+  uint8_t *loaded_xpm = xpm_load(xpm, XPM_INDEXED, &img);
+  if (loaded_xpm == NULL) return 1;
+
+  uint16_t num_pixels = img.width * img.height;
+
+  for (uint16_t i = 0; i < num_pixels; i++) {
+    if (paint_pixel(x, y, loaded_xpm[i])) return 1;
+    x = (x + 1) % (img.width + initial_x);
+    if (x == 0) {
+      y++;
+      x = initial_x;
+    }
+  }
+
+  int ipc_status;
+  uint8_t irq_set;
+  message msg;
+
+  if (keyboard_subscribe_interrupts(&irq_set) != 0)
+    return 1;
+
+  while(scancode != BREAK_ESC) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("Error");
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch(_ENDPOINT_P(msg.m_source)){
+        case HARDWARE:
+          if (msg.m_notify.interrupts & irq_set) {
+            kbc_ih();
+            if (error) return 1;
+          }
+      }
+    }
+  }  
+
+  if (keyboard_unsubscribe_interrupts())
+    return 1;
+
+  if (vg_exit()) return 1;
+
+  return 0;
 }
 
 int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,

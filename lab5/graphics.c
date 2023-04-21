@@ -101,4 +101,5 @@ int fill_rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint
             if (paint_pixel(i, j, color)) return 1;
         }
     }
+    return 0;
 }
