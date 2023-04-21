@@ -102,16 +102,27 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
   if (get_mode_info(mode, &mode_info)) return 1;
 
   uint16_t x = 0, y = 0;
+  uint8_t row = 0, col = 0;
   uint16_t width = mode_info.XResolution / no_rectangles;
   uint16_t height = mode_info.YResolution / no_rectangles;
 
   for (uint8_t i = 0; i < no_rectangles; i++) {
-    //CENA ESTRANHA DE COR
-    fill_rectangle(x, y, width, height, 0);
+    uint32_t color = 0;
+    if (mode == VBE_768p_INDEXED) {
+      color = (first + (row * no_rectangles + col) * step) % (1 << mode_info.BitsPerPixel);
+    }
+    else {
+      color |= ((((1 << mode_info.RedMaskSize) - 1) & (first >> mode_info.RedFieldPosition)) + col * step) % (1 << mode_info.RedMaskSize);
+      color |= ((((1 << mode_info.GreenMaskSize) - 1) & (first >> mode_info.GreenFieldPosition)) + col * step) % (1 << mode_info.GreenMaskSize);
+      color |= ((((1 << mode_info.BlueMaskSize) - 1) & (first >> mode_info.BlueFieldPosition)) + col * step) % (1 << mode_info.BlueMaskSize);
+    }
+    fill_rectangle(x, y, width, height, color);
     x += width;
     if (x + width > mode_info.XResolution) {
       x = 0;
       y += height;
+      row++;
+      col++;
     }
   }
   
