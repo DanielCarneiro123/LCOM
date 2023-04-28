@@ -127,6 +127,9 @@ int (partial_print_xpm)(xpm_image_t img, uint16_t x, uint16_t y, uint16_t xdraw,
 
   uint16_t initial_x = xdraw;
   uint16_t num_pixels = width * height;
+  uint16_t index = xdraw + ydraw * img.width;
+  uint16_t initial_index = index;
+  uint16_t initial_y = ydraw;
 
   for (uint16_t i = 0; i < num_pixels; i++) {
 
@@ -135,7 +138,9 @@ int (partial_print_xpm)(xpm_image_t img, uint16_t x, uint16_t y, uint16_t xdraw,
     if (xdraw == 0) {
         ydraw++;
         xdraw = initial_x;
+        index = initial_index + (img.width * (ydraw - initial_y));
     }
+    else index++;
   }
 
   return 0;
