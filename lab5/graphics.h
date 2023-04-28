@@ -20,3 +20,5 @@ int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t col
 int (fill_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
 
 int (print_xpm)(xpm_image_t img, uint16_t x, uint16_t y, const uint8_t* loaded_xpm);
+
+int (partial_print_xpm)(xpm_iamge_t img, uint16_t x, uint16_t y, uint16_t xdraw, uint16_t ydraw, uint16_t width, uint16_t height, const uint8_t* loaded_xpm);

@@ -120,3 +120,22 @@ int print_xpm(xpm_image_t img, uint16_t x, uint16_t y, const uint8_t* loaded_xpm
 
   return 0;
 }
+
+int (partial_print_xpm)(xpm_iamge_t img, uint16_t x, uint16_t y, uint16_t xdraw, uint16_t ydraw, uint16_t width, uint16_t height, const uint8_t* loaded_xpm) {
+  if (loaded_xpm == NULL) return 1;
+  if (xdraw + width > img.width || ydraw + height > img.height) return 1; 
+
+  uint16_t initial_x = xdraw;
+  uint16_t num_pixels = width * height;
+
+  for (uint16_t i = 0; i < num_pixels; i++) {
+    if (paint_pixel(xdraw, ydraw, loaded_xpm[i])) return 1;
+    xdraw = (xdraw + 1) % (x + initial_x + width);
+    if (x == 0) {
+        ydraw++;
+        x = initial_x;
+    }
+  }
+
+  return 0;
+}
