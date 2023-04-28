@@ -127,17 +127,11 @@ int (partial_print_xpm)(xpm_image_t img, uint16_t x, uint16_t y, uint16_t xdraw,
 
   uint16_t initial_x = xdraw;
   uint16_t num_pixels = width * height;
-  //uint16_t initial_index = xdraw + img.width * ydraw;
-  //uint16_t index = initial_index;
 
   for (uint16_t i = 0; i < num_pixels; i++) {
-    /*index = (index + 1) % (initial_x + initial_index);
-    if (index == 0) {
-        initial_index += img.width;
-        index = initial_index;
-    }*/
-    if (paint_pixel(xdraw, ydraw, loaded_xpm[i])) return 1;
-    xdraw = (xdraw + 1) % (x + initial_x + width);
+
+    if (paint_pixel(x + xdraw, y + ydraw, loaded_xpm[i])) return 1;
+    xdraw = (xdraw + 1) % (initial_x + width);
     if (xdraw == 0) {
         ydraw++;
         xdraw = initial_x;

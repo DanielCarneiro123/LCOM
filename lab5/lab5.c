@@ -166,6 +166,7 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   uint8_t *loaded_xpm = xpm_load(xpm, XPM_INDEXED, &img);
   if (loaded_xpm == NULL) return 1;
   
+  //print_xpm(img, x, y, loaded_xpm);
   partial_print_xpm(img, x, y, 0, 0, img.width, img.height, loaded_xpm);
 
   int ipc_status;
