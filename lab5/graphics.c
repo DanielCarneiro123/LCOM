@@ -138,9 +138,9 @@ int (partial_print_xpm)(xpm_image_t img, uint16_t x, uint16_t y, uint16_t xdraw,
     }*/
     if (paint_pixel(xdraw, ydraw, loaded_xpm[i])) return 1;
     xdraw = (xdraw + 1) % (x + initial_x + width);
-    if (x == 0) {
+    if (xdraw == 0) {
         ydraw++;
-        x = initial_x;
+        xdraw = initial_x;
     }
   }
 
