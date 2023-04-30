@@ -167,7 +167,7 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   if (loaded_xpm == NULL) return 1;
   
   //print_xpm(img, x, y, loaded_xpm);
-  partial_print_xpm(img, x, y, 20, 20, img.width/2, img.height/2, loaded_xpm);
+  partial_print_xpm(img, x, y, img.width/2, img.height/2, img.width/2, img.height/2, loaded_xpm);
 
   int ipc_status;
   uint8_t irq_set;
