@@ -8,6 +8,7 @@ MenuState menuState = START;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
 extern real_time_info time_info;
+extern bool firstFrame;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
@@ -22,6 +23,11 @@ Sprite *exit_menu;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
+
+void update_menu_state(MenuState new_state) {
+    firstFrame = true;
+    menuState = new_state;
+}
 
 // Criação dos objetos via XPM e via comum
 void setup_sprites() {
@@ -75,13 +81,13 @@ void update_keyboard_state() {
             systemState = EXIT;
             break;
         case S_KEY:
-            menuState = START;
+            update_menu_state(START);
             break;
         case G_KEY:
-            menuState = GAME;
+            update_menu_state(GAME);
             break;
         case E_KEY:
-            menuState = END;
+            update_menu_state(END);
         default:
             break;
     }
