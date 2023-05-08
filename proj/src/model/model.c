@@ -90,7 +90,22 @@ void update_keyboard_state() {
             break;
         case E_KEY:
             //update_menu_state(END);
-            
+        case ONE_KEY:
+            mouse_info.ball_color = 0xFF0000;
+            break;
+        case TWO_KEY:
+            mouse_info.ball_color = 0x00FF00;
+            break;
+        case THREE_KEY:
+            mouse_info.ball_color = 0x0000FF;    
+            break;
+        case FOUR_KEY:
+            mouse_info.ball_color = 0xFFFF00;
+            break;
+        case FIVE_KEY:
+            mouse_info.ball_color = 0x00FFFF;
+            break;        
+
         default:
             break;
     }
