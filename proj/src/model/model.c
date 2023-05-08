@@ -12,11 +12,13 @@ extern real_time_info time_info;
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
 Sprite *hand;
-Sprite *smile;
 Sprite *button1;
 Sprite *button2;
 Sprite *button3;
 Sprite *button4;
+Sprite *masterminix;
+Sprite *start;
+Sprite *exit_menu;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -25,22 +27,29 @@ int timer_interrupts = 0;
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
-    smile = create_sprite_xpm((xpm_map_t) smile_xpm);
+    //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
+    masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
+    start = create_sprite_xpm((xpm_map_t) start_xpm);
+    exit_menu = create_sprite_xpm((xpm_map_t) exit_xpm);
     button1 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, ORANGE);
     button2 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, BLUE);
     button3 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, GREEN);
     button4 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, YELLOW);
+    
 }
 
 // É boa prática antes de acabar o programa libertar a memória alocada
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(hand);
-    destroy_sprite(smile);
+    destroy_sprite(masterminix);
+    destroy_sprite(start);
+    destroy_sprite(exit_menu);
     destroy_sprite(button1);
     destroy_sprite(button2);
     destroy_sprite(button3);
     destroy_sprite(button4);
+    //destroy_sprite(masterminix);
 }
 
 // Na altura da interrupção há troca dos buffers e incremento do contador

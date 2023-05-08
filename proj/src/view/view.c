@@ -14,11 +14,13 @@ extern MenuState menuState;
 // Objetos
 extern Sprite *mouse;
 extern Sprite *hand;
-extern Sprite *smile;
+extern Sprite *masterminix;
+extern Sprite *start;
 extern Sprite *button1;
 extern Sprite *button2;
 extern Sprite *button3;
 extern Sprite *button4;
+extern Sprite *exit_menu;
 
 bool firstFrame = true;
 
@@ -77,7 +79,9 @@ void draw_new_frame() {
 // O menu inicial é apenas um retângulo com tamanho máximo, com um smile ao centro
 void draw_initial_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, RED, drawing_frame_buffer);
-    draw_sprite_xpm(smile, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
+    draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
+    draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
+    draw_sprite_xpm(exit_menu, mode_info.XResolution/2 - 37, mode_info.YResolution/2 + 40);
 }
 
 // O menu do jogo é constituído por quatro botões
@@ -91,7 +95,7 @@ void draw_game_menu() {
 // O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
 void draw_finish_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
-    draw_sprite_xpm(smile, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
+    draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
 }
 
 // O cursor mode ter dois estados:
@@ -112,12 +116,13 @@ void clean_mouse() {
     switch (menuState) {
         case START: case END:
             fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
-            draw_partial_sprite_xpm(smile, smile->x, smile->y, mouse->x - smile->x, mouse->y - smile->y, mouse->height, mouse->width);
+            draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, mouse->x - masterminix->x, mouse->y - masterminix->y, mouse->height, mouse->width);
             break;
        case GAME:
             break;
     }
 }
+
 
 // A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
 // Usa as cores dinamicamente alocadas na altura da construção
