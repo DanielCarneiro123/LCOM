@@ -12,6 +12,7 @@ extern bool firstFrame;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
+Sprite *ball_mouse;
 Sprite *hand;
 Sprite *button1;
 Sprite *button2;
@@ -32,6 +33,7 @@ void update_menu_state(MenuState new_state) {
 // Criação dos objetos via XPM e via comum
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
+    ball_mouse = create_sprite_xpm((xpm_map_t) cursorGimp_xpm);
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
     //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
@@ -87,7 +89,8 @@ void update_keyboard_state() {
             update_menu_state(GAME);
             break;
         case E_KEY:
-            update_menu_state(END);
+            //update_menu_state(END);
+            
         default:
             break;
     }

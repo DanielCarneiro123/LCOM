@@ -12,6 +12,7 @@
 typedef struct {
     uint8_t right_click;
     uint8_t left_click;
+    uint32_t ball_color;
     int16_t x;
     int16_t y;
 } MouseInfo;   

@@ -5,7 +5,7 @@ int hook_id_mouse = 2;        // um valor qualquer [0..7], desde que seja difere
 uint8_t byte_index = 0;       // [0..2]
 uint8_t mouse_bytes[3];       // bytes apanhados
 uint8_t mouse_byte;         // o byte mais recente lido
-MouseInfo mouse_info = {0, 0, 100, 100};
+MouseInfo mouse_info = {0, 0, 0, 100, 100};
 extern vbe_mode_info_t mode_info;
 bool mouse_error = false;
 
