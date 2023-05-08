@@ -12,7 +12,6 @@ extern bool firstFrame;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
-Sprite *ball_mouse;
 Sprite *hand;
 Sprite *button1;
 Sprite *button2;
@@ -22,6 +21,7 @@ Sprite *masterminix;
 Sprite *start;
 Sprite *exit_menu;
 Sprite *board;
+Sprite *ball;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -35,7 +35,6 @@ void update_menu_state(MenuState new_state) {
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
-    ball_mouse = create_sprite_xpm((xpm_map_t) cursorGimp_xpm);
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
     //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
@@ -51,6 +50,8 @@ void setup_sprites() {
 // É boa prática antes de acabar o programa libertar a memória alocada
 void destroy_sprites() {
     destroy_sprite(mouse);
+    destroy_sprite(board);
+    destroy_sprite(ball);
     destroy_sprite(hand);
     destroy_sprite(masterminix);
     destroy_sprite(start);

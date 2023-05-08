@@ -13,7 +13,6 @@ extern MenuState menuState;
 
 // Objetos
 extern Sprite *mouse;
-extern Sprite *ball_mouse;
 extern Sprite *hand;
 extern Sprite *masterminix;
 extern Sprite *start;
@@ -23,6 +22,7 @@ extern Sprite *button3;
 extern Sprite *button4;
 extern Sprite *exit_menu;
 extern Sprite *board;
+extern Sprite *ball;
 
 bool firstFrame = true;
 
@@ -101,6 +101,22 @@ void draw_finish_menu() {
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
 }
 
+int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
+    uint16_t height = sprite->height;
+    uint16_t width = sprite->width;
+    sprite->x = x;
+    sprite->y = y;
+    uint32_t current_color;
+    for (int h = 0 ; h < height ; h++) {
+      for (int w = 0 ; w < width ; w++) {
+        current_color = sprite->colors[w + h*width];
+        if (current_color == TRANSPARENT) continue;
+        if (paint_pixel(x + w, y + h, color, drawing_frame_buffer) != 0) return 1;
+      }
+    }
+    return 0; 
+}
+
 // O cursor mode ter dois estados:
 // - "normal", quando está no menu de início ou de fim
 // - "mão", quando está no menu com os botões
@@ -110,8 +126,8 @@ void draw_mouse() {
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
         case GAME:
-            if (mouse_info.ball_color == 0) draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
-            else draw_sprite_xpm(ball_mouse, mouse_info.x, mouse_info.y);
+            if (mouse_info.ball_color != 0) draw_ball(ball, mouse_info.x, mouse_info.y, mouse_info.ball_color);
+            draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
     }
 }
@@ -119,9 +135,14 @@ void draw_mouse() {
 void clean_mouse() {
     switch (menuState) {
         case START: case END:
-            if (mouse_info.ball_color == 0) fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
-            else fill_rectangle(ball_mouse->x, ball_mouse->y, ball_mouse->width, ball_mouse->height, RED, drawing_frame_buffer);
-            draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, mouse->x - masterminix->x, mouse->y - masterminix->y, mouse->height, mouse->width);
+            if (mouse_info.ball_color == 0) {
+                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
+                draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, mouse->x - masterminix->x, mouse->y - masterminix->y, mouse->height, mouse->width);
+            }
+            else {
+                fill_rectangle(ball->x, ball->y, ball->width, ball->height, RED, drawing_frame_buffer);
+                draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, ball->x - masterminix->x, ball->y - masterminix->y, ball->height, ball->width);
+            }
             break;
        case GAME:
             break;

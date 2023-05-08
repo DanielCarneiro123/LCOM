@@ -13,6 +13,7 @@
 #include "xpm/smile.xpm"
 #include "xpm/masterminix.xpm"
 #include "xpm/mastermind_boardV1.xpm"
+#include "xpm/ball.xpm"
 #include "xpm/start.xpm"
 #include "xpm/exit.xpm"
 #include "view/view.h"
