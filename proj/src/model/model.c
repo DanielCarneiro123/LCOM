@@ -35,6 +35,7 @@ void update_menu_state(MenuState new_state) {
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
+    ball = create_sprite_xpm((xpm_map_t) ball_xpm);
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
     //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
