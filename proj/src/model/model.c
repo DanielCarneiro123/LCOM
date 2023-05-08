@@ -105,6 +105,9 @@ void update_keyboard_state() {
         case FIVE_KEY:
             mouse_info.ball_color = 0x00FFFF;
             break;        
+        case ZERO_KEY:
+            mouse_info.ball_color = 0;
+            break;
 
         default:
             break;
