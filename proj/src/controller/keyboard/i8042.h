@@ -26,5 +26,10 @@
 #define G_KEY           34
 #define E_KEY           18
 #define Q_KEY           16
+#define ONE_KEY         02
+#define TWO_KEY         03
+#define THREE_KEY       04
+#define FOUR_KEY        05
+#define FIVE_KEY        06
 
 #endif /* _LCOM_I8042_H_ */

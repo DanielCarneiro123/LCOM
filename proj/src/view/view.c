@@ -13,6 +13,7 @@ extern MenuState menuState;
 
 // Objetos
 extern Sprite *mouse;
+extern Sprite *ball_mouse;
 extern Sprite *hand;
 extern Sprite *masterminix;
 extern Sprite *start;
@@ -107,7 +108,9 @@ void draw_mouse() {
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
         case GAME:
-            draw_sprite_xpm(hand, mouse_info.x, mouse_info.y);
+            if (mouse_info.ball_color == 0) draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
+            else draw_sprite_xpm(ball_mouse, mouse_info.x, mouse_info.y);
+            mouse_info.ball_color = 1;
             break;
     }
 }

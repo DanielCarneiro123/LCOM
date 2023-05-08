@@ -9,6 +9,7 @@
 #include "controller/rtc/rtc.h"
 #include "xpm/hand.xpm"
 #include "xpm/mouse.xpm"
+#include "xpm/cursorGimp.xpm"
 #include "xpm/smile.xpm"
 #include "xpm/masterminix.xpm"
 #include "xpm/mastermind_boardV1.xpm"
