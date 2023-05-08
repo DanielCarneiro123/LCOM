@@ -21,6 +21,7 @@ Sprite *button4;
 Sprite *masterminix;
 Sprite *start;
 Sprite *exit_menu;
+Sprite *board;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -33,6 +34,7 @@ void update_menu_state(MenuState new_state) {
 // Criação dos objetos via XPM e via comum
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
+    board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
     ball_mouse = create_sprite_xpm((xpm_map_t) cursorGimp_xpm);
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
     //smile = create_sprite_xpm((xpm_map_t) smile_xpm);

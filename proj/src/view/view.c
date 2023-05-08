@@ -22,6 +22,7 @@ extern Sprite *button2;
 extern Sprite *button3;
 extern Sprite *button4;
 extern Sprite *exit_menu;
+extern Sprite *board;
 
 bool firstFrame = true;
 
@@ -91,6 +92,7 @@ void draw_game_menu() {
     draw_sprite_button(button2, mode_info.XResolution/2, 0);
     draw_sprite_button(button3, 0, mode_info.YResolution/2);
     draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
+    draw_sprite_xpm(board, 0, 0);
 }
 
 // O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
@@ -125,7 +127,6 @@ void clean_mouse() {
             break;
     }
 }
-
 
 // A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
 // Usa as cores dinamicamente alocadas na altura da construção
