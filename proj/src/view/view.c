@@ -118,7 +118,8 @@ void draw_mouse() {
 void clean_mouse() {
     switch (menuState) {
         case START: case END:
-            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
+            if (mouse_info.ball_color == 0) fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
+            else fill_rectangle(ball_mouse->x, ball_mouse->y, ball_mouse->width, ball_mouse->height, RED, drawing_frame_buffer);
             draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, mouse->x - masterminix->x, mouse->y - masterminix->y, mouse->height, mouse->width);
             break;
        case GAME:
