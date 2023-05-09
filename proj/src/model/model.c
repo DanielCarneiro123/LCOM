@@ -182,6 +182,7 @@ void place_ball() {
     if (menuState != GAME || balls >= 9*4) return;
     ball_positions[balls].x = mouse_info.x - ball->width/2;
     ball_positions[balls].y = mouse_info.y - ball->height/2;
+    ball_positions[balls].color = mouse_info.ball_color;
 
     balls++;
 }

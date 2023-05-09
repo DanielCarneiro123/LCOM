@@ -34,6 +34,7 @@ typedef enum {
 typedef struct {
     uint16_t x;
     uint16_t y;
+    uint32_t color;
 } Position;
 
 void update_timer_state();

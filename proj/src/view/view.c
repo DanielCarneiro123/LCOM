@@ -106,7 +106,7 @@ void draw_finish_menu() {
 
 void draw_balls() {
     for (uint8_t i = 0; i < balls; i++) {
-        draw_ball(ball, ball_positions[i].x, ball_positions[i].y, 0x00FF00);
+        draw_ball(ball, ball_positions[i].x, ball_positions[i].y, ball_positions[i].color);
     }
 }
 
