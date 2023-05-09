@@ -126,7 +126,7 @@ void draw_mouse() {
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
         case GAME:
-            if (mouse_info.ball_color != 0) draw_ball(ball, mouse_info.x, mouse_info.y, mouse_info.ball_color);
+            if (mouse_info.ball_color != 0) draw_ball(ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
     }
