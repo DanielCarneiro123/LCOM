@@ -93,24 +93,24 @@ void update_keyboard_state() {
             update_menu_state(GAME);
             break;
         case E_KEY:
-            //update_menu_state(END);
+            update_menu_state(END);
         case ONE_KEY:
-            mouse_info.ball_color = 0xFF0000;
+            update_mouse_color(0xFF0000);
             break;
         case TWO_KEY:
-            mouse_info.ball_color = 0x00FF00;
+            update_mouse_color(0x00FF00);
             break;
         case THREE_KEY:
-            mouse_info.ball_color = 0x0000FF;    
+            update_mouse_color(0x0000FF);
             break;
         case FOUR_KEY:
-            mouse_info.ball_color = 0xFFFF00;
+            update_mouse_color(0xFFFF00);
             break;
         case FIVE_KEY:
-            mouse_info.ball_color = 0x00FFFF;
+            mupdate_mouse_color(0x00FFFF);
             break;        
         case ZERO_KEY:
-            mouse_info.ball_color = 0;
+            update_mouse_color(0);
             break;
 
         default:
@@ -158,4 +158,11 @@ void update_buttons_state() {
         button3->pressed = 0;
         button4->pressed = 0;
     }
+}
+
+
+void update_mouse_color(uint32_t color) {
+  if (menuState == GAME) {
+    mouse_info.ball_color = color;
+  } 
 }

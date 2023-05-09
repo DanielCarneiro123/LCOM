@@ -38,5 +38,7 @@ void update_buttons_state();
 void update_rtc_state();
 void setup_sprites();
 void destroy_sprites();
+void update_menu_state(MenuState new_state);
+void update_mouse_color(uint32_t color);
 
 #endif
