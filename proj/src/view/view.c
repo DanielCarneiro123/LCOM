@@ -10,6 +10,8 @@ extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
 extern real_time_info time_info;
 extern MenuState menuState;
+extern uint8_t balls;
+extern Position* ball_positions;
 
 // Objetos
 extern Sprite *mouse;
@@ -75,6 +77,7 @@ void draw_new_frame() {
         }
     }    
     clean_mouse();
+    draw_balls();
     draw_mouse();
 }
 
@@ -99,6 +102,12 @@ void draw_game_menu() {
 void draw_finish_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
+}
+
+void draw_balls() {
+    for (uint8_t i = 0; i < balls; i++) {
+        draw_ball(ball, ball_positions[i].x, ball_positions[i].y, 0x00FF00);
+    }
 }
 
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
@@ -171,7 +180,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
 }
 
 int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, int height, int width) {
-  //if (xdraw + width > sprite->width || ydraw + height > sprite->height) return 0; 
+  //if (xdraw + width < x || ydraw + height < y) return 0; 
   
   int initial_x = xdraw;
   uint16_t num_pixels = width * height;
