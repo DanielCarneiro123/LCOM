@@ -107,7 +107,7 @@ void update_keyboard_state() {
             update_mouse_color(0xFFFF00);
             break;
         case FIVE_KEY:
-            mupdate_mouse_color(0x00FFFF);
+            update_mouse_color(0x00FFFF);
             break;        
         case ZERO_KEY:
             update_mouse_color(0);
