@@ -188,6 +188,7 @@ void place_ball() {
 }
 
 void remove_ball() {
+    if (menuState != GAME || balls == 0) return;
     int16_t removed_index = -1;
     for (int i = 0; i < balls; i++) {
         if (mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height) {
