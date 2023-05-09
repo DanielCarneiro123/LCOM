@@ -9,6 +9,8 @@ extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
 extern real_time_info time_info;
 extern bool firstFrame;
+extern uint8_t balls;
+extern Position* ball_positions;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
@@ -23,12 +25,20 @@ Sprite *exit_menu;
 Sprite *board;
 Sprite *ball;
 
+Position* ball_positions;
+uint8_t balls;
+
 // Contador de interrupções do timer
 int timer_interrupts = 0;
 
 void update_menu_state(MenuState new_state) {
     firstFrame = true;
     menuState = new_state;
+}
+
+void setup_positions() {
+    balls = 0;
+    ball_positions = malloc(sizeof(Position) * 9 * 4);
 }
 
 // Criação dos objetos via XPM e via comum
@@ -111,6 +121,8 @@ void update_keyboard_state() {
             break;        
         case ZERO_KEY:
             update_mouse_color(0);
+        case P_KEY:
+            place_ball();    
             break;
 
         default:
@@ -160,9 +172,16 @@ void update_buttons_state() {
     }
 }
 
-
 void update_mouse_color(uint32_t color) {
   if (menuState == GAME) {
     mouse_info.ball_color = color;
   } 
+}
+
+void place_ball() {
+    if (menuState != GAME || balls >= 9*4) return;
+    ball_positions[balls].x = mouse_info.x - ball->width/2;
+    ball_positions[balls].y = mouse_info.y - ball->height/2;
+
+    balls++;
 }

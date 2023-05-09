@@ -31,14 +31,21 @@ typedef enum {
     END
 } MenuState;
 
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+} Position;
+
 void update_timer_state();
 void update_keyboard_state();
 void update_mouse_state();
 void update_buttons_state();
 void update_rtc_state();
 void setup_sprites();
+void setup_positions();
 void destroy_sprites();
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
+void place_ball();
 
 #endif

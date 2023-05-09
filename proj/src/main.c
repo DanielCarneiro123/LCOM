@@ -32,6 +32,7 @@ int setup() {
 
   // Inicialização dos sprites
   setup_sprites();
+  setup_positions();
 
   uint8_t timer_byte, keyboard_byte, mouse_byte;
 
