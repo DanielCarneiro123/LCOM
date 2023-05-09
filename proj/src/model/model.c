@@ -186,3 +186,21 @@ void place_ball() {
 
     balls++;
 }
+
+void remove_ball() {
+    int16_t removed_index = -1;
+    for (int i = 0; i < balls; i++) {
+        if (mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height) {
+            removed_index = i;
+            break;
+        }
+    }
+
+    if (removed_index != -1) {
+        for (int i = removed_index; i < balls - 1; i++) {
+            ball_positions[i] = ball_positions[i + 1];
+        }
+
+        balls--;
+    }
+}

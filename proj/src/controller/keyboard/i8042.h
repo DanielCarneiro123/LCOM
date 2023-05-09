@@ -33,5 +33,6 @@
 #define FIVE_KEY        06
 #define ZERO_KEY        0x0b
 #define P_KEY           0x19
+#define O_KEY           0x18
 
 #endif /* _LCOM_I8042_H_ */
