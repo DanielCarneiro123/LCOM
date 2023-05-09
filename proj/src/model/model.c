@@ -124,6 +124,9 @@ void update_keyboard_state() {
         case P_KEY:
             place_ball();    
             break;
+        case O_KEY:
+            remove_ball();
+            break;    
 
         default:
             break;
