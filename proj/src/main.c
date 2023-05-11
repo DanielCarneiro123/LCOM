@@ -4,6 +4,7 @@
 #include "controller/keyboard/keyboard.h"
 #include "controller/mouse/mouse.h"
 #include "controller/rtc/rtc.h"
+#include "controller/serialport/sp.h"
 #include "model/model.h"
 #include "view/view.h"
 #include "config.h"
@@ -33,13 +34,14 @@ int setup() {
   // Inicialização dos sprites
   setup_sprites();
 
-  uint8_t timer_byte, keyboard_byte, mouse_byte;
+  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
 
   // Ativação das interrupções dos dispositivos
   if (timer_subscribe_ints(&timer_byte) != 0) return 1;
   if (keyboard_subscribe_interrupts(&keyboard_byte) != 0) return 1;
   if (mouse_subscribe_interrupts(&mouse_byte) != 0) return 1;
   if (rtc_subscribe_interrupts() != 0) return 1;
+  if (sp_subscribe_interrupts(&sp_byte) != 0) return 1;
 
   // Ativar stream-mode e report de dados do rato
   if (mouse_write(ENABLE_STREAM) != 0) return 1;
@@ -64,6 +66,7 @@ int teardown() {
   if (keyboard_unsubscribe_interrupts() != 0) return 1;
   if (mouse_unsubscribe_interrupts() != 0) return 1;
   if (rtc_unsubscribe_interrupts() != 0) return 1;
+  if (sp_unsubscribe_interrupts() != 0) return 1;
 
   // Desativar o report de dados do rato
   if (mouse_write(DISABLE_STREAM) != 0) return 1;
