@@ -11,6 +11,7 @@ extern real_time_info time_info;
 extern bool firstFrame;
 extern uint8_t balls;
 extern Position* ball_positions;
+extern uint8_t sp_data;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
@@ -78,6 +79,10 @@ void destroy_sprites() {
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
     timer_interrupts++;
+}
+
+void update_sp_state() {
+    sp_ih();
 }
 
 // Como o Real Time Clock é um módulo mais pesado, 

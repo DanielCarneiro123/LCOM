@@ -7,6 +7,7 @@
 #include "controller/mouse/mouse.h"
 #include "controller/video/graphics.h"
 #include "controller/rtc/rtc.h"
+#include "controller/serialport/sp.h"
 #include "xpm/hand.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/cursorGimp.xpm"
@@ -42,6 +43,7 @@ void update_keyboard_state();
 void update_mouse_state();
 void update_buttons_state();
 void update_rtc_state();
+void update_sp_state();
 void setup_sprites();
 void setup_positions();
 void destroy_sprites();
