@@ -47,6 +47,23 @@ int read_sp_data() {
     return 1;
 }
 
+int write_sp_data(uint8_t data) {
+    int attempts = SP_ATTEMPTS;
+    uint8_t status;
+    while (attempts) {
+        if (read_lsr(&status)) return 1;
+
+        if (status & BIT(5)) {
+            return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
+        }
+
+        tickdelay(micros_to_ticks(SP_WAIT));
+        attempts--;
+    }
+
+    return 1;
+}
+
 void sp_ih() {
     uint8_t iir;
     util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
@@ -56,6 +73,7 @@ void sp_ih() {
                 read_sp_data();
                 break;
             case IIR_TRANSMITTER_EMPTY:
+                write_sp_data(143);
                 break;    
         }
     }
