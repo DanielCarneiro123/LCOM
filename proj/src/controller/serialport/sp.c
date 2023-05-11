@@ -1,6 +1,7 @@
 #include "sp.h"
 
 int hook_id_sp = 6;
+uint8_t sp_data;
 
 int sp_setup() {
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(0) | BIT(1))) return 1;
@@ -20,12 +21,39 @@ int sp_unsubscribe_interrupts() {
   return 0;
 }
 
+int read_lsr(uint8_t *lsr) {
+    return util_sys_inb(COM2_BASE + LINE_STATUS_OFFSET, lsr);
+}
+
+int read_sp_data() {
+    int attempts = SP_ATTEMPTS;
+    uint8_t status;
+    while (attempts) {
+        if (read_lsr(&status)) return 1;
+
+        if (status & BIT(0)) {
+            if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
+
+            if (status & SP_OVERRUN_ERROR) return 1;
+            if (status & SP_PARITY_ERROR) return 1;
+            if (status & SP_FRAMING_ERROR) return 1;
+            return 0;
+        }
+
+        tickdelay(micros_to_ticks(SP_WAIT));
+        attempts--;
+    }
+
+    return 1;
+}
+
 void sp_ih() {
     uint8_t iir;
     util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
     if ((iir & IIR_NO_PENDING) == 0) {
         switch (iir & INT_ID) {
             case IIR_DATA_AVAILABLE:
+                read_sp_data();
                 break;
             case IIR_TRANSMITTER_EMPTY:
                 break;    

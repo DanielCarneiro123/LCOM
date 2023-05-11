@@ -19,3 +19,10 @@
 #define IIR_DATA_AVAILABLE              BIT(2) | BIT(1)
 #define IIR_TRANSMITTER_EMPTY           BIT(1)
 #define INT_ID                          BIT(0) | BIT(1) | BIT(2) | BIT(3)
+
+#define SP_OVERRUN_ERROR                   BIT(1)
+#define SP_PARITY_ERROR                    BIT(2)
+#define SP_FRAMING_ERROR                   BIT(3)
+
+#define SP_ATTEMPTS                     10
+#define SP_WAIT                         20000
