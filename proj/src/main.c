@@ -50,6 +50,7 @@ int setup() {
 
   // Setup do Real Time Clock
   rtc_setup();
+  if (sp_setup()) return 1;
 
   return 0;
 }

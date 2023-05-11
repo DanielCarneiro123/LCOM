@@ -5,7 +5,9 @@
 #include <lcom/lcf.h>
 #include "UART.h"
 
+int sp_setup();
 int sp_subscribe_interrupts(uint8_t *bit_no);
 int sp_unsubscribe_interrupts();
+void sp_ih();
 
 #endif
