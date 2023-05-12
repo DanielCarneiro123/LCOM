@@ -14,5 +14,7 @@ int (get_mode_info)(uint16_t mode, vbe_mode_info_t *mode_info);
 uint32_t (frame_buffer_index)(uint16_t x, uint16_t y);
 uint32_t (pixel_index)(uint16_t x, uint16_t y);
 int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color, uint8_t* frame_buffer);
+int (fill_circle)(uint16_t center_x, uint16_t center_y, uint16_t radius, uint32_t color, uint8_t* frame_buffer);
+
 
 #endif
