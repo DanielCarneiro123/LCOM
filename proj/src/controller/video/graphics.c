@@ -90,3 +90,32 @@ int (fill_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, ui
     }
     return 0;
 }
+
+int (fill_circle)(uint16_t center_x, uint16_t center_y, uint16_t radius, uint32_t color, uint8_t* frame_buffer) {
+    int x = radius;
+    int y = 0;
+    int radiusError = 1 - x;
+
+    while (x >= y) {
+        for (int i = center_x - x; i <= center_x + x; i++) {
+            if (paint_pixel(i, center_y + y, color, frame_buffer)) return 1;
+            if (paint_pixel(i, center_y - y, color, frame_buffer)) return 1;
+        }
+        for (int i = center_x - y; i <= center_x + y; i++) {
+            if (paint_pixel(i, center_y + x, color, frame_buffer)) return 1;
+            if (paint_pixel(i, center_y - x, color, frame_buffer)) return 1;
+        }
+
+        y++;
+
+        if (radiusError < 0) {
+            radiusError += 2 * y + 1;
+        } else {
+            x--;
+            radiusError += 2 * (y - x) + 1;
+        }
+    }
+
+    return 0;
+}
+
