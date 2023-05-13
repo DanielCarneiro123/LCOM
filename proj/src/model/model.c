@@ -127,6 +127,7 @@ void update_keyboard_state() {
             break;        
         case ZERO_KEY:
             update_mouse_color(0);
+            break;
         case P_KEY:
             place_ball();    
             break;
