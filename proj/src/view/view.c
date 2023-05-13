@@ -95,7 +95,7 @@ void draw_game_menu() {
     draw_sprite_button(button2, mode_info.XResolution/2, 0);
     draw_sprite_button(button3, 0, mode_info.YResolution/2);
     draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
-    draw_sprite_xpm(board, 0, 0);
+    draw_sprite_xpm(board, mode_info.XResolution/2 - board->width/2, 0);
 }
 
 // O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
