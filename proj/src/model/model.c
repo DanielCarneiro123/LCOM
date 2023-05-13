@@ -9,8 +9,6 @@ extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
 extern real_time_info time_info;
 extern bool firstFrame;
-extern uint8_t balls;
-extern Position* ball_positions;
 extern uint8_t sp_data;
 
 // Objetos a construir e manipular com a mudança de estados
@@ -40,6 +38,9 @@ void update_menu_state(MenuState new_state) {
 void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
+    for (int i = 0; i < 9 * 4; i++) {
+        ball_positions[i].color = TRANSPARENT;
+    }
 }
 
 // Criação dos objetos via XPM e via comum

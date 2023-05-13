@@ -111,6 +111,7 @@ void draw_balls() {
 }
 
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
+    if (color == TRANSPARENT) return 0;
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     sprite->x = x;
