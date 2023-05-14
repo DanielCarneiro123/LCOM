@@ -39,6 +39,8 @@ void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
     for (int i = 0; i < 9 * 4; i++) {
+        ball_positions[i].x = ((i + 1) * 150) % mode_info.XResolution;
+        ball_positions[i].y = 100 * ((i/4) + 1);
         ball_positions[i].color = TRANSPARENT;
     }
 }
