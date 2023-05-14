@@ -41,6 +41,8 @@ void setup_positions() {
     for (int i = 0; i < 9 * 4; i++) {
         ball_positions[i].x = ((i + 1) * 150) % mode_info.XResolution;
         ball_positions[i].y = 100 * ((i/4) + 1);
+        //ball_positions[i].x = mode_info.XResolution/2;
+        //ball_positions[i].y = mode_info.YResolution/2;
         ball_positions[i].color = TRANSPARENT;
     }
 }
@@ -190,30 +192,40 @@ void update_mouse_color(uint32_t color) {
   } 
 }
 
+bool is_mouse_in_ball(uint8_t i) {
+    return mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height;
+}
+
 void place_ball() {
     if (menuState != GAME || balls >= 9*4) return;
-    ball_positions[balls].x = mouse_info.x - ball->width/2;
-    ball_positions[balls].y = mouse_info.y - ball->height/2;
-    ball_positions[balls].color = mouse_info.ball_color;
+    for (int i = 0; i < 9 * 4; i++) {
+        if (is_mouse_in_ball(i)) {
+            ball_positions[i].color = mouse_info.ball_color;
+            return;
+        }
+    }
+    //ball_positions[balls].x = mouse_info.x - ball->width/2;
+    //ball_positions[balls].y = mouse_info.y - ball->height/2;
+    //ball_positions[balls].color = mouse_info.ball_color;
 
-    balls++;
+    //balls++;
 }
 
 void remove_ball() {
     if (menuState != GAME || balls == 0) return;
-    int16_t removed_index = -1;
+    //int16_t removed_index = -1;
     for (int i = 0; i < balls; i++) {
-        if (mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height) {
-            removed_index = i;
+        if (is_mouse_in_ball(i)) {
+            ball_positions[i].color = TRANSPARENT;
             break;
         }
     }
 
-    if (removed_index != -1) {
+    /*if (removed_index != -1) {
         for (int i = removed_index; i < balls - 1; i++) {
             ball_positions[i] = ball_positions[i + 1];
         }
 
         balls--;
-    }
+    }*/
 }
