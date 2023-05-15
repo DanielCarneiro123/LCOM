@@ -208,6 +208,7 @@ bool is_mouse_in_ball(uint8_t i) {
 
 void place_ball() {
     if (menuState != GAME || balls >= 9*4) return;
+    if (!activeTurn) return;
     for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_ball(i)) {
             ball_positions[i].color = mouse_info.ball_color;
@@ -223,6 +224,7 @@ void place_ball() {
 
 void remove_ball() {
     if (menuState != GAME || balls == 0) return;
+    if (!activeTurn) return;
     //int16_t removed_index = -1;
     for (int i = 0; i < balls; i++) {
         if (is_mouse_in_ball(i)) {
