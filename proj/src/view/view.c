@@ -247,3 +247,10 @@ int draw_sprite_button(Sprite *sprite, int x, int y) {
 void display_real_time() {
     printf("NOW: %d/%d/%d @%d:%d:%d\n", 2000 + time_info.year, time_info.month, time_info.day, time_info.hours, time_info.minutes, time_info.seconds);
 }
+
+void clean_ball(uint8_t k) {
+    fill_rectangle(ball_positions[k].x, ball_positions[k].y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+    for (int i = 0; i < bg_size; i++) {
+        draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball_positions[k].x - background[i]->x, ball_positions[k].y - background[i]->y, ball->height, ball->width);
+    }
+}
