@@ -26,6 +26,7 @@ Sprite *ball;
 
 Position* ball_positions;
 uint8_t balls;
+bool activeTurn = true;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -138,6 +139,9 @@ void update_keyboard_state() {
         case O_KEY:
             remove_ball();
             break;    
+        case ENTER_KEY:
+            finish_turn();
+            break;
 
         default:
             break;
@@ -190,6 +194,12 @@ void update_mouse_color(uint32_t color) {
   if (menuState == GAME) {
     mouse_info.ball_color = color;
   } 
+}
+
+void finish_turn() {
+    if (menuState == GAME) {
+        activeTurn = false;
+    }
 }
 
 bool is_mouse_in_ball(uint8_t i) {
