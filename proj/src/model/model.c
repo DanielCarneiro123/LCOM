@@ -48,6 +48,10 @@ void setup_positions() {
     }
 }
 
+void destroy_positions() {
+    free(ball_positions);
+}
+
 // Criação dos objetos via XPM e via comum
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
