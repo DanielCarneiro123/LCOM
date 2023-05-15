@@ -182,17 +182,26 @@ void clean_mouse() {
 int draw_sprite_xpm(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
+
+    uint16_t initial_x = x;
+    uint32_t num_pixels = width * height;
     sprite->x = x;
     sprite->y = y;
     uint32_t current_color;
-    for (int h = 0 ; h < height ; h++) {
-      for (int w = 0 ; w < width ; w++) {
-        current_color = sprite->colors[w + h*width];
-        if (current_color == TRANSPARENT) continue;
-        if (paint_pixel(x + w, y + h, current_color, drawing_frame_buffer) != 0) return 1;
+
+    for (uint32_t i = 0; i < num_pixels; i++) {
+      current_color = sprite->colors[i];
+      if (current_color != TRANSPARENT) {
+        if (paint_pixel(x, y, current_color, drawing_frame_buffer)) return 1;
+      }
+      x = (x + 1) % (width + initial_x);
+      if (x == 0) {
+        y++;
+        x = initial_x;
       }
     }
-    return 0; 
+
+    return 0;
 }
 
 int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, int height, int width) {
