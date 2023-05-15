@@ -9,8 +9,6 @@ extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
 extern real_time_info time_info;
 extern bool firstFrame;
-extern uint8_t balls;
-extern Position* ball_positions;
 extern uint8_t sp_data;
 
 // Objetos a construir e manipular com a mudança de estados
@@ -28,6 +26,7 @@ Sprite *ball;
 
 Position* ball_positions;
 uint8_t balls;
+bool activeTurn = true;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -40,6 +39,17 @@ void update_menu_state(MenuState new_state) {
 void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
+    for (int i = 0; i < 9 * 4; i++) {
+        ball_positions[i].x = ((i + 1) * 150) % mode_info.XResolution;
+        ball_positions[i].y = 100 * ((i/4) + 1);
+        //ball_positions[i].x = mode_info.XResolution/2;
+        //ball_positions[i].y = mode_info.YResolution/2;
+        ball_positions[i].color = TRANSPARENT;
+    }
+}
+
+void destroy_positions() {
+    free(ball_positions);
 }
 
 // Criação dos objetos via XPM e via comum
@@ -126,12 +136,16 @@ void update_keyboard_state() {
             break;        
         case ZERO_KEY:
             update_mouse_color(0);
+            break;
         case P_KEY:
             place_ball();    
             break;
         case O_KEY:
             remove_ball();
             break;    
+        case ENTER_KEY:
+            finish_turn();
+            break;
 
         default:
             break;
@@ -186,30 +200,49 @@ void update_mouse_color(uint32_t color) {
   } 
 }
 
+void finish_turn() {
+    if (menuState == GAME) {
+        activeTurn = false;
+    }
+}
+
+bool is_mouse_in_ball(uint8_t i) {
+    return mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height;
+}
+
 void place_ball() {
     if (menuState != GAME || balls >= 9*4) return;
-    ball_positions[balls].x = mouse_info.x - ball->width/2;
-    ball_positions[balls].y = mouse_info.y - ball->height/2;
-    ball_positions[balls].color = mouse_info.ball_color;
+    if (!activeTurn) return;
+    for (int i = 0; i < 9 * 4; i++) {
+        if (is_mouse_in_ball(i)) {
+            ball_positions[i].color = mouse_info.ball_color;
+            return;
+        }
+    }
+    //ball_positions[balls].x = mouse_info.x - ball->width/2;
+    //ball_positions[balls].y = mouse_info.y - ball->height/2;
+    //ball_positions[balls].color = mouse_info.ball_color;
 
-    balls++;
+    //balls++;
 }
 
 void remove_ball() {
-    if (menuState != GAME || balls == 0) return;
-    int16_t removed_index = -1;
-    for (int i = 0; i < balls; i++) {
-        if (mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height) {
-            removed_index = i;
+    if (menuState != GAME) return;
+    if (!activeTurn) return;
+    //int16_t removed_index = -1;
+    for (int i = 0; i < 9 * 4; i++) {
+        if (is_mouse_in_ball(i)) {
+            ball_positions[i].color = TRANSPARENT;
+            clean_ball(i);
             break;
         }
     }
 
-    if (removed_index != -1) {
+    /*if (removed_index != -1) {
         for (int i = removed_index; i < balls - 1; i++) {
             ball_positions[i] = ball_positions[i + 1];
         }
 
         balls--;
-    }
+    }*/
 }

@@ -27,6 +27,9 @@ extern Sprite *board;
 extern Sprite *ball;
 
 bool firstFrame = true;
+Sprite *background[5];
+uint8_t bg_size;
+uint32_t bg_color;
 
 // Alocação de memória ao(s) buffer(s)
 // Se houver só um buffer, esse é o principal
@@ -83,34 +86,47 @@ void draw_new_frame() {
 
 // O menu inicial é apenas um retângulo com tamanho máximo, com um smile ao centro
 void draw_initial_menu() {
-    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, RED, drawing_frame_buffer);
+    bg_color = RED;
+    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
     draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
     draw_sprite_xpm(exit_menu, mode_info.XResolution/2 - 37, mode_info.YResolution/2 + 40);
+    bg_size = 3;
+    background[0] = masterminix;
+    background[1] = start;
+    background[2] = exit_menu;
 }
 
 // O menu do jogo é constituído por quatro botões
 void draw_game_menu() {
-    draw_sprite_button(button1, 0, 0);
-    draw_sprite_button(button2, mode_info.XResolution/2, 0);
-    draw_sprite_button(button3, 0, mode_info.YResolution/2);
-    draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
-    draw_sprite_xpm(board, 0, 0);
+    bg_color = GREEN;
+    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
+    //draw_sprite_button(button1, 0, 0);
+    //draw_sprite_button(button2, mode_info.XResolution/2, 0);
+    //draw_sprite_button(button3, 0, mode_info.YResolution/2);
+    //draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
+    draw_sprite_xpm(board, mode_info.XResolution/2 - board->width/2, 0);
+    bg_size = 1;
+    background[0] = board;
 }
 
 // O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
 void draw_finish_menu() {
-    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, DARKBLUE, drawing_frame_buffer);
+    bg_color = DARKBLUE;
+    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
+    bg_size = 1;
+    background[0] = masterminix;
 }
 
 void draw_balls() {
-    for (uint8_t i = 0; i < balls; i++) {
+    for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(ball, ball_positions[i].x, ball_positions[i].y, ball_positions[i].color);
     }
 }
 
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
+    if (color == TRANSPARENT) return 0;
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     sprite->x = x;
@@ -144,17 +160,17 @@ void draw_mouse() {
 void clean_mouse() {
     switch (menuState) {
         case START: case END:
-            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
-            draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, mouse->x - masterminix->x, mouse->y - masterminix->y, mouse->height, mouse->width);
+            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+            for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             break;
        case GAME:
             if (mouse_info.ball_color == 0) {
-                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, RED, drawing_frame_buffer);
-                draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, mouse->x - masterminix->x, mouse->y - masterminix->y, mouse->height, mouse->width);
+                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+                for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             }
             else {
-                fill_rectangle(ball->x, ball->y, ball->width, ball->height, RED, drawing_frame_buffer);
-                draw_partial_sprite_xpm(masterminix, masterminix->x, masterminix->y, ball->x - masterminix->x, ball->y - masterminix->y, ball->height, ball->width);
+                fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
             }
             break;
     }
@@ -166,17 +182,26 @@ void clean_mouse() {
 int draw_sprite_xpm(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
+
+    uint16_t initial_x = x;
+    uint32_t num_pixels = width * height;
     sprite->x = x;
     sprite->y = y;
     uint32_t current_color;
-    for (int h = 0 ; h < height ; h++) {
-      for (int w = 0 ; w < width ; w++) {
-        current_color = sprite->colors[w + h*width];
-        if (current_color == TRANSPARENT) continue;
-        if (paint_pixel(x + w, y + h, current_color, drawing_frame_buffer) != 0) return 1;
+
+    for (uint32_t i = 0; i < num_pixels; i++) {
+      current_color = sprite->colors[i];
+      if (current_color != TRANSPARENT) {
+        if (paint_pixel(x, y, current_color, drawing_frame_buffer)) return 1;
+      }
+      x = (x + 1) % (width + initial_x);
+      if (x == 0) {
+        y++;
+        x = initial_x;
       }
     }
-    return 0; 
+
+    return 0;
 }
 
 int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, int height, int width) {
@@ -230,4 +255,11 @@ int draw_sprite_button(Sprite *sprite, int x, int y) {
 // Em projetos pode ser mudada para invocar sprites que coloquem no ecrã os respetivos dígitos
 void display_real_time() {
     printf("NOW: %d/%d/%d @%d:%d:%d\n", 2000 + time_info.year, time_info.month, time_info.day, time_info.hours, time_info.minutes, time_info.seconds);
+}
+
+void clean_ball(uint8_t k) {
+    fill_rectangle(ball_positions[k].x, ball_positions[k].y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+    for (int i = 0; i < bg_size; i++) {
+        draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball_positions[k].x - background[i]->x, ball_positions[k].y - background[i]->y, ball->height, ball->width);
+    }
 }
