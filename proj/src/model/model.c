@@ -226,7 +226,7 @@ void remove_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     //int16_t removed_index = -1;
-    for (int i = 0; i < balls; i++) {
+    for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_ball(i)) {
             ball_positions[i].color = TRANSPARENT;
             clean_ball(i);
