@@ -26,6 +26,7 @@ Sprite *ball;
 Sprite *small_ball;
 
 Position* ball_positions;
+PositionSmall* small_ball_positions;
 uint8_t balls;
 bool activeTurn = true;
 
@@ -47,8 +48,24 @@ void setup_positions() {
     }
 }
 
+void setup_small_positions() {
+    small_ball_positions = malloc(sizeof(PositionSmall) * 36);
+    for (int j = 0; j < 9; j++) {
+            for (int i = 0; i < 4; i++) {
+                small_ball_positions[j*4+i].x = 416 + (i % 2) * 26;
+                small_ball_positions[j*4+i].y = (j*61) + (60 + (i / 2) * 30);
+                if (j > 5) small_ball_positions[j*4+i].y -= 2;
+                small_ball_positions[j*4+i].color = 0;
+            }
+        }  
+}
+
 void destroy_positions() {
     free(ball_positions);
+}
+
+void destroy_small_positions() {
+    free(small_ball_positions);
 }
 
 // Criação dos objetos via XPM e via comum
