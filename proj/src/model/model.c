@@ -23,6 +23,7 @@ Sprite *start;
 Sprite *exit_menu;
 Sprite *board;
 Sprite *ball;
+Sprite *small_ball;
 
 Position* ball_positions;
 uint8_t balls;
@@ -40,10 +41,8 @@ void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
     for (int i = 0; i < 9 * 4; i++) {
-        ball_positions[i].x = ((i + 1) * 150) % mode_info.XResolution;
-        ball_positions[i].y = 100 * ((i/4) + 1);
-        //ball_positions[i].x = mode_info.XResolution/2;
-        //ball_positions[i].y = mode_info.YResolution/2;
+        ball_positions[i].x = 190 + (i % 4) * 56;
+        ball_positions[i].y = 66 + (i / 4) * 60;
         ball_positions[i].color = TRANSPARENT;
     }
 }
@@ -57,6 +56,7 @@ void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
     ball = create_sprite_xpm((xpm_map_t) ball_xpm);
+    small_ball = create_sprite_xpm((xpm_map_t) small_ball_xpm);
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
     //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
@@ -74,6 +74,7 @@ void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(board);
     destroy_sprite(ball);
+    destroy_sprite(small_ball);
     destroy_sprite(hand);
     destroy_sprite(masterminix);
     destroy_sprite(start);

@@ -25,6 +25,7 @@ extern Sprite *button4;
 extern Sprite *exit_menu;
 extern Sprite *board;
 extern Sprite *ball;
+extern Sprite *small_ball;
 
 bool firstFrame = true;
 Sprite *background[5];
