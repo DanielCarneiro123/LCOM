@@ -35,7 +35,7 @@ int (read_sp_data)() {
     while (attempts) {
         if (read_lsr(&status)) return 1;
 
-        if (status & BIT(0)) {
+        if (status & RECIEVER_DATA_AVAILABLE) {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
 
             if (status & SP_OVERRUN_ERROR) return 1;
@@ -57,7 +57,7 @@ int (write_sp_data)(uint8_t data) {
     while (attempts) {
         if (read_lsr(&status)) return 1;
 
-        if (status & BIT(5)) {
+        if (status & THR_EMPTY) {
             return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
         }
 

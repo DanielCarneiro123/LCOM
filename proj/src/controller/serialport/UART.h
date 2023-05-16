@@ -24,5 +24,8 @@
 #define SP_PARITY_ERROR                    BIT(2)
 #define SP_FRAMING_ERROR                   BIT(3)
 
+#define RECIEVER_DATA_AVAILABLE            BIT(0)
+#define THR_EMPTY                          BIT(5)
+
 #define SP_ATTEMPTS                     10
 #define SP_WAIT                         20000
