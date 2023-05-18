@@ -156,6 +156,7 @@ void update_keyboard_state() {
             update_mouse_color(0);
             break;
         case P_KEY:
+            place_small_ball();
             place_ball();    
             break;
         case O_KEY:
@@ -252,7 +253,7 @@ void place_small_ball() {
     if (menuState != GAME || balls >= 9*4) return;
     if (!activeTurn) return;
     for (int i = 0; i < 9 * 4; i++) {
-        if (is_mouse_in_ball(i)) {
+        if (is_mouse_in_small_ball(i)) {
             small_ball_positions[i].color = mouse_info.ball_color;
             return;
         }

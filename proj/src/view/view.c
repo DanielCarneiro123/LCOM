@@ -83,6 +83,7 @@ void draw_new_frame() {
     }    
     clean_mouse();
     draw_balls();
+    draw_small_balls();
     draw_mouse();
 }
 
@@ -133,7 +134,9 @@ void draw_small_balls() {
 }
 
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
-    if (color == TRANSPARENT) return 0;
+    if (color == TRANSPARENT || (sprite == small_ball && color == 0)) return 0;
+    if (sprite == small_ball && color == 1) color = 0;
+    if (sprite == small_ball && color == 2) color = 0xFFFFFF;
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     sprite->x = x;
