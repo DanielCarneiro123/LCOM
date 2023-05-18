@@ -160,6 +160,7 @@ void update_keyboard_state() {
             place_ball();    
             break;
         case O_KEY:
+            remove_small_ball();
             remove_ball();
             break;    
         case ENTER_KEY:
