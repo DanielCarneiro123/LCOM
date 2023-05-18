@@ -34,6 +34,7 @@ int setup() {
   // Inicialização dos sprites
   setup_sprites();
   setup_positions();
+  setup_small_positions();
 
   uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
 
@@ -63,6 +64,7 @@ int teardown() {
   // Destruição dos sprites
   destroy_sprites();
   destroy_positions();
+  destroy_small_positions();
 
   // Desativa todas as interrupções
   if (timer_unsubscribe_ints() != 0) return 1;

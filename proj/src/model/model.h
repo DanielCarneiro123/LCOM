@@ -15,6 +15,7 @@
 #include "xpm/masterminix.xpm"
 #include "xpm/mastermind_boardV1.xpm"
 #include "xpm/ball.xpm"
+#include "xpm/small_ball.xpm"
 #include "xpm/start.xpm"
 #include "xpm/exit.xpm"
 #include "view/view.h"
@@ -38,6 +39,12 @@ typedef struct {
     uint32_t color;
 } Position;
 
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+    uint8_t color;
+} PositionSmall;
+
 void update_timer_state();
 void update_keyboard_state();
 void update_mouse_state();
@@ -46,7 +53,9 @@ void update_rtc_state();
 void update_sp_state();
 void setup_sprites();
 void setup_positions();
+void setup_small_positions();
 void destroy_positions();
+void destroy_small_positions();
 void destroy_sprites();
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);

@@ -25,6 +25,7 @@ extern Sprite *button4;
 extern Sprite *exit_menu;
 extern Sprite *board;
 extern Sprite *ball;
+extern Sprite *small_ball;
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -101,7 +102,6 @@ void draw_initial_menu() {
 void draw_game_menu() {
     bg_color = GREEN;
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
-    //draw_sprite_button(button1, 0, 0);
     //draw_sprite_button(button2, mode_info.XResolution/2, 0);
     //draw_sprite_button(button3, 0, mode_info.YResolution/2);
     //draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
