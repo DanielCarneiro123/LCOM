@@ -12,6 +12,7 @@ extern real_time_info time_info;
 extern MenuState menuState;
 extern uint8_t balls;
 extern Position* ball_positions;
+extern PositionSmall* small_ball_positions;
 
 // Objetos
 extern Sprite *mouse;
@@ -122,6 +123,12 @@ void draw_finish_menu() {
 void draw_balls() {
     for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(ball, ball_positions[i].x, ball_positions[i].y, ball_positions[i].color);
+    }
+}
+
+void draw_small_balls() {
+    for (uint8_t i = 0; i < 9 * 4; i++) {
+        draw_ball(small_ball, small_ball_positions[i].x, small_ball_positions[i].y, small_ball_positions[i].color);
     }
 }
 

@@ -57,9 +57,12 @@ void setup_small_positions();
 void destroy_positions();
 void destroy_small_positions();
 void destroy_sprites();
+bool is_mouse_in_ball(uint8_t i);
+bool is_mouse_in_small_ball(uint8_t i);
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
 void place_ball();
+void place_small_ball();
 void remove_ball();
 void finish_turn();
 

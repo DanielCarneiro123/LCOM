@@ -17,6 +17,7 @@ void draw_finish_menu();
 void clean_mouse();
 void draw_mouse();
 void draw_balls();
+void draw_small_balls();
 void swap_buffers();
 void display_real_time();
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
