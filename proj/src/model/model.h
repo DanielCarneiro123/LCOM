@@ -64,6 +64,7 @@ void update_mouse_color(uint32_t color);
 void place_ball();
 void place_small_ball();
 void remove_ball();
+void remove_small_ball();
 void finish_turn();
 
 #endif

@@ -267,7 +267,7 @@ void remove_ball() {
     for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_ball(i)) {
             ball_positions[i].color = TRANSPARENT;
-            clean_ball(i);
+            clean_ball(i, ball);
             break;
         }
     }
@@ -279,4 +279,16 @@ void remove_ball() {
 
         balls--;
     }*/
+}
+
+void remove_small_ball() {
+    if (menuState != GAME) return;
+    if (!activeTurn) return;
+    for (int i = 0; i < 9 * 4; i++) {
+        if (is_mouse_in_small_ball(i)) {
+            small_ball_positions[i].color = 0;
+            clean_ball(i, small_ball);
+            break;
+        }
+    }
 }
