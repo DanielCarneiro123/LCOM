@@ -50,7 +50,7 @@ uint32_t frame_buffer_index(uint16_t x, uint16_t y) {
 }
 
 int (paint_pixel)(uint16_t x, uint16_t y, uint32_t color, uint8_t* frame_buffer) {
-    if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 0;
+    if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 1;
     
     uint32_t index = frame_buffer_index(x, y);
 

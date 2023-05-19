@@ -166,6 +166,7 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
       for (int w = 0 ; w < width ; w++) {
         current_color = sprite->colors[w + h*width];
         if (current_color == TRANSPARENT) continue;
+        if (x + w < 0 || y + h < 0) continue;
         if (paint_pixel(x + w, y + h, color, drawing_frame_buffer) != 0) return 1;
       }
     }
