@@ -82,9 +82,10 @@ int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t col
     return 1;
 }
 
-int (fill_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t* frame_buffer) {
-  for (uint16_t i = x; i < x + width; i++) {
-        for (uint16_t j = y; j < y + height; j++) {
+int (fill_rectangle)(int32_t x, int32_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t* frame_buffer) {
+  for (int32_t i = x; i < x + width; i++) {
+        for (int32_t j = y; j < y + height; j++) {
+            if (i < 0 || j < 0) continue;
             if (paint_pixel(i, j, color, frame_buffer)) return 1;
         }
     }
