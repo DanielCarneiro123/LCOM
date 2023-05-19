@@ -183,7 +183,8 @@ void draw_mouse() {
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
         case GAME:
-            if (mouse_info.ball_color != 0) draw_ball(ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
+            if (mouse_info.ball_color > 1 && mouse_info.ball_color != 0xffffff) draw_ball(ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
+            if (mouse_info.ball_color == 1 || mouse_info.ball_color == 0xffffff) draw_ball(small_ball, mouse_info.x - small_ball->width/2, mouse_info.y - small_ball->height/2, mouse_info.ball_color);
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
     }
@@ -201,8 +202,14 @@ void clean_mouse() {
                 for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             }
             else {
-                fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
-                for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
+                if (mouse_info.ball_color == 1 || mouse_info.ball_color == 0xFFFFFF) {
+                    fill_rectangle(small_ball->x, small_ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, small_ball->x - background[i]->x, small_ball->y - background[i]->y, ball->height, ball->width);
+                }
+                else {
+                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
+                }
             }
             break;
     }

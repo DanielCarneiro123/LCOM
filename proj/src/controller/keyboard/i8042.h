@@ -26,6 +26,8 @@
 #define G_KEY           34
 #define E_KEY           18
 #define Q_KEY           16
+#define W_KEY           17
+#define B_KEY           11
 #define ONE_KEY         02
 #define TWO_KEY         03
 #define THREE_KEY       04

@@ -186,6 +186,9 @@ void update_keyboard_state() {
         case ZERO_KEY:
             update_mouse_color(0);
             break;
+        case W_KEY:
+            update_mouse_color(0xFFFFFF);
+            break;
         case P_KEY:
             place_small_ball();
             place_ball();    
@@ -247,8 +250,8 @@ void update_buttons_state() {
 
 void update_mouse_color(uint32_t color) {
   if (menuState == GAME) {
-    mouse_info.ball_color = color;
-  } 
+        mouse_info.ball_color = color;
+    }
 }
 
 void finish_turn() {
