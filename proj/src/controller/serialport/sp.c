@@ -9,6 +9,7 @@ int (sp_setup)() {
     if (sys_outb(COM2_BASE + 1, 0x7)) return 1;
 
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(0) | BIT(1))) return 1;
+    if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, 0)) return 1;
     if (sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, BIT(0) | BIT(1))) return 1;
     return 0;
 }
@@ -37,6 +38,7 @@ int (read_sp_data)() {
 
         if (status & RECIEVER_DATA_AVAILABLE) {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
+            printf("\n\n\nBYTE READ: %d\n\n\n", sp_data);
 
             if (status & SP_OVERRUN_ERROR) return 1;
             if (status & SP_PARITY_ERROR) return 1;
@@ -71,6 +73,7 @@ int (write_sp_data)(uint8_t data) {
 void (sp_ih)() {
     uint8_t iir;
     util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
+    printf("\n\n\nIIR IS %d\n\n\n", iir);
     if ((iir & IIR_NO_PENDING) == 0) {
         switch (iir & INT_ID) {
             case IIR_DATA_AVAILABLE:
