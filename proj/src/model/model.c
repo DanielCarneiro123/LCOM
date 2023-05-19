@@ -37,6 +37,7 @@ PositionBallsBox* ball_box_positions;
 
 uint8_t balls;
 bool activeTurn = true;
+int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -218,6 +219,15 @@ void update_mouse_state() {
         update_buttons_state();
         draw_new_frame();
         byte_index = 0;
+        if (mouse_info.left_click){
+            pick_box_ball();
+            place_small_ball();
+            place_ball();    
+        }
+        if (mouse_info.right_click){
+            remove_small_ball();
+            remove_ball();    
+        }
     }
 }
 
@@ -268,6 +278,10 @@ bool is_mouse_in_small_ball(uint8_t i) {
     return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + ball->height;
 }
 
+bool is_mouse_in_ball_box(uint8_t i) {
+    return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
+}
+
 void place_ball() {
     if (menuState != GAME || balls >= 9*4) return;
     if (!activeTurn) return;
@@ -275,6 +289,22 @@ void place_ball() {
         if (is_mouse_in_ball(i)) {
             ball_positions[i].color = mouse_info.ball_color;
             return;
+        }
+    }
+    //ball_positions[balls].x = mouse_info.x - ball->width/2;
+    //ball_positions[balls].y = mouse_info.y - ball->height/2;
+    //ball_positions[balls].color = mouse_info.ball_color;
+
+    //balls++;
+}
+
+void pick_box_ball() {
+    if (menuState != GAME) return;
+    if (!activeTurn) return;
+    for (int i = 0; i < 5; i++) {
+        if (is_mouse_in_ball_box(i)) {
+            update_mouse_color(colorArr[i]);
+            return;       
         }
     }
     //ball_positions[balls].x = mouse_info.x - ball->width/2;
