@@ -24,9 +24,17 @@ Sprite *exit_menu;
 Sprite *board;
 Sprite *ball;
 Sprite *small_ball;
+Sprite *um;
+Sprite *dois;
+Sprite *tres;
+Sprite *quatro;
+Sprite *cinco;
+
 
 Position* ball_positions;
 PositionSmall* small_ball_positions;
+PositionBallsBox* ball_box_positions;
+
 uint8_t balls;
 bool activeTurn = true;
 
@@ -38,6 +46,16 @@ void update_menu_state(MenuState new_state) {
     menuState = new_state;
 }
 
+void setup_box_balls_positions() {
+    ball_box_positions = 0;
+    ball_box_positions = malloc(sizeof(PositionBallsBox) * 5 );
+    for (int j = 0; j < 5; j++) {
+        ball_box_positions[j].x = 500;
+        ball_box_positions[j].y = 120 + (j % 5) * 80;
+        ball_box_positions[j].color = TRANSPARENT;
+    }  
+}
+
 void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
@@ -47,6 +65,7 @@ void setup_positions() {
         ball_positions[i].color = TRANSPARENT;
     }
 }
+
 
 void setup_small_positions() {
     small_ball_positions = malloc(sizeof(PositionSmall) * 36);
@@ -74,6 +93,7 @@ void setup_sprites() {
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
     ball = create_sprite_xpm((xpm_map_t) ball_xpm);
     small_ball = create_sprite_xpm((xpm_map_t) small_ball_xpm);
+
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
     //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
@@ -83,7 +103,12 @@ void setup_sprites() {
     button2 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, BLUE);
     button3 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, GREEN);
     button4 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, YELLOW);
-    
+    um = create_sprite_xpm((xpm_map_t) um_xpm);
+    dois = create_sprite_xpm((xpm_map_t) dois_xpm);
+    tres = create_sprite_xpm((xpm_map_t) tres_xpm);
+    quatro = create_sprite_xpm((xpm_map_t) quatro_xpm);
+    cinco = create_sprite_xpm((xpm_map_t) cinco_xpm);
+
 }
 
 // É boa prática antes de acabar o programa libertar a memória alocada
@@ -101,6 +126,12 @@ void destroy_sprites() {
     destroy_sprite(button3);
     destroy_sprite(button4);
     //destroy_sprite(masterminix);
+    destroy_sprite(um);
+    destroy_sprite(dois);
+    destroy_sprite(tres);
+    destroy_sprite(quatro);
+    destroy_sprite(cinco);
+
 }
 
 // Na altura da interrupção há troca dos buffers e incremento do contador

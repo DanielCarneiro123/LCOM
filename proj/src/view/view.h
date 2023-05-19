@@ -16,6 +16,7 @@ void draw_game_menu();
 void draw_finish_menu();
 void clean_mouse();
 void draw_mouse();
+void draw_numbers_and_balls_in_box();
 void draw_balls();
 void draw_small_balls();
 void swap_buffers();

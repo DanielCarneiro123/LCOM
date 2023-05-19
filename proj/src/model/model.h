@@ -18,6 +18,12 @@
 #include "xpm/small_ball.xpm"
 #include "xpm/start.xpm"
 #include "xpm/exit.xpm"
+#include "xpm/um.xpm"
+#include "xpm/dois.xpm"
+#include "xpm/tres.xpm"
+#include "xpm/quatro.xpm"
+#include "xpm/cinco.xpm"
+
 #include "view/view.h"
 #include "model/sprite.h"
 #include "config.h"
@@ -45,6 +51,12 @@ typedef struct {
     uint8_t color;
 } PositionSmall;
 
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+    uint32_t color;
+} PositionBallsBox;
+
 void update_timer_state();
 void update_keyboard_state();
 void update_mouse_state();
@@ -53,6 +65,7 @@ void update_rtc_state();
 void update_sp_state();
 void setup_sprites();
 void setup_positions();
+void setup_box_balls_positions();
 void setup_small_positions();
 void destroy_positions();
 void destroy_small_positions();

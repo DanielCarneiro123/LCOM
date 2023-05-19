@@ -13,6 +13,7 @@ extern MenuState menuState;
 extern uint8_t balls;
 extern Position* ball_positions;
 extern PositionSmall* small_ball_positions;
+extern PositionBallsBox* ball_box_positions;
 
 // Objetos
 extern Sprite *mouse;
@@ -27,6 +28,11 @@ extern Sprite *exit_menu;
 extern Sprite *board;
 extern Sprite *ball;
 extern Sprite *small_ball;
+extern Sprite *um;
+extern Sprite *dois;
+extern Sprite *tres;
+extern Sprite *quatro;
+extern Sprite *cinco;
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -84,6 +90,7 @@ void draw_new_frame() {
     clean_mouse();
     draw_balls();
     draw_small_balls();
+    draw_numbers_and_balls_in_box();
     draw_mouse();
 }
 
@@ -121,6 +128,19 @@ void draw_finish_menu() {
     background[0] = masterminix;
 }
 
+void draw_numbers_and_balls_in_box(){
+
+    if(menuState != GAME) return;
+    Sprite *numbers[5] = {um,dois,tres,quatro,cinco};
+
+    int color[] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
+
+    for (int j = 0; j < 5; j++) {
+        draw_sprite_xpm(numbers[j], 570, 135 + (j % 5) * 80);
+        draw_ball(ball, ball_box_positions[j].x, ball_box_positions[j].y, color[j]);
+    }  
+}
+
 void draw_balls() {
     for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(ball, ball_positions[i].x, ball_positions[i].y, ball_positions[i].color);
@@ -151,6 +171,7 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
     }
     return 0; 
 }
+
 
 // O cursor mode ter dois estados:
 // - "normal", quando está no menu de início ou de fim
