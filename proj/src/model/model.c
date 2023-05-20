@@ -165,9 +165,11 @@ void update_keyboard_state() {
             update_menu_state(START);
             break;
         case G_KEY:
+            write_sp_data(143);
             update_menu_state(GAME);
             break;
         case E_KEY:
+            read_sp_data();
             update_menu_state(END);
         case ONE_KEY:
             update_mouse_color(0xFF0000);

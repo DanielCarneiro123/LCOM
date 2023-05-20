@@ -16,7 +16,7 @@
 #define SCRATCHPAD_OFFSET               7
 
 #define IIR_NO_PENDING                  BIT(0)
-#define IIR_DATA_AVAILABLE              (BIT(2) | BIT(1))
+#define IIR_DATA_AVAILABLE              BIT(2)
 #define IIR_TRANSMITTER_EMPTY           BIT(1)
 #define INT_ID                          (BIT(0) | BIT(1) | BIT(2) | BIT(3))
 
