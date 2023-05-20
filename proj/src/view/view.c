@@ -293,7 +293,7 @@ int draw_sprite_button(Sprite *sprite, int x, int y) {
 // No caso do Template esta função apenas retorna uma string para o ficheiro output.txt
 // Em projetos pode ser mudada para invocar sprites que coloquem no ecrã os respetivos dígitos
 void display_real_time() {
-    printf("NOW: %d/%d/%d @%d:%d:%d\n", 2000 + time_info.year, time_info.month, time_info.day, time_info.hours, time_info.minutes, time_info.seconds);
+    //printf("NOW: %d/%d/%d @%d:%d:%d\n", 2000 + time_info.year, time_info.month, time_info.day, time_info.hours, time_info.minutes, time_info.seconds);
 }
 
 void clean_ball(uint8_t k, Sprite* sprite) {

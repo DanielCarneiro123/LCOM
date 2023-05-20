@@ -60,6 +60,7 @@ int (write_sp_data)(uint8_t data) {
         if (read_lsr(&status)) return 1;
 
         if (status & THR_EMPTY) {
+            printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
             return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
         }
 
@@ -73,7 +74,7 @@ int (write_sp_data)(uint8_t data) {
 void (sp_ih)() {
     uint8_t iir;
     util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
-    printf("\n\n\nIIR IS %d\n\n\n", iir);
+    printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
     if ((iir & IIR_NO_PENDING) == 0) {
         switch (iir & INT_ID) {
             case IIR_DATA_AVAILABLE:

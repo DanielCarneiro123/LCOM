@@ -14,7 +14,7 @@ extern SystemState systemState;
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
   lcf_trace_calls("/home/lcom/labs/g2/proj/src/debug/trace.txt");
-  lcf_log_output("/home/lcom/labs/g2/proj/src/debug/output.txt");
+  lcf_log_output(strcat(strcat("/home/lcom/labs/g2/proj/src/debug/output", argv[1]), ".txt"));
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
