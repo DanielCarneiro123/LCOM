@@ -2,6 +2,7 @@
 
 int hook_id_sp = 6;
 uint8_t sp_data = 0;
+extern uint32_t* color_table;
 
 int (sp_setup)() {
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(7))) return 1;
@@ -86,4 +87,15 @@ void (sp_ih)() {
                 break;    
         }
     }
+}
+
+uint8_t (prepare_move_byte)(uint8_t position, uint32_t color) {
+    uint8_t index;
+    for (uint i = 0; i < 7; i++) {
+        if (color_table[i] == color) {
+            index = i;
+            break;
+        }
+    }
+    return (position << 6) | index;
 }
