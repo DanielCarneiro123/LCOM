@@ -38,7 +38,7 @@ PositionBallsBox* ball_box_positions;
 uint8_t balls;
 bool activeTurn = true;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
-uint32_t color_table[7] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
+uint32_t color_table[8] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -291,7 +291,9 @@ void place_ball() {
     for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_ball(i)) {
             ball_positions[i].color = mouse_info.ball_color;
-            prepare_move_byte(i/4, mouse_info.ball_color);
+            uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
+            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
+            write_sp_data(byte);
             return;
         }
     }
