@@ -30,8 +30,8 @@ uint8_t pop() {
 
 int update_queue() {
     if (ready) {
-        printf("\n\n\n I AM READY \n\n\n");
         if (has_byte()) {
+            printf("\n\n\n I AM READY \n\n\n");
             uint8_t data_to_send = pop();
             if (write_sp_data(data_to_send)) return 1;
         }
