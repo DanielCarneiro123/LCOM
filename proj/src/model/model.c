@@ -39,6 +39,7 @@ uint8_t balls;
 bool activeTurn = true;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
 uint32_t color_table[8] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
+uint8_t curr_turn = 0;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -271,6 +272,7 @@ void update_mouse_color(uint32_t color) {
 void finish_turn() {
     if (menuState == GAME) {
         activeTurn = false;
+        curr_turn++;
     }
 }
 
@@ -289,7 +291,7 @@ bool is_mouse_in_ball_box(uint8_t i) {
 void place_ball() {
     if (menuState != GAME || balls >= 9*4) return;
     if (!activeTurn) return;
-    for (int i = 0; i < 9 * 4; i++) {
+    for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
         if (is_mouse_in_ball(i)) {
             ball_positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
