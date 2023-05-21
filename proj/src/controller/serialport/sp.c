@@ -3,6 +3,7 @@
 int hook_id_sp = 6;
 uint8_t player_no = 0;
 uint8_t sp_data = 0;
+bool ready = false;
 extern uint32_t color_table[];
 
 int (sp_setup)() {
@@ -63,6 +64,7 @@ int (write_sp_data)(uint8_t data) {
 
         if (status & THR_EMPTY) {
             printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
+            ready = false;
             return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
         }
 
@@ -85,11 +87,14 @@ void (sp_ih)() {
                 break;
             case IIR_TRANSMITTER_EMPTY:
                 printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
-                if (has_byte()) {
-                    uint8_t data_to_send = pop();
-                    write_sp_data(data_to_send);
-                }
+                ready = true;
                 break;    
+        }
+    }
+    if (ready) {
+        if (has_byte()) {
+            uint8_t data_to_send = pop();
+            write_sp_data(data_to_send);
         }
     }
 }

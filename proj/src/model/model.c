@@ -293,7 +293,7 @@ void place_ball() {
             ball_positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
-            write_sp_data(byte);
+            push(byte);
             return;
         }
     }
