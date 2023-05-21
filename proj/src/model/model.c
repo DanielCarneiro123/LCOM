@@ -41,6 +41,7 @@ bool activeTurn = true;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
 uint32_t color_table[8] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
 uint8_t curr_turn = 0;
+uint8_t player_no = 0;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -156,6 +157,16 @@ void update_rtc_state() {
     if (timer_interrupts % GAME_FREQUENCY == 0) rtc_update_time();
 }
 
+void test_player_no() {
+    if (sp_data == 143) {
+        player_no = 2;
+    }
+    else {
+        player_no = 1;
+    }
+    printf("\n\n\nI AM %d\n\n\n", player_no);
+}
+
 // Sempre que uma nova tecla é pressionada há avaliação do scancode.
 // No caso do Template o teclado influencia:
 // - o systemState: se Q for pressionado, leva ao fim do programa
@@ -170,6 +181,7 @@ void update_keyboard_state() {
             update_menu_state(START);
             break;
         case G_KEY:
+            test_player_no();
             write_sp_data(143);
             update_menu_state(GAME);
             break;

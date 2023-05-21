@@ -14,6 +14,5 @@ int (read_sp_data)();
 int (read_lsr)(uint8_t *lsr);
 int (write_sp_data)(uint8_t data);
 uint8_t (prepare_move_byte)(uint8_t position, uint32_t color);
-int (test_player_no)();
 
 #endif

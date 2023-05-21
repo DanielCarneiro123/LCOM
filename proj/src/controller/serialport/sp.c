@@ -1,7 +1,6 @@
 #include "sp.h"
 
 int hook_id_sp = 6;
-uint8_t player_no = 0;
 uint8_t sp_data = 0;
 bool ready = false;
 bool new_data = false;
@@ -105,17 +104,4 @@ uint8_t (prepare_move_byte)(uint8_t position, uint32_t color) {
         }
     }
     return ((position & 0x3) << 6) | index;
-}
-
-int (test_player_no)() {
-    if (read_sp_data()) return 1;
-    if (sp_data == 37) {
-        player_no = 1;
-    }
-    else {
-        if (write_sp_data(37)) return 1;
-        player_no = 2;
-    }
-
-    return 0;
 }
