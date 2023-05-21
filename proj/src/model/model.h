@@ -81,6 +81,7 @@ void remove_ball();
 void remove_small_ball();
 void finish_turn();
 void pick_box_ball();
+void handle_sp_data();
 bool is_mouse_in_ball_box(uint8_t i);
 
 #endif

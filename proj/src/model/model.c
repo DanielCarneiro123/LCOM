@@ -10,6 +10,7 @@ extern vbe_mode_info_t mode_info;
 extern real_time_info time_info;
 extern bool firstFrame;
 extern uint8_t sp_data;
+extern bool new_data;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
@@ -141,6 +142,7 @@ void destroy_sprites() {
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
     update_queue();
+    handle_sp_data();
     timer_interrupts++;
 }
 
@@ -359,6 +361,12 @@ void remove_ball() {
 
         balls--;
     }*/
+}
+
+void handle_sp_data() {
+    if (sp_data == 0xFF) {
+        activeTurn = true;
+    }
 }
 
 void remove_small_ball() {

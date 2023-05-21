@@ -4,6 +4,7 @@ int hook_id_sp = 6;
 uint8_t player_no = 0;
 uint8_t sp_data = 0;
 bool ready = false;
+bool new_data = false;
 extern uint32_t color_table[];
 
 int (sp_setup)() {
@@ -84,6 +85,7 @@ void (sp_ih)() {
             case IIR_DATA_AVAILABLE:
                 printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
                 read_sp_data();
+                new_data = true;
                 break;
             case IIR_TRANSMITTER_EMPTY:
                 printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
