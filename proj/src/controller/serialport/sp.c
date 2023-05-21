@@ -85,6 +85,10 @@ void (sp_ih)() {
                 break;
             case IIR_TRANSMITTER_EMPTY:
                 printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
+                if (has_byte()) {
+                    uint8_t data_to_send = pop();
+                    write_sp_data(data_to_send);
+                }
                 break;    
         }
     }
