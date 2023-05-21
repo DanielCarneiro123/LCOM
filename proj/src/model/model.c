@@ -270,9 +270,15 @@ void update_mouse_color(uint32_t color) {
 }
 
 void finish_turn() {
-    if (menuState == GAME) {
+    for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
+        if (ball_positions[i].color == 0) {
+            return;
+        }
+    }
+    if (menuState == GAME && activeTurn) {
         activeTurn = false;
         curr_turn++;
+        push(0xFF);
     }
 }
 
