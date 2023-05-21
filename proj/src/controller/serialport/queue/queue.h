@@ -7,5 +7,6 @@
 int push(uint8_t byte);
 uint8_t pop();
 bool has_byte();
+int update_queue();
 
 #endif

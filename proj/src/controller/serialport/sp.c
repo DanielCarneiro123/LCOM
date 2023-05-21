@@ -91,12 +91,6 @@ void (sp_ih)() {
                 break;    
         }
     }
-    if (ready) {
-        if (has_byte()) {
-            uint8_t data_to_send = pop();
-            write_sp_data(data_to_send);
-        }
-    }
 }
 
 uint8_t (prepare_move_byte)(uint8_t position, uint32_t color) {
