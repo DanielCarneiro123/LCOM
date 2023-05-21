@@ -160,6 +160,7 @@ void update_rtc_state() {
 void test_player_no() {
     if (sp_data == 143) {
         player_no = 2;
+        activeTurn = false;
     }
     else {
         player_no = 1;
@@ -285,7 +286,7 @@ void update_mouse_color(uint32_t color) {
 
 void finish_turn() {
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
-        if (ball_positions[i].color == 0) {
+        if (ball_positions[i].color == TRANSPARENT) {
             return;
         }
     }
