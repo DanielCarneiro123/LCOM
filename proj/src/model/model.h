@@ -8,7 +8,7 @@
 #include "controller/video/graphics.h"
 #include "controller/rtc/rtc.h"
 #include "controller/serialport/sp.h"
-#include "controller/serialport/queue/queue.h"
+#include "controller/serialport/queue.h"
 #include "xpm/hand.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/cursorGimp.xpm"

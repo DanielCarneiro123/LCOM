@@ -139,6 +139,7 @@ void destroy_sprites() {
 // Na altura da interrupção há troca dos buffers e incremento do contador
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
+    update_queue();
     timer_interrupts++;
 }
 
