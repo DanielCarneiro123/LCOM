@@ -42,7 +42,7 @@ uint8_t balls;
 bool activeTurn;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
 uint32_t color_table[8] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
-uint8_t curr_turn = 0;
+int8_t curr_turn = -1;
 uint8_t player_no = 0;
 
 // Contador de interrupções do timer
@@ -249,12 +249,12 @@ void update_keyboard_state() {
             break;
         case P_KEY:
             place_small_ball();
-            if (player_no == 2 && curr_turn == 0) place_ball(code_positions, 4);    
+            if (player_no == 2 && curr_turn == -1) place_ball(code_positions, 4);    
             else place_ball(ball_positions, 9*4);    
             break;
         case O_KEY:
             remove_small_ball();
-            if (player_no == 2 && curr_turn == 0) remove_ball(code_positions, 4);
+            if (player_no == 2 && curr_turn == -1) remove_ball(code_positions, 4);
             else remove_ball(ball_positions, 9*4);
             break;    
         case ENTER_KEY:
@@ -332,7 +332,6 @@ void finish_turn(Position* positions) {
     }
     if (menuState == GAME && activeTurn) {
         activeTurn = false;
-        curr_turn++;
         push(0xFF);
     }
 }
@@ -353,7 +352,8 @@ void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     printf("\n\n I AM HERE WITH %d", activeTurn);
-    for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
+    int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
+    for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
