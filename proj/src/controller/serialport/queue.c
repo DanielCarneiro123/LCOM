@@ -4,8 +4,8 @@ static uint8_t size = 0;
 static uint8_t top = 0;
 static uint8_t queue[16];
 extern bool ready;
-extern uint8_t writing_byte;
-extern bool is_writing = false;
+uint8_t writing_byte;
+bool is_writing = false;
 
 int push(uint8_t byte) {
     if (size >= 16) return 1;

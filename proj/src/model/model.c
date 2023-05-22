@@ -11,6 +11,7 @@ extern rtc_info time_info;
 extern bool firstFrame;
 extern uint8_t sp_data;
 extern bool new_data;
+extern bool is_writing;
 
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
@@ -171,6 +172,12 @@ void update_sp_state() {
         if (sp_data == 0xFF) {
             activeTurn = true;
             curr_turn++;
+        }
+        if (sp_data == 0xFE) {
+            retry();
+        }
+        if (sp_data == 0xFD) {
+            is_writing = false;
         }
         new_data = false;
     }
