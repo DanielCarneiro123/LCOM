@@ -2,7 +2,7 @@
 
 int hook_id_sp = 6;
 uint8_t sp_data = 0;
-bool ready = false;
+bool ready = true;
 bool new_data = false;
 extern uint32_t color_table[];
 

@@ -73,6 +73,7 @@ void setup_positions() {
 }
 
 void setup_code_positions() {
+    code_positions = malloc(sizeof(Position) * 4);
     if (player_no == 1) {
         code_positions = NULL;
     }
@@ -178,10 +179,12 @@ void update_rtc_state() {
 void test_player_no() {
     if (sp_data == 143) {
         player_no = 2;
-        activeTurn = false;
+        activeTurn = true;
     }
     else {
         player_no = 1;
+        activeTurn = false;
+        push(143);
     }
     printf("\n\n\nI AM %d\n\n\n", player_no);
 }
@@ -202,7 +205,6 @@ void update_keyboard_state() {
         case G_KEY:
             test_player_no();
             setup_code_positions();
-            write_sp_data(143);
             update_menu_state(GAME);
             break;
         case E_KEY:
