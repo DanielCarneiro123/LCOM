@@ -66,6 +66,7 @@ int teardown() {
   destroy_sprites();
   destroy_positions();
   destroy_small_positions();
+  destroy_code_positions();
 
   // Desativa todas as interrupções
   if (timer_unsubscribe_ints() != 0) return 1;

@@ -35,6 +35,7 @@ Sprite *cinco;
 Position* ball_positions;
 PositionSmall* small_ball_positions;
 PositionBallsBox* ball_box_positions;
+Position* code_positions;
 
 uint8_t balls;
 bool activeTurn = true;
@@ -71,6 +72,19 @@ void setup_positions() {
     }
 }
 
+void setup_code_positions() {
+    if (player_no == 1) {
+        code_positions = NULL;
+    }
+    else {
+        for (int i = 0; i < 4; i++) {
+            code_positions[i].x = 190 + i * 56;
+            code_positions[i].y = 6;
+            code_positions[i].color = TRANSPARENT;
+        }
+    }
+}
+
 
 void setup_small_positions() {
     small_ball_positions = malloc(sizeof(PositionSmall) * 36);
@@ -90,6 +104,10 @@ void destroy_positions() {
 
 void destroy_small_positions() {
     free(small_ball_positions);
+}
+
+void destroy_code_positions() {
+    free(code_positions);
 }
 
 // Criação dos objetos via XPM e via comum
@@ -183,6 +201,7 @@ void update_keyboard_state() {
             break;
         case G_KEY:
             test_player_no();
+            setup_code_positions();
             write_sp_data(143);
             update_menu_state(GAME);
             break;
