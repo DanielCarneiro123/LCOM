@@ -7,13 +7,13 @@ bool new_data = false;
 extern uint32_t color_table[];
 
 int (sp_setup)() {
-    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(7))) return 1;
+    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, DIVISOR_LATCH_BIT)) return 1;
     if (sys_outb(COM2_BASE + 0, 0x8)) return 1;
     if (sys_outb(COM2_BASE + 1, 0x7)) return 1;
 
-    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(0) | BIT(1))) return 1;
-    if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, 0)) return 1;
-    if (sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, BIT(0) | BIT(1))) return 1;
+    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, EIGHT_BIT_CHAR)) return 1;
+    if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, FIFO_DISABLED)) return 1;
+    if (sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, IER_DATA_AVAILABLE | IER_THR_EMPTY)) return 1;
     return 0;
 }
 
@@ -43,8 +43,8 @@ int (read_sp_data)() {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
             printf("\n\n\nBYTE READ: %d\n\n\n", sp_data);
 
-            if (sp_data != 0xFE && sp_data != 0xFD && (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR)) write_sp_data(0xFE);
-            else if (sp_data != 0xFE && sp_data != 0xFD) write_sp_data(0xFD);
+            if (sp_data != SP_NACK && sp_data != SP_ACK && (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR)) write_sp_data(SP_NACK);
+            else if (sp_data != SP_NACK && sp_data != SP_ACK) write_sp_data(SP_ACK);
             return 0;
         }
 
