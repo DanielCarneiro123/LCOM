@@ -73,7 +73,7 @@ void destroy_positions();
 void destroy_code_positions();
 void destroy_small_positions();
 void destroy_sprites();
-bool is_mouse_in_ball(uint8_t i, Positions* positions, uint8_t n);
+bool is_mouse_in_ball(uint8_t i, Position* positions, uint8_t n);
 bool is_mouse_in_small_ball(uint8_t i);
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
