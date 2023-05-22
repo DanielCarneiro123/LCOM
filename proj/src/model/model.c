@@ -266,7 +266,7 @@ void update_keyboard_state() {
 // - pode mudar o estado do botão por baixo dele - update_buttons_state();
 void update_mouse_state() {
     (mouse_ih)();
-    mouse_sync_bytes();
+    mouse_update_buffer();
     if (byte_index == 3) {
         mouse_sync_info();
         update_buttons_state();

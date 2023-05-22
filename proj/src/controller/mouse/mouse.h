@@ -23,7 +23,7 @@ int (mouse_unsubscribe_interrupts)();
 
 void (mouse_ih)();
 
-void (mouse_sync_bytes)();
+void (mouse_update_buffer)();
 
 void (mouse_sync_info)();
 
