@@ -83,7 +83,6 @@ void remove_ball(Position* positions, uint8_t n);
 void remove_small_ball();
 void finish_turn(Position* positions);
 void pick_box_ball();
-void handle_sp_data();
 bool is_mouse_in_ball_box(uint8_t i);
 void test_player_no();
 

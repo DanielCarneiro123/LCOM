@@ -38,7 +38,7 @@ PositionBallsBox* ball_box_positions;
 Position* code_positions;
 
 uint8_t balls;
-bool activeTurn = true;
+bool activeTurn;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
 uint32_t color_table[8] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
 uint8_t curr_turn = 0;
@@ -162,7 +162,6 @@ void destroy_sprites() {
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
     update_queue();
-    handle_sp_data();
     timer_interrupts++;
 }
 
@@ -346,6 +345,7 @@ bool is_mouse_in_ball_box(uint8_t i) {
 void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
+    printf("\n\n I AM HERE WITH %d", activeTurn);
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
@@ -410,12 +410,6 @@ void remove_ball(Position* positions, uint8_t n) {
 
         balls--;
     }*/
-}
-
-void handle_sp_data() {
-    if (sp_data == 0xFF) {
-        activeTurn = true;
-    }
 }
 
 void remove_small_ball() {
