@@ -12,6 +12,7 @@ extern real_time_info time_info;
 extern MenuState menuState;
 extern uint8_t balls;
 extern Position* ball_positions;
+extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
 
@@ -89,6 +90,7 @@ void draw_new_frame() {
     }    
     clean_mouse();
     draw_balls();
+    draw_code();
     draw_small_balls();
     draw_numbers_and_balls_in_box();
     draw_mouse();
@@ -126,6 +128,13 @@ void draw_finish_menu() {
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
     bg_size = 1;
     background[0] = masterminix;
+}
+
+void draw_code() {
+    if (code_positions == NULL || menuState != GAME) return;
+    for (uint8_t i = 0; i < 4; i++) {
+        draw_ball(ball, code_positions[i].x, code_positions[i].y, code_positions[i].color);
+    }
 }
 
 void draw_numbers_and_balls_in_box(){

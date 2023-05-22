@@ -168,6 +168,12 @@ void update_timer_state() {
 
 void update_sp_state() {
     sp_ih();
+    if (new_data) {
+        if (sp_data == 0xFF) {
+            activeTurn = true;
+            curr_turn++;
+        }
+    }
 }
 
 // Como o Real Time Clock é um módulo mais pesado, 
@@ -236,14 +242,17 @@ void update_keyboard_state() {
             break;
         case P_KEY:
             place_small_ball();
-            place_ball(ball_positions, 9*4);    
+            if (player_no == 2 && curr_turn == 0) place_ball(code_positions, 4);    
+            else place_ball(ball_positions, 9*4);    
             break;
         case O_KEY:
             remove_small_ball();
-            remove_ball(ball_positions, 9*4);
+            if (player_no == 2 && curr_turn == 0) remove_ball(code_positions, 4);
+            else remove_ball(ball_positions, 9*4);
             break;    
         case ENTER_KEY:
-            finish_turn();
+            if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
+            else finish_turn(ball_positions);
             break;
 
         default:
@@ -308,9 +317,9 @@ void update_mouse_color(uint32_t color) {
     }
 }
 
-void finish_turn() {
+void finish_turn(Position* positions) {
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
-        if (ball_positions[i].color == TRANSPARENT) {
+        if (positions[i].color == TRANSPARENT) {
             return;
         }
     }
@@ -334,6 +343,7 @@ bool is_mouse_in_ball_box(uint8_t i) {
 }
 
 void place_ball(Position* positions, uint8_t n) {
+    printf("\n\nPLACING DA BALL\n\n");
     if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
@@ -342,7 +352,7 @@ void place_ball(Position* positions, uint8_t n) {
             positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
-            push(byte);
+            if (positions != code_positions) push(byte);
             return;
         }
     }
