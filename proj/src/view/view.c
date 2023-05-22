@@ -142,12 +142,14 @@ void draw_numbers_and_balls_in_box(){
 }
 
 void draw_balls() {
+    if (menuState != GAME) return;
     for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(ball, ball_positions[i].x, ball_positions[i].y, ball_positions[i].color);
     }
 }
 
 void draw_small_balls() {
+    if (menuState != GAME) return;
     for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(small_ball, small_ball_positions[i].x, small_ball_positions[i].y, small_ball_positions[i].color);
     }
