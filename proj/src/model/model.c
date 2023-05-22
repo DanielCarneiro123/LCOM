@@ -400,8 +400,8 @@ void place_small_ball() {
 void remove_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
-    //int16_t removed_index = -1;
-    for (int i = 0; i < 9 * 4; i++) {
+    int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
+    for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             ball_positions[i].color = TRANSPARENT;
@@ -409,14 +409,6 @@ void remove_ball(Position* positions, uint8_t n) {
             break;
         }
     }
-
-    /*if (removed_index != -1) {
-        for (int i = removed_index; i < balls - 1; i++) {
-            ball_positions[i] = ball_positions[i + 1];
-        }
-
-        balls--;
-    }*/
 }
 
 void remove_small_ball() {
