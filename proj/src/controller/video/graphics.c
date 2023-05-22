@@ -41,6 +41,21 @@ int (set_frame_buffer)(uint16_t mode, uint8_t** frame_buffer) {
     return 0;
 }
 
+int (set_second_frame_buffer)(uint8_t** second_frame_buffer) {
+    unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bpp;
+
+    struct minix_mem_range physic_addresses;
+    physic_addresses.mr_base = mode_info.PhysBasePtr;
+    physic_addresses.mr_limit = physic_addresses.mr_base + frame_size;
+
+    if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)) return 1;
+
+    *frame_buffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
+    if (frame_buffer == NULL) return 1;
+    
+    return 0;
+}
+
 uint32_t pixel_index(uint16_t x, uint16_t y) {
     return y * mode_info.XResolution + x;
 }
