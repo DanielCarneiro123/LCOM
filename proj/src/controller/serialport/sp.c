@@ -2,6 +2,9 @@
 
 int hook_id_sp = 6;
 uint8_t sp_data = 0;
+bool ready = true;
+bool new_data = false;
+extern uint32_t color_table[];
 
 int (sp_setup)() {
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(7))) return 1;
@@ -50,7 +53,7 @@ int (read_sp_data)() {
         attempts--;
     }
 
-    return 1;
+    return 0;
 }
 
 int (write_sp_data)(uint8_t data) {
@@ -60,6 +63,8 @@ int (write_sp_data)(uint8_t data) {
         if (read_lsr(&status)) return 1;
 
         if (status & THR_EMPTY) {
+            printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
+            ready = false;
             return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
         }
 
@@ -73,15 +78,30 @@ int (write_sp_data)(uint8_t data) {
 void (sp_ih)() {
     uint8_t iir;
     util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
-    printf("\n\n\nIIR IS %d\n\n\n", iir);
+    printf("\n\n\n IIR IS %d\n\n\n", iir);
     if ((iir & IIR_NO_PENDING) == 0) {
         switch (iir & INT_ID) {
             case IIR_DATA_AVAILABLE:
+                printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
                 read_sp_data();
+                new_data = true;
                 break;
             case IIR_TRANSMITTER_EMPTY:
-                write_sp_data(143);
+                printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
+                ready = true;
                 break;    
         }
     }
+}
+
+uint8_t (prepare_move_byte)(uint8_t position, uint32_t color) {
+    return 0x60;
+    uint8_t index = 0;
+    for (uint i = 0; i < 8; i++) {
+        if (color_table[i] == color) {
+            index = i;
+            break;
+        }
+    }
+    return ((position & 0x3) << 6) | index;
 }

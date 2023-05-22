@@ -12,6 +12,7 @@ extern real_time_info time_info;
 extern MenuState menuState;
 extern uint8_t balls;
 extern Position* ball_positions;
+extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
 
@@ -89,6 +90,7 @@ void draw_new_frame() {
     }    
     clean_mouse();
     draw_balls();
+    draw_code();
     draw_small_balls();
     draw_numbers_and_balls_in_box();
     draw_mouse();
@@ -128,6 +130,13 @@ void draw_finish_menu() {
     background[0] = masterminix;
 }
 
+void draw_code() {
+    if (code_positions == NULL || menuState != GAME) return;
+    for (uint8_t i = 0; i < 4; i++) {
+        draw_ball(ball, code_positions[i].x, code_positions[i].y, code_positions[i].color);
+    }
+}
+
 void draw_numbers_and_balls_in_box(){
 
     if(menuState != GAME) return;
@@ -142,12 +151,14 @@ void draw_numbers_and_balls_in_box(){
 }
 
 void draw_balls() {
+    if (menuState != GAME) return;
     for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(ball, ball_positions[i].x, ball_positions[i].y, ball_positions[i].color);
     }
 }
 
 void draw_small_balls() {
+    if (menuState != GAME) return;
     for (uint8_t i = 0; i < 9 * 4; i++) {
         draw_ball(small_ball, small_ball_positions[i].x, small_ball_positions[i].y, small_ball_positions[i].color);
     }
@@ -183,7 +194,8 @@ void draw_mouse() {
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
         case GAME:
-            if (mouse_info.ball_color != 0) draw_ball(ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
+            if (mouse_info.ball_color > 2) draw_ball(ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
+            else draw_ball(small_ball, mouse_info.x - small_ball->width/2, mouse_info.y - small_ball->height/2, mouse_info.ball_color);
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
     }
@@ -201,8 +213,14 @@ void clean_mouse() {
                 for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             }
             else {
-                fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
-                for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
+                if (mouse_info.ball_color == 1 || mouse_info.ball_color == 0xFFFFFF) {
+                    fill_rectangle(small_ball->x, small_ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, small_ball->x - background[i]->x, small_ball->y - background[i]->y, ball->height, ball->width);
+                }
+                else {
+                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
+                }
             }
             break;
     }
@@ -286,7 +304,7 @@ int draw_sprite_button(Sprite *sprite, int x, int y) {
 // No caso do Template esta função apenas retorna uma string para o ficheiro output.txt
 // Em projetos pode ser mudada para invocar sprites que coloquem no ecrã os respetivos dígitos
 void display_real_time() {
-    printf("NOW: %d/%d/%d @%d:%d:%d\n", 2000 + time_info.year, time_info.month, time_info.day, time_info.hours, time_info.minutes, time_info.seconds);
+    //printf("NOW: %d/%d/%d @%d:%d:%d\n", 2000 + time_info.year, time_info.month, time_info.day, time_info.hours, time_info.minutes, time_info.seconds);
 }
 
 void clean_ball(uint8_t k, Sprite* sprite) {
