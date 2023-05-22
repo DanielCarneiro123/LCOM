@@ -173,6 +173,7 @@ void update_sp_state() {
             activeTurn = true;
             curr_turn++;
         }
+        new_data = false;
     }
 }
 
@@ -343,7 +344,6 @@ bool is_mouse_in_ball_box(uint8_t i) {
 }
 
 void place_ball(Position* positions, uint8_t n) {
-    printf("\n\nPLACING DA BALL\n\n");
     if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
