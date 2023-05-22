@@ -238,7 +238,7 @@ void update_keyboard_state() {
             break;
         case O_KEY:
             remove_small_ball();
-            remove_ball();
+            remove_ball(ball_positions, 9*4);
             break;    
         case ENTER_KEY:
             finish_turn();
@@ -264,11 +264,11 @@ void update_mouse_state() {
         if (mouse_info.left_click){
             pick_box_ball();
             place_small_ball();
-            place_ball();    
+            place_ball(ball_positions, 9*4);    
         }
         if (mouse_info.right_click){
             remove_small_ball();
-            remove_ball();    
+            remove_ball(ball_positions, 9*4);    
         }
     }
 }
@@ -319,8 +319,8 @@ void finish_turn() {
     }
 }
 
-bool is_mouse_in_ball(uint8_t i) {
-    return mouse_info.x >= ball_positions[i].x && mouse_info.x <= ball_positions[i].x + ball->width && mouse_info.y >= ball_positions[i].y && mouse_info.y <= ball_positions[i].y + ball->height;
+bool is_mouse_in_ball(uint8_t i, Position* positions) {
+    return mouse_info.x >= positions[i].x && mouse_info.x <= positions[i].x + ball->width && mouse_info.y >= positions[i].y && mouse_info.y <= positions[i].y + ball->height;
 }
 
 bool is_mouse_in_small_ball(uint8_t i) {
@@ -335,7 +335,8 @@ void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
-        if (is_mouse_in_ball(positions, n)) {
+        if (i >= n) return;
+        if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
@@ -377,12 +378,13 @@ void place_small_ball() {
     }
 }
 
-void remove_ball() {
+void remove_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     //int16_t removed_index = -1;
     for (int i = 0; i < 9 * 4; i++) {
-        if (is_mouse_in_ball(i)) {
+        if (i >= n) return;
+        if (is_mouse_in_ball(i, positions)) {
             ball_positions[i].color = TRANSPARENT;
             clean_ball(i, ball);
             break;
