@@ -234,7 +234,7 @@ void update_keyboard_state() {
             break;
         case P_KEY:
             place_small_ball();
-            place_ball();    
+            place_ball(ball_positions, 9*4);    
             break;
         case O_KEY:
             remove_small_ball();
@@ -331,12 +331,12 @@ bool is_mouse_in_ball_box(uint8_t i) {
     return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
 }
 
-void place_ball() {
-    if (menuState != GAME || balls >= 9*4) return;
+void place_ball(Position* positions, uint8_t n) {
+    if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
-        if (is_mouse_in_ball(i)) {
-            ball_positions[i].color = mouse_info.ball_color;
+        if (is_mouse_in_ball(positions, n)) {
+            positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             push(byte);
