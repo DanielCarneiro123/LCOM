@@ -43,9 +43,8 @@ int (read_sp_data)() {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
             printf("\n\n\nBYTE READ: %d\n\n\n", sp_data);
 
-            if (status & SP_OVERRUN_ERROR) return 1;
-            if (status & SP_PARITY_ERROR) return 1;
-            if (status & SP_FRAMING_ERROR) return 1;
+            if (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR) write_sp_data(0xFE);
+            else write_sp_data(0xFD);
             return 0;
         }
 
