@@ -37,13 +37,13 @@ int setup() {
   setup_small_positions();
   setup_box_balls_positions();
 
-  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
+  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte, rtc_byte;
 
   // Ativação das interrupções dos dispositivos
   if (timer_subscribe_ints(&timer_byte) != 0) return 1;
   if (keyboard_subscribe_interrupts(&keyboard_byte) != 0) return 1;
   if (mouse_subscribe_interrupts(&mouse_byte) != 0) return 1;
-  if (rtc_subscribe_interrupts() != 0) return 1;
+  if (rtc_subscribe_interrupts(&rtc_byte) != 0) return 1;
   if (sp_subscribe_interrupts(&sp_byte) != 0) return 1;
 
   // Ativar stream-mode e report de dados do rato
