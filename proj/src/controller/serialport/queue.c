@@ -4,6 +4,8 @@ static uint8_t size = 0;
 static uint8_t top = 0;
 static uint8_t queue[16];
 extern bool ready;
+extern uint8_t writing_byte;
+extern bool is_writing = false;
 
 int push(uint8_t byte) {
     if (size >= 16) return 1;
@@ -29,12 +31,19 @@ uint8_t pop() {
 }
 
 int update_queue() {
-    if (ready) {
+    if (ready && !is_writing) {
         if (has_byte()) {
-            printf("\n\n\n I AM READY \n\n\n");
-            uint8_t data_to_send = pop();
-            if (write_sp_data(data_to_send)) return 1;
+            writing_byte = pop();
+            is_writing = true;
+            if (write_sp_data(writing_byte)) return 1;
         }
+    }
+    return 0;
+}
+
+int retry() {
+    if (is_writing) {
+        if (write_sp_data(writing_byte)) return 1;
     }
     return 0;
 }
