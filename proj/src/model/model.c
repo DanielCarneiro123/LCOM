@@ -404,8 +404,8 @@ void remove_ball(Position* positions, uint8_t n) {
     for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
-            ball_positions[i].color = TRANSPARENT;
-            clean_ball(i, ball);
+            positions[i].color = TRANSPARENT;
+            clean_ball(i, ball, positions);
             break;
         }
     }
@@ -417,7 +417,7 @@ void remove_small_ball() {
     for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_small_ball(i)) {
             small_ball_positions[i].color = 0;
-            clean_ball(i, small_ball);
+            clean_ball(i, small_ball, NULL);
             break;
         }
     }
