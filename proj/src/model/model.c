@@ -41,7 +41,7 @@ Position* code_positions;
 uint8_t balls;
 bool activeTurn;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
-uint32_t color_table[8] = {0, 1, 0xFFFFFF, RED, GREEN, DARKBLUE, YELLOW, BLUE};
+uint32_t color_table[8] = {0, 1, WHITE, RED, GREEN, DARKBLUE, YELLOW, BLUE};
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 
@@ -242,10 +242,7 @@ void update_keyboard_state() {
             update_mouse_color(0);
             break;
         case W_KEY:
-            update_mouse_color(2);
-            break;
-        case B_KEY:
-            update_mouse_color(1);
+            update_mouse_color(0xFFFFFF);
             break;
         case R_KEY:
             update_mouse_color(1);
