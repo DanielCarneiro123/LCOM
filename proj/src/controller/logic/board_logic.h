@@ -3,7 +3,9 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
+#include "model/model.h"
 
-int check_player_two_cheating();
+bool check_player_two_cheating();
+bool check_guess();
 
 #endif
