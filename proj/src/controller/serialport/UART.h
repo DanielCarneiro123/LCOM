@@ -15,10 +15,17 @@
 #define MODEM_STATUS_OFFSET             6
 #define SCRATCHPAD_OFFSET               7
 
-#define IIR_NO_PENDING                  BIT(1)
-#define IIR_DATA_AVAILABLE              BIT(2) | BIT(1)
+#define DIVISOR_LATCH_BIT               BIT(7)
+#define FIFO_DISABLED                   0
+
+#define IER_DATA_AVAILABLE              BIT(0)
+#define IER_THR_EMPTY                   BIT(1)
+#define EIGHT_BIT_CHAR                  (BIT(0) | BIT(1))
+
+#define IIR_NO_PENDING                  BIT(0)
+#define IIR_DATA_AVAILABLE              BIT(2)
 #define IIR_TRANSMITTER_EMPTY           BIT(1)
-#define INT_ID                          BIT(0) | BIT(1) | BIT(2) | BIT(3)
+#define INT_ID                          (BIT(0) | BIT(1) | BIT(2) | BIT(3))
 
 #define SP_OVERRUN_ERROR                   BIT(1)
 #define SP_PARITY_ERROR                    BIT(2)
@@ -26,6 +33,9 @@
 
 #define RECIEVER_DATA_AVAILABLE            BIT(0)
 #define THR_EMPTY                          BIT(5)
+
+#define SP_NACK                         0xFE
+#define SP_ACK                          0xFD
 
 #define SP_ATTEMPTS                     10
 #define SP_WAIT                         20000

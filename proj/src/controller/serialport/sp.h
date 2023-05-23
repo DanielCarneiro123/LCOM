@@ -4,6 +4,7 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "UART.h"
+#include "queue.h"
 
 int (sp_setup)();
 int (sp_subscribe_interrupts)(uint8_t *bit_no);
@@ -12,5 +13,6 @@ void (sp_ih)();
 int (read_sp_data)();
 int (read_lsr)(uint8_t *lsr);
 int (write_sp_data)(uint8_t data);
+uint8_t (prepare_move_byte)(uint8_t position, uint32_t color);
 
 #endif

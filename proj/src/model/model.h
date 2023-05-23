@@ -8,6 +8,7 @@
 #include "controller/video/graphics.h"
 #include "controller/rtc/rtc.h"
 #include "controller/serialport/sp.h"
+#include "controller/serialport/queue.h"
 #include "xpm/hand.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/cursorGimp.xpm"
@@ -66,18 +67,23 @@ void update_sp_state();
 void setup_sprites();
 void setup_positions();
 void setup_box_balls_positions();
+void setup_code_positions();
 void setup_small_positions();
 void destroy_positions();
+void destroy_code_positions();
 void destroy_small_positions();
 void destroy_sprites();
-bool is_mouse_in_ball(uint8_t i);
+bool is_mouse_in_ball(uint8_t i, Position* positions);
 bool is_mouse_in_small_ball(uint8_t i);
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
-void place_ball();
+void place_ball(Position* positions, uint8_t n);
 void place_small_ball();
-void remove_ball();
+void remove_ball(Position* positions, uint8_t n);
 void remove_small_ball();
-void finish_turn();
+void finish_turn(Position* positions);
+void pick_box_ball();
+bool is_mouse_in_ball_box(uint8_t i);
+void test_player_no();
 
 #endif

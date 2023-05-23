@@ -3,9 +3,9 @@
 // Variáveis globais do módulo
 int hook_id_mouse = 2;        // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
 uint8_t byte_index = 0;       // [0..2]
-uint8_t mouse_bytes[3];       // bytes apanhados
 uint8_t mouse_byte;         // o byte mais recente lido
 MouseInfo mouse_info = {0, 0, 0, 100, 100};
+MouseInfo mouse_buffer;
 extern vbe_mode_info_t mode_info;
 bool mouse_error = false;
 
@@ -28,31 +28,37 @@ void (mouse_ih)() {
 
 // Avalia a disposição dos bytes no array @mouse_bytes
 // O primeiro byte do pacote é sempre o que tem o BIT(3) ativo
-void mouse_sync_bytes() {
+void mouse_update_buffer() {
   if (byte_index == 0 && (mouse_byte & FIRST_BYTE)) { // é o byte CONTROL, o bit 3 está ativo
-    mouse_bytes[byte_index]= mouse_byte;
+    mouse_buffer.right_click = mouse_byte & MOUSE_RB;
+    mouse_buffer.left_click = mouse_byte & MOUSE_LB;
+    if (mouse_byte & MOUSE_X_SIGNAL) mouse_buffer.x = 0xFF00;
+    else mouse_buffer.x = 0;
+    if (mouse_byte & MOUSE_Y_SIGNAL) mouse_buffer.y = 0xFF00;
+    else mouse_buffer.y = 0;
     byte_index++;
   }
-  else if (byte_index > 0) {                            // recebe os deslocamentos em X e Y
-    mouse_bytes[byte_index] = mouse_byte;
+  else if (byte_index == 1) {                            // recebe os deslocamentos em X e Y
+    mouse_buffer.x |= mouse_byte;
     byte_index++;
   }
+  else if (byte_index == 2) {
+    mouse_buffer.y |= mouse_byte;
+    byte_index++;
+  }  
 }
 
 // Transforma o array de bytes numa struct definida de acordo com as necessidades da aplicação
 void (mouse_sync_info)(){
+  int16_t new_x = mouse_info.x + mouse_buffer.x;
+  int16_t new_y = mouse_info.y - mouse_buffer.y;
 
-  mouse_info.right_click = mouse_bytes[0] & MOUSE_RB;
-  mouse_info.left_click = mouse_bytes[0] & MOUSE_LB;
+  mouse_info.right_click = mouse_buffer.right_click;
+  mouse_info.left_click = mouse_buffer.left_click;
 
-  if (mouse_bytes[0] & MOUSE_X_OVERFLOW || mouse_bytes[0] & MOUSE_Y_OVERFLOW) return;
-
-  int16_t delta_x = mouse_info.x + ((mouse_bytes[0] & MOUSE_X_SIGNAL) ? (0xFF00 | mouse_bytes[1]) : mouse_bytes[1]);
-  int16_t delta_y = mouse_info.y - ((mouse_bytes[0] & MOUSE_Y_SIGNAL) ? (0xFF00 | mouse_bytes[2]) : mouse_bytes[2]);
-
-  if (delta_x < 0 || delta_x > mode_info.XResolution || delta_y < 0 || delta_y > mode_info.YResolution) return;
-  mouse_info.x = delta_x;
-  mouse_info.y = delta_y;
+  if (new_x < 0 || new_x > mode_info.XResolution || new_y < 0 || new_y > mode_info.YResolution) return;
+  mouse_info.x = new_x;
+  mouse_info.y = new_y;
 }
 
 // A escrita para o rato tem de ser feita de forma mais controlada do que no keyboard

@@ -14,7 +14,7 @@ extern SystemState systemState;
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
   lcf_trace_calls("/home/lcom/labs/g2/proj/src/debug/trace.txt");
-  lcf_log_output("/home/lcom/labs/g2/proj/src/debug/output.txt");
+  lcf_log_output(strcat(strcat("/home/lcom/labs/g2/proj/src/debug/output", argv[1]), ".txt"));
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
@@ -37,13 +37,13 @@ int setup() {
   setup_small_positions();
   setup_box_balls_positions();
 
-  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
+  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte, rtc_byte;
 
   // Ativação das interrupções dos dispositivos
   if (timer_subscribe_ints(&timer_byte) != 0) return 1;
   if (keyboard_subscribe_interrupts(&keyboard_byte) != 0) return 1;
   if (mouse_subscribe_interrupts(&mouse_byte) != 0) return 1;
-  if (rtc_subscribe_interrupts() != 0) return 1;
+  if (rtc_subscribe_interrupts(&rtc_byte) != 0) return 1;
   if (sp_subscribe_interrupts(&sp_byte) != 0) return 1;
 
   // Ativar stream-mode e report de dados do rato
@@ -66,6 +66,7 @@ int teardown() {
   destroy_sprites();
   destroy_positions();
   destroy_small_positions();
+  destroy_code_positions();
 
   // Desativa todas as interrupções
   if (timer_unsubscribe_ints() != 0) return 1;

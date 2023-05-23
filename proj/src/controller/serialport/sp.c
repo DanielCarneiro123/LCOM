@@ -2,15 +2,18 @@
 
 int hook_id_sp = 6;
 uint8_t sp_data = 0;
+bool ready = true;
+bool new_data = false;
+extern uint32_t color_table[];
 
 int (sp_setup)() {
-    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(7))) return 1;
+    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, DIVISOR_LATCH_BIT)) return 1;
     if (sys_outb(COM2_BASE + 0, 0x8)) return 1;
     if (sys_outb(COM2_BASE + 1, 0x7)) return 1;
 
-    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, BIT(0) | BIT(1))) return 1;
-    if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, 0)) return 1;
-    if (sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, BIT(0) | BIT(1))) return 1;
+    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, EIGHT_BIT_CHAR)) return 1;
+    if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, FIFO_DISABLED)) return 1;
+    if (sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, IER_DATA_AVAILABLE | IER_THR_EMPTY)) return 1;
     return 0;
 }
 
@@ -40,9 +43,8 @@ int (read_sp_data)() {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
             printf("\n\n\nBYTE READ: %d\n\n\n", sp_data);
 
-            if (status & SP_OVERRUN_ERROR) return 1;
-            if (status & SP_PARITY_ERROR) return 1;
-            if (status & SP_FRAMING_ERROR) return 1;
+            if (sp_data != SP_NACK && sp_data != SP_ACK && (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR)) write_sp_data(SP_NACK);
+            else if (sp_data != SP_NACK && sp_data != SP_ACK) write_sp_data(SP_ACK);
             return 0;
         }
 
@@ -50,7 +52,7 @@ int (read_sp_data)() {
         attempts--;
     }
 
-    return 1;
+    return 0;
 }
 
 int (write_sp_data)(uint8_t data) {
@@ -60,6 +62,8 @@ int (write_sp_data)(uint8_t data) {
         if (read_lsr(&status)) return 1;
 
         if (status & THR_EMPTY) {
+            printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
+            ready = false;
             return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
         }
 
@@ -73,15 +77,30 @@ int (write_sp_data)(uint8_t data) {
 void (sp_ih)() {
     uint8_t iir;
     util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
-    printf("\n\n\nIIR IS %d\n\n\n", iir);
+    printf("\n\n\n IIR IS %d\n\n\n", iir);
     if ((iir & IIR_NO_PENDING) == 0) {
         switch (iir & INT_ID) {
             case IIR_DATA_AVAILABLE:
+                printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
                 read_sp_data();
+                new_data = true;
                 break;
             case IIR_TRANSMITTER_EMPTY:
-                write_sp_data(143);
+                printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
+                ready = true;
                 break;    
         }
     }
+}
+
+uint8_t (prepare_move_byte)(uint8_t position, uint32_t color) {
+    return 0x60;
+    uint8_t index = 0;
+    for (uint i = 0; i < 8; i++) {
+        if (color_table[i] == color) {
+            index = i;
+            break;
+        }
+    }
+    return ((position & 0x3) << 6) | index;
 }
