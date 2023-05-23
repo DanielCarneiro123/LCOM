@@ -21,6 +21,7 @@
 
 // Colors
 
+#define WHITE 0xffffff
 #define RED 0xff0000
 #define ORANGE 0xd17b4f
 #define BLUE 0x19DBF0

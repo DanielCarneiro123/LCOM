@@ -26,15 +26,13 @@
 #define G_KEY           34
 #define E_KEY           18
 #define Q_KEY           16
-#define W_KEY           0x17
-#define B_KEY           0x11
+#define W_KEY           17
+#define R_KEY           19
 #define ONE_KEY         02
 #define TWO_KEY         03
 #define THREE_KEY       04
 #define FOUR_KEY        05
 #define FIVE_KEY        06
-#define W_KEY           17
-#define R_KEY           19
 #define ZERO_KEY        0x0b
 #define P_KEY           0x19
 #define O_KEY           0x18

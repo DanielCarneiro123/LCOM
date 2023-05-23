@@ -93,14 +93,37 @@ void (sp_ih)() {
     }
 }
 
-uint8_t (prepare_move_byte)(uint8_t position, uint32_t color) {
-    return 0x60;
-    uint8_t index = 0;
+uint8_t (prepare_move_byte)(uint8_t position, uint32_t color, uint8_t size) {
+
+    unsigned char byte = 0;
+
+    switch (position) {
+        case 0:
+            byte |= 0x00;
+            break;
+        case 1:
+            byte |= BIT(6);
+            break;
+        case 2:
+            byte |= BIT(7);
+            break;
+        case 3:
+            byte |= BIT(7) | BIT(6);
+            break;
+        default:
+            return 0;
+    }
+
+    if (size == 1) { 
+        byte |= BIT(5); /*então é ball*/
+    }
+
     for (uint i = 0; i < 8; i++) {
         if (color_table[i] == color) {
-            index = i;
+            byte |= i;
             break;
         }
     }
-    return ((position & 0x3) << 6) | index;
+
+    return byte;
 }
