@@ -189,6 +189,9 @@ void update_keyboard_state() {
         case W_KEY:
             update_mouse_color(0xFFFFFF);
             break;
+        case R_KEY:
+            update_mouse_color(1);
+            break;
         case P_KEY:
             place_small_ball();
             place_ball();    
