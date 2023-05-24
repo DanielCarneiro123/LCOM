@@ -195,7 +195,7 @@ void update_sp_state() {
         
 
         else if(sp_data & BIT(5)){
-            printf("\n\nINDEX IS %d", (curr_turn+1) * 4 + (sp_data >> 6));
+            printf("\n\nINDEX IS %d", sp_data & 0x1F);
             printf("\nCOLOR IS %d\n\n", color_table[sp_data & 0x1F]);
             ball_positions[(curr_turn+1) * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
         }
@@ -273,19 +273,19 @@ void update_keyboard_state() {
             read_sp_data();
             update_menu_state(END);
         case ONE_KEY:
-            update_mouse_color(0xFF0000);
+            update_mouse_color(RED);
             break;
         case TWO_KEY:
-            update_mouse_color(0x00FF00);
+            update_mouse_color(GREEN);
             break;
         case THREE_KEY:
-            update_mouse_color(0x0000FF);
+            update_mouse_color(DARKBLUE);
             break;
         case FOUR_KEY:
-            update_mouse_color(0xFFFF00);
+            update_mouse_color(YELLOW);
             break;
         case FIVE_KEY:
-            update_mouse_color(0x00FFFF);
+            update_mouse_color(BLUE);
             break;        
         case ZERO_KEY:
             update_mouse_color(0);
