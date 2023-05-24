@@ -11,6 +11,7 @@ bool check_guess() {
         if (ball_positions[curr_turn * 4 + i].color == code_positions[i].color) guesses++;
     }
 
+    printf("\n\nTHERE ARE %d CORRECT GUESSES\n\n", guesses);
     return guesses == 4;
 }
 
