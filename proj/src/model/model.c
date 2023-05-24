@@ -369,7 +369,7 @@ void place_ball(Position* positions, uint8_t n) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
-            uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color);
+            uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color,1);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             if (positions != code_positions) push(byte);
             return;
