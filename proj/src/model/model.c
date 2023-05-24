@@ -190,6 +190,7 @@ void update_sp_state() {
         else if (sp_data == 0xFD) {
             is_writing = false;
         }
+        else if (sp_data == 143) {}
         
 
         else if(sp_data & BIT(5)){
@@ -271,15 +272,27 @@ void update_keyboard_state() {
             update_mouse_color(1);
             break;
         case P_KEY:
-            place_small_ball();
-            if (player_no == 2 && curr_turn == -1) place_ball(code_positions, 4);    
-            else place_ball(ball_positions, 9*4);    
+            switch (player_no) {
+                case 1:
+                    place_ball(ball_positions, 9*4);
+                    break;
+                case 2:
+                    if (curr_turn == -1) place_ball(code_positions, 4);
+                    else place_small_ball();
+                    break;    
+            } 
             break;
         case O_KEY:
-            remove_small_ball();
-            if (player_no == 2 && curr_turn == -1) remove_ball(code_positions, 4);
-            else remove_ball(ball_positions, 9*4);
-            break;    
+            switch (player_no) {
+                case 1:
+                    remove_ball(ball_positions, 9*4);
+                    break;
+                case 2:
+                    if (curr_turn == -1) remove_ball(code_positions, 4);
+                    else remove_small_ball();
+                    break;    
+            } 
+            break; 
         case ENTER_KEY:
             if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
             else finish_turn(ball_positions);
