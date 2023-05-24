@@ -291,7 +291,7 @@ void update_keyboard_state() {
             update_mouse_color(0);
             break;
         case W_KEY:
-            update_mouse_color(0xFFFFFF);
+            update_mouse_color(2);
             break;
         case R_KEY:
             update_mouse_color(1);
