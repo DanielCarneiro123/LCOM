@@ -15,6 +15,9 @@ extern Position* ball_positions;
 extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
+extern PositionSmallBallsBox* small_ball_box_positions;
+extern uint32_t color_table[8];
+
 
 // Objetos
 extern Sprite *mouse;
@@ -34,6 +37,9 @@ extern Sprite *dois;
 extern Sprite *tres;
 extern Sprite *quatro;
 extern Sprite *cinco;
+extern Sprite *seis;
+extern Sprite *sete;
+extern Sprite *oito;
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -98,7 +104,7 @@ void draw_new_frame() {
 
 // O menu inicial é apenas um retângulo com tamanho máximo, com um smile ao centro
 void draw_initial_menu() {
-    bg_color = RED;
+    set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
     draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
@@ -111,7 +117,7 @@ void draw_initial_menu() {
 
 // O menu do jogo é constituído por quatro botões
 void draw_game_menu() {
-    bg_color = GREEN;
+    set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     //draw_sprite_button(button2, mode_info.XResolution/2, 0);
     //draw_sprite_button(button3, 0, mode_info.YResolution/2);
@@ -123,7 +129,7 @@ void draw_game_menu() {
 
 // O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
 void draw_finish_menu() {
-    bg_color = DARKBLUE;
+    set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
     bg_size = 1;
@@ -140,14 +146,18 @@ void draw_code() {
 void draw_numbers_and_balls_in_box(){
 
     if(menuState != GAME) return;
-    Sprite *numbers[5] = {um,dois,tres,quatro,cinco};
+    Sprite *numbers[8] = {um,dois,tres,quatro,cinco,seis,sete,oito};
 
-    int color[] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
+    int color[] = {LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
 
-    for (int j = 0; j < 5; j++) {
-        draw_sprite_xpm(numbers[j], 570, 135 + (j % 5) * 80);
+    for (int j = 0; j < 8; j++) {
+        draw_sprite_xpm(numbers[j], 570, 84 + (j % 8) * 66);
         draw_ball(ball, ball_box_positions[j].x, ball_box_positions[j].y, color[j]);
-    }  
+    } 
+    for( int j= 0; j < 2; j++){
+        draw_ball(small_ball, small_ball_box_positions[j].x, small_ball_box_positions[j].y, color_table[j+1]);
+    }
+ 
 }
 
 void draw_balls() {
@@ -183,6 +193,7 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
     }
     return 0; 
 }
+
 
 
 // O cursor mode ter dois estados:
@@ -320,5 +331,79 @@ void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
             draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, small_ball_positions[k].x - background[i]->x, small_ball_positions[k].y - background[i]->y, sprite->height, sprite->width);
         }
     }
+}
+
+void set_background_color() {
+    if (time_info.hours == 0) {
+        bg_color = COLOR_TIME1;
+    }else if (time_info.hours == 1) {
+        bg_color = COLOR_TIME2;
+    } 
+    else if (time_info.hours == 2) {
+        bg_color = COLOR_TIME3;
+    }
+    else if (time_info.hours == 3) {
+        bg_color = COLOR_TIME4;
+    }
+    else if (time_info.hours == 4) {
+        bg_color = COLOR_TIME5;
+    }
+    else if (time_info.hours == 5) {
+        bg_color = COLOR_TIME6;
+    }
+    else if (time_info.hours == 6) {
+        bg_color = COLOR_TIME7;
+    }
+    else if (time_info.hours == 7) {
+        bg_color = COLOR_TIME8;
+    }
+    else if (time_info.hours == 8) {
+        bg_color = COLOR_TIME9;
+    }
+    else if (time_info.hours == 9) {
+        bg_color = COLOR_TIME10;
+    }
+    else if (time_info.hours == 10) {
+        bg_color = COLOR_TIME11;
+    }
+    else if (time_info.hours == 11) {
+        bg_color = COLOR_TIME12;
+    }
+    else if (time_info.hours == 12) {
+        bg_color = COLOR_TIME13;
+    }
+    else if (time_info.hours == 13) {
+        bg_color = COLOR_TIME14;
+    }
+    else if (time_info.hours == 14) {
+        bg_color = COLOR_TIME15;
+    }
+    else if (time_info.hours == 15) {
+        bg_color = COLOR_TIME16;
+    }
+    else if (time_info.hours == 16) {
+        bg_color = COLOR_TIME17;
+    }
+    else if (time_info.hours == 17) {
+        bg_color = COLOR_TIME18;
+    }
+    else if (time_info.hours == 18) {
+        bg_color = COLOR_TIME19;
+    }
+    else if (time_info.hours == 19) {
+        bg_color = COLOR_TIME20;
+    }
+    else if (time_info.hours == 20) {
+        bg_color = COLOR_TIME21;
+    }
+    else if (time_info.hours == 21) {
+        bg_color = COLOR_TIME22;
+    }
+    else if (time_info.hours == 22) {
+        bg_color = COLOR_TIME23;
+    }
+    else {
+        bg_color = COLOR_TIME24;
+    } 
 }
 
