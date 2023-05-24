@@ -15,7 +15,7 @@ extern Position* ball_positions;
 extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
-extern color_table;
+extern uint32_t color_table[8];
 
 // Objetos
 extern Sprite *mouse;
