@@ -15,6 +15,7 @@ extern Position* ball_positions;
 extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
+extern color_table;
 
 // Objetos
 extern Sprite *mouse;
@@ -142,11 +143,9 @@ void draw_numbers_and_balls_in_box(){
     if(menuState != GAME) return;
     Sprite *numbers[5] = {um,dois,tres,quatro,cinco};
 
-    int color[] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
-
     for (int j = 0; j < 5; j++) {
         draw_sprite_xpm(numbers[j], 570, 135 + (j % 5) * 80);
-        draw_ball(ball, ball_box_positions[j].x, ball_box_positions[j].y, color[j]);
+        draw_ball(ball, ball_box_positions[j].x, ball_box_positions[j].y, color_table[j+3]);
     }  
 }
 

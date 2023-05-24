@@ -179,9 +179,19 @@ void update_sp_state() {
         if (sp_data == 0xFD) {
             is_writing = false;
         }
-        new_data = false;
+        
+
+        if(sp_data & BIT(5)){
+            ball_positions[curr_turn * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
+        }
+        else{
+            small_ball_positions[curr_turn * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
+        }
     }
+
+    new_data = false;
 }
+
 
 // Como o Real Time Clock é um módulo mais pesado, 
 // devemos só atualizar os valores quando passa um segundo
@@ -353,6 +363,8 @@ void place_ball(Position* positions, uint8_t n) {
     if (!activeTurn) return;
     printf("\n\n I AM HERE WITH %d", activeTurn);
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
+    printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
+    printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
     for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
