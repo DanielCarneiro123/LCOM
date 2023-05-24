@@ -213,6 +213,30 @@ void update_rtc_state() {
     if (timer_interrupts % GAME_FREQUENCY == 0) rtc_update_time();
 }
 
+void place_move() {
+    switch (player_no) {
+        case 1:
+            place_ball(ball_positions, 9*4);
+            break;
+        case 2:
+            if (curr_turn == -1) place_ball(code_positions, 4);
+            else place_small_ball();
+            break;    
+    } 
+}
+
+void remove_move() {
+    switch (player_no) {
+        case 1:
+            remove_ball(ball_positions, 9*4);
+            break;
+        case 2:
+            if (curr_turn == -1) remove_ball(code_positions, 4);
+            else remove_small_ball();
+            break;    
+    } 
+}
+
 void test_player_no() {
     if (sp_data == 143) {
         player_no = 2;
@@ -272,26 +296,10 @@ void update_keyboard_state() {
             update_mouse_color(1);
             break;
         case P_KEY:
-            switch (player_no) {
-                case 1:
-                    place_ball(ball_positions, 9*4);
-                    break;
-                case 2:
-                    if (curr_turn == -1) place_ball(code_positions, 4);
-                    else place_small_ball();
-                    break;    
-            } 
+            place_move();
             break;
         case O_KEY:
-            switch (player_no) {
-                case 1:
-                    remove_ball(ball_positions, 9*4);
-                    break;
-                case 2:
-                    if (curr_turn == -1) remove_ball(code_positions, 4);
-                    else remove_small_ball();
-                    break;    
-            } 
+            remove_move(); 
             break; 
         case ENTER_KEY:
             if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
@@ -317,12 +325,10 @@ void update_mouse_state() {
         byte_index = 0;
         if (mouse_info.left_click){
             pick_box_ball();
-            place_small_ball();
-            place_ball(ball_positions, 9*4);    
+            place_move();  
         }
         if (mouse_info.right_click){
-            remove_small_ball();
-            remove_ball(ball_positions, 9*4);    
+            remove_move();  
         }
     }
 }

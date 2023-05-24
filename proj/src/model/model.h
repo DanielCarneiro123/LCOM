@@ -92,5 +92,7 @@ void finish_turn(Position* positions);
 void pick_box_ball();
 bool is_mouse_in_ball_box(uint8_t i);
 void test_player_no();
+void place_move();
+void remove_move();
 
 #endif
