@@ -10,15 +10,6 @@ int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse) {
     uint8_t status;
     while (attempts) {
         if (read_KBC_status(&status)) return 1;
-        
-        /*if (mouse && !(status & BIT(5))) {
-          printf("Error: Mouse output not found\n");
-          return 1;
-        } 
-        if (!mouse && (status & BIT(5))) {
-          printf("Error: Keyboard output not found\n");
-          return 1;
-        } */
 
         if ((status & FULL_OUT_BUFFER)) {
             if (util_sys_inb(port, output)) return 1;

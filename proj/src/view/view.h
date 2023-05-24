@@ -27,6 +27,6 @@ int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, 
 int draw_sprite_button(Sprite *sprite, int x, int y);
 int set_frame_buffers(uint16_t mode);
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color);
-void clean_ball(uint8_t k, Sprite* sprite);
+void clean_ball(uint8_t k, Sprite* sprite, Position* positions);
 
 #endif

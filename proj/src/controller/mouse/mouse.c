@@ -64,12 +64,12 @@ void (mouse_sync_info)(){
 // A escrita para o rato tem de ser feita de forma mais controlada do que no keyboard
 // Temos de injetar o comando DIRETAMENTE no rato e esperar por uma resposta afirmativa (ACK).
 int (mouse_write)(uint8_t command) {
-  uint8_t attemps = 10;
+  uint8_t attempts = 10;
   uint8_t mouse_response;
 
   // Enquanto houver tentativas e a resposta não for satisfatória
   do {
-    attemps--;
+    attempts--;
     // Ativar do modo D4 do i8042
     if (write_KBC_command(0x64, 0xD4))
       return 1;
@@ -80,7 +80,7 @@ int (mouse_write)(uint8_t command) {
     // Ler a resposta do rato pela porta 0x60
     if (read_KBC_output(0x60, &mouse_response, 1))
       return 1;
-  } while (mouse_response != 0xFA && attemps);       
+  } while (mouse_response != 0xFA && attempts);       
 
   return 0;
 }

@@ -25,6 +25,12 @@
 #include "xpm/quatro.xpm"
 #include "xpm/cinco.xpm"
 
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+    uint32_t color;
+} Position;
+
 #include "view/view.h"
 #include "model/sprite.h"
 #include "config.h"
@@ -39,12 +45,6 @@ typedef enum {
     GAME,
     END
 } MenuState;
-
-typedef struct {
-    uint16_t x;
-    uint16_t y;
-    uint32_t color;
-} Position;
 
 typedef struct {
     uint16_t x;
