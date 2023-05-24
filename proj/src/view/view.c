@@ -15,6 +15,7 @@ extern Position* ball_positions;
 extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
+extern PositionSmallBallsBox* small_ball_box_positions;
 extern uint32_t color_table[8];
 
 // Objetos
@@ -147,6 +148,10 @@ void draw_numbers_and_balls_in_box(){
         draw_sprite_xpm(numbers[j], 570, 135 + (j % 5) * 80);
         draw_ball(ball, ball_box_positions[j].x, ball_box_positions[j].y, color_table[j+3]);
     }  
+
+    for( int j= 0; j < 2; j++){
+        draw_ball(small_ball, small_ball_box_positions[j].x, small_ball_box_positions[j].y, color_table[j+1]);
+    }
 }
 
 void draw_balls() {

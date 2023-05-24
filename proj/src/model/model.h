@@ -58,6 +58,12 @@ typedef struct {
     uint32_t color;
 } PositionBallsBox;
 
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+    uint8_t color;
+} PositionSmallBallsBox;
+
 void update_timer_state();
 void update_keyboard_state();
 void update_mouse_state();
@@ -67,6 +73,7 @@ void update_sp_state();
 void setup_sprites();
 void setup_positions();
 void setup_box_balls_positions();
+void setup_box_small_balls_positions();
 void setup_code_positions();
 void setup_small_positions();
 void destroy_positions();

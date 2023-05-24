@@ -36,6 +36,7 @@ Sprite *cinco;
 Position* ball_positions;
 PositionSmall* small_ball_positions;
 PositionBallsBox* ball_box_positions;
+PositionSmallBallsBox* small_ball_box_positions;
 Position* code_positions;
 
 uint8_t balls;
@@ -60,6 +61,16 @@ void setup_box_balls_positions() {
         ball_box_positions[j].x = 500;
         ball_box_positions[j].y = 120 + (j % 5) * 80;
         ball_box_positions[j].color = TRANSPARENT;
+    }  
+}
+
+void setup_box_small_balls_positions() {
+    small_ball_box_positions = 0;
+    small_ball_box_positions = malloc(sizeof(PositionSmallBallsBox) * 2 );
+    for (int j = 0; j < 2; j++) {
+        small_ball_box_positions[j].x = 500 + (j % 2) * 36;
+        small_ball_box_positions[j].y = 20;
+        small_ball_box_positions[j].color = 0;
     }  
 }
 

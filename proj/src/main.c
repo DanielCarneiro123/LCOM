@@ -36,6 +36,7 @@ int setup() {
   setup_positions();
   setup_small_positions();
   setup_box_balls_positions();
+  setup_box_small_balls_positions();
 
   uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte, rtc_byte;
 
