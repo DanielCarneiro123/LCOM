@@ -184,19 +184,21 @@ void update_sp_state() {
             activeTurn = true;
             curr_turn++;
         }
-        if (sp_data == 0xFE) {
+        else if (sp_data == 0xFE) {
             retry();
         }
-        if (sp_data == 0xFD) {
+        else if (sp_data == 0xFD) {
             is_writing = false;
         }
         
 
-        if(sp_data & BIT(5)){
-            ball_positions[curr_turn * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
+        else if(sp_data & BIT(5)){
+            printf("\n\nINDEX IS %d", (curr_turn+1) * 4 + (sp_data >> 6));
+            printf("\nCOLOR IS %d\n\n", color_table[sp_data & 0x1F]);
+            ball_positions[(curr_turn+1) * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
         }
         else{
-            small_ball_positions[curr_turn * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
+            small_ball_positions[(curr_turn+1) * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
         }
     }
 
@@ -380,7 +382,7 @@ void place_ball(Position* positions, uint8_t n) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
-            uint8_t byte = prepare_move_byte(i/4, mouse_info.ball_color,1);
+            uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color,1);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             if (positions != code_positions) push(byte);
             return;
