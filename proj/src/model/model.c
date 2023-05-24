@@ -183,6 +183,7 @@ void update_sp_state() {
         if (sp_data == 0xFF) {
             activeTurn = true;
             curr_turn++;
+            if (player_no == 2) check_guess();
         }
         else if (sp_data == 0xFE) {
             retry();

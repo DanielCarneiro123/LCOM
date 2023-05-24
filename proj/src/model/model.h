@@ -9,6 +9,7 @@
 #include "controller/rtc/rtc.h"
 #include "controller/serialport/sp.h"
 #include "controller/serialport/queue.h"
+#include "controller/logic/board_logic.h"
 #include "xpm/hand.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/cursorGimp.xpm"
