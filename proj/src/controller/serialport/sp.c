@@ -93,7 +93,7 @@ void (sp_ih)() {
     }
 }
 
-uint8_t (prepare_move_byte)(uint8_t position, uint32_t color, uint8_t size) {
+uint8_t (prepare_move_byte)(uint8_t position, uint32_t color, uint8_t remove) {
 
     unsigned char byte = 0;
 
@@ -114,8 +114,8 @@ uint8_t (prepare_move_byte)(uint8_t position, uint32_t color, uint8_t size) {
             return 0;
     }
 
-    if (size == 1) { 
-        byte |= BIT(5); /*então é ball*/
+    if (remove == 1) { 
+        byte |= BIT(5);
     }
 
     for (uint i = 0; i < 8; i++) {
