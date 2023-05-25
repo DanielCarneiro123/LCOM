@@ -69,6 +69,17 @@ void setup_box_balls_positions() {
     }  
 }
 
+void setup_box_small_balls_positions() {
+    small_ball_box_positions = 0;
+    small_ball_box_positions = malloc(sizeof(PositionSmallBallsBox) * 2 );
+    for (int j = 0; j < 2; j++) {
+        small_ball_box_positions[j].x = 500 + (j % 2) * 36;
+        small_ball_box_positions[j].y = 20;
+        small_ball_box_positions[j].color = 0;
+    }  
+}
+
+
 void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
@@ -198,6 +209,31 @@ void update_sp_state() {
     new_data = false;
 }
 
+void place_move() {
+    switch (player_no) {
+        case 1:
+            place_ball(ball_positions, 9*4);
+            break;
+        case 2:
+            if (curr_turn == -1) place_ball(code_positions, 4);
+            else place_small_ball();
+            break;    
+    } 
+}
+
+void remove_move() {
+    switch (player_no) {
+        case 1:
+            remove_ball(ball_positions, 9*4);
+            break;
+        case 2:
+            if (curr_turn == -1) remove_ball(code_positions, 4);
+            else remove_small_ball();
+            break;    
+    } 
+}
+
+
 
 // Como o Real Time Clock é um módulo mais pesado, 
 // devemos só atualizar os valores quando passa um segundo
@@ -240,20 +276,29 @@ void update_keyboard_state() {
             read_sp_data();
             update_menu_state(END);
         case ONE_KEY:
-            update_mouse_color(0xFF0000);
+            update_mouse_color(RED);
             break;
         case TWO_KEY:
             update_mouse_color(GREEN);
             break;
         case THREE_KEY:
-            update_mouse_color(0x0000FF);
+            update_mouse_color(YELLOW);
             break;
         case FOUR_KEY:
-            update_mouse_color(0xFFFF00);
+            update_mouse_color(DARKBLUE);
             break;
         case FIVE_KEY:
-            update_mouse_color(0x00FFFF);
-            break;        
+            update_mouse_color(RED);
+            break;   
+        case SIX_KEY:
+            update_mouse_color(PINK);
+            break;
+        case SEVEN_KEY:
+            update_mouse_color(ORANGE);
+            break;
+        case EIGHT_KEY:
+            update_mouse_color(PURPLE);
+            break;     
         case ZERO_KEY:
             update_mouse_color(0);
             break;
