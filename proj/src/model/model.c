@@ -440,6 +440,7 @@ bool is_mouse_in_ball_box(uint8_t i) {
 void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
+    if (mouse_info.ball_color < 3) return;
     printf("\n\n I AM HERE WITH %d", activeTurn);
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
     printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
