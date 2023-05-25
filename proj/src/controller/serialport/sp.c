@@ -118,7 +118,7 @@ uint8_t (prepare_move_byte)(uint8_t position, uint32_t color, uint8_t remove) {
         byte |= BIT(5);
     }
 
-    for (uint i = 0; i < 8; i++) {
+    for (uint i = 0; i < 11; i++) {
         if (color_table[i] == color) {
             byte |= i;
             break;
