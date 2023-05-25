@@ -42,6 +42,8 @@ extern Sprite *cinco;
 extern Sprite *seis;
 extern Sprite *sete;
 extern Sprite *oito;
+extern Sprite *code_guessed;
+extern Sprite *code_not_guessed;
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -408,5 +410,7 @@ void set_background_color() {
     else {
         bg_color = COLOR_TIME24;
     } 
+    printf("\n\n\nTIME %d \n\n\n", time_info.hours);
+    printf("\n\n\nBACKGROUND COLOR %d \n\n\n", bg_color);
 }
 
