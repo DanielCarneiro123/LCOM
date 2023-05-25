@@ -54,6 +54,7 @@ int colorArr[8] = {LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE
 uint32_t color_table[11] = {0, 1, 2, LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
+uint8_t hide_code = 0;
 
 // Contador de interrupções do timer
 int timer_interrupts = 0;
@@ -352,7 +353,17 @@ void update_keyboard_state() {
             break;
         case O_KEY:
             remove_move(); 
-            break; 
+            break;
+        case NINE_KEY:
+            if (player_no == 2){
+                toggle_code_view(hide_code);
+                if(hide_code){
+                    hide_code = 0;
+                }
+                else{
+                    hide_code = 1;
+                }
+            }
         case ENTER_KEY:
             if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
             else finish_turn(ball_positions);

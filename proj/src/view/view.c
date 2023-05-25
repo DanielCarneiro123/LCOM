@@ -149,8 +149,14 @@ void draw_code() {
     }
 }
 
-void toggle_code_view(){
-    draw_sprite_xpm(madeira,186,0);
+void toggle_code_view(uint8_t hide_code){
+    if(hide_code){
+        fill_rectangle(186, 0, 230, 59, GREEN, drawing_frame_buffer);
+    }
+
+    else {
+        fill_rectangle(186, 0, 230, 59, bg_color, drawing_frame_buffer);
+        }
 }
 
 void draw_numbers_and_balls_in_box(){

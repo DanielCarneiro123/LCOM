@@ -34,8 +34,9 @@
 #define FOUR_KEY        05
 #define FIVE_KEY        06
 #define SIX_KEY         07
-#define SEVEN_KEY         0x08
-#define EIGHT_KEY         0x09
+#define SEVEN_KEY       0x08
+#define EIGHT_KEY       0x09
+#define NINE_KEY        10
 #define ZERO_KEY        0x0b
 #define P_KEY           0x19
 #define O_KEY           0x18
