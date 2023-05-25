@@ -42,7 +42,7 @@ Position* code_positions;
 uint8_t balls;
 bool activeTurn;
 int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
-uint32_t color_table[8] = {0, 1, WHITE, RED, GREEN, DARKBLUE, YELLOW, BLUE};
+uint32_t color_table[8] = {0, 1, 2, RED, GREEN, DARKBLUE, YELLOW, BLUE};
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 
@@ -194,7 +194,7 @@ void update_sp_state() {
         else if (sp_data == 143) {}
         
         else if (player_no == 1) {
-            uint8_t index = (curr_turn+1) * 4 + (sp_data >> 6);
+            uint8_t index = (curr_turn) * 4 + (sp_data >> 6);
             if (sp_data & BIT(5)) {
                 small_ball_positions[index].color = 0;
             }
@@ -455,6 +455,9 @@ void place_small_ball() {
     for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_small_ball(i)) {
             small_ball_positions[i].color = mouse_info.ball_color;
+            uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 0);
+            printf("\n\n\nABOUT TO WRITE %d SMALL\n\n\n", byte);
+            push(byte);
             return;
         }
     }
