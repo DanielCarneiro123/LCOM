@@ -197,6 +197,7 @@ void update_sp_state() {
             uint8_t index = (curr_turn) * 4 + (sp_data >> 6);
             if (sp_data & BIT(5)) {
                 small_ball_positions[index].color = 0;
+                clean_ball(index, small_ball, NULL);
             }
             else {
                 small_ball_positions[index].color = color_table[sp_data & 0x1F];
@@ -486,6 +487,9 @@ void remove_small_ball() {
     for (int i = 0; i < 9 * 4; i++) {
         if (is_mouse_in_small_ball(i)) {
             small_ball_positions[i].color = 0;
+            uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
+            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
+            push(byte);
             clean_ball(i, small_ball, NULL);
             break;
         }
