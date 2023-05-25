@@ -91,12 +91,12 @@ void destroy_code_positions();
 void destroy_small_positions();
 void destroy_sprites();
 bool is_mouse_in_ball(uint8_t i, Position* positions);
-bool is_mouse_in_small_ball(uint8_t i);
+bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions);
 bool is_mouse_in_start();
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
 void place_ball(Position* positions, uint8_t n);
-void place_small_ball();
+void place_small_ball(PositionSmall* small_ball_positions, uint8_t n);
 void remove_ball(Position* positions, uint8_t n);
 void remove_small_ball();
 void finish_turn(Position* positions);
@@ -106,6 +106,8 @@ void test_player_no();
 void place_move();
 void remove_move();
 void menu_selection();
+bool is_mouse_in_small_ball_box(uint8_t i);
+void pick_small_ball();
 
 
 #endif

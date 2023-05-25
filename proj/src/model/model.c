@@ -256,7 +256,7 @@ void place_move() {
             break;
         case 2:
             if (curr_turn == -1) place_ball(code_positions, 4);
-            else place_small_ball();
+            else place_small_ball(small_ball_positions, 36);
             break;    
     } 
 }
@@ -387,7 +387,8 @@ void update_mouse_state() {
         if (mouse_info.left_click){
             menu_selection();
             pick_box_ball();
-            place_move();  
+            place_move(); 
+            pick_small_ball(); 
         }
         if (mouse_info.right_click){
             remove_move();  
@@ -442,11 +443,15 @@ void finish_turn(Position* positions) {
     }
 }
 
+bool is_mouse_in_small_ball_box(uint8_t i) {
+    return mouse_info.x >= small_ball_box_positions[i].x && mouse_info.x <= small_ball_box_positions[i].x + ball->width && mouse_info.y >= small_ball_box_positions[i].y && mouse_info.y <= small_ball_box_positions[i].y + ball->height;
+}
+
 bool is_mouse_in_ball(uint8_t i, Position* positions) {
     return mouse_info.x >= positions[i].x && mouse_info.x <= positions[i].x + ball->width && mouse_info.y >= positions[i].y && mouse_info.y <= positions[i].y + ball->height;
 }
 
-bool is_mouse_in_small_ball(uint8_t i) {
+bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions) {
     return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + ball->height;
 }
 
@@ -456,6 +461,10 @@ bool is_mouse_in_ball_box(uint8_t i) {
 
 bool is_mouse_in_start() {
     return mouse_info.x >= 280 && mouse_info.x <= 400 && mouse_info.y >= 231 && mouse_info.y <= 289;
+}
+
+bool is_mouse_in_exit() {
+    return mouse_info.x >= 326 && mouse_info.x <= 400 && mouse_info.y >= 326 && mouse_info.y <= 355;
 }
 
 
@@ -477,11 +486,6 @@ void place_ball(Position* positions, uint8_t n) {
             return;
         }
     }
-    //ball_positions[balls].x = mouse_info.x - ball->width/2;
-    //ball_positions[balls].y = mouse_info.y - ball->height/2;
-    //ball_positions[balls].color = mouse_info.ball_color;
-
-    //balls++;
 }
 
 void menu_selection() {
@@ -490,8 +494,12 @@ void menu_selection() {
         test_player_no();
         setup_code_positions();
         update_menu_state(GAME);
-        return;       
+        return; 
     }
+
+    if (is_mouse_in_exit()){
+        systemState = EXIT;
+    }      
     
     //ball_positions[balls].x = mouse_info.x - ball->width/2;
     //ball_positions[balls].y = mouse_info.y - ball->height/2;
@@ -500,6 +508,16 @@ void menu_selection() {
     //balls++;
 }
 
+void pick_small_ball() {
+    if (menuState != GAME) return;
+    if (!activeTurn) return;
+    for (int i = 0; i < 2; i++) {
+        if (is_mouse_in_small_ball_box(i)) {
+            update_mouse_color(i+1);
+            return;       
+        }
+    }
+}
 
 void pick_box_ball() {
     if (menuState != GAME) return;
@@ -517,14 +535,20 @@ void pick_box_ball() {
     //balls++;
 }
 
-void place_small_ball() {
-    if (menuState != GAME || balls >= 9*4) return;
+void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
+    if (menuState != GAME) return;
     if (!activeTurn) return;
-    for (int i = 0; i < 9 * 4; i++) {
-        if (is_mouse_in_small_ball(i)) {
+    if (!(mouse_info.ball_color == 1 || mouse_info.ball_color == 2)) return;
+    printf("\n\n I AM HERE WITH %d", activeTurn);
+    int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
+    printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
+    printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
+    for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
+        if (i >= n) return;
+        if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 0);
-            printf("\n\n\nABOUT TO WRITE %d SMALL\n\n\n", byte);
+            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             push(byte);
             return;
         }
@@ -552,7 +576,7 @@ void remove_small_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = 0; i < 9 * 4; i++) {
-        if (is_mouse_in_small_ball(i)) {
+        if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = 0;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
             printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
