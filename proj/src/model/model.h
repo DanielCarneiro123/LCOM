@@ -16,6 +16,7 @@
 #include "xpm/smile.xpm"
 #include "xpm/masterminix.xpm"
 #include "xpm/mastermind_boardV1.xpm"
+#include "xpm/mastermind_boardV2.xpm"
 #include "xpm/ball.xpm"
 #include "xpm/small_ball.xpm"
 #include "xpm/start.xpm"

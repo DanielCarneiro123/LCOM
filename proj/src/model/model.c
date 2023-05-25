@@ -25,6 +25,7 @@ Sprite *masterminix;
 Sprite *start;
 Sprite *exit_menu;
 Sprite *board;
+Sprite *board2;
 Sprite *ball;
 Sprite *small_ball;
 Sprite *um;
@@ -133,6 +134,7 @@ void destroy_code_positions() {
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
+    board2 = create_sprite_xpm((xpm_map_t) mastermind_boardV2_xpm);
     ball = create_sprite_xpm((xpm_map_t) ball_xpm);
     small_ball = create_sprite_xpm((xpm_map_t) small_ball_xpm);
 
@@ -160,6 +162,7 @@ void setup_sprites() {
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(board);
+    destroy_sprite(board2);
     destroy_sprite(ball);
     destroy_sprite(small_ball);
     destroy_sprite(hand);
