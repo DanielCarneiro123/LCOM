@@ -13,6 +13,7 @@ extern uint8_t sp_data;
 extern bool new_data;
 extern bool is_writing;
 
+
 // Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
 Sprite *hand;
@@ -31,6 +32,9 @@ Sprite *dois;
 Sprite *tres;
 Sprite *quatro;
 Sprite *cinco;
+Sprite *seis;
+Sprite *sete;
+Sprite *oito;
 
 
 Position* ball_positions;
@@ -39,10 +43,11 @@ PositionBallsBox* ball_box_positions;
 PositionSmallBallsBox* small_ball_box_positions;
 Position* code_positions;
 
+
 uint8_t balls;
 bool activeTurn;
-int colorArr[5] = {RED, GREEN, DARKBLUE, YELLOW, BLUE};
-uint32_t color_table[8] = {0, 1, 2, RED, GREEN, DARKBLUE, YELLOW, BLUE};
+int colorArr[8] = {LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
+uint32_t color_table[11] = {0, 1, 2, LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 
@@ -56,10 +61,10 @@ void update_menu_state(MenuState new_state) {
 
 void setup_box_balls_positions() {
     ball_box_positions = 0;
-    ball_box_positions = malloc(sizeof(PositionBallsBox) * 5 );
-    for (int j = 0; j < 5; j++) {
+    ball_box_positions = malloc(sizeof(PositionBallsBox) * 8 );
+    for (int j = 0; j < 8; j++) {
         ball_box_positions[j].x = 500;
-        ball_box_positions[j].y = 120 + (j % 5) * 80;
+        ball_box_positions[j].y = 77 + (j % 8) * 65;
         ball_box_positions[j].color = TRANSPARENT;
     }  
 }
@@ -73,6 +78,7 @@ void setup_box_small_balls_positions() {
         small_ball_box_positions[j].color = 0;
     }  
 }
+
 
 void setup_positions() {
     balls = 0;
@@ -135,7 +141,7 @@ void setup_sprites() {
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
     start = create_sprite_xpm((xpm_map_t) start_xpm);
     exit_menu = create_sprite_xpm((xpm_map_t) exit_xpm);
-    button1 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, ORANGE);
+    button1 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2,  ORANGE);
     button2 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, BLUE);
     button3 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, GREEN);
     button4 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, YELLOW);
@@ -144,6 +150,9 @@ void setup_sprites() {
     tres = create_sprite_xpm((xpm_map_t) tres_xpm);
     quatro = create_sprite_xpm((xpm_map_t) quatro_xpm);
     cinco = create_sprite_xpm((xpm_map_t) cinco_xpm);
+    seis = create_sprite_xpm((xpm_map_t) seis_xpm);
+    sete = create_sprite_xpm((xpm_map_t) sete_xpm);
+    oito = create_sprite_xpm((xpm_map_t) oito_xpm);
 
 }
 
@@ -167,6 +176,9 @@ void destroy_sprites() {
     destroy_sprite(tres);
     destroy_sprite(quatro);
     destroy_sprite(cinco);
+    destroy_sprite(seis);
+    destroy_sprite(sete);
+    destroy_sprite(oito);
 
 }
 
@@ -226,13 +238,6 @@ void update_sp_state() {
     new_data = false;
 }
 
-
-// Como o Real Time Clock é um módulo mais pesado, 
-// devemos só atualizar os valores quando passa um segundo
-void update_rtc_state() {
-    if (timer_interrupts % GAME_FREQUENCY == 0) rtc_update_time();
-}
-
 void place_move() {
     switch (player_no) {
         case 1:
@@ -255,6 +260,14 @@ void remove_move() {
             else remove_small_ball();
             break;    
     } 
+}
+
+
+
+// Como o Real Time Clock é um módulo mais pesado, 
+// devemos só atualizar os valores quando passa um segundo
+void update_rtc_state() {
+    if (timer_interrupts % GAME_FREQUENCY == 0) rtc_update_time();
 }
 
 void test_player_no() {
@@ -298,14 +311,23 @@ void update_keyboard_state() {
             update_mouse_color(GREEN);
             break;
         case THREE_KEY:
-            update_mouse_color(DARKBLUE);
-            break;
-        case FOUR_KEY:
             update_mouse_color(YELLOW);
             break;
+        case FOUR_KEY:
+            update_mouse_color(DARKBLUE);
+            break;
         case FIVE_KEY:
-            update_mouse_color(BLUE);
-            break;        
+            update_mouse_color(RED);
+            break;   
+        case SIX_KEY:
+            update_mouse_color(PINK);
+            break;
+        case SEVEN_KEY:
+            update_mouse_color(ORANGE);
+            break;
+        case EIGHT_KEY:
+            update_mouse_color(PURPLE);
+            break;     
         case ZERO_KEY:
             update_mouse_color(0);
             break;
@@ -325,7 +347,6 @@ void update_keyboard_state() {
             if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
             else finish_turn(ball_positions);
             break;
-
         default:
             break;
     }
@@ -343,6 +364,7 @@ void update_mouse_state() {
         update_buttons_state();
         byte_index = 0;
         if (mouse_info.left_click){
+            //menu_selection();
             pick_box_ball();
             place_move();  
         }
@@ -352,6 +374,7 @@ void update_mouse_state() {
         draw_new_frame();        
     }
 }
+
 
 // Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
 // muda o estado do botão no mesmo quadrante
@@ -410,6 +433,10 @@ bool is_mouse_in_ball_box(uint8_t i) {
     return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
 }
 
+/*bool is_mouse_in_start() {
+    return mouse_info.x >= 280 && mouse_info.x <= 400 && mouse_info.y >= 231 && mouse_info.y <= 289;
+}*/
+
 void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
@@ -434,10 +461,24 @@ void place_ball(Position* positions, uint8_t n) {
     //balls++;
 }
 
+/*void menu_selection() {
+    if (menuState != START) return;
+    if (is_mouse_in_start()) {
+        draw_game_menu();
+        return;       
+    }
+    
+    //ball_positions[balls].x = mouse_info.x - ball->width/2;
+    //ball_positions[balls].y = mouse_info.y - ball->height/2;
+    //ball_positions[balls].color = mouse_info.ball_color;
+
+    //balls++;
+}*/
+
 void pick_box_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 8; i++) {
         if (is_mouse_in_ball_box(i)) {
             update_mouse_color(colorArr[i]);
             return;       

@@ -25,6 +25,10 @@
 #include "xpm/tres.xpm"
 #include "xpm/quatro.xpm"
 #include "xpm/cinco.xpm"
+#include "xpm/seis.xpm"
+#include "xpm/sete.xpm"
+#include "xpm/oito.xpm"
+
 
 typedef struct {
     uint16_t x;
@@ -65,6 +69,7 @@ typedef struct {
     uint8_t color;
 } PositionSmallBallsBox;
 
+
 void update_timer_state();
 void update_keyboard_state();
 void update_mouse_state();
@@ -83,6 +88,7 @@ void destroy_small_positions();
 void destroy_sprites();
 bool is_mouse_in_ball(uint8_t i, Position* positions);
 bool is_mouse_in_small_ball(uint8_t i);
+bool is_mouse_in_start();
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
 void place_ball(Position* positions, uint8_t n);
@@ -95,5 +101,7 @@ bool is_mouse_in_ball_box(uint8_t i);
 void test_player_no();
 void place_move();
 void remove_move();
+void menu_selection();
+
 
 #endif

@@ -28,5 +28,6 @@ int draw_sprite_button(Sprite *sprite, int x, int y);
 int set_frame_buffers(uint16_t mode);
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color);
 void clean_ball(uint8_t k, Sprite* sprite, Position* positions);
+void set_background_color();
 
 #endif
