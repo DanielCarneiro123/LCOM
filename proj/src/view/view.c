@@ -40,6 +40,8 @@ extern Sprite *cinco;
 extern Sprite *seis;
 extern Sprite *sete;
 extern Sprite *oito;
+extern Sprite *code_guessed;
+extern Sprite *code_not_guessed;
 
 bool firstFrame = true;
 Sprite *background[5];

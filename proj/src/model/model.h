@@ -28,6 +28,8 @@
 #include "xpm/seis.xpm"
 #include "xpm/sete.xpm"
 #include "xpm/oito.xpm"
+#include "xpm/code_guessed.xpm"
+#include "xpm/code_not_guessed.xpm"
 
 
 typedef struct {

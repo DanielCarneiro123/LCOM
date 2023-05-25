@@ -35,6 +35,8 @@ Sprite *cinco;
 Sprite *seis;
 Sprite *sete;
 Sprite *oito;
+Sprite *code_guessed;
+Sprite *code_not_guessed;
 
 
 Position* ball_positions;
@@ -153,6 +155,10 @@ void setup_sprites() {
     seis = create_sprite_xpm((xpm_map_t) seis_xpm);
     sete = create_sprite_xpm((xpm_map_t) sete_xpm);
     oito = create_sprite_xpm((xpm_map_t) oito_xpm);
+    code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
+    code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
+
+
 
 }
 
@@ -179,6 +185,8 @@ void destroy_sprites() {
     destroy_sprite(seis);
     destroy_sprite(sete);
     destroy_sprite(oito);
+    destroy_sprite(code_guessed);
+    destroy_sprite(code_not_guessed);
 
 }
 
