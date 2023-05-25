@@ -17,6 +17,7 @@ extern PositionSmall* small_ball_positions;
 extern PositionBallsBox* ball_box_positions;
 extern PositionSmallBallsBox* small_ball_box_positions;
 extern uint32_t color_table[8];
+extern uint8_t player_no;
 
 
 // Objetos
@@ -30,6 +31,7 @@ extern Sprite *button3;
 extern Sprite *button4;
 extern Sprite *exit_menu;
 extern Sprite *board;
+extern Sprite *board2;
 extern Sprite *ball;
 extern Sprite *small_ball;
 extern Sprite *um;
@@ -125,9 +127,10 @@ void draw_game_menu() {
     //draw_sprite_button(button2, mode_info.XResolution/2, 0);
     //draw_sprite_button(button3, 0, mode_info.YResolution/2);
     //draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
-    draw_sprite_xpm(board, mode_info.XResolution/2 - board->width/2, 0);
+    Sprite* drawing_board = player_no == 1 ? board : board2;
+    draw_sprite_xpm(drawing_board, mode_info.XResolution/2 - board->width/2, 0);
     bg_size = 1;
-    background[0] = board;
+    background[0] = drawing_board;
 }
 
 // O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
@@ -412,5 +415,7 @@ void set_background_color() {
     else {
         bg_color = COLOR_TIME24;
     } 
+    printf("\n\n\nTIME %d \n\n\n", time_info.hours);
+    printf("\n\n\nBACKGROUND COLOR %d \n\n\n", bg_color);
 }
 
