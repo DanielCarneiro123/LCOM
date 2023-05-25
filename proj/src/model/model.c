@@ -313,7 +313,7 @@ void update_keyboard_state() {
             read_sp_data();
             update_menu_state(END);
         case ONE_KEY:
-            update_mouse_color(RED);
+            update_mouse_color(LIGHTBLUE);
             break;
         case TWO_KEY:
             update_mouse_color(GREEN);
@@ -372,7 +372,7 @@ void update_mouse_state() {
         update_buttons_state();
         byte_index = 0;
         if (mouse_info.left_click){
-            //menu_selection();
+            menu_selection();
             pick_box_ball();
             place_move();  
         }
@@ -441,9 +441,10 @@ bool is_mouse_in_ball_box(uint8_t i) {
     return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
 }
 
-/*bool is_mouse_in_start() {
+bool is_mouse_in_start() {
     return mouse_info.x >= 280 && mouse_info.x <= 400 && mouse_info.y >= 231 && mouse_info.y <= 289;
-}*/
+}
+
 
 void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
@@ -470,10 +471,12 @@ void place_ball(Position* positions, uint8_t n) {
     //balls++;
 }
 
-/*void menu_selection() {
+void menu_selection() {
     if (menuState != START) return;
     if (is_mouse_in_start()) {
-        draw_game_menu();
+        test_player_no();
+        setup_code_positions();
+        update_menu_state(GAME);
         return;       
     }
     
@@ -482,7 +485,8 @@ void place_ball(Position* positions, uint8_t n) {
     //ball_positions[balls].color = mouse_info.ball_color;
 
     //balls++;
-}*/
+}
+
 
 void pick_box_ball() {
     if (menuState != GAME) return;
