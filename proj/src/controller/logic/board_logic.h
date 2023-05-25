@@ -5,7 +5,7 @@
 #include <lcom/lcf.h>
 #include "model/model.h"
 
-bool check_player_two_cheating();
-bool check_guess();
+void check_player_two_cheating();
+void check_guess();
 
 #endif

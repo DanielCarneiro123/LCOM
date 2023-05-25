@@ -440,6 +440,9 @@ void finish_turn(Position* positions) {
     if (menuState == GAME && activeTurn) {
         activeTurn = false;
         push(0xFF);
+        if (player_no == 2 && curr_turn != -1) {
+            check_player_two_cheating();
+        }
     }
 }
 
