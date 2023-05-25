@@ -19,6 +19,7 @@ void draw_mouse();
 void draw_numbers_and_balls_in_box();
 void draw_balls();
 void draw_code();
+void toggle_code_view();
 void draw_small_balls();
 void swap_buffers();
 void display_real_time();

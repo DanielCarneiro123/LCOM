@@ -30,6 +30,7 @@
 #include "xpm/oito.xpm"
 #include "xpm/code_guessed.xpm"
 #include "xpm/code_not_guessed.xpm"
+#include "xpm/madeira.xpm"
 
 
 typedef struct {

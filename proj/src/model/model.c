@@ -37,6 +37,7 @@ Sprite *sete;
 Sprite *oito;
 Sprite *code_guessed;
 Sprite *code_not_guessed;
+Sprite *madeira;
 
 
 Position* ball_positions;
@@ -157,9 +158,7 @@ void setup_sprites() {
     oito = create_sprite_xpm((xpm_map_t) oito_xpm);
     code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
-
-
-
+    madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
 }
 
 // É boa prática antes de acabar o programa libertar a memória alocada
@@ -187,7 +186,7 @@ void destroy_sprites() {
     destroy_sprite(oito);
     destroy_sprite(code_guessed);
     destroy_sprite(code_not_guessed);
-
+    destroy_sprite(madeira);
 }
 
 // Na altura da interrupção há troca dos buffers e incremento do contador
@@ -313,28 +312,28 @@ void update_keyboard_state() {
             read_sp_data();
             update_menu_state(END);
         case ONE_KEY:
-            update_mouse_color(RED);
+            update_mouse_color(color_table[3]);
             break;
         case TWO_KEY:
-            update_mouse_color(GREEN);
+            update_mouse_color(color_table[4]);
             break;
         case THREE_KEY:
-            update_mouse_color(YELLOW);
+            update_mouse_color(color_table[5]);
             break;
         case FOUR_KEY:
-            update_mouse_color(DARKBLUE);
+            update_mouse_color(color_table[6]);
             break;
         case FIVE_KEY:
-            update_mouse_color(RED);
+            update_mouse_color(color_table[7]);
             break;   
         case SIX_KEY:
-            update_mouse_color(PINK);
+            update_mouse_color(color_table[8]);
             break;
         case SEVEN_KEY:
-            update_mouse_color(ORANGE);
+            update_mouse_color(color_table[9]);
             break;
         case EIGHT_KEY:
-            update_mouse_color(PURPLE);
+            update_mouse_color(color_table[10]);
             break;     
         case ZERO_KEY:
             update_mouse_color(0);

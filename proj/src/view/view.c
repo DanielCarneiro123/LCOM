@@ -42,6 +42,7 @@ extern Sprite *sete;
 extern Sprite *oito;
 extern Sprite *code_guessed;
 extern Sprite *code_not_guessed;
+extern Sprite *madeira;
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -138,11 +139,15 @@ void draw_finish_menu() {
     background[0] = masterminix;
 }
 
-void draw_code() {
+void draw_code() {  
     if (code_positions == NULL || menuState != GAME) return;
     for (uint8_t i = 0; i < 4; i++) {
         draw_ball(ball, code_positions[i].x, code_positions[i].y, code_positions[i].color);
     }
+}
+
+void toggle_code_view(){
+    draw_sprite_xpm(madeira,186,0);
 }
 
 void draw_numbers_and_balls_in_box(){
