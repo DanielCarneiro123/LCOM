@@ -175,6 +175,10 @@ void draw_numbers_and_balls_in_box(){
  
 }
 
+/**
+ * @brief Draws the large balls
+ * Draws the balls from the ball_positions array
+ */
 void draw_balls() {
     if (menuState != GAME) return;
     for (uint8_t i = 0; i < 9 * 4; i++) {
@@ -182,6 +186,10 @@ void draw_balls() {
     }
 }
 
+/**
+ * @brief Draws the small balls
+ * Draws the small balls from the small_ball_positions array
+ */
 void draw_small_balls() {
     if (menuState != GAME) return;
     for (uint8_t i = 0; i < 9 * 4; i++) {
@@ -189,6 +197,15 @@ void draw_small_balls() {
     }
 }
 
+/**
+ * @brief Draws a ball
+ * Puts a ball in the frame buffer, it can be any color
+ * @param sprite Sprite to draw (ball or small_ball)
+ * @param x x coordinate to draw ball in
+ * @param y y coordinate to draw ball in
+ * @param color Color to be used (for small balls, 0 is transparent, 1 is black, 2 is white)
+ * @return int 1 on failure, 0 otherwise
+ */
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
     if (color == TRANSPARENT || (sprite == small_ball && color == 0)) return 0;
     if (sprite == small_ball && color == 1) color = 0;
@@ -211,9 +228,10 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
 
 
 
-// O cursor mode ter dois estados:
-// - "normal", quando está no menu de início ou de fim
-// - "mão", quando está no menu com os botões
+/**
+ * @brief Draws the mouse
+ * Draws a cursor, and a ball behind it in case the player is holding one
+ */
 void draw_mouse() {
     switch (menuState) {
         case START: case END:
@@ -227,6 +245,10 @@ void draw_mouse() {
     }
 }
 
+/**
+ * @brief Cleans the previous position the mouse was in
+ * Redraws the background, layer by layer, in the mouse's position during the previous frame
+ */
 void clean_mouse() {
     switch (menuState) {
         case START: case END:
@@ -252,9 +274,14 @@ void clean_mouse() {
     }
 }
 
-// A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
-// Usa as cores dinamicamente alocadas na altura da construção
-// A função ignora a cor transparente do XPM para não modificar o fundo quando não é preciso
+/**
+ * @brief Draws a sprite
+ * Draws the entirety of a sprite object's colors on the frame buffer
+ * @param sprite Sprite to be drawn
+ * @param x x coordinate to draw in
+ * @param y y coordinate to draw in
+ * @return int 
+ */
 int draw_sprite_xpm(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -280,6 +307,18 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     return 0;
 }
 
+/**
+ * @brief Draws a sprite partially
+ * This function is used when redrawing the background behind moving/cleaned objects, thus avoiding the need to redraw the entire frame buffer per frame
+ * @param sprite Sprite to be partially drawn
+ * @param x x coordinate in which to draw sprite
+ * @param y y coordinate in which to draw sprite
+ * @param xdraw x coordinate from which to start paiting pixels (relative to the sprite, that is, 0 equates to the parameter passed for "x")
+ * @param ydraw y coordinate from which to start painting pixels (relative to the sprite, that is, 0 equates to the parameter passed for "y")
+ * @param height Height of fragment to be drawn
+ * @param width Width of fragment to be drawn
+ * @return int 1 on failure, 0 otherwise
+ */
 int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, int height, int width) {
   //if (xdraw + width < x || ydraw + height < y) return 0; 
   
@@ -311,6 +350,13 @@ int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, 
 
 }
 
+/**
+ * @brief Cleans a ball from the frame buffer after it is removed
+ * Redraws the background behind the removed ball
+ * @param k Index of ball to be cleaned
+ * @param sprite Sprite of ball (ball or small_ball)
+ * @param positions Position array to check in (irrelevant for small balls)
+ */
 void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
     if (sprite == ball) {
         fill_rectangle(positions[k].x, positions[k].y, sprite->width, sprite->height, bg_color, drawing_frame_buffer);
@@ -326,6 +372,9 @@ void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
     }
 }
 
+/**
+ * @brief Set the background color according to current hour
+ */
 void set_background_color() {
     if (time_info.hours == 0) {
         bg_color = COLOR_TIME1;
