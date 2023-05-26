@@ -16,7 +16,7 @@ int (sp_setup)() {
     if (sys_outb(COM2_BASE + 0, 0x0C)) return 1;
     if (sys_outb(COM2_BASE + 1, 0x00)) return 1;
 
-    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, EIGHT_BIT_CHAR)) return 1;
+    if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, EIGHT_BIT_CHAR | BIT(3))) return 1;
     if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, FIFO_DISABLED)) return 1;
     if (sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, IER_DATA_AVAILABLE | IER_THR_EMPTY)) return 1;
     return 0;
@@ -70,7 +70,7 @@ int (read_sp_data)() {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
             printf("\n\n\nBYTE READ: %d\n\n\n", sp_data);
 
-            if (sp_data != SP_NACK && sp_data != SP_ACK && (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR)) write_sp_data(SP_NACK);
+            if (sp_data != SP_NACK && sp_data != SP_ACK && (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR || status & BIT(4))) write_sp_data(SP_NACK);
             else if (sp_data != SP_NACK && sp_data != SP_ACK) write_sp_data(SP_ACK);
             return 0;
         }
@@ -95,9 +95,10 @@ int (write_sp_data)(uint8_t data) {
         if (read_lsr(&status)) return 1;
 
         if (status & THR_EMPTY) {
-            printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
             ready = false;
-            return sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data);
+            if (sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data)) return 1;
+            printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
+            return 0;
         }
 
         tickdelay(micros_to_ticks(SP_WAIT));

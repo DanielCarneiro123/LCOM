@@ -270,7 +270,7 @@ void update_sp_state() {
         else if (sp_data == 0xFC) {
             update_menu_state(END);
         }
-        else if (sp_data == 143) {}
+        else if (sp_data == (143 | BIT(4))) {}
         
         else if (player_no == 1) {
             uint8_t index = (curr_turn) * 4 + (sp_data >> 6);
@@ -353,14 +353,14 @@ void update_rtc_state() {
  */
 void test_player_no() {
     if (player_no == 1 || player_no == 2) return;
-    if (sp_data == 143) {
+    if (sp_data == (143 | BIT(4))) {
         player_no = 2;
         activeTurn = true;
     }
     else {
         player_no = 1;
         activeTurn = false;
-        push(143);
+        push(143 | BIT(4));
     }
     printf("\n\n\nI AM %d\n\n\n", player_no);
 }
