@@ -38,13 +38,12 @@ int setup() {
   setup_box_balls_positions();
   setup_box_small_balls_positions();
 
-  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte, rtc_byte;
+  uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
 
   // Ativação das interrupções dos dispositivos
   if (timer_subscribe_ints(&timer_byte) != 0) return 1;
   if (keyboard_subscribe_interrupts(&keyboard_byte) != 0) return 1;
   if (mouse_subscribe_interrupts(&mouse_byte) != 0) return 1;
-  if (rtc_subscribe_interrupts(&rtc_byte) != 0) return 1;
   if (sp_subscribe_interrupts(&sp_byte) != 0) return 1;
 
   // Ativar stream-mode e report de dados do rato
@@ -73,7 +72,6 @@ int teardown() {
   if (timer_unsubscribe_ints() != 0) return 1;
   if (keyboard_unsubscribe_interrupts() != 0) return 1;
   if (mouse_unsubscribe_interrupts() != 0) return 1;
-  if (rtc_unsubscribe_interrupts() != 0) return 1;
   if (sp_unsubscribe_interrupts() != 0) return 1;
 
   // Desativar o report de dados do rato
@@ -107,7 +105,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & KEYBOARD_MASK) update_keyboard_state();
           if (msg.m_notify.interrupts & BIT(6))        update_sp_state();
           if (msg.m_notify.interrupts & MOUSE_MASK)    update_mouse_state();
-          if (msg.m_notify.interrupts & RTC_MASK)      update_rtc_state();
         }
     }
   }

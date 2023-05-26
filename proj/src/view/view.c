@@ -76,7 +76,6 @@ int set_frame_buffers(uint16_t mode) {
 // B) só vale a pena dar display do RTC quando passa um segundo
 void swap_buffers() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
-    if (timer_interrupts % GAME_FREQUENCY == 0) display_real_time();
 }
 
 // A construção de um novo frame é baseado:

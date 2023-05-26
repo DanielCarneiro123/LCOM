@@ -375,7 +375,6 @@ void update_mouse_state() {
     mouse_update_buffer();
     if (byte_index == 3) {
         mouse_sync_info();
-        update_buttons_state();
         byte_index = 0;
         if (mouse_info.left_click){
             menu_selection();
