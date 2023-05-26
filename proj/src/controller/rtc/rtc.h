@@ -31,7 +31,7 @@ typedef struct {
 int rtc_setup();
 int rtc_read(uint8_t rregister, uint8_t *status);
 int rtc_write(uint8_t wregister, uint8_t data);
-int rtc_is_updating();
+uint8_t rtc_is_updating();
 int rtc_set_binary();
 int rtc_update_time();
 
