@@ -9,8 +9,8 @@ typedef struct {
     uint32_t *colors;
     uint32_t color;
     uint8_t pressed;
-    uint16_t x;
-    uint16_t y;
+    int32_t x;
+    int32_t y;
 } Sprite; 
 
 Sprite *create_sprite_xpm(xpm_map_t sprite);
