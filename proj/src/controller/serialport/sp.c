@@ -114,20 +114,26 @@ int (write_sp_data)(uint8_t data) {
  */
 void (sp_ih)() {
     uint8_t iir;
-    util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
-    printf("\n\n\n IIR IS %d\n\n\n", iir);
-    if ((iir & IIR_NO_PENDING) == 0) {
-        switch (iir & INT_ID) {
-            case IIR_DATA_AVAILABLE:
-                printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
-                read_sp_data();
-                new_data = true;
-                break;
-            case IIR_TRANSMITTER_EMPTY:
-                printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
-                ready = true;
-                break;    
+    uint8_t count = 0;
+    while (true) {
+        util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
+        printf("\n\n\n IIR IS %d\n\n\n", iir);
+        if (count > 0) printf("COUNT IS %d\n\n\n", count);
+        if (iir & IIR_NO_PENDING) break;
+        if ((iir & IIR_NO_PENDING) == 0) {
+            switch (iir & INT_ID) {
+                case IIR_DATA_AVAILABLE:
+                    printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
+                    read_sp_data();
+                    new_data = true;
+                    break;
+                case IIR_TRANSMITTER_EMPTY:
+                    printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
+                    ready = true;
+                    break;    
+            }
         }
+        count++;
     }
 }
 
