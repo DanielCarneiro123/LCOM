@@ -264,6 +264,7 @@ void place_move() {
             place_ball(ball_positions, 9*4);
             break;
         case 2:
+            if (hide_code) return;
             if (curr_turn == -1) place_ball(code_positions, 4);
             else place_small_ball(small_ball_positions, 36);
             break;    
@@ -373,6 +374,7 @@ void update_keyboard_state() {
                     hide_code = 1;
                 }
             }
+            break;
         case ENTER_KEY:
             if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
             else finish_turn(ball_positions);
