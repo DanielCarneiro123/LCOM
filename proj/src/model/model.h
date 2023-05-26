@@ -82,6 +82,7 @@ void destroy_positions();
 void destroy_code_positions();
 void destroy_small_positions();
 void destroy_sprites();
+void push_code();
 bool is_mouse_in_ball(uint8_t i, Position* positions);
 bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions);
 bool is_mouse_in_start();

@@ -256,6 +256,7 @@ void update_sp_state() {
             if (player_no == 2) {
                 check_guess();
                 if (player_one_won == 1 || curr_turn == 8){
+                    push_code();
                     update_menu_state(END);
                 }
             }
@@ -265,6 +266,9 @@ void update_sp_state() {
         }
         else if (sp_data == 0xFD) {
             is_writing = false;
+        }
+        else if (sp_data == 0xFC) {
+            update_menu_state(END);
         }
         else if (sp_data == 143) {}
         
@@ -739,4 +743,12 @@ void resetTable(){
             code_positions[i].color = TRANSPARENT;
         }
     }    
+}
+
+void push_code() {
+    push(252);
+    for (int i = 0; i < 4; i++) {
+        uint8_t byte = prepare_move_byte(i, code_positions[i].color, 0);
+        push(byte);
+    }
 }

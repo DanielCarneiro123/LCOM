@@ -21,6 +21,7 @@ extern uint8_t player_no;
 extern uint8_t player_one_won;
 extern uint8_t player_two_cheating;
 extern int8_t curr_turn;
+extern uint8_t hide_code;
 
 
 // Objetos
