@@ -197,6 +197,7 @@ void destroy_sprites() {
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
     update_queue();
+    update_rtc_state();
     timer_interrupts++;
 }
 

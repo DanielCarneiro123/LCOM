@@ -19,19 +19,6 @@ int rtc_set_binary() {
     return 0;
 }
 
-// Subscrição das interrupções. Semelhante aos labs anteriores.
-int rtc_subscribe_interrupts(uint8_t *bit_no) {
-    if (bit_no == NULL) return 1;
-    *bit_no = BIT(rtc_hook_id);
-    if (sys_irqsetpolicy(IRQ_RTC, IRQ_REENABLE, &rtc_hook_id)) return 1;
-    return 0;
-}
-
-// Desativação das interrupções. Semelhante aos labs anteriores.
-int rtc_unsubscribe_interrupts() {
-    return sys_irqrmpolicy(&rtc_hook_id);
-}
-
 // Leitura do output do RTC, dado um comando
 int rtc_read(uint8_t rregister, uint8_t *status) {
     if (status == NULL) return 1;
@@ -61,17 +48,21 @@ int rtc_update_time() {
     if (rtc_is_updating()) return 1;
     uint8_t time;
 
+    rtc_info time_buffer;
     // Seconds
     if (rtc_read(SECONDS, &time)) return 1;
-    time_info.seconds = time;
+    time_buffer.seconds = time;
 
     // Minutes
     if (rtc_read(MINUTES, &time)) return 1;
-    time_info.minutes = time;
+    time_buffer.minutes = time;
 
     // Hours
     if (rtc_read(HOURS, &time)) return 1;
-    time_info.hours = time;
+    time_buffer.hours = time;
 
+    time_info.seconds = time_buffer.seconds;
+    time_info.minutes = time_buffer.minutes;
+    time_info.hours = time_buffer.hours;
     return 0;
 }

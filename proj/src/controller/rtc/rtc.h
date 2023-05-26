@@ -29,8 +29,6 @@ typedef struct {
 
 // Functions
 int rtc_setup();
-int rtc_subscribe_interrupts(uint8_t *bit_no);
-int rtc_unsubscribe_interrupts();
 int rtc_read(uint8_t rregister, uint8_t *status);
 int rtc_write(uint8_t wregister, uint8_t data);
 int rtc_is_updating();
