@@ -23,6 +23,10 @@ void check_guess() {
         player_one_won = 1;
         printf("\n\nPLAYER ONE WON\n\n");
     }
+    
+    if (curr_turn == 8){
+        printf("\n\nPLAYER ONE LOST\n\n");
+    }
 }
 
 /**

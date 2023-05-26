@@ -61,17 +61,7 @@ typedef struct {
     uint8_t color;
 } PositionSmall;
 
-typedef struct {
-    uint16_t x;
-    uint16_t y;
-    uint32_t color;
-} PositionBallsBox;
 
-typedef struct {
-    uint16_t x;
-    uint16_t y;
-    uint8_t color;
-} PositionSmallBallsBox;
 
 
 void update_timer_state();
@@ -107,6 +97,7 @@ void remove_move();
 void menu_selection();
 bool is_mouse_in_small_ball_box(uint8_t i);
 void pick_small_ball();
+void resetTable();
 
 
 #endif

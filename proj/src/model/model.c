@@ -12,6 +12,7 @@ extern bool firstFrame;
 extern uint8_t sp_data;
 extern bool new_data;
 extern bool is_writing;
+extern uint8_t player_one_won;
 
 
 // Objetos a construir e manipular com a mudança de estados
@@ -43,8 +44,8 @@ Sprite *madeira;
 
 Position* ball_positions;
 PositionSmall* small_ball_positions;
-PositionBallsBox* ball_box_positions;
-PositionSmallBallsBox* small_ball_box_positions;
+Position* ball_box_positions;
+PositionSmall* small_ball_box_positions;
 Position* code_positions;
 
 
@@ -75,7 +76,7 @@ void update_menu_state(MenuState new_state) {
  */
 void setup_box_balls_positions() {
     ball_box_positions = 0;
-    ball_box_positions = malloc(sizeof(PositionBallsBox) * 8 );
+    ball_box_positions = malloc(sizeof(Position) * 8 );
     for (int j = 0; j < 8; j++) {
         ball_box_positions[j].x = 500;
         ball_box_positions[j].y = 77 + (j % 8) * 65;
@@ -89,7 +90,7 @@ void setup_box_balls_positions() {
  */
 void setup_box_small_balls_positions() {
     small_ball_box_positions = 0;
-    small_ball_box_positions = malloc(sizeof(PositionSmallBallsBox) * 2 );
+    small_ball_box_positions = malloc(sizeof(PositionSmall) * 2 );
     for (int j = 0; j < 2; j++) {
         small_ball_box_positions[j].x = 500 + (j % 2) * 36;
         small_ball_box_positions[j].y = 20;
@@ -243,7 +244,12 @@ void update_sp_state() {
         if (sp_data == 0xFF) {
             activeTurn = true;
             curr_turn++;
-            if (player_no == 2) check_guess();
+            if (player_no == 2) {
+                check_guess();
+                if (player_one_won == 1 || curr_turn == 8){
+                    update_menu_state(END);
+                }
+            }
         }
         else if (sp_data == 0xFE) {
             retry();
@@ -332,6 +338,7 @@ void update_rtc_state() {
  * This function runs when the actual game begins. The first player to enter the game menu is player 1, the other is player 2.
  */
 void test_player_no() {
+    if (player_no == 1 || player_no == 2) return;
     if (sp_data == 143) {
         player_no = 2;
         activeTurn = true;
@@ -363,7 +370,6 @@ void update_keyboard_state() {
             update_menu_state(GAME);
             break;
         case E_KEY:
-            read_sp_data();
             update_menu_state(END);
         case ONE_KEY:
             update_mouse_color(color_table[3]);
@@ -678,4 +684,26 @@ void remove_small_ball() {
             break;
         }
     }
+}
+
+void resetTable(){
+    curr_turn = -1;
+    hide_code = 0;
+    if (player_no == 1){
+        activeTurn = false;
+    }
+    else if (player_no == 2){
+        activeTurn = true;
+    }
+    for (int i = 0; i < 9*4; i++){
+        ball_positions[i].color = TRANSPARENT;
+    }
+    for (int i = 0; i < 9*4; i++){
+        small_ball_positions[i].color = 0;
+    }
+    if (player_no == 2) {
+        for (int i = 0; i < 4; i++){
+            code_positions[i].color = TRANSPARENT;
+        }
+    }    
 }
