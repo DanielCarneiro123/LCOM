@@ -29,6 +29,9 @@
 #include "xpm/seis.xpm"
 #include "xpm/sete.xpm"
 #include "xpm/oito.xpm"
+#include "xpm/w.xpm"
+#include "xpm/r.xpm"
+#include "xpm/toggle9.xpm"
 #include "xpm/code_guessed.xpm"
 #include "xpm/code_not_guessed.xpm"
 #include "xpm/madeira.xpm"
@@ -92,6 +95,7 @@ void destroy_sprites();
 bool is_mouse_in_ball(uint8_t i, Position* positions);
 bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions);
 bool is_mouse_in_start();
+bool is_mouse_in_hide_code_button();
 void update_menu_state(MenuState new_state);
 void update_mouse_color(uint32_t color);
 void place_ball(Position* positions, uint8_t n);
@@ -107,6 +111,7 @@ void remove_move();
 void menu_selection();
 bool is_mouse_in_small_ball_box(uint8_t i);
 void pick_small_ball();
+void click_hide_code_button();
 
 
 #endif
