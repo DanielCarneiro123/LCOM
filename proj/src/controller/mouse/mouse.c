@@ -9,6 +9,12 @@ MouseInfo mouse_buffer;
 extern vbe_mode_info_t mode_info;
 bool mouse_error = false;
 
+/**
+ * @brief Subscribes to the mouse's interrupts
+ * Subscribes to the mouse's interrupts in exclusive mode with the bit mask defined in hook_id_mouse
+ * @param bit_no Bit mask for which the subscription takes place
+ * @return int 1 on failure, 0 otherwise
+ */
 int mouse_subscribe_interrupts(uint8_t *bit_no) {
   if (bit_no == NULL) return 1;
   *bit_no = BIT(hook_id_mouse);
@@ -16,20 +22,30 @@ int mouse_subscribe_interrupts(uint8_t *bit_no) {
   return 0;
 }
 
+/**
+ * @brief Unsubscribes from the mouse's interrupts
+ * @return int 1 on failure, 0 otherwise
+ */
 int mouse_unsubscribe_interrupts() {
   if (sys_irqrmpolicy(&hook_id_mouse)) return 1;
   return 0;
 }
 
+/**
+ * @brief Interrupt handler for the mouse
+ * Reads a mouse byte from the KBC
+ */
 void (mouse_ih)() {
   if (read_KBC_output(KBC_OUT_CMD, &mouse_byte, 1)) mouse_error = true;
   else mouse_error = false;
 }
 
-// Avalia a disposição dos bytes no array @mouse_bytes
-// O primeiro byte do pacote é sempre o que tem o BIT(3) ativo
+/**
+ * @brief Updates the buffer mouse struct
+ * A second struct is used as a buffer, and its contents are copied to the main struct after each packet
+ */
 void mouse_update_buffer() {
-  if (byte_index == 0 && (mouse_byte & FIRST_BYTE)) { // é o byte CONTROL, o bit 3 está ativo
+  if (byte_index == 0 && (mouse_byte & FIRST_BYTE)) { 
     mouse_buffer.right_click = mouse_byte & MOUSE_RB;
     mouse_buffer.left_click = mouse_byte & MOUSE_LB;
     if (mouse_byte & MOUSE_X_SIGNAL) mouse_buffer.x = 0xFF00;
@@ -38,7 +54,7 @@ void mouse_update_buffer() {
     else mouse_buffer.y = 0;
     byte_index++;
   }
-  else if (byte_index == 1) {                            // recebe os deslocamentos em X e Y
+  else if (byte_index == 1) {                            
     mouse_buffer.x |= mouse_byte;
     byte_index++;
   }
@@ -48,7 +64,10 @@ void mouse_update_buffer() {
   }  
 }
 
-// Transforma o array de bytes numa struct definida de acordo com as necessidades da aplicação
+/**
+ * @brief Updates the main mouse struct
+ * Copies the contents of the buffer struct to the main struct
+ */
 void (mouse_sync_info)(){
   int16_t new_x = mouse_info.x + mouse_buffer.x;
   int16_t new_y = mouse_info.y - mouse_buffer.y;
@@ -61,8 +80,10 @@ void (mouse_sync_info)(){
   mouse_info.y = new_y;
 }
 
-// A escrita para o rato tem de ser feita de forma mais controlada do que no keyboard
-// Temos de injetar o comando DIRETAMENTE no rato e esperar por uma resposta afirmativa (ACK).
+/**
+ * @brief Writes a command to the mouse
+ * The command is sent until too many attempts are made or until an ACK response is obtained
+ */
 int (mouse_write)(uint8_t command) {
   uint8_t attempts = 10;
   uint8_t mouse_response;

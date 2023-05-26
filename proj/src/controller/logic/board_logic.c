@@ -8,6 +8,11 @@ uint8_t player_one_won = 0;
 uint8_t player_two_cheating = 0;
 
 
+/**
+ * @brief Checks if player one's guess is correct
+ * This function compares the colors in the code to the colors in the position array, according to the latest turn
+ * If the guess is correct, a flag is set
+ */
 void check_guess() {
     uint8_t guesses = 0;
     for (uint8_t i = 0; i < 4; i++) {
@@ -20,6 +25,11 @@ void check_guess() {
     }
 }
 
+/**
+ * @brief Checks if player two gave wrong instructions to player 1
+ * This function compares the instructions that player 2 to the last turn that player 1 completed
+ * If player 2 made a mistake, a flag is set
+ */
 void check_player_two_cheating() {
     int8_t right_place = 0, wrong_place = 0;
     uint8_t used[4];
