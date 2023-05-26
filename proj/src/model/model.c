@@ -37,6 +37,9 @@ Sprite *cinco;
 Sprite *seis;
 Sprite *sete;
 Sprite *oito;
+Sprite *w;
+Sprite *r;
+Sprite *toggle9;
 Sprite *code_guessed;
 Sprite *code_not_guessed;
 Sprite *madeira;
@@ -191,6 +194,9 @@ void setup_sprites() {
     seis = create_sprite_xpm((xpm_map_t) seis_xpm);
     sete = create_sprite_xpm((xpm_map_t) sete_xpm);
     oito = create_sprite_xpm((xpm_map_t) oito_xpm);
+    w = create_sprite_xpm((xpm_map_t) w_xpm);
+    r = create_sprite_xpm((xpm_map_t) r_xpm);
+    toggle9 = create_sprite_xpm((xpm_map_t) toggle9_xpm);
     code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
@@ -218,6 +224,9 @@ void destroy_sprites() {
     destroy_sprite(seis);
     destroy_sprite(sete);
     destroy_sprite(oito);
+    destroy_sprite(w);
+    destroy_sprite(r);
+    destroy_sprite(toggle9);
     destroy_sprite(code_guessed);
     destroy_sprite(code_not_guessed);
     destroy_sprite(madeira);
@@ -302,6 +311,7 @@ void place_move() {
             place_ball(ball_positions, 9*4);
             break;
         case 2:
+            if (hide_code) return;
             if (curr_turn == -1) place_ball(code_positions, 4);
             else place_small_ball(small_ball_positions, 36);
             break;    
@@ -412,14 +422,15 @@ void update_keyboard_state() {
             break;
         case NINE_KEY:
             if (player_no == 2){
-                toggle_code_view(hide_code);
                 if(hide_code){
                     hide_code = 0;
+                    clean_lid();
                 }
                 else{
                     hide_code = 1;
                 }
             }
+            break;
         case ENTER_KEY:
             if (player_no == 2 && curr_turn == 0) finish_turn(code_positions);
             else finish_turn(ball_positions);
@@ -444,7 +455,8 @@ void update_mouse_state() {
             menu_selection();
             pick_box_ball();
             place_move(); 
-            pick_small_ball(); 
+            pick_small_ball();
+            click_hide_code_button();
         }
         if (mouse_info.right_click){
             remove_move();  
@@ -452,6 +464,23 @@ void update_mouse_state() {
         draw_new_frame();        
     }
 }
+
+
+void click_hide_code_button() {
+    if (is_mouse_in_hide_code_button() && player_no == 2) {
+        if(hide_code){
+            hide_code = 0;
+            clean_lid();
+        }
+        else{
+            hide_code = 1;
+        }
+    }
+}
+
+// Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
+// muda o estado do botão no mesmo quadrante
+// Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
 
 /**
  * @brief Updates the color of the ball being held
@@ -530,6 +559,10 @@ bool is_mouse_in_start() {
  */
 bool is_mouse_in_exit() {
     return mouse_info.x >= 326 && mouse_info.x <= 400 && mouse_info.y >= 326 && mouse_info.y <= 355;
+}
+
+bool is_mouse_in_hide_code_button(){
+    return mouse_info.x >= 0 && mouse_info.x <= 130 && mouse_info.y >= 0 && mouse_info.y <= 50;
 }
 
 /**
