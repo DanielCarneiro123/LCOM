@@ -13,8 +13,8 @@ extern uint32_t color_table[];
  */
 int (sp_setup)() {
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, DIVISOR_LATCH_BIT)) return 1;
-    if (sys_outb(COM2_BASE + 0, 0x8)) return 1;
-    if (sys_outb(COM2_BASE + 1, 0x7)) return 1;
+    if (sys_outb(COM2_BASE + 0, 0x0C)) return 1;
+    if (sys_outb(COM2_BASE + 1, 0x00)) return 1;
 
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, EIGHT_BIT_CHAR)) return 1;
     if (sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, FIFO_DISABLED)) return 1;
