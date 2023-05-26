@@ -254,6 +254,8 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
     uint16_t width = sprite->width;
     sprite->x = x;
     sprite->y = y;
+    ball->x = x;
+    ball->y = y;
     uint32_t current_color;
     for (int h = 0 ; h < height ; h++) {
       for (int w = 0 ; w < width ; w++) {
@@ -279,7 +281,9 @@ void draw_mouse() {
             break;
         case GAME:
             if (mouse_info.ball_color > 2) draw_ball(ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
-            else if (mouse_info.ball_color <= 2 && mouse_info.ball_color > 0) draw_ball(small_ball, mouse_info.x - ball->width/2, mouse_info.y - ball->height/2, mouse_info.ball_color);
+            else if (mouse_info.ball_color <= 2 && mouse_info.ball_color > 0) {
+                draw_ball(small_ball, mouse_info.x - small_ball->width/2, mouse_info.y - small_ball->height/2, mouse_info.ball_color);
+            }
             draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
             break;
     }
@@ -302,8 +306,8 @@ void clean_mouse() {
             }
             else {
                 if (mouse_info.ball_color <= 2 && mouse_info.ball_color > 0) {
-                    fill_rectangle(small_ball->x, small_ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
-                    for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, small_ball->x - background[i]->x, small_ball->y - background[i]->y, ball->height, ball->width);
+                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
                 }
                 else {
                     fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
