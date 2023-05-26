@@ -55,6 +55,7 @@ int (timer_subscribe_ints)(uint8_t *bit_no) {
 
 /**
  * @brief Ubsubscribes from the timer's interrupts
+ * @return int 1 on failure, 0 otherwise
  */
 int (timer_unsubscribe_ints)() {
   if (sys_irqrmpolicy(&hook_id_timer)) return 1;
