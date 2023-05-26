@@ -59,11 +59,20 @@ uint8_t hide_code = 0;
 // Contador de interrupções do timer
 int timer_interrupts = 0;
 
+/**
+ * @brief Updates the menu state
+ * This function is used instead of simply assigning the new state to avoid repeating code that needs to go along with updating said state
+ * @param new_state State to transition to
+ */
 void update_menu_state(MenuState new_state) {
     firstFrame = true;
     menuState = new_state;
 }
 
+/**
+ * @brief Set up the box balls positions object
+ * Allocates memory for the balls that the player can pick up
+ */
 void setup_box_balls_positions() {
     ball_box_positions = 0;
     ball_box_positions = malloc(sizeof(PositionBallsBox) * 8 );
@@ -74,6 +83,10 @@ void setup_box_balls_positions() {
     }  
 }
 
+/**
+ * @brief Set up the box small balls positions object
+ * Allocates memory for the small balls that the player can pick up
+ */
 void setup_box_small_balls_positions() {
     small_ball_box_positions = 0;
     small_ball_box_positions = malloc(sizeof(PositionSmallBallsBox) * 2 );
@@ -84,7 +97,10 @@ void setup_box_small_balls_positions() {
     }  
 }
 
-
+/**
+ * @brief Set up the positions object
+ * Allocates memory for the balls that the player will place
+ */
 void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
@@ -95,6 +111,10 @@ void setup_positions() {
     }
 }
 
+/**
+ * @brief Set up the code positions object
+ * Allocates memory for the balls in the code
+ */
 void setup_code_positions() {
     code_positions = malloc(sizeof(Position) * 4);
     if (player_no == 1) {
@@ -109,7 +129,10 @@ void setup_code_positions() {
     }
 }
 
-
+/**
+ * @brief Set up the small positions object
+ * Allocates memory for the small balls that the player will place
+ */
 void setup_small_positions() {
     small_ball_positions = malloc(sizeof(PositionSmall) * 36);
     for (int j = 0; j < 9; j++) {
@@ -122,19 +145,31 @@ void setup_small_positions() {
         }  
 }
 
+/**
+ * @brief Deallocates memory for placed balls
+ */
 void destroy_positions() {
     free(ball_positions);
 }
 
+/**
+ * @brief Deallocates memory for placed small balls
+ */
 void destroy_small_positions() {
     free(small_ball_positions);
 }
 
+/**
+ * @brief Deallocates memory for code balls
+ */
 void destroy_code_positions() {
     free(code_positions);
 }
 
-// Criação dos objetos via XPM e via comum
+/**
+ * @brief Creates sprite objects
+ * Allocates memory for every sprite that the game will need
+ */
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
@@ -160,7 +195,9 @@ void setup_sprites() {
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
 }
 
-// É boa prática antes de acabar o programa libertar a memória alocada
+/**
+ * @brief Deallocates memory used for sprites
+ */
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(board);
@@ -185,7 +222,10 @@ void destroy_sprites() {
     destroy_sprite(madeira);
 }
 
-// Na altura da interrupção há troca dos buffers e incremento do contador
+/**
+ * @brief Updates the state of the i8254 timer
+ * Beyond incrementing the internal counter, this function also sets the pace of queue updates, RTC updates, and buffer copying
+ */
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
     update_queue();
@@ -193,6 +233,10 @@ void update_timer_state() {
     timer_interrupts++;
 }
 
+/**
+ * @brief Updates the state of the UART serial port
+ * This function runs the serial port's interrupt handler, then deals with any data that might have been recieved
+ */
 void update_sp_state() {
     sp_ih();
     if (new_data) {
@@ -242,6 +286,10 @@ void update_sp_state() {
     new_data = false;
 }
 
+/**
+ * @brief Function used when placing a ball
+ * This function contains all the logic tied to placing balls (differentiating players 1 from 2, etc) so that it can be called with no need for external conditions
+ */
 void place_move() {
     switch (player_no) {
         case 1:
@@ -254,6 +302,10 @@ void place_move() {
     } 
 }
 
+/**
+ * @brief Function used when removing a ball
+ * This function contains all the logic tied to removing balls (differentiating players 1 from 2, etc) so that it can be called with no need for external conditions
+ */
 void remove_move() {
     switch (player_no) {
         case 1:
@@ -268,12 +320,17 @@ void remove_move() {
 
 
 
-// Como o Real Time Clock é um módulo mais pesado, 
-// devemos só atualizar os valores quando passa um segundo
+/**
+ * @brief Updates the RTC time info
+ */
 void update_rtc_state() {
     if (timer_interrupts % GAME_FREQUENCY == 0) rtc_update_time();
 }
 
+/**
+ * @brief Decides player numbers
+ * This function runs when the actual game begins. The first player to enter the game menu is player 1, the other is player 2.
+ */
 void test_player_no() {
     if (sp_data == 143) {
         player_no = 2;
@@ -287,10 +344,10 @@ void test_player_no() {
     printf("\n\n\nI AM %d\n\n\n", player_no);
 }
 
-// Sempre que uma nova tecla é pressionada há avaliação do scancode.
-// No caso do Template o teclado influencia:
-// - o systemState: se Q for pressionado, leva ao fim do programa
-// - o menuState: se S, G, E forem pressionados, leva a um dos menus (start, game, end) disponíveis
+/**
+ * @brief Updates the state of the keyboard
+ * This function runs the interrupt handler, and then runs code based on which key was pressed
+ */
 void update_keyboard_state() {
     (kbc_ih)();
     switch (scancode) {
@@ -367,9 +424,10 @@ void update_keyboard_state() {
     draw_new_frame();
 }
 
-// Sempre que há um novo pacote completo do rato
-// - muda o seu estado interno (x, y, left_pressed, right_pressed) - mouse_sync_info();
-// - pode mudar o estado do botão por baixo dele - update_buttons_state();
+/**
+ * @brief Updates the state of the mouse
+ * This function runs the interrupt handler, updates the mouse info at the end of each packet, and runs code according to the button the player is pressing
+ */
 void update_mouse_state() {
     (mouse_ih)();
     mouse_update_buffer();
@@ -389,12 +447,22 @@ void update_mouse_state() {
     }
 }
 
+/**
+ * @brief Updates the color of the ball being held
+ * This function is used instead of simply assigning the new color to avoid repeating the condition that this can only happen in the game menu
+ * @param color new color to be used
+ */
 void update_mouse_color(uint32_t color) {
   if (menuState == GAME) {
         mouse_info.ball_color = color;
     }
 }
 
+/**
+ * @brief Tries to mark a turn as finished
+ * This function checks if all balls for the current turn have been filled (irrelevant for small balls)
+ * @param positions Array of balls to check (use ball_positions in the case of small balls)
+ */
 void finish_turn(Position* positions) {
     for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
         if (positions[i].color == TRANSPARENT) {
@@ -414,10 +482,24 @@ bool is_mouse_in_small_ball_box(uint8_t i) {
     return mouse_info.x >= small_ball_box_positions[i].x && mouse_info.x <= small_ball_box_positions[i].x + ball->width && mouse_info.y >= small_ball_box_positions[i].y && mouse_info.y <= small_ball_box_positions[i].y + ball->height;
 }
 
+/**
+ * @brief Checks if the mouse is inside a given ball position
+ * @param i Index to check
+ * @param positions Position array to check in
+ * @return true The mouse is inside the position
+ * @return false The mouse is not inside the position
+ */
 bool is_mouse_in_ball(uint8_t i, Position* positions) {
     return mouse_info.x >= positions[i].x && mouse_info.x <= positions[i].x + ball->width && mouse_info.y >= positions[i].y && mouse_info.y <= positions[i].y + ball->height;
 }
 
+/**
+ * @brief Checks if the mouse is inside a given small ball position
+ * @param i Index to check
+ * @param small_ball_positions Small position array to check in
+ * @return true The mouse is inside the position
+ * @return false The mouse is not inside the position
+ */
 bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions) {
     return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + ball->height;
 }
@@ -426,15 +508,30 @@ bool is_mouse_in_ball_box(uint8_t i) {
     return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
 }
 
+/**
+ * @brief Checks if the mouse is inside the start button
+ * @return true The mouse is inside the button
+ * @return false The mouse is not inside the button
+ */
 bool is_mouse_in_start() {
     return mouse_info.x >= 280 && mouse_info.x <= 400 && mouse_info.y >= 231 && mouse_info.y <= 289;
 }
 
+/**
+ * @brief Checks if the mouse is inside the exit button
+ * @return true The mouse is inside the button
+ * @return false The mouse is not inside the button
+ */
 bool is_mouse_in_exit() {
     return mouse_info.x >= 326 && mouse_info.x <= 400 && mouse_info.y >= 326 && mouse_info.y <= 355;
 }
 
-
+/**
+ * @brief Places a ball
+ * This function returns before doing anything if the player's turn isn't active or if the player is not in the game menu
+ * @param positions Position array to place on
+ * @param n Number of balls in array
+ */
 void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
@@ -455,6 +552,10 @@ void place_ball(Position* positions, uint8_t n) {
     }
 }
 
+/**
+ * @brief Selects menu options
+ * This function is run when on the initial menu and the player presses the left mouse button
+ */
 void menu_selection() {
     if (menuState != START) return;
     if (is_mouse_in_start()) {
@@ -475,6 +576,10 @@ void menu_selection() {
     //balls++;
 }
 
+/**
+ * @brief Picks a small ball from the box
+ * Picks a black/white small ball from the box
+ */
 void pick_small_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
@@ -486,6 +591,10 @@ void pick_small_ball() {
     }
 }
 
+/**
+ * @brief Picks a ball from the box
+ * Picks a large ball from the box
+ */
 void pick_box_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
@@ -502,6 +611,12 @@ void pick_box_ball() {
     //balls++;
 }
 
+/**
+ * @brief Places a small ball
+ * This function returns before doing anything if the player's turn isn't active or if the player is not in the game menu
+ * @param positions Small position array to place on
+ * @param n Number of balls in array
+ */
 void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
@@ -522,6 +637,12 @@ void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
     }
 }
 
+/**
+ * @brief Removes a ball from the board if the mouse is inside it
+ * Checks every ball in the array until finding one that can be removed
+ * @param positions Array to check in
+ * @param n Number of balls in array
+ */
 void remove_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
@@ -539,6 +660,11 @@ void remove_ball(Position* positions, uint8_t n) {
     }
 }
 
+/**
+ * @brief Removes a small ball from the board if the mouse is inside it
+ * Checks every ball in the array until finding one that can be removed
+ * This function doesn't need any arguments because, unlike for large balls, there is only one case in which small balls can be removed
+ */
 void remove_small_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
