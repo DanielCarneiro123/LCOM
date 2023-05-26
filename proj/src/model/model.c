@@ -147,10 +147,6 @@ void setup_sprites() {
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
     start = create_sprite_xpm((xpm_map_t) start_xpm);
     exit_menu = create_sprite_xpm((xpm_map_t) exit_xpm);
-    button1 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2,  ORANGE);
-    button2 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, BLUE);
-    button3 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, GREEN);
-    button4 = create_sprite_button(mode_info.XResolution/2, mode_info.YResolution/2, YELLOW);
     um = create_sprite_xpm((xpm_map_t) um_xpm);
     dois = create_sprite_xpm((xpm_map_t) dois_xpm);
     tres = create_sprite_xpm((xpm_map_t) tres_xpm);
@@ -175,10 +171,6 @@ void destroy_sprites() {
     destroy_sprite(masterminix);
     destroy_sprite(start);
     destroy_sprite(exit_menu);
-    destroy_sprite(button1);
-    destroy_sprite(button2);
-    destroy_sprite(button3);
-    destroy_sprite(button4);
     //destroy_sprite(masterminix);
     destroy_sprite(um);
     destroy_sprite(dois);
@@ -395,34 +387,6 @@ void update_mouse_state() {
             remove_move();  
         }
         draw_new_frame();        
-    }
-}
-
-
-// Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
-// muda o estado do botão no mesmo quadrante
-// Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
-void update_buttons_state() {
-
-    if (mouse_info.left_click) {
-
-        if (mouse_info.x < mode_info.XResolution/2 && mouse_info.y < mode_info.YResolution/2)
-            button1->pressed = 1;
-
-        if (mouse_info.x >= mode_info.XResolution/2 && mouse_info.y <= mode_info.YResolution/2)
-            button2->pressed = 1;
-
-        if (mouse_info.x < mode_info.XResolution/2 && mouse_info.y >= mode_info.YResolution/2)
-            button3->pressed = 1;
-
-        if (mouse_info.x >= mode_info.XResolution/2 && mouse_info.y > mode_info.YResolution/2)
-            button4->pressed = 1;
-
-    } else {
-        button1->pressed = 0;
-        button2->pressed = 0;
-        button3->pressed = 0;
-        button4->pressed = 0;
     }
 }
 

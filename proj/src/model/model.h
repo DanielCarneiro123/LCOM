@@ -77,7 +77,6 @@ typedef struct {
 void update_timer_state();
 void update_keyboard_state();
 void update_mouse_state();
-void update_buttons_state();
 void update_rtc_state();
 void update_sp_state();
 void setup_sprites();
