@@ -141,6 +141,10 @@ void draw_finish_menu() {
     background[0] = masterminix;
 }
 
+/**
+ * @brief Draws the code
+ * Only applies to player 2, when in the game menu
+ */
 void draw_code() {  
     if (code_positions == NULL || menuState != GAME) return;
     for (uint8_t i = 0; i < 4; i++) {
@@ -158,6 +162,10 @@ void toggle_code_view(uint8_t hide_code){
         }
 }
 
+/**
+ * @brief Draws the balls that the player can pick up
+ * If the player is not in the game menu, this function returns without doing anything
+ */
 void draw_numbers_and_balls_in_box(){
 
     if(menuState != GAME) return;

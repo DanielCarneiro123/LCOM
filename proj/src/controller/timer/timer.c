@@ -8,6 +8,13 @@
 int hook_id_timer = 0;
 int counter = 0;
 
+/**
+ * @brief Sets the timer's frequency
+ * Sets the timer's frequency to a given value passed to the function
+ * @param timer Timer to update (0, 1, 2)
+ * @param freq New frequency
+ * @return int 1 on failure, 0 otherwise
+ */
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   if (timer != 0 && timer != 1 && timer != 2) return 1;
   if (freq < 19 || freq > TIMER_FREQ) return 1;
@@ -33,6 +40,12 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return 0;
 }
 
+/**
+ * @brief Subscribes to timer 0's interrupts
+ * Subscribes to the timer's interrupts with the bit mask defined in hook_id_timer
+ * @param bit_no Bit mask for which the subscription takes place
+ * @return int 1 on failure, 0 otherwise
+ */
 int (timer_subscribe_ints)(uint8_t *bit_no) {
   if (bit_no == NULL) return 1;
   *bit_no = BIT(hook_id_timer);
@@ -40,6 +53,9 @@ int (timer_subscribe_ints)(uint8_t *bit_no) {
   return 0;
 }
 
+/**
+ * @brief Ubsubscribes from the timer's interrupts
+ */
 int (timer_unsubscribe_ints)() {
   if (sys_irqrmpolicy(&hook_id_timer)) return 1;
   return 0;
@@ -49,6 +65,13 @@ int (timer_unsubscribe_ints)() {
   counter++;
 }*/
 
+/**
+ * @brief Reads the configuration from a timer
+ * Reads the configuration from a timer and returns it via a pointer parameter
+ * @param timer Timer to read (0, 1, 2)
+ * @param st Configuration byte 
+ * @return int 1 on failure, 0 otherwise
+ */
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if (timer > 2) return 1;
   uint8_t command = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
@@ -57,6 +80,14 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   return 0;
 }
 
+/**
+ * @brief Displays a timer's configuration in the terminal
+ * Displays the configuration using the timer_status_field_val union type and the timer_print_config function
+ * @param timer Timer to display (0, 1, 2)
+ * @param st Configuration
+ * @param field Field to display
+ * @return int 1 on failure, 0 otherwise
+ */
 int (timer_display_conf)(uint8_t timer, uint8_t st,
                         enum timer_status_field field) {
   union timer_status_field_val conf;
