@@ -1,0 +1,34 @@
+
+
+
+TIME 23 
+
+
+
+
+
+BACKGROUND COLOR 12528128 
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+Error: Mouse output not found

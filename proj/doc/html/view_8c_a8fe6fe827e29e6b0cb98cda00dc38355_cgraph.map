@@ -1,0 +1,21 @@
+<map id="draw_new_frame" name="draw_new_frame">
+<area shape="rect" id="node1" title="Draws a frame Draws the next frame on the frame buffer according to the game&#39;s state." alt="" coords="5,233,123,260"/>
+<area shape="rect" id="node2" href="$view_8c.html#a90b49506151d9c99fb46fc80c94e8310" title="Cleans the previous position the mouse was in Redraws the background, layer by layer,..." alt="" coords="205,5,304,32"/>
+<area shape="rect" id="node8" href="$view_8c.html#ad213086ef081c77ee69fc98186c1e861" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="213,376,296,403"/>
+<area shape="rect" id="node10" href="$view_8c.html#ab70482e00c488d5d0edf45ac41a0675a" title="Draws the code Only applies to player 2, when in the game menu." alt="" coords="213,427,296,453"/>
+<area shape="rect" id="node11" href="$view_8c.html#a4ef1021932b3491a17530d73f0a0d0f8" title="Draws the final menu Draws the final menu and sets background." alt="" coords="192,107,317,133"/>
+<area shape="rect" id="node14" href="$view_8c.html#a0a9f56467341cbe24bd981d4b9960fdd" title="Draws the game menu Draws the game menu and sets background." alt="" coords="191,157,318,184"/>
+<area shape="rect" id="node15" href="$view_8c.html#a2e293823f22abda1c98f45d8035282d8" title="Draws the initial menu Draws the initial menu and sets background." alt="" coords="192,208,317,235"/>
+<area shape="rect" id="node16" href="$view_8c.html#a670ef1b26fcda05a6f21a1e6a71482f9" title="Draws the lid Only applies to player 2, when in the game menu." alt="" coords="220,56,289,83"/>
+<area shape="rect" id="node17" href="$view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the mouse Draws a cursor, and a ball behind it in case the player is holding one." alt="" coords="207,259,302,285"/>
+<area shape="rect" id="node18" href="$view_8c.html#afc027cc34fe47988c744e96b61b8651d" title="Draws the balls that the player can pick up If the player is not in the game menu,..." alt="" coords="171,309,338,352"/>
+<area shape="rect" id="node19" href="$view_8c.html#a81d5a92020094f67e9de783cd29aea6e" title="Draws the small balls Draws the small balls from the small_ball_positions array." alt="" coords="194,477,315,504"/>
+<area shape="rect" id="node3" href="$view_8c.html#ad0aab3c62c41de83d18a7788a3ae212a" title="Draws a sprite partially This function is used when redrawing the background behind moving/cleaned ob..." alt="" coords="386,31,547,57"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="420,107,513,133"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="595,157,679,184"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="727,157,856,184"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="904,157,990,184"/>
+<area shape="rect" id="node9" href="$view_8c.html#aa047908abc31e4b0b12ab393908b52d0" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="429,347,504,373"/>
+<area shape="rect" id="node12" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws a sprite Draws the entirety of a sprite object&#39;s colors on the frame buffer." alt="" coords="407,208,526,235"/>
+<area shape="rect" id="node13" href="$view_8c.html#a958c1e44555e3972bef87ab253dab40c" title="Set the background color according to current hour." alt="" coords="393,157,541,184"/>
+</map>

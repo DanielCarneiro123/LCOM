@@ -1,0 +1,6 @@
+<map id="kbc_ih_poll" name="kbc_ih_poll">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,92,57"/>
+<area shape="rect" id="node2" href="$keyboard_2_k_b_c_8c.html#a9d349c7d21249f462f611a692ab8e5fb" title=" " alt="" coords="140,31,290,57"/>
+<area shape="rect" id="node3" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="338,5,461,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="509,31,600,57"/>
+</map>

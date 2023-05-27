@@ -1,0 +1,12 @@
+<map id="remove_small_ball" name="remove_small_ball">
+<area shape="rect" id="node1" title="Removes a small ball from the board if the mouse is inside it Checks every ball in the array until fi..." alt="" coords="5,107,133,133"/>
+<area shape="rect" id="node2" href="$view_8c.html#a20cb8bd15061b1c1c9b030522e97e495" title="Cleans a ball from the frame buffer after it is removed Redraws the background behind the removed bal..." alt="" coords="221,31,300,57"/>
+<area shape="rect" id="node8" href="$model_8c.html#a9886a994428876ec845dcbbc8fde06d8" title="Checks if the mouse is inside a given small ball position." alt="" coords="181,81,340,108"/>
+<area shape="rect" id="node9" href="$sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="194,132,327,159"/>
+<area shape="rect" id="node10" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="236,183,285,209"/>
+<area shape="rect" id="node3" href="$view_8c.html#ad0aab3c62c41de83d18a7788a3ae212a" title="Draws a sprite partially This function is used when redrawing the background behind moving/cleaned ob..." alt="" coords="388,5,549,32"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="422,56,515,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="597,31,681,57"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="729,31,858,57"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="906,31,992,57"/>
+</map>

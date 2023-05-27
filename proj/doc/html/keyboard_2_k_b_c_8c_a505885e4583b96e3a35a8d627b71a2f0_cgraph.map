@@ -1,0 +1,4 @@
+<map id="read_KBC_status" name="read_KBC_status">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="177,5,267,32"/>
+</map>

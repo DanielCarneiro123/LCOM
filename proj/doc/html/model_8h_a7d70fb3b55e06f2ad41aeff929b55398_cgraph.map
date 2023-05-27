@@ -1,0 +1,4 @@
+<map id="update_menu_state" name="update_menu_state">
+<area shape="rect" id="node1" title="Updates the menu state This function is used instead of simply assigning the new state to avoid repea..." alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state Resets global variables so that the game may be replayed." alt="" coords="189,5,270,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="place_small_ball" name="place_small_ball">
+<area shape="rect" id="node1" title="Places a small ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or ..." alt="" coords="5,56,123,83"/>
+<area shape="rect" id="node2" href="$model_8c.html#a9886a994428876ec845dcbbc8fde06d8" title="Checks if the mouse is inside a given small ball position." alt="" coords="171,5,330,32"/>
+<area shape="rect" id="node3" href="$sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="184,56,317,83"/>
+<area shape="rect" id="node4" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="226,107,275,133"/>
+</map>

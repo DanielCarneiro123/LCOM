@@ -1,0 +1,9 @@
+<map id="place_move" name="place_move">
+<area shape="rect" id="node1" title="Function used when placing a ball This function contains all the logic tied to placing balls (differe..." alt="" coords="5,81,95,108"/>
+<area shape="rect" id="node2" href="$model_8c.html#a61b20c44a2ce92fa54eec29769ec99d6" title="Places a ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or if the..." alt="" coords="162,56,241,83"/>
+<area shape="rect" id="node6" href="$model_8c.html#af3e25debba4cb88350105fb76d713db9" title="Places a small ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or ..." alt="" coords="143,107,260,133"/>
+<area shape="rect" id="node3" href="$model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c" title="Checks if the mouse is inside a given ball position." alt="" coords="327,5,448,32"/>
+<area shape="rect" id="node4" href="$sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="321,56,454,83"/>
+<area shape="rect" id="node5" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="363,107,412,133"/>
+<area shape="rect" id="node7" href="$model_8c.html#a9886a994428876ec845dcbbc8fde06d8" title="Checks if the mouse is inside a given small ball position." alt="" coords="308,157,467,184"/>
+</map>

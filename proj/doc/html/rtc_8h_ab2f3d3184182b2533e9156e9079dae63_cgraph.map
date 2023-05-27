@@ -1,0 +1,5 @@
+<map id="rtc_is_updating" name="rtc_is_updating">
+<area shape="rect" id="node1" title="Checks whether the RTC is updating." alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="163,5,231,32"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="279,5,369,32"/>
+</map>

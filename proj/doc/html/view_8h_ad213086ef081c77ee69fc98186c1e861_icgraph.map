@@ -1,0 +1,7 @@
+<map id="draw_balls" name="draw_balls">
+<area shape="rect" id="node1" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="531,24,614,50"/>
+<area shape="rect" id="node2" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws a frame Draws the next frame on the frame buffer according to the game&#39;s state." alt="" coords="366,24,483,50"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,24,114,50"/>
+<area shape="rect" id="node4" href="$model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates the state of the keyboard This function runs the interrupt handler, and then runs code based ..." alt="" coords="162,24,318,50"/>
+<area shape="rect" id="node5" href="$model_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates the state of the mouse This function runs the interrupt handler, updates the mouse info at th..." alt="" coords="169,74,311,101"/>
+</map>

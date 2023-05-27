@@ -1,0 +1,6 @@
+<map id="has_byte" name="has_byte">
+<area shape="rect" id="node1" title="Checks if the queue has a byte available." alt="" coords="492,5,567,32"/>
+<area shape="rect" id="node2" href="$queue_8c.html#a93191533323a04cdbf5a52eac95a871e" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="342,5,444,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="162,5,294,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="draw_ball" name="draw_ball">
+<area shape="rect" id="node1" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="5,5,81,32"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="129,5,212,32"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="260,5,389,32"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="437,5,524,32"/>
+</map>

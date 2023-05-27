@@ -1,0 +1,7 @@
+<map id="keyboard_restore" name="keyboard_restore">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,127,57"/>
+<area shape="rect" id="node2" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="186,56,310,83"/>
+<area shape="rect" id="node5" href="$keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="175,5,321,32"/>
+<area shape="rect" id="node3" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="369,5,492,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="540,31,631,57"/>
+</map>

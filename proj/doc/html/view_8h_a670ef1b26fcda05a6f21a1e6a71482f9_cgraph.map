@@ -1,0 +1,7 @@
+<map id="draw_lid" name="draw_lid">
+<area shape="rect" id="node1" title="Draws the lid Only applies to player 2, when in the game menu." alt="" coords="5,5,74,32"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="122,5,215,32"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="263,5,346,32"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="394,5,524,32"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="572,5,658,32"/>
+</map>

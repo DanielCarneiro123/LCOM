@@ -1,0 +1,10 @@
+<map id="click_hide_code_button" name="click_hide_code_button">
+<area shape="rect" id="node1" title=" " alt="" coords="5,60,163,87"/>
+<area shape="rect" id="node2" href="$view_8c.html#a92191be6515c8689bfaa61b022080023" title="Cleans the lid Draws the background behind the now hidden lid." alt="" coords="255,31,327,57"/>
+<area shape="rect" id="node8" href="$model_8c.html#a1061527bdbb3bf1e99c6455b32dae2c6" title=" " alt="" coords="211,81,371,124"/>
+<area shape="rect" id="node3" href="$view_8c.html#ad0aab3c62c41de83d18a7788a3ae212a" title="Draws a sprite partially This function is used when redrawing the background behind moving/cleaned ob..." alt="" coords="419,5,580,32"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="453,56,546,83"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="628,31,712,57"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="760,31,889,57"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="937,31,1023,57"/>
+</map>

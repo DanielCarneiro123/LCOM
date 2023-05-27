@@ -1,0 +1,6 @@
+<map id="create_sprite_xpm" name="create_sprite_xpm">
+<area shape="rect" id="node1" title="Create a sprite xpm object Allocates memory for a sprite." alt="" coords="410,5,539,32"/>
+<area shape="rect" id="node2" href="$model_8c.html#a834200084177d31e41dd9b28754a3312" title="Creates sprite objects Allocates memory for every sprite that the game will need." alt="" coords="263,5,362,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="162,5,215,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="update_timer_state" name="update_timer_state">
+<area shape="rect" id="node1" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="5,69,138,96"/>
+<area shape="rect" id="node2" href="$view_8c.html#a4aaef992ac0c47fae4b43683cc3a7d95" title="Double buffering function Copies the contents of the secondary buffer to the main buffer." alt="" coords="201,19,289,45"/>
+<area shape="rect" id="node3" href="$queue_8c.html#a93191533323a04cdbf5a52eac95a871e" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="194,69,296,96"/>
+<area shape="rect" id="node9" href="$model_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the RTC time info." alt="" coords="186,132,304,159"/>
+<area shape="rect" id="node4" href="$queue_8c.html#ae42954dc097acfb9eda61eccf848ddce" title="Checks if the queue has a byte available." alt="" coords="372,5,446,32"/>
+<area shape="rect" id="node5" href="$queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9" title="Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the lef..." alt="" coords="388,56,430,83"/>
+<area shape="rect" id="node6" href="$sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="359,107,460,133"/>
+<area shape="rect" id="node7" href="$sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="672,107,740,133"/>
+<area shape="rect" id="node8" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="788,132,878,159"/>
+<area shape="rect" id="node10" href="$rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="352,157,466,184"/>
+<area shape="rect" id="node11" href="$rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="514,157,624,184"/>
+<area shape="rect" id="node12" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="672,157,740,184"/>
+</map>

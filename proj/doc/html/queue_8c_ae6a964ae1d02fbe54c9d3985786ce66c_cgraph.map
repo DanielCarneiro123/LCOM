@@ -1,0 +1,6 @@
+<map id="retry" name="retry">
+<area shape="rect" id="node1" title="Retries to send the last byte Is used when there was an error sending the last byte." alt="" coords="5,5,53,32"/>
+<area shape="rect" id="node2" href="$sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="101,5,202,32"/>
+<area shape="rect" id="node3" href="$sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="250,5,317,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="365,5,456,32"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="menu_selection" name="menu_selection">
+<area shape="rect" id="node1" title="Selects menu options This function is run when on the initial menu and the player presses the left mo..." alt="" coords="5,107,118,133"/>
+<area shape="rect" id="node2" href="$model_8c.html#a35b8d0985e514a05cf75fa5e0ea4eecc" title="Checks if the mouse is inside the exit button." alt="" coords="178,5,301,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#adce849d2f2537e846435a8b4c3a8fd70" title="Checks if the mouse is inside the start button." alt="" coords="176,56,303,83"/>
+<area shape="rect" id="node4" href="$model_8c.html#a869031cae0f677fbe05af3d211e8fba0" title="Set up the code positions object Allocates memory for the balls in the code." alt="" coords="166,107,313,133"/>
+<area shape="rect" id="node5" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers This function runs when the actual game begins. The first player to enter the ..." alt="" coords="186,157,293,184"/>
+<area shape="rect" id="node7" href="$model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state This function is used instead of simply assigning the new state to avoid repea..." alt="" coords="172,208,307,235"/>
+<area shape="rect" id="node6" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="377,157,426,184"/>
+<area shape="rect" id="node8" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state Resets global variables so that the game may be replayed." alt="" coords="361,208,442,235"/>
+</map>

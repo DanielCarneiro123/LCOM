@@ -1,0 +1,12 @@
+<map id="draw_ball" name="draw_ball">
+<area shape="rect" id="node1" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="747,107,822,133"/>
+<area shape="rect" id="node2" href="$view_8c.html#ad213086ef081c77ee69fc98186c1e861" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="574,5,656,32"/>
+<area shape="rect" id="node7" href="$view_8c.html#ab70482e00c488d5d0edf45ac41a0675a" title="Draws the code Only applies to player 2, when in the game menu." alt="" coords="573,56,657,83"/>
+<area shape="rect" id="node8" href="$view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the mouse Draws a cursor, and a ball behind it in case the player is holding one." alt="" coords="568,107,662,133"/>
+<area shape="rect" id="node9" href="$view_8c.html#afc027cc34fe47988c744e96b61b8651d" title="Draws the balls that the player can pick up If the player is not in the game menu,..." alt="" coords="531,157,699,200"/>
+<area shape="rect" id="node10" href="$view_8c.html#a81d5a92020094f67e9de783cd29aea6e" title="Draws the small balls Draws the small balls from the small_ball_positions array." alt="" coords="555,224,675,251"/>
+<area shape="rect" id="node3" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws a frame Draws the next frame on the frame buffer according to the game&#39;s state." alt="" coords="366,107,483,133"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,107,114,133"/>
+<area shape="rect" id="node5" href="$model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates the state of the keyboard This function runs the interrupt handler, and then runs code based ..." alt="" coords="162,107,318,133"/>
+<area shape="rect" id="node6" href="$model_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates the state of the mouse This function runs the interrupt handler, updates the mouse info at th..." alt="" coords="169,157,311,184"/>
+</map>

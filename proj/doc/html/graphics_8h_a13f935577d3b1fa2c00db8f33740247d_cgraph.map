@@ -1,0 +1,4 @@
+<map id="frame_buffer_index" name="frame_buffer_index">
+<area shape="rect" id="node1" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="5,5,135,32"/>
+<area shape="rect" id="node2" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="183,5,269,32"/>
+</map>

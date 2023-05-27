@@ -1,0 +1,7 @@
+<map id="mouse_write" name="mouse_write">
+<area shape="rect" id="node1" title="Writes a command to the mouse The command is sent until too many attempts are made or until an ACK re..." alt="" coords="5,31,100,57"/>
+<area shape="rect" id="node2" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="159,56,283,83"/>
+<area shape="rect" id="node5" href="$keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="148,5,294,32"/>
+<area shape="rect" id="node3" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="342,5,465,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="513,31,604,57"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="rtc_set_binary" name="rtc_set_binary">
+<area shape="rect" id="node1" title="Sets the counting mode to binary." alt="" coords="5,31,109,57"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="158,5,226,32"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#ab803bc9a1b1b88f8d618e3ace57d6ab4" title="Writes a byte to the RTC." alt="" coords="157,56,227,83"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="275,5,365,32"/>
+</map>

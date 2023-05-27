@@ -1,0 +1,6857 @@
+
+
+
+TIME 18 
+
+
+
+
+
+BACKGROUND COLOR 9783089 
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 159
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+I AM 2
+
+
+
+
+
+TIME 18 
+
+
+
+
+
+BACKGROUND COLOR 9783089 
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: -1
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 3
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: -1
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 68
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: -1
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 133
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: -1
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 198
+
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 4
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 69
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 69
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 198
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 135
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 0
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 1
+
+
+
+
+
+BYTE WRITTEN: 1
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 0
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 2
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 0
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 2
+
+
+
+
+
+BYTE WRITTEN: 2
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+BYTE WRITTEN: 2
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 0
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 66
+
+
+
+
+
+BYTE WRITTEN: 66
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 0
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 193
+
+
+
+
+
+BYTE WRITTEN: 193
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 0
+
+
+
+
+
+Turn Offset: 0
+
+
+
+
+
+ABOUT TO WRITE 129
+
+
+
+
+
+BYTE WRITTEN: 129
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 4
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+PLAYER TWO GOT IT WRONG
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 4
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 132
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 196
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 196
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 196
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 1
+
+
+
+
+
+BYTE WRITTEN: 1
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 1
+
+
+
+
+
+BYTE WRITTEN: 1
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 1
+
+
+
+
+
+BYTE WRITTEN: 1
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 65
+
+
+
+
+
+BYTE WRITTEN: 65
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 66
+
+
+
+
+
+BYTE WRITTEN: 66
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 194
+
+
+
+
+
+BYTE WRITTEN: 194
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 1
+
+
+
+
+
+Turn Offset: 1
+
+
+
+
+
+ABOUT TO WRITE 130
+
+
+
+
+
+BYTE WRITTEN: 130
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+PLAYER TWO GOT IT WRONG
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 5
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 5
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 5
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 5
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 69
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 131
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 131
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 131
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 195
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 2
+
+
+
+
+
+Turn Offset: 2
+
+
+
+
+
+ABOUT TO WRITE 2
+
+
+
+
+
+BYTE WRITTEN: 2
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+PLAYER TWO GOT IT WRONG
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 195
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 195
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 131
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 6
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 3
+
+
+
+
+
+Turn Offset: 3
+
+
+
+
+
+ABOUT TO WRITE 130
+
+
+
+
+
+BYTE WRITTEN: 130
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 3
+
+
+
+
+
+Turn Offset: 3
+
+
+
+
+
+ABOUT TO WRITE 194
+
+
+
+
+
+BYTE WRITTEN: 194
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 3
+
+
+
+
+
+Turn Offset: 3
+
+
+
+
+
+ABOUT TO WRITE 65
+
+
+
+
+
+BYTE WRITTEN: 65
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+PLAYER TWO GOT IT WRONG
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 7
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 70
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 133
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 133
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 195
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 4
+
+
+
+
+
+Turn Offset: 4
+
+
+
+
+
+ABOUT TO WRITE 2
+
+
+
+
+
+BYTE WRITTEN: 2
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 4
+
+
+
+
+
+Turn Offset: 4
+
+
+
+
+
+ABOUT TO WRITE 2
+
+
+
+
+
+BYTE WRITTEN: 2
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 4
+
+
+
+
+
+Turn Offset: 4
+
+
+
+
+
+ABOUT TO WRITE 66
+
+
+
+
+
+BYTE WRITTEN: 66
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+PLAYER TWO GOT IT WRONG
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 8
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 8
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 8
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 73
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 137
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 202
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 202
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 202
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 202
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 202
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 202
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 5
+
+
+
+
+
+Turn Offset: 5
+
+
+
+
+
+ABOUT TO WRITE 2
+
+
+
+
+
+BYTE WRITTEN: 2
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 5
+
+
+
+
+
+Turn Offset: 5
+
+
+
+
+
+ABOUT TO WRITE 1
+
+
+
+
+
+BYTE WRITTEN: 1
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 5
+
+
+
+
+
+Turn Offset: 5
+
+
+
+
+
+ABOUT TO WRITE 65
+
+
+
+
+
+BYTE WRITTEN: 65
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+ I AM HERE WITH 1
+
+
+Current turn: 5
+
+
+
+
+
+Turn Offset: 5
+
+
+
+
+
+ABOUT TO WRITE 194
+
+
+
+
+
+BYTE WRITTEN: 194
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 1
+
+
+
+
+PLAYER TWO GOT IT WRONG
+
+
+
+
+BYTE WRITTEN: 255
+
+
+
+
+
+ IIR IS 2
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 4
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 253
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 138
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 198
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 198
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 3
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 3
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 3
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 3
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 3
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 3
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 68
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+ IIR IS 4
+
+
+
+
+
+ SHIT IS 4
+
+
+
+
+
+BYTE READ: 255
+
+
+
+
+
+BYTE WRITTEN: 253
+
+
+
+
+
+ IIR IS 2
+
+
+COUNT IS 1
+
+
+
+
+
+ SHIT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+COUNT IS 2
+
+
+
+
+
+ IIR IS 1
+
+
+
+
+
+TIME 18 
+
+
+
+
+
+BACKGROUND COLOR 9783089 
+
+

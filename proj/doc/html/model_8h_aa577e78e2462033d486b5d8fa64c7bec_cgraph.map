@@ -1,0 +1,52 @@
+<map id="update_mouse_state" name="update_mouse_state">
+<area shape="rect" id="node1" title="Updates the state of the mouse This function runs the interrupt handler, updates the mouse info at th..." alt="" coords="5,672,148,699"/>
+<area shape="rect" id="node2" href="$model_8c.html#a1479abf62f95907d182f1af46aa669f8" title=" " alt="" coords="388,279,545,305"/>
+<area shape="rect" id="node10" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws a frame Draws the next frame on the frame buffer according to the game&#39;s state." alt="" coords="408,329,525,356"/>
+<area shape="rect" id="node24" href="$model_8c.html#a77a605867b767ce9eb771f5780c6028a" title="Selects menu options This function is run when on the initial menu and the player presses the left mo..." alt="" coords="212,520,324,547"/>
+<area shape="rect" id="node32" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Interrupt handler for the mouse Reads a mouse byte from the KBC." alt="" coords="229,951,307,977"/>
+<area shape="rect" id="node36" href="$mouse_8c.html#aa832040dd305ba3a8401cc3a4e6a4cc4" title="Updates the main mouse struct Copies the contents of the buffer struct to the main struct." alt="" coords="207,647,329,673"/>
+<area shape="rect" id="node37" href="$mouse_8c.html#a173708d175f74dd2b99f7398b3c15a15" title="Updates the buffer mouse struct A second struct is used as a buffer, and its contents are copied to t..." alt="" coords="196,697,340,724"/>
+<area shape="rect" id="node38" href="$model_8c.html#abdd1188cf76ab339e06430695730e44f" title="Picks a ball from the box Picks a large ball from the box." alt="" coords="218,799,318,825"/>
+<area shape="rect" id="node41" href="$model_8c.html#a0293b3c6abf79e47f9445d93ca8dd17e" title="Picks a small ball from the box Picks a black/white small ball from the box." alt="" coords="213,596,323,623"/>
+<area shape="rect" id="node43" href="$model_8c.html#a933a0ee51b61bea202604faa0dc7d5b5" title="Function used when placing a ball This function contains all the logic tied to placing balls (differe..." alt="" coords="223,748,313,775"/>
+<area shape="rect" id="node47" href="$model_8c.html#a39975a512705f9a2a8edcd540a62c0c6" title="Function used when removing a ball This function contains all the logic tied to removing balls (diffe..." alt="" coords="218,849,318,876"/>
+<area shape="rect" id="node3" href="$view_8c.html#a92191be6515c8689bfaa61b022080023" title="Cleans the lid Draws the background behind the now hidden lid." alt="" coords="641,493,713,520"/>
+<area shape="rect" id="node9" href="$model_8c.html#a1061527bdbb3bf1e99c6455b32dae2c6" title=" " alt="" coords="597,5,757,48"/>
+<area shape="rect" id="node4" href="$view_8c.html#ad0aab3c62c41de83d18a7788a3ae212a" title="Draws a sprite partially This function is used when redrawing the background behind moving/cleaned ob..." alt="" coords="809,519,970,545"/>
+<area shape="rect" id="node8" href="$graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="843,468,936,495"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="1018,405,1101,432"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="1149,405,1279,432"/>
+<area shape="rect" id="node7" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="1327,405,1413,432"/>
+<area shape="rect" id="node11" href="$view_8c.html#a90b49506151d9c99fb46fc80c94e8310" title="Cleans the previous position the mouse was in Redraws the background, layer by layer,..." alt="" coords="628,595,726,621"/>
+<area shape="rect" id="node12" href="$view_8c.html#ad213086ef081c77ee69fc98186c1e861" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="636,123,718,149"/>
+<area shape="rect" id="node14" href="$view_8c.html#ab70482e00c488d5d0edf45ac41a0675a" title="Draws the code Only applies to player 2, when in the game menu." alt="" coords="635,173,719,200"/>
+<area shape="rect" id="node15" href="$view_8c.html#a4ef1021932b3491a17530d73f0a0d0f8" title="Draws the final menu Draws the final menu and sets background." alt="" coords="615,341,739,368"/>
+<area shape="rect" id="node18" href="$view_8c.html#a0a9f56467341cbe24bd981d4b9960fdd" title="Draws the game menu Draws the game menu and sets background." alt="" coords="614,392,740,419"/>
+<area shape="rect" id="node19" href="$view_8c.html#a2e293823f22abda1c98f45d8035282d8" title="Draws the initial menu Draws the initial menu and sets background." alt="" coords="615,443,739,469"/>
+<area shape="rect" id="node20" href="$view_8c.html#a670ef1b26fcda05a6f21a1e6a71482f9" title="Draws the lid Only applies to player 2, when in the game menu." alt="" coords="643,544,711,571"/>
+<area shape="rect" id="node21" href="$view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the mouse Draws a cursor, and a ball behind it in case the player is holding one." alt="" coords="630,291,724,317"/>
+<area shape="rect" id="node22" href="$view_8c.html#afc027cc34fe47988c744e96b61b8651d" title="Draws the balls that the player can pick up If the player is not in the game menu,..." alt="" coords="593,224,761,267"/>
+<area shape="rect" id="node23" href="$view_8c.html#a81d5a92020094f67e9de783cd29aea6e" title="Draws the small balls Draws the small balls from the small_ball_positions array." alt="" coords="617,72,737,99"/>
+<area shape="rect" id="node13" href="$view_8c.html#aa047908abc31e4b0b12ab393908b52d0" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="852,203,927,229"/>
+<area shape="rect" id="node16" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws a sprite Draws the entirety of a sprite object&#39;s colors on the frame buffer." alt="" coords="830,341,949,368"/>
+<area shape="rect" id="node17" href="$view_8c.html#a958c1e44555e3972bef87ab253dab40c" title="Set the background color according to current hour." alt="" coords="815,392,964,419"/>
+<area shape="rect" id="node25" href="$model_8c.html#a35b8d0985e514a05cf75fa5e0ea4eecc" title="Checks if the mouse is inside the exit button." alt="" coords="406,380,528,407"/>
+<area shape="rect" id="node26" href="$model_8c.html#adce849d2f2537e846435a8b4c3a8fd70" title="Checks if the mouse is inside the start button." alt="" coords="403,431,530,457"/>
+<area shape="rect" id="node27" href="$model_8c.html#a869031cae0f677fbe05af3d211e8fba0" title="Set up the code positions object Allocates memory for the balls in the code." alt="" coords="393,481,540,508"/>
+<area shape="rect" id="node28" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers This function runs when the actual game begins. The first player to enter the ..." alt="" coords="414,583,520,609"/>
+<area shape="rect" id="node30" href="$model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state This function is used instead of simply assigning the new state to avoid repea..." alt="" coords="399,532,534,559"/>
+<area shape="rect" id="node29" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="652,747,702,773"/>
+<area shape="rect" id="node31" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state Resets global variables so that the game may be replayed." alt="" coords="636,645,718,672"/>
+<area shape="rect" id="node33" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="405,988,528,1015"/>
+<area shape="rect" id="node34" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="615,1025,739,1052"/>
+<area shape="rect" id="node35" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="844,1000,935,1027"/>
+<area shape="rect" id="node39" href="$model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c" title="Checks if the mouse is inside a given ball position." alt="" coords="616,899,738,925"/>
+<area shape="rect" id="node40" href="$model_8c.html#a2270e09b63279e79f4cae557c1e44da6" title="Updates the color of the ball being held This function is used instead of simply assigning the new co..." alt="" coords="396,684,537,711"/>
+<area shape="rect" id="node42" href="$model_8c.html#a9886a994428876ec845dcbbc8fde06d8" title="Checks if the mouse is inside a given small ball position." alt="" coords="597,696,757,723"/>
+<area shape="rect" id="node44" href="$model_8c.html#a61b20c44a2ce92fa54eec29769ec99d6" title="Places a ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or if the..." alt="" coords="427,836,506,863"/>
+<area shape="rect" id="node46" href="$model_8c.html#af3e25debba4cb88350105fb76d713db9" title="Places a small ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or ..." alt="" coords="408,735,525,761"/>
+<area shape="rect" id="node45" href="$sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="610,797,744,824"/>
+<area shape="rect" id="node48" href="$model_8c.html#ad0d2c57b88c1209234b4620359aa60f7" title="Removes a ball from the board if the mouse is inside it Checks every ball in the array until finding ..." alt="" coords="422,887,511,913"/>
+<area shape="rect" id="node50" href="$model_8c.html#a25d36ce066829ed49feede36a95fc6d2" title="Removes a small ball from the board if the mouse is inside it Checks every ball in the array until fi..." alt="" coords="403,785,530,812"/>
+<area shape="rect" id="node49" href="$view_8c.html#a20cb8bd15061b1c1c9b030522e97e495" title="Cleans a ball from the frame buffer after it is removed Redraws the background behind the removed bal..." alt="" coords="637,848,717,875"/>
+</map>

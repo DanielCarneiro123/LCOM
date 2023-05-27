@@ -1,1 +1,568 @@
+@lcflib.a:2019, lcf_start
+  proj_main_loop(argc, argv)
+> proj_main_loop(1, ["1", NULL])
+  @main.c:26, setup
+    timer_set_frequency(TIMER, GAME_FREQUENCY)
+  > timer_set_frequency(0, 60)
+    @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:23, timer_set_frequency
+      util_get_MSB(counter, &msb)
+    > util_get_MSB(0x4dae, addr: 0xeffff642)
+    < util_get_MSB(0x4dae, addr: 0xeffff642 [0x4d]) -> (ret: 0)
+    @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:24, timer_set_frequency
+      util_get_LSB(counter, &lsb)
+    > util_get_LSB(0x4dae, addr: 0xeffff643)
+    < util_get_LSB(0x4dae, addr: 0xeffff643 [0xae]) -> (ret: 0)
+    @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:26, timer_set_frequency
+      timer_get_conf(timer, &st)
+    > timer_get_conf(0, addr: 0xeffff641)
+      @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:79, timer_get_conf
+        sys_outb(TIMER_CTRL, command)
+      > sys_outb(0x43, 0xe2 = 0b11100010)
+      @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+        sys_inb(port, &val)
+      > sys_inb(0x40, addr: 0xeffff530)
+      < sys_inb(0x40, addr: 0xeffff530 [0xb6 = 0b10110110])
+    < timer_get_conf(0, addr: 0xeffff641 [0xb6 = 0b10110110]) -> (ret: 0)
+    @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:37, timer_set_frequency
+      sys_outb(TIMER_CTRL, st)
+    > sys_outb(0x43, 0x36 = 0b00110110)
+    @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:38, timer_set_frequency
+      sys_outb(0x40 + timer, lsb)
+    > sys_outb(0x40, 0xae = 0b10101110)
+    @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:39, timer_set_frequency
+      sys_outb(0x40 + timer, msb)
+    > sys_outb(0x40, 0x4d = 0b01001101)
+  < timer_set_frequency(0, 60) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/video/graphics.c:34, get_mode_info
+    vbe_get_mode_info(mode, mode_info)
+  > vbe_get_mode_info(0x115, addr: 0x8392a70)
+  < vbe_get_mode_info(0x115, addr: 0x8392a70 [0xe0000000, 800x600, 8:8:8 (24) <1.37329 MiB>]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/video/graphics.c:54, set_frame_buffer
+    sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)
+  > sys_privctl(SELF, SYS_PRIV_ADD_MEM, addr: 0xeffff6e0 [0xe0000000 - 0xe015f900 <1.37329 MiB>])
+  < sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/video/graphics.c:56, set_frame_buffer
+    vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size)
+  < vm_map_phys(SELF, addr: 0xe0000000, 1.37329 MiB) -> (ret: 0xef89b000)
+  @/home/lcom/labs/g2/proj/src/controller/video/graphics.c:19, set_graphic_mode
+    sys_int86(&reg86)
+  > sys_int86(addr: 0xeffff6c8 [AX: 4f02, BX: 4115, CX: 0000, DX: 0000, ES: 0000, DI: 0000])
+  < sys_int86(addr: 0xeffff6c8 [AX: 004f, BX: 4115, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x836a230, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x836a230, XPM_8_8_8_8, addr: 0xeffff6d8 [12x19 : 912 bytes]) -> (ret: 0x8399000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x836a28c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x836a28c, XPM_8_8_8_8, addr: 0xeffff6d8 [429x600 : 1029600 bytes]) -> (ret: 0x8522000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x836fbb4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x836fbb4, XPM_8_8_8_8, addr: 0xeffff6d8 [429x600 : 1029600 bytes]) -> (ret: 0x861e000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83750d0, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83750d0, XPM_8_8_8_8, addr: 0xeffff6d8 [50x50 : 10000 bytes]) -> (ret: 0x839b000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83751a4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83751a4, XPM_8_8_8_8, addr: 0xeffff6d8 [25x25 : 2500 bytes]) -> (ret: 0x839e000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375214, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375214, XPM_8_8_8_8, addr: 0xeffff6d8 [16x16 : 1024 bytes]) -> (ret: 0x8399400)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x837526c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x837526c, XPM_8_8_8_8, addr: 0xeffff6d8 [400x52 : 83200 bytes]) -> (ret: 0x8509000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375348, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375348, XPM_8_8_8_8, addr: 0xeffff6d8 [120x29 : 13920 bytes]) -> (ret: 0x839f000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83753c8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83753c8, XPM_8_8_8_8, addr: 0xeffff6d8 [74x29 : 8584 bytes]) -> (ret: 0x83a3000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375448, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375448, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a6000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83754a4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83754a4, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a6800)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375500, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375500, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a7000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x837555c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x837555c, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a7800)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83755b8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83755b8, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a8000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375614, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375614, XPM_8_8_8_8, addr: 0xeffff6d8 [15x19 : 1140 bytes]) -> (ret: 0x83a8800)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x837566c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x837566c, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x851e000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83756c8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83756c8, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x851e800)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375724, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375724, XPM_8_8_8_8, addr: 0xeffff6d8 [15x15 : 900 bytes]) -> (ret: 0x8399800)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x837576c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x837576c, XPM_8_8_8_8, addr: 0xeffff6d8 [15x15 : 900 bytes]) -> (ret: 0x8399c00)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83757b4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83757b4, XPM_8_8_8_8, addr: 0xeffff6d8 [173x33 : 22836 bytes]) -> (ret: 0x871a000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375844, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375844, XPM_8_8_8_8, addr: 0xeffff6d8 [380x52 : 79040 bytes]) -> (ret: 0x8720000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x8375920, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8375920, XPM_8_8_8_8, addr: 0xeffff6d8 [564x52 : 117312 bytes]) -> (ret: 0x8734000)
+  @/home/lcom/labs/g2/proj/src/model//sprite.c:11, create_sprite_xpm
+    xpm_load(sprite, XPM_8_8_8_8, &img)
+  > xpm_load(addr: 0x83759fc, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83759fc, XPM_8_8_8_8, addr: 0xeffff6d8 [230x61 : 56120 bytes]) -> (ret: 0x8751000)
+  @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:52, timer_subscribe_ints
+    sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id_timer)
+  > sys_irqsetpolicy(0, 1, addr: 0x8376c98 [0])
+  < sys_irqsetpolicy(0, 1, addr: 0x8376c98 [10]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/keyboard.c:17, keyboard_subscribe_interrupts
+    sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_kbd)
+  > sys_irqsetpolicy(1, 3, addr: 0x836a1cc [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x836a1cc [11]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:21, mouse_subscribe_interrupts
+    sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_mouse)
+  > sys_irqsetpolicy(12, 3, addr: 0x836a1d0 [2])
+  < sys_irqsetpolicy(12, 3, addr: 0x836a1d0 [12]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:34, sp_subscribe_interrupts
+    sys_irqsetpolicy(COM2_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_sp)
+  > sys_irqsetpolicy(3, 3, addr: 0x8376018 [6])
+  < sys_irqsetpolicy(3, 3, addr: 0x8376018 [13]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff69c)
+  < sys_inb(0x64, addr: 0xeffff69c [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:67, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x64, 0xd4 = 0b11010100)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff69c)
+  < sys_inb(0x64, addr: 0xeffff69c [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:67, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x60, 0xea = 0b11101010)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:100, mouse_write
+    micros_to_ticks(20000)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:100, mouse_write
+    tickdelay(micros_to_ticks(20000))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6a0)
+  < sys_inb(0x64, addr: 0xeffff6a0 [0x3d = 0b00111101])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x60, addr: 0xeffff6a0)
+  < sys_inb(0x60, addr: 0xeffff6a0 [0xfa = 0b11111010])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff69c)
+  < sys_inb(0x64, addr: 0xeffff69c [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:67, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x64, 0xd4 = 0b11010100)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff69c)
+  < sys_inb(0x64, addr: 0xeffff69c [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:67, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x60, 0xf4 = 0b11110100)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:100, mouse_write
+    micros_to_ticks(20000)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:100, mouse_write
+    tickdelay(micros_to_ticks(20000))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6a0)
+  < sys_inb(0x64, addr: 0xeffff6a0 [0x3d = 0b00111101])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x60, addr: 0xeffff6a0)
+  < sys_inb(0x60, addr: 0xeffff6a0 [0xfa = 0b11111010])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x0b = 0b00001011)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6c4)
+  < sys_inb(0x71, addr: 0xeffff6c4 [0x02 = 0b00000010])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:49, rtc_write
+    sys_outb(REGISTER_INPUT, wregister)
+  > sys_outb(0x70, 0x0b = 0b00001011)
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:50, rtc_write
+    sys_outb(REGISTER_OUTPUT, data)
+  > sys_outb(0x71, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x0a = 0b00001010)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6c0)
+  < sys_inb(0x71, addr: 0xeffff6c0 [0x26 = 0b00100110])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6c0)
+  < sys_inb(0x71, addr: 0xeffff6c0 [0x58 = 0b01011000])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x02 = 0b00000010)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6c0)
+  < sys_inb(0x71, addr: 0xeffff6c0 [0x05 = 0b00000101])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x04 = 0b00000100)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6c0)
+  < sys_inb(0x71, addr: 0xeffff6c0 [0x17 = 0b00010111])
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:15, sp_setup
+    sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, DIVISOR_LATCH_BIT)
+  > sys_outb(0x2fb, 0x80 = 0b10000000)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:16, sp_setup
+    sys_outb(COM2_BASE + 0, 0x0C)
+  > sys_outb(0x2f8, 0x0c = 0b00001100)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:17, sp_setup
+    sys_outb(COM2_BASE + 1, 0x00)
+  > sys_outb(0x2f9, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:19, sp_setup
+    sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, EIGHT_BIT_CHAR | BIT(3))
+  > sys_outb(0x2fb, 0x0b = 0b00001011)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:20, sp_setup
+    sys_outb(COM2_BASE + FIFO_CONTROL_OFFSET, FIFO_DISABLED)
+  > sys_outb(0x2fa, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:21, sp_setup
+    sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, IER_DATA_AVAILABLE | IER_THR_EMPTY)
+  > sys_outb(0x2f9, 0x03 = 0b00000011)
+  @/home/lcom/labs/g2/proj/src/view//view.c:515, set_background_color
+    printf("\n\n\nTIME %d \n\n\n", time_info.hours)
+    "
 
+
+TIME 23 "
+  @/home/lcom/labs/g2/proj/src/view//view.c:516, set_background_color
+    printf("\n\n\nBACKGROUND COLOR %d \n\n\n", bg_color)
+    "
+
+
+BACKGROUND COLOR 12528128 "
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000001000101]>)
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x0a = 0b00001010)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6e8)
+  < sys_inb(0x71, addr: 0xeffff6e8 [0x26 = 0b00100110])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6e8)
+  < sys_inb(0x71, addr: 0xeffff6e8 [0x58 = 0b01011000])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x02 = 0b00000010)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6e8)
+  < sys_inb(0x71, addr: 0xeffff6e8 [0x05 = 0b00000101])
+  @/home/lcom/labs/g2/proj/src/controller/rtc/rtc.c:37, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x04 = 0b00000100)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x71, addr: 0xeffff6e8)
+  < sys_inb(0x71, addr: 0xeffff6e8 [0x17 = 0b00010111])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x2fa, addr: 0xeffff6e0)
+  < sys_inb(0x2fa, addr: 0xeffff6e0 [0x02 = 0b00000010])
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:120, sp_ih
+    printf("\n\n\n IIR IS %d\n\n\n", iir)
+    "
+
+
+ IIR IS 2"
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:131, sp_ih
+    printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID)
+    "
+
+
+ SHIT IS 2"
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x2fa, addr: 0xeffff6e0)
+  < sys_inb(0x2fa, addr: 0xeffff6e0 [0x01 = 0b00000001])
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:120, sp_ih
+    printf("\n\n\n IIR IS %d\n\n\n", iir)
+    "
+
+
+ IIR IS 1"
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:121, sp_ih
+    printf("COUNT IS %d\n\n\n", count)
+    "COUNT IS 1"
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:37, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:96, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6c0)
+  < sys_inb(0x64, addr: 0xeffff6c0 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x60, addr: 0xeffff6c0)
+  < sys_inb(0x60, addr: 0xeffff6c0 [0x10 = 0b00010000])
+  @main.c:63, .txt
+    vg_exit()
+  < vg_exit() -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/timer/timer.c:61, timer_unsubscribe_ints
+    sys_irqrmpolicy(&hook_id_timer)
+  > sys_irqrmpolicy(addr: 0x8376c98 [10])
+  < sys_irqrmpolicy(addr: 0x8376c98 [10]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/keyboard.c:26, keyboard_unsubscribe_interrupts
+    sys_irqrmpolicy(&hook_id_kbd)
+  > sys_irqrmpolicy(addr: 0x836a1cc [11])
+  < sys_irqrmpolicy(addr: 0x836a1cc [11]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:30, mouse_unsubscribe_interrupts
+    sys_irqrmpolicy(&hook_id_mouse)
+  > sys_irqrmpolicy(addr: 0x836a1d0 [12])
+  < sys_irqrmpolicy(addr: 0x836a1d0 [12]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller/serialport/sp.c:43, sp_unsubscribe_interrupts
+    sys_irqrmpolicy(&hook_id_sp)
+  > sys_irqrmpolicy(addr: 0x8376018 [13])
+  < sys_irqrmpolicy(addr: 0x8376018 [13]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6c4)
+  < sys_inb(0x64, addr: 0xeffff6c4 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:67, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x64, 0xd4 = 0b11010100)
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6c4)
+  < sys_inb(0x64, addr: 0xeffff6c4 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:67, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x60, 0xf5 = 0b11110101)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:100, mouse_write
+    micros_to_ticks(20000)
+  @/home/lcom/labs/g2/proj/src/controller/mouse/mouse.c:100, mouse_write
+    tickdelay(micros_to_ticks(20000))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x64, addr: 0xeffff6c8)
+  < sys_inb(0x64, addr: 0xeffff6c8 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/controller//utils.c:22, util_sys_inb
+    sys_inb(port, &val)
+  > sys_inb(0x60, addr: 0xeffff6c8)
+  < sys_inb(0x60, addr: 0xeffff6c8 [0x90 = 0b10010000])
+  @/home/lcom/labs/g2/proj/src/controller/keyboard/KBC.c:28, read_KBC_output
+    printf("Error: Mouse output not found\n")
+    "Error: Mouse output not found"
+< proj_main_loop(1, ["1", NULL]) -> (ret: 1)

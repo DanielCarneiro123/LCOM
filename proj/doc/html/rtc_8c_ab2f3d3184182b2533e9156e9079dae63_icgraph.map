@@ -1,0 +1,9 @@
+<map id="rtc_is_updating" name="rtc_is_updating">
+<area shape="rect" id="node1" title="Checks whether the RTC is updating." alt="" coords="671,31,780,57"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="508,31,623,57"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a99c770b400026bc59e3c80a22615ad50" title="Sets up the RTC for use Sets the counting mode to binary and fills the time struct for the first time..." alt="" coords="364,5,439,32"/>
+<area shape="rect" id="node6" href="$model_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the RTC time info." alt="" coords="342,56,460,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="201,5,255,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,114,57"/>
+<area shape="rect" id="node7" href="$model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="162,56,294,83"/>
+</map>
