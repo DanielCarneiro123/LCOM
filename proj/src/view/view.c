@@ -60,11 +60,12 @@ Sprite *background[5];
 uint8_t bg_size;
 uint32_t bg_color;
  
-
-// Alocação de memória ao(s) buffer(s)
-// Se houver só um buffer, esse é o principal
-// Se houver double buffering, há um secundário a alocar a mesma quantidade de memória que serve
-// exclusivamente para o desenho
+/**
+ * @brief Prepares the frame buffers
+ * Allocates the main frame buffer in VRAM and the secondary buffer in the process' address space
+ * @param mode Mode to be used
+ * @return int 1 on failure, 0 otherwise
+ */
 int set_frame_buffers(uint16_t mode) {
     if (set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
@@ -73,22 +74,18 @@ int set_frame_buffers(uint16_t mode) {
     return 0;
 }
 
-// Double buffering
-// Cópia para o frame buffer principal do frame construído desde a última atualização
-// Otimizaçṍes: 
-// A) como o swap é uma operação muito frequente, é melhor não estar  a calcular frame_buffer_size sempre. 
-// Assim opta-se por uma variável global, que é constante ao longo da execução e calculada 1 vez na linha 30.
-// Poupa-se (frequência * (2 multiplicações + 1 soma + 1 divisão)) operações por cada segundo.
-// B) só vale a pena dar display do RTC quando passa um segundo
+/**
+ * @brief Double buffering function
+ * Copies the contents of the secondary buffer to the main buffer
+ */
 void copy_buffer() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
 }
 
-// A construção de um novo frame é baseado:
-// - no estado atual do modelo (menuState, mouse_info, mode_info, buttonX->pressed...);
-// - no Algoritmo do Pintor - https://pt.wikipedia.org/wiki/Algoritmo_do_pintor
-// A ideia é colocar no buffer primeiro o plano mais longe do observador (a cor do fundo) e só depois 
-// os objetos em cima, no caso do cursor e / ou dos botões
+/**
+ * @brief Draws a frame
+ * Draws the next frame on the frame buffer according to the game's state
+ */
 void draw_new_frame() {
     if (firstFrame) {
         firstFrame = false;
@@ -113,7 +110,10 @@ void draw_new_frame() {
     draw_mouse();
 }
 
-// O menu inicial é apenas um retângulo com tamanho máximo, com um smile ao centro
+/**
+ * @brief Draws the initial menu
+ * Draws the initial menu and sets background
+ */
 void draw_initial_menu() {
     set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
@@ -128,13 +128,13 @@ void draw_initial_menu() {
     background[0] = frase_menu;
 }
 
-// O menu do jogo é constituído por quatro botões
+/**
+ * @brief Draws the game menu
+ * Draws the game menu and sets background
+ */
 void draw_game_menu() {
     set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
-    //draw_sprite_button(button2, mode_info.XResolution/2, 0);
-    //draw_sprite_button(button3, 0, mode_info.YResolution/2);
-    //draw_sprite_button(button4, mode_info.XResolution/2, mode_info.YResolution/2);
     Sprite* drawing_board = player_no == 1 ? board : board2;
     draw_sprite_xpm(drawing_board, mode_info.XResolution/2 - board->width/2, 0);
     bg_size = 1;
@@ -146,7 +146,10 @@ void draw_game_menu() {
     }
 }
 
-// O menu final é apenas um retângulo com tamanho máximo, com um smile ao centro
+/**
+ * @brief Draws the final menu
+ * Draws the final menu and sets background
+ */
 void draw_finish_menu() {
     set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
@@ -180,21 +183,24 @@ void draw_code() {
     }
 }
 
+/**
+ * @brief Draws the lid
+ * Only applies to player 2, when in the game menu
+ */
 void draw_lid(){
     if (hide_code) {
         fill_rectangle(186, 0, 230, 59, GREEN, drawing_frame_buffer);
     }
 }
 
+/**
+ * @brief Cleans the lid
+ * Draws the background behind the now hidden lid
+ */
 void clean_lid(){
     fill_rectangle(186, 0, 230, 59, bg_color, drawing_frame_buffer);
     for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, 186 - background[i]->x, 0 - background[i]->y, 59, 230);
                 
-}
-
-void draw_toggle_button(){
-    if(menuState == GAME){
-    draw_sprite_xpm(toggle9, 2, 5);}
 }
 
 /*
