@@ -521,10 +521,6 @@ void finish_turn(Position* positions) {
     }
 }
 
-bool is_mouse_in_small_ball_box(uint8_t i) {
-    return mouse_info.x >= small_ball_box_positions[i].x && mouse_info.x <= small_ball_box_positions[i].x + ball->width && mouse_info.y >= small_ball_box_positions[i].y && mouse_info.y <= small_ball_box_positions[i].y + ball->height;
-}
-
 /**
  * @brief Checks if the mouse is inside a given ball position
  * @param i Index to check
@@ -631,7 +627,7 @@ void pick_small_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = 0; i < 2; i++) {
-        if (is_mouse_in_small_ball_box(i)) {
+        if (is_mouse_in_small_ball(i, small_ball_box_positions)) {
             update_mouse_color(i+1);
             return;       
         }
@@ -646,7 +642,7 @@ void pick_box_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     for (int i = 0; i < 8; i++) {
-        if (is_mouse_in_ball_box(i)) {
+        if (is_mouse_in_ball(i, ball_box_positions)) {
             update_mouse_color(colorArr[i]);
             return;       
         }
@@ -727,6 +723,10 @@ void remove_small_ball() {
     }
 }
 
+/**
+ * @brief Resets the game state
+ * Resets global variables so that the game may be replayed
+ */
 void resetTable(){
     curr_turn = -1;
     hide_code = 0;
@@ -749,6 +749,10 @@ void resetTable(){
     }    
 }
 
+/**
+ * @brief Pushes endgame data
+ * Pushes all relevant data to player 2 when the game ends
+ */
 void push_code() {
     push(SP_FINISH_GAME);
     for (int i = 0; i < 4; i++) {
