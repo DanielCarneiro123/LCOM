@@ -156,7 +156,7 @@ void draw_finish_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     if (player_one_won == 1){
         for (uint i = 0; i < 4; i++) {
-            draw_ball(ball, 250+i*56, 60, code_colors[i]);
+            draw_ball(ball, 300 + i*56, 470, code_colors[i]);
             background[bg_size] = ball;
             bg_size ++;
         }
@@ -168,6 +168,10 @@ void draw_finish_menu() {
         draw_sprite_xpm(code_not_guessed, mode_info.XResolution/2 - 282, mode_info.YResolution/2 - 80);
         background[bg_size] = code_not_guessed;
         bg_size ++;
+        for (uint i = 0; i < 4; i++) {
+            draw_ball(ball, 300 + i*56, 470, code_colors[i]);
+            background[bg_size] = ball;
+            bg_size ++;}
     }
     if (player_two_cheating == 1){
         draw_sprite_xpm(madeira, mode_info.XResolution/2 - 100, mode_info.YResolution/2);
@@ -324,7 +328,7 @@ void draw_mouse() {
  */
 void clean_mouse() {
     switch (menuState) {
-        case START: case END:
+        case START:
             fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
             for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             break;
@@ -347,6 +351,14 @@ void clean_mouse() {
                 fill_rectangle(186, 0, 230, 59, GREEN, drawing_frame_buffer);
             }
             break;
+        case END:
+                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+                for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
+                for (uint i = 0; i < 4; i++) {
+                draw_ball(ball, 300 + i*56, 470, code_colors[i]);
+                }
+            break;
+
     }
 }
 

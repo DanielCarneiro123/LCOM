@@ -257,13 +257,13 @@ void update_sp_state() {
     sp_ih();
     if (new_data) {
         
-         if ((sp_data & BIT(7)) && !(sp_data & BIT(6))) {
+         if ((sp_data & BIT(7)) && (sp_data & BIT(6))) {
             code_colors[3] = color_table[sp_data & 0xF];
         }
         else if (!(sp_data & BIT(7)) && (sp_data & BIT(6))) {
             code_colors[1] = color_table[sp_data & 0xF];
         }
-        else if ((sp_data & BIT(7)) && (sp_data & BIT(6))) {
+        else if ((sp_data & BIT(7)) && !(sp_data & BIT(6))) {
             code_colors[2] = color_table[sp_data & 0xF];
         }
         else {
