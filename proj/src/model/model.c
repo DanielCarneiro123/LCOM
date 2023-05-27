@@ -200,7 +200,7 @@ void setup_sprites() {
     code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
-    frase_menu = create_sprite_xpm((xpm_map_t) frase_menu);
+    frase_menu = create_sprite_xpm((xpm_map_t) frase_menu_xpm);
 
 }
 
