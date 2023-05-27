@@ -43,7 +43,7 @@ Sprite *toggle9;
 Sprite *code_guessed;
 Sprite *code_not_guessed;
 Sprite *madeira;
-
+Sprite *frase_menu;
 
 Position* ball_positions;
 PositionSmall* small_ball_positions;
@@ -200,6 +200,8 @@ void setup_sprites() {
     code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
+    frase_menu = create_sprite_xpm((xpm_map_t) frase_menu);
+
 }
 
 /**
@@ -230,6 +232,7 @@ void destroy_sprites() {
     destroy_sprite(code_guessed);
     destroy_sprite(code_not_guessed);
     destroy_sprite(madeira);
+    destroy_sprite(frase_menu);
 }
 
 /**

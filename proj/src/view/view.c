@@ -52,6 +52,8 @@ extern Sprite *toggle9;
 extern Sprite *code_guessed;
 extern Sprite *code_not_guessed;
 extern Sprite *madeira;
+extern Sprite *frase_menu;
+
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -123,6 +125,7 @@ void draw_initial_menu() {
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
     draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
     draw_sprite_xpm(exit_menu, mode_info.XResolution/2 - 37, mode_info.YResolution/2 + 40);
+    draw_sprite_xpm(frase_menu, 0, mode_info.YResolution - 52);
     bg_size = 3;
     background[0] = masterminix;
     background[1] = start;
