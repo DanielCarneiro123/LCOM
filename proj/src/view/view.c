@@ -141,7 +141,7 @@ void draw_game_menu() {
     bg_size = 1;
     background[0] = drawing_board;
     if (player_no == 2) {
-        draw_sprite_xpm(toggle9, 0, 0);
+        draw_sprite_xpm(toggle9, 2, 5);
         bg_size = 2;
         background[1] = toggle9;
     }
@@ -195,7 +195,7 @@ void clean_lid(){
 
 void draw_toggle_button(){
     if(menuState == GAME){
-    draw_sprite_xpm(toggle9, 0, 0);}
+    draw_sprite_xpm(toggle9, 2, 5);}
 }
 
 /*

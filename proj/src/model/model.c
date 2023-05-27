@@ -540,7 +540,7 @@ bool is_mouse_in_ball(uint8_t i, Position* positions) {
  * @return false The mouse is not inside the position
  */
 bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions) {
-    return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + ball->height;
+    return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + small_ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + small_ball->height;
 }
 
 bool is_mouse_in_ball_box(uint8_t i) {
@@ -566,7 +566,7 @@ bool is_mouse_in_exit() {
 }
 
 bool is_mouse_in_hide_code_button(){
-    return mouse_info.x >= 0 && mouse_info.x <= 130 && mouse_info.y >= 0 && mouse_info.y <= 50;
+    return mouse_info.x >= 2 && mouse_info.x <= 132 && mouse_info.y >= 5 && mouse_info.y <= 55;
 }
 
 /**
