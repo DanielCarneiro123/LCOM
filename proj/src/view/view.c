@@ -2,7 +2,6 @@
 
 // Variáveis externas importantes à visualização do modelo e dos seus estados
 uint8_t *main_frame_buffer;
-uint8_t *secondary_frame_buffer;
 uint8_t *drawing_frame_buffer;
 uint32_t frame_buffer_size;
 extern int timer_interrupts;
@@ -79,7 +78,7 @@ int set_frame_buffers(uint16_t mode) {
  * Copies the contents of the secondary buffer to the main buffer
  */
 void copy_buffer() {
-    memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
+    memcpy(main_frame_buffer, drawing_frame_buffer, frame_buffer_size);
 }
 
 /**
