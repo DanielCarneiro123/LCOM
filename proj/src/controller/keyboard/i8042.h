@@ -27,6 +27,7 @@
 #define E_KEY           18
 #define Q_KEY           16
 #define W_KEY           17
+#define T_KEY           20
 #define R_KEY           0x13
 #define ONE_KEY         02
 #define TWO_KEY         03
@@ -36,7 +37,6 @@
 #define SIX_KEY         07
 #define SEVEN_KEY       0x08
 #define EIGHT_KEY       0x09
-#define NINE_KEY        10
 #define ZERO_KEY        0x0b
 #define P_KEY           0x19
 #define O_KEY           0x18

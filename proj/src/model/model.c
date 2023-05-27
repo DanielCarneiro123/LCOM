@@ -424,7 +424,7 @@ void update_keyboard_state() {
         case O_KEY:
             remove_move(); 
             break;
-        case NINE_KEY:
+        case T_KEY:
             if (player_no == 2){
                 if(hide_code){
                     hide_code = 0;
