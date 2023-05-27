@@ -1,7 +1,11 @@
 #include "sprite.h"
 
-// Construção de um Sprite com um XPM com cores em modo direto
-// O Sprite terá de conter um array de cores
+/**
+ * @brief Create a sprite xpm object
+ * Allocates memory for a sprite
+ * @param sprite xpm of sprite to create
+ * @return Sprite* Pointer to new sprite
+ */
 Sprite *create_sprite_xpm(xpm_map_t sprite){
 
   Sprite *sp = (Sprite *) malloc (sizeof(Sprite));
@@ -19,7 +23,10 @@ Sprite *create_sprite_xpm(xpm_map_t sprite){
   return sp;
 }
 
-// É boa prática antes de acabar o programa libertar a memória alocada
+/**
+ * @brief Deallocates sprite memory
+ * @param sprite Sprite to delete
+ */
 void destroy_sprite(Sprite *sprite) {
     if (sprite == NULL) return;
     if (sprite->colors != NULL) free(sprite->colors);
