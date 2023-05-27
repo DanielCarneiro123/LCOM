@@ -34,8 +34,5 @@
 #define RECIEVER_DATA_AVAILABLE            BIT(0)
 #define THR_EMPTY                          BIT(5)
 
-#define SP_NACK                         0xFE
-#define SP_ACK                          0xFD
-
 #define SP_ATTEMPTS                     10
 #define SP_WAIT                         20000
