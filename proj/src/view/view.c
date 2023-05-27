@@ -156,8 +156,9 @@ void draw_finish_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     if (player_one_won == 1){
         for (uint i = 0; i < 4; i++) {
-            printf("\n\n olaaaaaa \n\n");
             draw_ball(ball, 250+i*56, 60, code_colors[i]);
+            background[bg_size] = ball;
+            bg_size ++;
         }
         draw_sprite_xpm(code_guessed, mode_info.XResolution/2 - 190, mode_info.YResolution/2 - 27);
         background[bg_size] = code_guessed;
