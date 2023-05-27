@@ -254,7 +254,7 @@ void update_timer_state() {
 void update_sp_state() {
     sp_ih();
     if (new_data) {
-        if (sp_data == 0xFF) {
+        if (sp_data == SP_END_TURN) {
             activeTurn = true;
             curr_turn++;
             if (player_no == 2) {
@@ -265,16 +265,16 @@ void update_sp_state() {
                 }
             }
         }
-        else if (sp_data == 0xFE) {
+        else if (sp_data == SP_NACK) {
             retry();
         }
-        else if (sp_data == 0xFD) {
+        else if (sp_data == SP_ACK) {
             is_writing = false;
         }
-        else if (sp_data == 0xFC) {
+        else if (sp_data == SP_FINISH_GAME) {
             update_menu_state(END);
         }
-        else if (sp_data == (143 | BIT(4))) {}
+        else if (sp_data == SP_TEST_PLAYER) {}
         
         else if (player_no == 1) {
             uint8_t index = (curr_turn) * 4 + (sp_data >> 6);
@@ -357,14 +357,14 @@ void update_rtc_state() {
  */
 void test_player_no() {
     if (player_no == 1 || player_no == 2) return;
-    if (sp_data == (143 | BIT(4))) {
+    if (sp_data == SP_TEST_PLAYER) {
         player_no = 2;
         activeTurn = true;
     }
     else {
         player_no = 1;
         activeTurn = false;
-        push(143 | BIT(4));
+        push(SP_TEST_PLAYER);
     }
     printf("\n\n\nI AM %d\n\n\n", player_no);
 }
@@ -514,7 +514,7 @@ void finish_turn(Position* positions) {
     }
     if (menuState == GAME && activeTurn) {
         activeTurn = false;
-        push(0xFF);
+        push(SP_END_TURN);
         if (player_no == 2 && curr_turn != -1) {
             check_player_two_cheating();
         }
@@ -750,7 +750,7 @@ void resetTable(){
 }
 
 void push_code() {
-    push(252);
+    push(SP_FINISH_GAME);
     for (int i = 0; i < 4; i++) {
         uint8_t byte = prepare_move_byte(i, code_positions[i].color, 0);
         push(byte);

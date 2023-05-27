@@ -4,6 +4,7 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "UART.h"
+#include "logic/queue/comm_bytes.h"
 #include "logic/queue/queue.h"
 
 int (sp_setup)();

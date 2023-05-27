@@ -9,6 +9,7 @@
 #include "driver/rtc/rtc.h"
 #include "driver/serialport/sp.h"
 #include "logic/queue/queue.h"
+#include "logic/queue/comm_bytes.h"
 #include "logic/board_logic.h"
 #include "xpm/hand.xpm"
 #include "xpm/mouse.xpm"
