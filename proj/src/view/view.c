@@ -15,12 +15,13 @@ extern Position* code_positions;
 extern PositionSmall* small_ball_positions;
 extern Position* ball_box_positions;
 extern PositionSmall* small_ball_box_positions;
-extern uint32_t color_table[8];
+extern uint32_t color_table[11];
 extern uint8_t player_no;
 extern uint8_t player_one_won;
 extern uint8_t player_two_cheating;
 extern int8_t curr_turn;
 extern uint8_t hide_code;
+extern uint32_t code_colors[4];
 
 
 // Objetos
@@ -150,22 +151,27 @@ void draw_game_menu() {
  * Draws the final menu and sets background
  */
 void draw_finish_menu() {
+    bg_size = 0;
     set_background_color();
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     if (player_one_won == 1){
+        for (uint i = 0; i < 4; i++) {
+            printf("\n\n olaaaaaa \n\n");
+            draw_ball(ball, 250+i*56, 60, code_colors[i]);
+        }
         draw_sprite_xpm(code_guessed, mode_info.XResolution/2 - 190, mode_info.YResolution/2 - 27);
-        bg_size = 1;
-        background[0] = code_guessed;
+        background[bg_size] = code_guessed;
+        bg_size ++;
     }
-    else if (curr_turn == 8){
-        draw_sprite_xpm(code_not_guessed, mode_info.XResolution/2 - 282, mode_info.YResolution/2 - 27);
-        bg_size = 1;
-        background[0] = code_not_guessed;
+    if (player_one_won == 0){
+        draw_sprite_xpm(code_not_guessed, mode_info.XResolution/2 - 282, mode_info.YResolution/2 - 80);
+        background[bg_size] = code_not_guessed;
+        bg_size ++;
     }
-    else{
-        draw_sprite_xpm(madeira, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);
-        bg_size = 1;
-        background[0] = madeira;
+    if (player_two_cheating == 1){
+        draw_sprite_xpm(madeira, mode_info.XResolution/2 - 100, mode_info.YResolution/2);
+        background[bg_size] = madeira;
+        bg_size ++;
     }
     
 

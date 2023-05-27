@@ -13,6 +13,7 @@ extern uint8_t sp_data;
 extern bool new_data;
 extern bool is_writing;
 extern uint8_t player_one_won;
+extern uint8_t player_two_cheating;
 
 
 // Objetos a construir e manipular com a mudança de estados
@@ -56,6 +57,7 @@ uint8_t balls;
 bool activeTurn;
 int colorArr[8] = {LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
 uint32_t color_table[11] = {0, 1, 2, LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
+uint32_t code_colors[4];
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 uint8_t hide_code = 0;
@@ -254,6 +256,7 @@ void update_timer_state() {
 void update_sp_state() {
     sp_ih();
     if (new_data) {
+        
         if (sp_data == SP_END_TURN) {
             activeTurn = true;
             curr_turn++;
@@ -271,10 +274,32 @@ void update_sp_state() {
         else if (sp_data == SP_ACK) {
             is_writing = false;
         }
-        else if (sp_data == SP_FINISH_GAME) {
-            update_menu_state(END);
+        else if (menuState == END && player_no == 1) {
+            printf("\n\n coresDef %d\n\n",sp_data);
+            if (sp_data & 0x00) {
+                printf("\n\n entrou no 1 %d\n\n",sp_data);
+                code_colors[0] = color_table[sp_data & 0xF];
+            }
+             else if (sp_data & (BIT(7) | BIT(6))) {
+                printf("\n\n entrou no 4 %d\n\n",sp_data);
+                code_colors[3] = color_table[sp_data & 0xF];
+            }
+            else if (sp_data & BIT(6)) {
+                printf("\n\n entrou no 2 %d\n\n",sp_data);
+                code_colors[1] = color_table[sp_data & 0xF];
+            }
+            else if (sp_data & BIT(7)) {
+                printf("\n\n entrou no 3 %d\n\n",sp_data);
+                code_colors[2] = color_table[sp_data & 0xF];
+            }
         }
         else if (sp_data == SP_TEST_PLAYER) {}
+        else if (sp_data & BIT(4)) {
+            printf("\n\n palavraQualquer%d\n\n", sp_data);
+            if (sp_data & BIT(0)) player_one_won = 1;
+            if (sp_data & BIT(1)) player_two_cheating = 1;
+            update_menu_state(END);
+        }
         
         else if (player_no == 1) {
             uint8_t index = (curr_turn) * 4 + (sp_data >> 6);
@@ -754,7 +779,10 @@ void resetTable(){
  * Pushes all relevant data to player 2 when the game ends
  */
 void push_code() {
-    push(SP_FINISH_GAME);
+    uint8_t end_byte = BIT(4);
+    if (player_one_won == 1) end_byte |= BIT(0);
+    if (player_two_cheating == 1) end_byte |= BIT(1);
+    push(end_byte);
     for (int i = 0; i < 4; i++) {
         uint8_t byte = prepare_move_byte(i, code_positions[i].color, 0);
         push(byte);
