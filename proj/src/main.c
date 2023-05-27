@@ -23,16 +23,11 @@ int (main)(int argc, char *argv[]) {
 
 int setup() {
 
-  // Atualização da frequência
+
   if (timer_set_frequency(TIMER, GAME_FREQUENCY) != 0) return 1;
-
-  // Inicialização dos buffers de vídeo (double buffering)
   if (set_frame_buffers(VIDEO_MODE) != 0) return 1;
-
-  // Inicialização do modo gráfico
   if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
 
-  // Inicialização dos sprites
   setup_sprites();
   setup_positions();
   setup_small_positions();
@@ -41,17 +36,14 @@ int setup() {
 
   uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
 
-  // Ativação das interrupções dos dispositivos
   if (timer_subscribe_ints(&timer_byte) != 0) return 1;
   if (keyboard_subscribe_interrupts(&keyboard_byte) != 0) return 1;
   if (mouse_subscribe_interrupts(&mouse_byte) != 0) return 1;
   if (sp_subscribe_interrupts(&sp_byte) != 0) return 1;
 
-  // Ativar stream-mode e report de dados do rato
   if (mouse_write(ENABLE_STREAM) != 0) return 1;
   if (mouse_write(ENABLE_REMOTE) != 0) return 1;
 
-  // Setup do Real Time Clock
   rtc_setup();
   if (sp_setup()) return 1;
 
@@ -60,22 +52,18 @@ int setup() {
 
 int teardown() {
 
-  // Volta ao modo de texto
   if (vg_exit() != 0) return 1;
 
-  // Destruição dos sprites
   destroy_sprites();
   destroy_positions();
   destroy_small_positions();
   destroy_code_positions();
 
-  // Desativa todas as interrupções
   if (timer_unsubscribe_ints() != 0) return 1;
   if (keyboard_unsubscribe_interrupts() != 0) return 1;
   if (mouse_unsubscribe_interrupts() != 0) return 1;
   if (sp_unsubscribe_interrupts() != 0) return 1;
 
-  // Desativar o report de dados do rato
   if (mouse_write(DISABLE_STREAM) != 0) return 1;
 
   return 0;
@@ -83,13 +71,10 @@ int teardown() {
 
 int (proj_main_loop)(int argc, char *argv[]) {
 
-  // Setup do Minix
   if (setup() != 0) return teardown();
 
-  // Desenha a primeira frame
   draw_new_frame();
 
-  // Tratamento das interrupções
   int ipc_status;
   message msg;
   while (systemState == RUNNING) {
@@ -110,7 +95,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
   }
   
-  // Tear-down do Minix
   if (teardown() != 0) return 1;
 
   return 0;
