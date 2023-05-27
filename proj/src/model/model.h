@@ -35,35 +35,10 @@
 #include "xpm/code_guessed.xpm"
 #include "xpm/code_not_guessed.xpm"
 #include "xpm/madeira.xpm"
-
-
-typedef struct {
-    uint16_t x;
-    uint16_t y;
-    uint32_t color;
-} Position;
-
 #include "view/view.h"
 #include "model/sprite.h"
 #include "config.h"
-
-typedef enum {
-    RUNNING,
-    EXIT,
-} SystemState;
-
-typedef enum {
-    START,
-    GAME,
-    END
-} MenuState;
-
-typedef struct {
-    uint16_t x;
-    uint16_t y;
-    uint8_t color;
-} PositionSmall;
-
+#include "data_structures.h"
 
 
 

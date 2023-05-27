@@ -8,7 +8,7 @@
 #include "controller/mouse/mouse.h"
 #include "controller/rtc/rtc.h"
 #include "model/sprite.h"
-#include "model/model.h"
+#include "model/data_structures.h"
 
 void draw_new_frame();
 void draw_initial_menu();

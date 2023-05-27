@@ -6,6 +6,7 @@
 #include "controller/rtc/rtc.h"
 #include "controller/serialport/sp.h"
 #include "model/model.h"
+#include "model/data_structures.h"
 #include "view/view.h"
 #include "config.h"
 

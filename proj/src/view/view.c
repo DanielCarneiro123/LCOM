@@ -102,7 +102,6 @@ void draw_new_frame() {
                 draw_game_menu();
                 break;
             case END:
-                resetTable();
                 draw_finish_menu();
                 break;
         }

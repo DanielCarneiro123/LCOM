@@ -1,4 +1,5 @@
 #include "board_logic.h"
+#include "model/data_structures.h"
 
 extern uint8_t curr_turn;
 extern Position* ball_positions;
