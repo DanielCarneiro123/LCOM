@@ -3,7 +3,7 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
-#include "sp.h"
+#include "controller/serialport/sp.h"
 
 int push(uint8_t byte);
 uint8_t pop();

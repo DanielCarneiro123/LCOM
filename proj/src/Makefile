@@ -9,7 +9,8 @@ PROG=proj
 .PATH: ${.CURDIR}/controller/video
 .PATH: ${.CURDIR}/controller/rtc
 .PATH: ${.CURDIR}/controller/serialport
-.PATH: ${.CURDIR}/controller/logic
+.PATH: ${.CURDIR}/logic
+.PATH: ${.CURDIR}/logic/queue
 .PATH: ${.CURDIR}/model/
 .PATH: ${.CURDIR}/view/
 
