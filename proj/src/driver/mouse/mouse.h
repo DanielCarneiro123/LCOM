@@ -7,7 +7,7 @@
 #include <lcom/lcf.h>
 #include "i8042.h"
 #include "KBC.h"
-#include "controller/video/graphics.h"
+#include "driver/video/graphics.h"
 
 typedef struct {
     uint8_t right_click;

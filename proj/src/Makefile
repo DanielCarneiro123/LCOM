@@ -2,13 +2,13 @@
 PROG=proj
 
 # Indicar as pastas de todos os ficheiros a compilar.
-.PATH: ${.CURDIR}/controller/
-.PATH: ${.CURDIR}/controller/keyboard
-.PATH: ${.CURDIR}/controller/mouse
-.PATH: ${.CURDIR}/controller/timer
-.PATH: ${.CURDIR}/controller/video
-.PATH: ${.CURDIR}/controller/rtc
-.PATH: ${.CURDIR}/controller/serialport
+.PATH: ${.CURDIR}/driver/
+.PATH: ${.CURDIR}/driver/keyboard
+.PATH: ${.CURDIR}/driver/mouse
+.PATH: ${.CURDIR}/driver/timer
+.PATH: ${.CURDIR}/driver/video
+.PATH: ${.CURDIR}/driver/rtc
+.PATH: ${.CURDIR}/driver/serialport
 .PATH: ${.CURDIR}/logic
 .PATH: ${.CURDIR}/logic/queue
 .PATH: ${.CURDIR}/model/

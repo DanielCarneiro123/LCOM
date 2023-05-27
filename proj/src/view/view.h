@@ -4,9 +4,9 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "config.h"
-#include "controller/video/graphics.h"
-#include "controller/mouse/mouse.h"
-#include "controller/rtc/rtc.h"
+#include "driver/video/graphics.h"
+#include "driver/mouse/mouse.h"
+#include "driver/rtc/rtc.h"
 #include "model/sprite.h"
 #include "model/data_structures.h"
 

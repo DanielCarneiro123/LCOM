@@ -3,11 +3,11 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
-#include "controller/keyboard/KBC.h"
-#include "controller/mouse/mouse.h"
-#include "controller/video/graphics.h"
-#include "controller/rtc/rtc.h"
-#include "controller/serialport/sp.h"
+#include "driver/keyboard/KBC.h"
+#include "driver/mouse/mouse.h"
+#include "driver/video/graphics.h"
+#include "driver/rtc/rtc.h"
+#include "driver/serialport/sp.h"
 #include "logic/queue/queue.h"
 #include "logic/board_logic.h"
 #include "xpm/hand.xpm"
