@@ -1,6 +1,8 @@
 #ifndef _LCOM_SP_H_
 #define _LCOM_SP_H_
 
+#define SP_MASK         BIT(6)
+
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "UART.h"
