@@ -43,7 +43,7 @@ Sprite *toggle9;
 Sprite *code_guessed;
 Sprite *code_not_guessed;
 Sprite *madeira;
-
+Sprite *frase_menu;
 
 Position* ball_positions;
 PositionSmall* small_ball_positions;
@@ -201,6 +201,8 @@ void setup_sprites() {
     code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
+    frase_menu = create_sprite_xpm((xpm_map_t) frase_menu_xpm);
+
 }
 
 /**
@@ -231,6 +233,7 @@ void destroy_sprites() {
     destroy_sprite(code_guessed);
     destroy_sprite(code_not_guessed);
     destroy_sprite(madeira);
+    destroy_sprite(frase_menu);
 }
 
 /**
@@ -425,7 +428,7 @@ void update_keyboard_state() {
         case O_KEY:
             remove_move(); 
             break;
-        case NINE_KEY:
+        case T_KEY:
             if (player_no == 2){
                 if(hide_code){
                     hide_code = 0;
@@ -541,7 +544,7 @@ bool is_mouse_in_ball(uint8_t i, Position* positions) {
  * @return false The mouse is not inside the position
  */
 bool is_mouse_in_small_ball(uint8_t i, PositionSmall* small_ball_positions) {
-    return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + ball->height;
+    return mouse_info.x >= small_ball_positions[i].x && mouse_info.x <= small_ball_positions[i].x + small_ball->width && mouse_info.y >= small_ball_positions[i].y && mouse_info.y <= small_ball_positions[i].y + small_ball->height;
 }
 
 bool is_mouse_in_ball_box(uint8_t i) {
@@ -567,7 +570,7 @@ bool is_mouse_in_exit() {
 }
 
 bool is_mouse_in_hide_code_button(){
-    return mouse_info.x >= 0 && mouse_info.x <= 130 && mouse_info.y >= 0 && mouse_info.y <= 50;
+    return mouse_info.x >= 2 && mouse_info.x <= 132 && mouse_info.y >= 5 && mouse_info.y <= 55;
 }
 
 /**

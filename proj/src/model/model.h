@@ -34,6 +34,7 @@
 #include "xpm/toggle9.xpm"
 #include "xpm/code_guessed.xpm"
 #include "xpm/code_not_guessed.xpm"
+#include "xpm/frase_menu.xpm"
 #include "xpm/madeira.xpm"
 #include "view/view.h"
 #include "model/sprite.h"

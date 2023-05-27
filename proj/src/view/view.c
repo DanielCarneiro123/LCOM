@@ -52,6 +52,8 @@ extern Sprite *toggle9;
 extern Sprite *code_guessed;
 extern Sprite *code_not_guessed;
 extern Sprite *madeira;
+extern Sprite *frase_menu;
+
 
 bool firstFrame = true;
 Sprite *background[5];
@@ -122,10 +124,12 @@ void draw_initial_menu() {
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
     draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
     draw_sprite_xpm(exit_menu, mode_info.XResolution/2 - 37, mode_info.YResolution/2 + 40);
-    bg_size = 3;
-    background[0] = masterminix;
-    background[1] = start;
-    background[2] = exit_menu;
+    draw_sprite_xpm(frase_menu, mode_info.XResolution/2 - 325, mode_info.YResolution - 54);
+    bg_size = 4;
+    background[1] = masterminix;
+    background[2] = start;
+    background[3] = exit_menu;
+    background[0] = frase_menu;
 }
 
 // O menu do jogo é constituído por quatro botões
@@ -140,7 +144,7 @@ void draw_game_menu() {
     bg_size = 1;
     background[0] = drawing_board;
     if (player_no == 2) {
-        draw_sprite_xpm(toggle9, 0, 0);
+        draw_sprite_xpm(toggle9, 2, 5);
         bg_size = 2;
         background[1] = toggle9;
     }
@@ -194,7 +198,7 @@ void clean_lid(){
 
 void draw_toggle_button(){
     if(menuState == GAME){
-    draw_sprite_xpm(toggle9, 0, 0);}
+    draw_sprite_xpm(toggle9, 2, 5);}
 }
 
 /*
