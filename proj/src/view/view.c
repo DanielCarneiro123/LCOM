@@ -68,12 +68,8 @@ uint32_t bg_color;
 int set_frame_buffers(uint16_t mode) {
     if (set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
-    if (DOUBLE_BUFFER) {
-        secondary_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
-        drawing_frame_buffer = secondary_frame_buffer;
-    } else {
-        drawing_frame_buffer = main_frame_buffer;
-    }
+    drawing_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
+    if (drawing_frame_buffer == NULL) return 1;
     return 0;
 }
 
@@ -84,7 +80,7 @@ int set_frame_buffers(uint16_t mode) {
 // Assim opta-se por uma variável global, que é constante ao longo da execução e calculada 1 vez na linha 30.
 // Poupa-se (frequência * (2 multiplicações + 1 soma + 1 divisão)) operações por cada segundo.
 // B) só vale a pena dar display do RTC quando passa um segundo
-void swap_buffers() {
+void copy_buffer() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
 }
 

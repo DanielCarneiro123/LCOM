@@ -241,7 +241,7 @@ void destroy_sprites() {
  * Beyond incrementing the internal counter, this function also sets the pace of queue updates, RTC updates, and buffer copying
  */
 void update_timer_state() {
-    if (DOUBLE_BUFFER) swap_buffers();
+    copy_buffer();
     update_queue();
     update_rtc_state();
     timer_interrupts++;

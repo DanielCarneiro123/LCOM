@@ -24,7 +24,7 @@ void clean_lid();
 void toggle_code_view();
 void draw_small_balls();
 void draw_toggle_button();
-void swap_buffers();
+void copy_buffer();
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, int height, int width);
 int set_frame_buffers(uint16_t mode);
