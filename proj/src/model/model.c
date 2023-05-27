@@ -257,6 +257,19 @@ void update_sp_state() {
     sp_ih();
     if (new_data) {
         
+         if ((sp_data & BIT(7)) && !(sp_data & BIT(6))) {
+            code_colors[3] = color_table[sp_data & 0xF];
+        }
+        else if (!(sp_data & BIT(7)) && (sp_data & BIT(6))) {
+            code_colors[1] = color_table[sp_data & 0xF];
+        }
+        else if ((sp_data & BIT(7)) && (sp_data & BIT(6))) {
+            code_colors[2] = color_table[sp_data & 0xF];
+        }
+        else {
+            code_colors[0] = color_table[sp_data & 0xF];
+        }
+
         if (sp_data == SP_END_TURN) {
             activeTurn = true;
             curr_turn++;
@@ -275,23 +288,7 @@ void update_sp_state() {
             is_writing = false;
         }
         else if (menuState == END && player_no == 1) {
-            printf("\n\n coresDef %d\n\n",sp_data);
-            if (sp_data & 0x00) {
-                printf("\n\n entrou no 1 %d\n\n",sp_data);
-                code_colors[0] = color_table[sp_data & 0xF];
-            }
-             else if (sp_data & (BIT(7) | BIT(6))) {
-                printf("\n\n entrou no 4 %d\n\n",sp_data);
-                code_colors[3] = color_table[sp_data & 0xF];
-            }
-            else if (sp_data & BIT(6)) {
-                printf("\n\n entrou no 2 %d\n\n",sp_data);
-                code_colors[1] = color_table[sp_data & 0xF];
-            }
-            else if (sp_data & BIT(7)) {
-                printf("\n\n entrou no 3 %d\n\n",sp_data);
-                code_colors[2] = color_table[sp_data & 0xF];
-            }
+
         }
         else if (sp_data == SP_TEST_PLAYER) {}
         else if (sp_data & BIT(4)) {
