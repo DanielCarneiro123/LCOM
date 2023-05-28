@@ -801,7 +801,7 @@ void resetTable(){
 
 /**
  * @brief Pushes endgame data
- * Pushes all relevant data to player 2 when the game ends
+ * Pushes all relevant data to player 1 when the game ends
  */
 void push_code() {
     uint8_t end_byte = BIT(4);
