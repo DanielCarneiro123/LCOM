@@ -8,7 +8,7 @@
 #include "model/model.h"
 #include "model/data_structures.h"
 #include "view/view.h"
-#include "config.h"
+#include "model/game_constants.h"
 
 extern uint8_t running;
 
@@ -25,8 +25,8 @@ int setup() {
 
 
   if (timer_set_frequency(TIMER, GAME_FREQUENCY) != 0) return 1;
-  if (set_frame_buffers(VIDEO_MODE) != 0) return 1;
-  if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
+  if (set_frame_buffers(0x115) != 0) return 1;
+  if (set_graphic_mode(0x115) != 0) return 1;
 
   if (setup_sprites()) return 1;
   if (setup_positions()) return 1;
