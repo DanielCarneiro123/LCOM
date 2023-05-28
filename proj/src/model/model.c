@@ -1,6 +1,5 @@
 #include "model.h"
 
-// Variáveis externas importantes à construção e manipulação do modelo
 extern uint8_t scancode;
 extern uint8_t byte_index;
 uint8_t running = 1;
@@ -15,8 +14,6 @@ extern bool is_writing;
 extern uint8_t player_one_won;
 extern uint8_t player_two_cheating;
 
-
-// Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
 Sprite *hand;
 Sprite *button1;

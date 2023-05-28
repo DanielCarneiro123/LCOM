@@ -1,6 +1,5 @@
 #include "view.h"
 
-// Variáveis externas importantes à visualização do modelo e dos seus estados
 uint8_t *main_frame_buffer;
 uint8_t *drawing_frame_buffer;
 uint32_t frame_buffer_size;
@@ -23,8 +22,6 @@ extern int8_t curr_turn;
 extern uint8_t hide_code;
 extern uint32_t code_colors[4];
 
-
-// Objetos
 extern Sprite *mouse;
 extern Sprite *hand;
 extern Sprite *masterminix;
