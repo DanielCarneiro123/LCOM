@@ -333,6 +333,9 @@ void update_sp_state() {
 
         }
         else if (sp_data == SP_TEST_PLAYER) {}
+        else if (sp_data == SP_RESET_GAME) {
+            resetTable();
+        }
         else if (sp_data & BIT(4)) {
             if (sp_data & BIT(0)) player_one_won = 1;
             if (sp_data & BIT(1)) player_two_cheating = 1;
@@ -775,6 +778,7 @@ void resetTable(){
             code_positions[i].color = TRANSPARENT;
         }
     }    
+    if (sp_data != SP_RESET_GAME) push(SP_RESET_GAME);
 }
 
 /**
