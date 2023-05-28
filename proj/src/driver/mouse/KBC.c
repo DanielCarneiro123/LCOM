@@ -31,11 +31,9 @@ int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse) {
             if (status & PARITY_ERROR) return 1;
             if (status & TIMEOUT_ERROR) return 1;
             if (mouse && !(status & BIT(5))) {
-                printf("Error: Mouse output not found\n");
                 return 1;
             } 
             if (!mouse && (status & BIT(5))) {
-                printf("Error: Keyboard output not found\n");
                 return 1;
             }   
             return 0;

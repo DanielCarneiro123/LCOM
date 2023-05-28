@@ -17,7 +17,6 @@ int (set_graphic_mode)(uint16_t submode) {
     reg86.ax = VBE_MODE_SET;             
     reg86.bx = submode | VBE_LINEAR_FB;     
     if (sys_int86(&reg86) != 0) {     
-        printf("Set graphic mode failed\n");
         return 1;
     }
     return 0;

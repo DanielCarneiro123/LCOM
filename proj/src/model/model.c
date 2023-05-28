@@ -343,7 +343,6 @@ void update_sp_state() {
         }
         else if (sp_data == SP_TEST_PLAYER) {}
         else if (sp_data & BIT(4)) {
-            printf("\n\n palavraQualquer%d\n\n", sp_data);
             if (sp_data & BIT(0)) player_one_won = 1;
             if (sp_data & BIT(1)) player_two_cheating = 1;
             update_menu_state(END);
@@ -432,7 +431,6 @@ void test_player_no() {
         activeTurn = false;
         push(SP_TEST_PLAYER);
     }
-    printf("\n\n\nI AM %d\n\n\n", player_no);
 }
 
 /**
@@ -626,16 +624,12 @@ void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     if (mouse_info.ball_color < 3) return;
-    printf("\n\n I AM HERE WITH %d", activeTurn);
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
-    printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
-    printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
     for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 0);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             if (positions != code_positions) push(byte);
             return;
         }
@@ -718,16 +712,12 @@ void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     if (!(mouse_info.ball_color == 1 || mouse_info.ball_color == 2)) return;
-    printf("\n\n I AM HERE WITH %d", activeTurn);
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
-    printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
-    printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
     for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 0);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             push(byte);
             return;
         }
@@ -749,7 +739,6 @@ void remove_ball(Position* positions, uint8_t n) {
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = TRANSPARENT;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             if (positions != code_positions) push(byte);
             clean_ball(i, ball, positions);
             break;
@@ -769,7 +758,6 @@ void remove_small_ball() {
         if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = 0;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             push(byte);
             clean_ball(i, small_ball, NULL);
             break;

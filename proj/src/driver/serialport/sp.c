@@ -68,7 +68,6 @@ int (read_sp_data)() {
 
         if (status & RECIEVER_DATA_AVAILABLE) {
             if (util_sys_inb(COM2_BASE + RECEIVER_BUFFER_OFFSET, &sp_data)) return 1;
-            printf("\n\n\nBYTE READ: %d\n\n\n", sp_data);
 
             if (sp_data != SP_NACK && sp_data != SP_ACK && (status & SP_OVERRUN_ERROR || status & SP_PARITY_ERROR || status & SP_FRAMING_ERROR || status & BIT(4))) write_sp_data(SP_NACK);
             else if (sp_data != SP_NACK && sp_data != SP_ACK) write_sp_data(SP_ACK);
@@ -97,7 +96,6 @@ int (write_sp_data)(uint8_t data) {
         if (status & THR_EMPTY) {
             ready = false;
             if (sys_outb(COM2_BASE + TRANSMITTER_HOLDING_OFFSET, data)) return 1;
-            printf("\n\n\nBYTE WRITTEN: %d\n\n\n", data);
             return 0;
         }
 
@@ -117,23 +115,18 @@ void (sp_ih)() {
     uint8_t count = 0;
     while (true) {
         util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
-        printf("\n\n\n IIR IS %d\n\n\n", iir);
-        if (count > 0) printf("COUNT IS %d\n\n\n", count);
         if (iir & IIR_NO_PENDING) break;
         if ((iir & IIR_NO_PENDING) == 0) {
             switch (iir & INT_ID) {
                 case IIR_DATA_AVAILABLE:
-                    printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
                     read_sp_data();
                     new_data = true;
                     break;
                 case IIR_TRANSMITTER_EMPTY:
-                    printf("\n\n\n SHIT IS %d\n\n\n", iir & INT_ID);
                     ready = true;
                     break;    
             }
         }
-        count++;
     }
 }
 

@@ -128,7 +128,6 @@ void draw_final_code() {
         }
         else {
             curr_color = code_positions[i].color;
-            printf("\n\n code_positions color %d\n\n", code_positions[i].color);
         }
         draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, curr_color);
     }
@@ -205,7 +204,6 @@ void draw_finish_menu() {
         }
         else {
             curr_color = code_positions[i].color;
-            printf("\n\n code_positions color %d\n\n", code_positions[i].color);
             draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, code_positions[i].color);
         }
         //draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, curr_color);
@@ -500,7 +498,5 @@ void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
  */
 void set_background_color() {
     bg_color = time_colors[time_info.hours];
-    printf("\n\n\nTIME %d \n\n\n", time_info.hours);
-    printf("\n\n\nBACKGROUND COLOR %d \n\n\n", bg_color);
 }
 

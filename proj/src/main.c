@@ -80,7 +80,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
   while (running) {
     
     if (driver_receive(ANY, &msg, &ipc_status)) {
-      printf("Error");
+      printf("Driver receive error");
       continue;
     }
 
