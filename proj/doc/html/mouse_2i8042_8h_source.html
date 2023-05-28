@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MasterMinix: src/driver/mouse/i8042.h Source File</title>
+<title>Masterminix: src/driver/mouse/i8042.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MasterMinix
+   <div id="projectname">Masterminix
    </div>
   </td>
  </tr>
@@ -106,16 +106,18 @@ $(function() {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#aa554763d6a066605edecacdea834da9b">   28</a></span><span class="preprocessor">#define WAIT_KBC        20000</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a7e1856ac7c6ed757978fc30bb92ace74">   29</a></span><span class="preprocessor">#define MAX_ATTEMPTS     10</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a81c0f94add844b0761bd142f7f708431">   31</a></span><span class="preprocessor">#define MOUSE_LB            BIT(0)</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a5f47c1d60579c8691054c939c1d7c20e">   32</a></span><span class="preprocessor">#define MOUSE_RB            BIT(1)</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a5a934eaadd3536aabe6df0adf6728e8e">   33</a></span><span class="preprocessor">#define MOUSE_MB            BIT(2)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a73d6572224ad0ac84a8587615cef947c">   34</a></span><span class="preprocessor">#define FIRST_BYTE          BIT(3)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a726368c7d58dac5edc608a58e2e92660">   35</a></span><span class="preprocessor">#define MOUSE_X_SIGNAL      BIT(4)</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a4b664cf12fa3048513e4c8b856aefd65">   36</a></span><span class="preprocessor">#define MOUSE_Y_SIGNAL      BIT(5)</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a39f0e19085186976faee23616a2f48b5">   37</a></span><span class="preprocessor">#define MOUSE_X_OVERFLOW    BIT(6)</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a056e214bb9df1114c547e8e712b7619d">   38</a></span><span class="preprocessor">#define MOUSE_Y_OVERFLOW    BIT(7)</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">/* _LCOM_I8042_M_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a064ec583ce5b039303686ce4c64b4f3e">   31</a></span><span class="preprocessor">#define MOUSE_ACK       0xFA</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a81c0f94add844b0761bd142f7f708431">   33</a></span><span class="preprocessor">#define MOUSE_LB            BIT(0)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a5f47c1d60579c8691054c939c1d7c20e">   34</a></span><span class="preprocessor">#define MOUSE_RB            BIT(1)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a5a934eaadd3536aabe6df0adf6728e8e">   35</a></span><span class="preprocessor">#define MOUSE_MB            BIT(2)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a73d6572224ad0ac84a8587615cef947c">   36</a></span><span class="preprocessor">#define FIRST_BYTE          BIT(3)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a726368c7d58dac5edc608a58e2e92660">   37</a></span><span class="preprocessor">#define MOUSE_X_SIGNAL      BIT(4)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a4b664cf12fa3048513e4c8b856aefd65">   38</a></span><span class="preprocessor">#define MOUSE_Y_SIGNAL      BIT(5)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a39f0e19085186976faee23616a2f48b5">   39</a></span><span class="preprocessor">#define MOUSE_X_OVERFLOW    BIT(6)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="mouse_2i8042_8h.html#a056e214bb9df1114c547e8e712b7619d">   40</a></span><span class="preprocessor">#define MOUSE_Y_OVERFLOW    BIT(7)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif </span><span class="comment">/* _LCOM_I8042_M_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

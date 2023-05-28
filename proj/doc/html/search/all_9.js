@@ -12,7 +12,6 @@ var searchData=
   ['keyboard_2ec_9',['keyboard.c',['../keyboard_8c.html',1,'']]],
   ['keyboard_2eh_10',['keyboard.h',['../keyboard_8h.html',1,'']]],
   ['keyboard_5fmask_11',['KEYBOARD_MASK',['../keyboard_8h.html#a67f9ce144f998dd5c8b1ae5e25fb8dec',1,'keyboard.h']]],
-  ['keyboard_5frestore_12',['keyboard_restore',['../keyboard_8c.html#a30aab366321c5fcad9b30c3afc1c3d4a',1,'keyboard_restore():&#160;keyboard.c'],['../keyboard_8h.html#a58017421d19bb2004825d339ebb600fa',1,'keyboard_restore():&#160;keyboard.c']]],
-  ['keyboard_5fsubscribe_5finterrupts_13',['keyboard_subscribe_interrupts',['../keyboard_8c.html#ad7a7a1287d9dd5aeb44b2266e33fab96',1,'keyboard_subscribe_interrupts(uint8_t *bit_no):&#160;keyboard.c'],['../keyboard_8h.html#aa0b3dcafa6ee3a5000cb641a7823482b',1,'keyboard_subscribe_interrupts(uint8_t *bit_no):&#160;keyboard.c']]],
-  ['keyboard_5funsubscribe_5finterrupts_14',['keyboard_unsubscribe_interrupts',['../keyboard_8c.html#a608e970c5d30257d983bc07f80e0ec7a',1,'keyboard_unsubscribe_interrupts():&#160;keyboard.c'],['../keyboard_8h.html#a97f07efdc4bf5955236db1b8f111daf6',1,'keyboard_unsubscribe_interrupts():&#160;keyboard.c']]]
+  ['keyboard_5fsubscribe_5finterrupts_12',['keyboard_subscribe_interrupts',['../keyboard_8c.html#ad7a7a1287d9dd5aeb44b2266e33fab96',1,'keyboard_subscribe_interrupts(uint8_t *bit_no):&#160;keyboard.c'],['../keyboard_8h.html#aa0b3dcafa6ee3a5000cb641a7823482b',1,'keyboard_subscribe_interrupts(uint8_t *bit_no):&#160;keyboard.c']]],
+  ['keyboard_5funsubscribe_5finterrupts_13',['keyboard_unsubscribe_interrupts',['../keyboard_8c.html#a608e970c5d30257d983bc07f80e0ec7a',1,'keyboard_unsubscribe_interrupts():&#160;keyboard.c'],['../keyboard_8h.html#a97f07efdc4bf5955236db1b8f111daf6',1,'keyboard_unsubscribe_interrupts():&#160;keyboard.c']]]
 ];

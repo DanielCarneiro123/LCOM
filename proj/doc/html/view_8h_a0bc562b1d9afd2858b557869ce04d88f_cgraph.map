@@ -1,0 +1,7 @@
+<map id="draw_final_code" name="draw_final_code">
+<area shape="rect" id="node1" title="Draws the balls in the end menu." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="$view_8c.html#aa047908abc31e4b0b12ab393908b52d0" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="167,5,242,32"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="290,5,373,32"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="421,5,551,32"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="599,5,685,32"/>
+</map>

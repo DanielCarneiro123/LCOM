@@ -1,5 +1,5 @@
 <map id="push_code" name="push_code">
-<area shape="rect" id="node1" title="Pushes endgame data Pushes all relevant data to player 2 when the game ends." alt="" coords="5,31,90,57"/>
+<area shape="rect" id="node1" title="Pushes endgame data Pushes all relevant data to player 1 when the game ends." alt="" coords="5,31,90,57"/>
 <area shape="rect" id="node2" href="$sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="138,5,271,32"/>
 <area shape="rect" id="node3" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="180,56,229,83"/>
 </map>

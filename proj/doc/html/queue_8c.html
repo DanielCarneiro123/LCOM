@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MasterMinix: src/logic/queue/queue.c File Reference</title>
+<title>Masterminix: src/logic/queue/queue.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MasterMinix
+   <div id="projectname">Masterminix
    </div>
   </td>
  </tr>
@@ -80,20 +80,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="queue_8h_source.html">queue.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for queue.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="queue_8c__incl.png" border="0" usemap="#asrc_2logic_2queue_2queue_8c" alt=""/></div>
-<map name="asrc_2logic_2queue_2queue_8c" id="asrc_2logic_2queue_2queue_8c">
-<area shape="rect" title=" " alt="" coords="122,5,282,32"/>
-<area shape="rect" href="queue_8h.html" title=" " alt="" coords="168,80,236,107"/>
-<area shape="rect" title=" " alt="" coords="5,229,111,256"/>
-<area shape="rect" title=" " alt="" coords="135,229,213,256"/>
-<area shape="rect" href="sp_8h.html" title=" " alt="" coords="187,155,324,181"/>
-<area shape="rect" href="_u_a_r_t_8h.html" title=" " alt="" coords="237,229,303,256"/>
-<area shape="rect" href="comm__bytes_8h.html" title=" " alt="" coords="327,229,504,256"/>
-</map>
-</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -142,17 +128,6 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true The queue has a byte available </dd>
 <dd>
 false The queue is empty </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="queue_8c_ae42954dc097acfb9eda61eccf848ddce_icgraph.png" border="0" usemap="#aqueue_8c_ae42954dc097acfb9eda61eccf848ddce_icgraph" alt=""/></div>
-<map name="aqueue_8c_ae42954dc097acfb9eda61eccf848ddce_icgraph" id="aqueue_8c_ae42954dc097acfb9eda61eccf848ddce_icgraph">
-<area shape="rect" title="Checks if the queue has a byte available." alt="" coords="492,5,567,32"/>
-<area shape="rect" href="queue_8c.html#a93191533323a04cdbf5a52eac95a871e" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="342,5,444,32"/>
-<area shape="rect" href="model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="162,5,294,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -173,17 +148,6 @@ Here is the caller graph for this function:</div>
 
 <p>Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the left, the head of the queue is moved one byte to the right. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t Popped byte </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="queue_8c_a49a91e509626c5f4c84e39cad959e3d9_icgraph.png" border="0" usemap="#aqueue_8c_a49a91e509626c5f4c84e39cad959e3d9_icgraph" alt=""/></div>
-<map name="aqueue_8c_a49a91e509626c5f4c84e39cad959e3d9_icgraph" id="aqueue_8c_a49a91e509626c5f4c84e39cad959e3d9_icgraph">
-<area shape="rect" title="Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the lef..." alt="" coords="492,5,535,32"/>
-<area shape="rect" href="queue_8c.html#a93191533323a04cdbf5a52eac95a871e" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="342,5,444,32"/>
-<area shape="rect" href="model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="162,5,294,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -211,28 +175,6 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="queue_8c_a17650dad9c45c1299a01df7cc7a0013f_icgraph.png" border="0" usemap="#aqueue_8c_a17650dad9c45c1299a01df7cc7a0013f_icgraph" alt=""/></div>
-<map name="aqueue_8c_a17650dad9c45c1299a01df7cc7a0013f_icgraph" id="aqueue_8c_a17650dad9c45c1299a01df7cc7a0013f_icgraph">
-<area shape="rect" title="Pushes a byte to the queue." alt="" coords="702,142,751,168"/>
-<area shape="rect" href="model_8c.html#a56ee478ae538f5921f74c01ff5ea4282" title="Tries to mark a turn as finished This function checks if all balls for the current turn have been fil..." alt="" coords="382,15,462,42"/>
-<area shape="rect" href="model_8c.html#a61b20c44a2ce92fa54eec29769ec99d6" title="Places a ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or if the..." alt="" coords="550,192,630,219"/>
-<area shape="rect" href="model_8c.html#af3e25debba4cb88350105fb76d713db9" title="Places a small ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or ..." alt="" coords="531,142,649,168"/>
-<area shape="rect" href="model_8c.html#a1a6d8e1bbb23a14874eba59bc0f6351d" title="Pushes endgame data Pushes all relevant data to player 2 when the game ends." alt="" coords="548,294,632,320"/>
-<area shape="rect" href="model_8c.html#ad0d2c57b88c1209234b4620359aa60f7" title="Removes a ball from the board if the mouse is inside it Checks every ball in the array until finding ..." alt="" coords="545,40,635,67"/>
-<area shape="rect" href="model_8c.html#a25d36ce066829ed49feede36a95fc6d2" title="Removes a small ball from the board if the mouse is inside it Checks every ball in the array until fi..." alt="" coords="526,91,654,118"/>
-<area shape="rect" href="model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers This function runs when the actual game begins. The first player to enter the ..." alt="" coords="537,243,643,270"/>
-<area shape="rect" href="model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates the state of the keyboard This function runs the interrupt handler, and then runs code based ..." alt="" coords="162,116,318,143"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,167,114,194"/>
-<area shape="rect" href="model_8c.html#a933a0ee51b61bea202604faa0dc7d5b5" title="Function used when placing a ball This function contains all the logic tied to placing balls (differe..." alt="" coords="378,142,467,168"/>
-<area shape="rect" href="model_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Updates the state of the mouse This function runs the interrupt handler, updates the mouse info at th..." alt="" coords="169,167,311,194"/>
-<area shape="rect" href="model_8c.html#a20f2e60644e274c6174042672460ddde" title="Updates the state of the UART serial port This function runs the serial port&#39;s interrupt handler,..." alt="" coords="181,243,299,270"/>
-<area shape="rect" href="model_8c.html#a39975a512705f9a2a8edcd540a62c0c6" title="Function used when removing a ball This function contains all the logic tied to removing balls (diffe..." alt="" coords="373,91,472,118"/>
-<area shape="rect" href="model_8c.html#a77a605867b767ce9eb771f5780c6028a" title="Selects menu options This function is run when on the initial menu and the player presses the left mo..." alt="" coords="366,243,478,270"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -262,16 +204,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="101,5,202,32"/>
 <area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="250,5,317,32"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="365,5,456,32"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="queue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_icgraph.png" border="0" usemap="#aqueue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_icgraph" alt=""/></div>
-<map name="aqueue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_icgraph" id="aqueue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_icgraph">
-<area shape="rect" title="Retries to send the last byte Is used when there was an error sending the last byte." alt="" coords="327,5,374,32"/>
-<area shape="rect" href="model_8c.html#a20f2e60644e274c6174042672460ddde" title="Updates the state of the UART serial port This function runs the serial port&#39;s interrupt handler,..." alt="" coords="162,5,279,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
 </map>
 </div>
 
@@ -305,16 +237,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="156,107,257,133"/>
 <area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="305,107,372,133"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="420,107,511,133"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="queue_8c_a93191533323a04cdbf5a52eac95a871e_icgraph.png" border="0" usemap="#aqueue_8c_a93191533323a04cdbf5a52eac95a871e_icgraph" alt=""/></div>
-<map name="aqueue_8c_a93191533323a04cdbf5a52eac95a871e_icgraph" id="aqueue_8c_a93191533323a04cdbf5a52eac95a871e_icgraph">
-<area shape="rect" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="342,5,444,32"/>
-<area shape="rect" href="model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="162,5,294,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
 </map>
 </div>
 

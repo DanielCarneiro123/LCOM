@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MasterMinix: src/model/sprite.h File Reference</title>
+<title>Masterminix: src/model/sprite.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MasterMinix
+   <div id="projectname">Masterminix
    </div>
   </td>
  </tr>
@@ -80,33 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="graphics_8h_source.html">driver/video/graphics.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for sprite.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="sprite_8h__incl.png" border="0" usemap="#asrc_2model_2sprite_8h" alt=""/></div>
-<map name="asrc_2model_2sprite_8h" id="asrc_2model_2sprite_8h">
-<area shape="rect" title=" " alt="" coords="27,5,152,32"/>
-<area shape="rect" href="graphics_8h.html" title=" " alt="" coords="15,80,164,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,83,181"/>
-<area shape="rect" href="_v_b_e_8h.html" title=" " alt="" coords="106,155,166,181"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="sprite_8h__dep__incl.png" border="0" usemap="#asrc_2model_2sprite_8hdep" alt=""/></div>
-<map name="asrc_2model_2sprite_8hdep" id="asrc_2model_2sprite_8hdep">
-<area shape="rect" title=" " alt="" coords="217,5,342,32"/>
-<area shape="rect" href="model_8h.html" title=" " alt="" coords="125,155,253,181"/>
-<area shape="rect" href="sprite_8c.html" title=" " alt="" coords="217,80,342,107"/>
-<area shape="rect" href="view_8h.html" title=" " alt="" coords="367,80,473,107"/>
-<area shape="rect" href="board__logic_8h.html" title=" " alt="" coords="5,229,157,256"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="333,229,416,256"/>
-<area shape="rect" href="model_8c.html" title=" " alt="" coords="181,229,309,256"/>
-<area shape="rect" href="board__logic_8c.html" title=" " alt="" coords="5,304,157,331"/>
-<area shape="rect" href="view_8c.html" title=" " alt="" coords="412,155,518,181"/>
-</map>
-</div>
+<code>#include &quot;<a class="el" href="mouse_8h_source.html">driver/mouse/mouse.h</a>&quot;</code><br />
 </div>
 <p><a href="sprite_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -123,6 +97,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a607cfeb4f019a84c346eb3bce9da0420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sprite_8h.html#a607cfeb4f019a84c346eb3bce9da0420">destroy_sprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite)</td></tr>
 <tr class="memdesc:a607cfeb4f019a84c346eb3bce9da0420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates sprite memory.  <br /></td></tr>
 <tr class="separator:a607cfeb4f019a84c346eb3bce9da0420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473f58fac6aebbcc5b8ee0c4ecb6547e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sprite_8h.html#a473f58fac6aebbcc5b8ee0c4ecb6547e">is_mouse_in_sprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite)</td></tr>
+<tr class="separator:a473f58fac6aebbcc5b8ee0c4ecb6547e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="acb93792ebc27a32413e0b31624c6d9b1" name="acb93792ebc27a32413e0b31624c6d9b1"></a>
@@ -149,17 +125,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Sprite* Pointer to new sprite </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="sprite_8h_acb93792ebc27a32413e0b31624c6d9b1_icgraph.png" border="0" usemap="#asprite_8h_acb93792ebc27a32413e0b31624c6d9b1_icgraph" alt=""/></div>
-<map name="asprite_8h_acb93792ebc27a32413e0b31624c6d9b1_icgraph" id="asprite_8h_acb93792ebc27a32413e0b31624c6d9b1_icgraph">
-<area shape="rect" title="Create a sprite xpm object Allocates memory for a sprite." alt="" coords="410,5,539,32"/>
-<area shape="rect" href="model_8c.html#a834200084177d31e41dd9b28754a3312" title="Creates sprite objects Allocates memory for every sprite that the game will need." alt="" coords="263,5,362,32"/>
-<area shape="rect" href="main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="162,5,215,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -186,17 +151,24 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="sprite_8h_a607cfeb4f019a84c346eb3bce9da0420_icgraph.png" border="0" usemap="#asprite_8h_a607cfeb4f019a84c346eb3bce9da0420_icgraph" alt=""/></div>
-<map name="asprite_8h_a607cfeb4f019a84c346eb3bce9da0420_icgraph" id="asprite_8h_a607cfeb4f019a84c346eb3bce9da0420_icgraph">
-<area shape="rect" title="Deallocates sprite memory." alt="" coords="441,5,545,32"/>
-<area shape="rect" href="model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Deallocates memory used for sprites." alt="" coords="283,5,393,32"/>
-<area shape="rect" href="main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="162,5,235,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
+
 </div>
+</div>
+<a id="a473f58fac6aebbcc5b8ee0c4ecb6547e" name="a473f58fac6aebbcc5b8ee0c4ecb6547e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473f58fac6aebbcc5b8ee0c4ecb6547e">&#9670;&#160;</a></span>is_mouse_in_sprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_mouse_in_sprite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_sprite.html">Sprite</a> *&#160;</td>
+          <td class="paramname"><em>sprite</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -1,0 +1,4 @@
+<map id="setup_sprites" name="setup_sprites">
+<area shape="rect" id="node1" title="Creates sprite objects Allocates memory for every sprite that the game will need." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node2" href="$sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Create a sprite xpm object Allocates memory for a sprite." alt="" coords="153,5,281,32"/>
+</map>

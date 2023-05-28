@@ -10,5 +10,5 @@ var searchData=
   ['mouse_5fbuffer_7',['mouse_buffer',['../mouse_8c.html#a0c696aa5db6c84c050c5cb53ee1aa5f1',1,'mouse.c']]],
   ['mouse_5fbyte_8',['mouse_byte',['../mouse_8c.html#aec82064a6795ef73e30e4c1873dca2c6',1,'mouse.c']]],
   ['mouse_5ferror_9',['mouse_error',['../mouse_8c.html#ab16a3e13988a41e497c1b3894acee0a4',1,'mouse.c']]],
-  ['mouse_5finfo_10',['mouse_info',['../mouse_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../model_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../view_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c']]]
+  ['mouse_5finfo_10',['mouse_info',['../mouse_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../model_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../sprite_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c'],['../view_8c.html#a343e4f854a0c3e5001228e209c5f025e',1,'mouse_info():&#160;mouse.c']]]
 ];

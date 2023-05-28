@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MasterMinix: src/driver/keyboard/keyboard.h File Reference</title>
+<title>Masterminix: src/driver/keyboard/keyboard.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MasterMinix
+   <div id="projectname">Masterminix
    </div>
   </td>
  </tr>
@@ -83,28 +83,6 @@ $(function() {
 <code>#include &lt;lcom/lcf.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="keyboard_2i8042_8h_source.html">i8042.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="keyboard_2_k_b_c_8h_source.html">KBC.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for keyboard.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8h__incl.png" border="0" usemap="#asrc_2driver_2keyboard_2keyboard_8h" alt=""/></div>
-<map name="asrc_2driver_2keyboard_2keyboard_8h" id="asrc_2driver_2keyboard_2keyboard_8h">
-<area shape="rect" title=" " alt="" coords="113,5,243,48"/>
-<area shape="rect" title=" " alt="" coords="5,171,111,197"/>
-<area shape="rect" title=" " alt="" coords="135,171,213,197"/>
-<area shape="rect" href="keyboard_2i8042_8h.html" title=" " alt="" coords="237,171,300,197"/>
-<area shape="rect" href="keyboard_2_k_b_c_8h.html" title=" " alt="" coords="115,96,174,123"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8h__dep__incl.png" border="0" usemap="#asrc_2driver_2keyboard_2keyboard_8hdep" alt=""/></div>
-<map name="asrc_2driver_2keyboard_2keyboard_8hdep" id="asrc_2driver_2keyboard_2keyboard_8hdep">
-<area shape="rect" title=" " alt="" coords="71,5,201,48"/>
-<area shape="rect" href="keyboard_8c.html" title=" " alt="" coords="5,96,136,139"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="160,104,242,131"/>
-</map>
-</div>
 </div>
 <p><a href="keyboard_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -126,8 +104,6 @@ Functions</h2></td></tr>
 <tr class="memitem:aea970a154161a35f6894898a092ed70a"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8h.html#aea970a154161a35f6894898a092ed70a">kbc_ih</a> ()</td></tr>
 <tr class="memdesc:aea970a154161a35f6894898a092ed70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the keyboard Reads a scancode from the KBC.  <br /></td></tr>
 <tr class="separator:aea970a154161a35f6894898a092ed70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58017421d19bb2004825d339ebb600fa"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8h.html#a58017421d19bb2004825d339ebb600fa">keyboard_restore</a> ()</td></tr>
-<tr class="separator:a58017421d19bb2004825d339ebb600fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a67f9ce144f998dd5c8b1ae5e25fb8dec" name="a67f9ce144f998dd5c8b1ae5e25fb8dec"></a>
@@ -172,16 +148,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="455,31,546,57"/>
 </map>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8h_aea970a154161a35f6894898a092ed70a_icgraph.png" border="0" usemap="#akeyboard_8h_aea970a154161a35f6894898a092ed70a_icgraph" alt=""/></div>
-<map name="akeyboard_8h_aea970a154161a35f6894898a092ed70a_icgraph" id="akeyboard_8h_aea970a154161a35f6894898a092ed70a_icgraph">
-<area shape="rect" title="Interrupt handler for the keyboard Reads a scancode from the KBC." alt="" coords="366,5,425,32"/>
-<area shape="rect" href="model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates the state of the keyboard This function runs the interrupt handler, and then runs code based ..." alt="" coords="162,5,318,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -213,35 +179,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a58017421d19bb2004825d339ebb600fa" name="a58017421d19bb2004825d339ebb600fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58017421d19bb2004825d339ebb600fa">&#9670;&#160;</a></span>keyboard_restore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int() keyboard_restore </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8h_a58017421d19bb2004825d339ebb600fa_cgraph.png" border="0" usemap="#akeyboard_8h_a58017421d19bb2004825d339ebb600fa_cgraph" alt=""/></div>
-<map name="akeyboard_8h_a58017421d19bb2004825d339ebb600fa_cgraph" id="akeyboard_8h_a58017421d19bb2004825d339ebb600fa_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,127,57"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="186,56,310,83"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="175,5,321,32"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="369,5,492,32"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="540,31,631,57"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="aa0b3dcafa6ee3a5000cb641a7823482b" name="aa0b3dcafa6ee3a5000cb641a7823482b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0b3dcafa6ee3a5000cb641a7823482b">&#9670;&#160;</a></span>keyboard_subscribe_interrupts()</h2>
 
@@ -266,16 +203,6 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8h_aa0b3dcafa6ee3a5000cb641a7823482b_icgraph.png" border="0" usemap="#akeyboard_8h_aa0b3dcafa6ee3a5000cb641a7823482b_icgraph" alt=""/></div>
-<map name="akeyboard_8h_aa0b3dcafa6ee3a5000cb641a7823482b_icgraph" id="akeyboard_8h_aa0b3dcafa6ee3a5000cb641a7823482b_icgraph">
-<area shape="rect" title="Subscribes to the keyboard&#39;s interrupts in exclusive mode Subscribes to the keyboard&#39;s interrupts wit..." alt="" coords="263,5,400,48"/>
-<area shape="rect" href="main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="162,13,215,40"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,13,114,40"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -296,16 +223,6 @@ Here is the caller graph for this function:</div>
 
 <p>Unsubscribes from the keyboard's interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8h_a97f07efdc4bf5955236db1b8f111daf6_icgraph.png" border="0" usemap="#akeyboard_8h_a97f07efdc4bf5955236db1b8f111daf6_icgraph" alt=""/></div>
-<map name="akeyboard_8h_a97f07efdc4bf5955236db1b8f111daf6_icgraph" id="akeyboard_8h_a97f07efdc4bf5955236db1b8f111daf6_icgraph">
-<area shape="rect" title="Unsubscribes from the keyboard&#39;s interrupts." alt="" coords="283,5,434,48"/>
-<area shape="rect" href="main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="162,13,235,40"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,13,114,40"/>
-</map>
-</div>
 
 </div>
 </div>

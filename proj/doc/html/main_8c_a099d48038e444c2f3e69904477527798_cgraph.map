@@ -6,15 +6,15 @@
 <area shape="rect" id="node9" href="$rtc_8c.html#a99c770b400026bc59e3c80a22615ad50" title="Sets up the RTC for use Sets the counting mode to binary and fills the time struct for the first time..." alt="" coords="161,173,237,200"/>
 <area shape="rect" id="node15" href="$view_8c.html#a3ad9f04212e7602618a0dd7ad4afbd4e" title="Prepares the frame buffers Allocates the main frame buffer in VRAM and the secondary buffer in the pr..." alt="" coords="137,224,261,251"/>
 <area shape="rect" id="node18" href="$graphics_8c.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets the VM&#39;s graphic mode Sets the VM&#39;s graphic mode through the VBE&#39;s 00h function." alt="" coords="135,275,263,301"/>
-<area shape="rect" id="node19" href="$model_8c.html#a881f3640533075d63b2958743e1ddc8b" title="Set up the box balls positions object Allocates memory for the balls that the player can pick up." alt="" coords="112,325,286,352"/>
-<area shape="rect" id="node20" href="$model_8c.html#a26d019d06bb3cce35b6a807a78830c60" title="Set up the box small balls positions object Allocates memory for the small balls that the player can ..." alt="" coords="122,376,276,419"/>
-<area shape="rect" id="node21" href="$model_8c.html#a8c2861eb2450eba4f6d6b3b539209d76" title="Set up the positions object Allocates memory for the balls that the player will place." alt="" coords="143,443,255,469"/>
-<area shape="rect" id="node22" href="$model_8c.html#aae78fc40fbe1c3dd54d0d36b92de57b0" title="Set up the small positions object Allocates memory for the small balls that the player will place." alt="" coords="124,493,274,520"/>
-<area shape="rect" id="node23" href="$model_8c.html#a834200084177d31e41dd9b28754a3312" title="Creates sprite objects Allocates memory for every sprite that the game will need." alt="" coords="149,544,249,571"/>
+<area shape="rect" id="node19" href="$model_8c.html#ad89bf01bff5672e6ccd3fa3097f8eba5" title="Set up the box balls positions object Allocates memory for the balls that the player can pick up." alt="" coords="112,325,286,352"/>
+<area shape="rect" id="node20" href="$model_8c.html#a7b4991e5250f9431eb25c8a416923711" title="Set up the box small balls positions object Allocates memory for the small balls that the player can ..." alt="" coords="122,376,276,419"/>
+<area shape="rect" id="node21" href="$model_8c.html#a83b1ed667273d5722f29e7dfd56fc4ac" title="Set up the positions object Allocates memory for the balls that the player will place." alt="" coords="143,443,255,469"/>
+<area shape="rect" id="node22" href="$model_8c.html#aa335fb875ce7c3117df2f0c797871c92" title="Set up the small positions object Allocates memory for the small balls that the player will place." alt="" coords="124,493,274,520"/>
+<area shape="rect" id="node23" href="$model_8c.html#ada323a9c88824838e2729c070449cbd6" title="Creates sprite objects Allocates memory for every sprite that the game will need." alt="" coords="149,544,249,571"/>
 <area shape="rect" id="node25" href="$sp_8c.html#a13c01867b9c145b09c600ffe7521455b" title="Sets up the serial port for use Sets the bit rate, the interrupts to be used, disables the fifo,..." alt="" coords="162,595,236,621"/>
 <area shape="rect" id="node26" href="$sp_8c.html#aa02100c8273995fd125d3ee9d7a0b45d" title="Subscribes to the serial port&#39;s interrupts Subscribes to the serial port&#39;s interrupts in exclusive mo..." alt="" coords="119,645,279,672"/>
-<area shape="rect" id="node27" href="$timer_8c.html#aca1506be74dfc71c6f90772ca269c619" title="Sets the timer&#39;s frequency Sets the timer&#39;s frequency to a given value passed to the function." alt="" coords="130,696,268,723"/>
-<area shape="rect" id="node31" href="$timer_8c.html#a998da606b08cf26378acb17b76f695ef" title="Subscribes to timer 0&#39;s interrupts Subscribes to the timer&#39;s interrupts with the bit mask defined in ..." alt="" coords="128,747,270,773"/>
+<area shape="rect" id="node27" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title="Sets the timer&#39;s frequency Sets the timer&#39;s frequency to a given value passed to the function." alt="" coords="130,696,268,723"/>
+<area shape="rect" id="node31" href="$timer_8c.html#a32021da0bb62eb144e5d81fc37a5dfb8" title="Subscribes to timer 0&#39;s interrupts Subscribes to the timer&#39;s interrupts with the bit mask defined in ..." alt="" coords="128,747,270,773"/>
 <area shape="rect" id="node5" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="527,97,650,124"/>
 <area shape="rect" id="node8" href="$keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="515,47,662,73"/>
 <area shape="rect" id="node6" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="710,97,833,124"/>
@@ -27,7 +27,7 @@
 <area shape="rect" id="node16" href="$graphics_8c.html#ac50005645b76a08eff8126607633420f" title="Maps the frame buffer to the process&#39; address spac." alt="" coords="345,325,461,352"/>
 <area shape="rect" id="node17" href="$graphics_8c.html#a4aa23812c97d2d1612e4053512560161" title="Gets the information of a given VBE mode." alt="" coords="536,351,641,377"/>
 <area shape="rect" id="node24" href="$sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Create a sprite xpm object Allocates memory for a sprite." alt="" coords="339,544,467,571"/>
-<area shape="rect" id="node28" href="$timer_8c.html#afafc1891c876602d55b894103b1841a7" title="Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointe..." alt="" coords="718,472,825,499"/>
+<area shape="rect" id="node28" href="$timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title="Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointe..." alt="" coords="718,472,825,499"/>
 <area shape="rect" id="node29" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title="Gets the LSB from a byte." alt="" coords="356,684,451,711"/>
 <area shape="rect" id="node30" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title="Gets the MSB from a byte." alt="" coords="354,735,453,761"/>
 </map>

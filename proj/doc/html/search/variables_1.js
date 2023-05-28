@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['background_0',['background',['../view_8c.html#a59f29d14ed8ddc8d0fc9214dde842e53',1,'view.c']]],
+  ['background_0',['background',['../view_8c.html#ab1e0e5641038b7a2ca9b86762b933db8',1,'view.c']]],
   ['ball_1',['ball',['../model_8c.html#accdb51067b4629cb5947ce47ab9b6a81',1,'ball():&#160;model.c'],['../view_8c.html#accdb51067b4629cb5947ce47ab9b6a81',1,'ball():&#160;model.c']]],
   ['ball_5fbox_5fpositions_2',['ball_box_positions',['../model_8c.html#aaf70543a705915cfb219a2344cba9606',1,'ball_box_positions():&#160;model.c'],['../view_8c.html#aaf70543a705915cfb219a2344cba9606',1,'ball_box_positions():&#160;model.c']]],
   ['ball_5fcolor_3',['ball_color',['../struct_mouse_info.html#a2988abd8954e7cf2eb3cd0e18335b869',1,'MouseInfo']]],

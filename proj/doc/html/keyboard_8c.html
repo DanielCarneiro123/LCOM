@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MasterMinix: src/driver/keyboard/keyboard.c File Reference</title>
+<title>Masterminix: src/driver/keyboard/keyboard.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MasterMinix
+   <div id="projectname">Masterminix
    </div>
   </td>
  </tr>
@@ -81,19 +81,6 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="keyboard_8h_source.html">keyboard.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="keyboard_2i8042_8h_source.html">i8042.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for keyboard.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8c__incl.png" border="0" usemap="#asrc_2driver_2keyboard_2keyboard_8c" alt=""/></div>
-<map name="asrc_2driver_2keyboard_2keyboard_8c" id="asrc_2driver_2keyboard_2keyboard_8c">
-<area shape="rect" title=" " alt="" coords="155,5,285,48"/>
-<area shape="rect" href="keyboard_8h.html" title=" " alt="" coords="119,96,204,123"/>
-<area shape="rect" href="keyboard_2i8042_8h.html" title=" " alt="" coords="236,245,300,272"/>
-<area shape="rect" title=" " alt="" coords="107,245,213,272"/>
-<area shape="rect" title=" " alt="" coords="5,245,83,272"/>
-<area shape="rect" href="keyboard_2_k_b_c_8h.html" title=" " alt="" coords="132,171,191,197"/>
-</map>
-</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -108,8 +95,6 @@ Functions</h2></td></tr>
 <tr class="separator:aea970a154161a35f6894898a092ed70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d89cfe691c385156f4a5524402cb6f4"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8c.html#a3d89cfe691c385156f4a5524402cb6f4">kbc_ih_poll</a> ()</td></tr>
 <tr class="separator:a3d89cfe691c385156f4a5524402cb6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30aab366321c5fcad9b30c3afc1c3d4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8c.html#a30aab366321c5fcad9b30c3afc1c3d4a">keyboard_restore</a> ()</td></tr>
-<tr class="separator:a30aab366321c5fcad9b30c3afc1c3d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -148,16 +133,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="455,31,546,57"/>
 </map>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8c_aea970a154161a35f6894898a092ed70a_icgraph.png" border="0" usemap="#akeyboard_8c_aea970a154161a35f6894898a092ed70a_icgraph" alt=""/></div>
-<map name="akeyboard_8c_aea970a154161a35f6894898a092ed70a_icgraph" id="akeyboard_8c_aea970a154161a35f6894898a092ed70a_icgraph">
-<area shape="rect" title="Interrupt handler for the keyboard Reads a scancode from the KBC." alt="" coords="366,5,425,32"/>
-<area shape="rect" href="model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates the state of the keyboard This function runs the interrupt handler, and then runs code based ..." alt="" coords="162,5,318,32"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -189,35 +164,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a30aab366321c5fcad9b30c3afc1c3d4a" name="a30aab366321c5fcad9b30c3afc1c3d4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30aab366321c5fcad9b30c3afc1c3d4a">&#9670;&#160;</a></span>keyboard_restore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int keyboard_restore </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8c_a30aab366321c5fcad9b30c3afc1c3d4a_cgraph.png" border="0" usemap="#akeyboard_8c_a30aab366321c5fcad9b30c3afc1c3d4a_cgraph" alt=""/></div>
-<map name="akeyboard_8c_a30aab366321c5fcad9b30c3afc1c3d4a_cgraph" id="akeyboard_8c_a30aab366321c5fcad9b30c3afc1c3d4a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,127,57"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="186,56,310,83"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="175,5,321,32"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="369,5,492,32"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="540,31,631,57"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="ad7a7a1287d9dd5aeb44b2266e33fab96" name="ad7a7a1287d9dd5aeb44b2266e33fab96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7a7a1287d9dd5aeb44b2266e33fab96">&#9670;&#160;</a></span>keyboard_subscribe_interrupts()</h2>
 
@@ -242,16 +188,6 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8c_ad7a7a1287d9dd5aeb44b2266e33fab96_icgraph.png" border="0" usemap="#akeyboard_8c_ad7a7a1287d9dd5aeb44b2266e33fab96_icgraph" alt=""/></div>
-<map name="akeyboard_8c_ad7a7a1287d9dd5aeb44b2266e33fab96_icgraph" id="akeyboard_8c_ad7a7a1287d9dd5aeb44b2266e33fab96_icgraph">
-<area shape="rect" title="Subscribes to the keyboard&#39;s interrupts in exclusive mode Subscribes to the keyboard&#39;s interrupts wit..." alt="" coords="263,5,400,48"/>
-<area shape="rect" href="main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="162,13,215,40"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,13,114,40"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -272,16 +208,6 @@ Here is the caller graph for this function:</div>
 
 <p>Unsubscribes from the keyboard's interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="keyboard_8c_a608e970c5d30257d983bc07f80e0ec7a_icgraph.png" border="0" usemap="#akeyboard_8c_a608e970c5d30257d983bc07f80e0ec7a_icgraph" alt=""/></div>
-<map name="akeyboard_8c_a608e970c5d30257d983bc07f80e0ec7a_icgraph" id="akeyboard_8c_a608e970c5d30257d983bc07f80e0ec7a_icgraph">
-<area shape="rect" title="Unsubscribes from the keyboard&#39;s interrupts." alt="" coords="283,5,434,48"/>
-<area shape="rect" href="main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="162,13,235,40"/>
-<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,13,114,40"/>
-</map>
-</div>
 
 </div>
 </div>

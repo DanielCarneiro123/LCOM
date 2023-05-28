@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['running_0',['RUNNING',['../data__structures_8h.html#aa51313be2faacb739a18fdeecefbac75a1061be6c3fb88d32829cba6f6b2be304',1,'data_structures.h']]]
+  ['start_0',['START',['../data__structures_8h.html#aa3041ae4242c0dd57a126d17505443b2a13d000b4d7dc70d90239b7430d1eb6b2',1,'data_structures.h']]]
 ];

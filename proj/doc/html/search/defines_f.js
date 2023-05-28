@@ -8,5 +8,7 @@ var searchData=
   ['register_5fb_5',['REGISTER_B',['../rtc_8h.html#a9935cde70013bbc215f658cfc078b988',1,'rtc.h']]],
   ['register_5finput_6',['REGISTER_INPUT',['../rtc_8h.html#ac7ccdd8e98d8f7fdad8dfe99c467d5d8',1,'rtc.h']]],
   ['register_5foutput_7',['REGISTER_OUTPUT',['../rtc_8h.html#a5e3f3a35c56673c2a54d9f4eadb759a9',1,'rtc.h']]],
-  ['rtc_5fmask_8',['RTC_MASK',['../rtc_8h.html#ab54f2d18b47b47a59f718e16099446e8',1,'rtc.h']]]
+  ['row_5fno_8',['ROW_NO',['../game__constants_8h.html#a4fbcf96cb7a19e01ee23e74fd8ea0486',1,'game_constants.h']]],
+  ['row_5fsize_9',['ROW_SIZE',['../game__constants_8h.html#aa4d030604a90c8d019d90fc721900d63',1,'game_constants.h']]],
+  ['rtc_5fmask_10',['RTC_MASK',['../rtc_8h.html#ab54f2d18b47b47a59f718e16099446e8',1,'rtc.h']]]
 ];

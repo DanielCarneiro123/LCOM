@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MasterMinix: src/model/sprite.h Source File</title>
+<title>Masterminix: src/model/sprite.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">MasterMinix
+   <div id="projectname">Masterminix
    </div>
   </td>
  </tr>
@@ -80,32 +80,36 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _LCOM_SPRITE_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="graphics_8h.html">driver/video/graphics.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="struct_sprite.html">    6</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_sprite.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">    7</a></span>    uint16_t <a class="code hl_variable" href="struct_sprite.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">height</a>;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_sprite.html#ad0eab1042455a2067c812ab8071d5376">    8</a></span>    uint16_t <a class="code hl_variable" href="struct_sprite.html#ad0eab1042455a2067c812ab8071d5376">width</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_sprite.html#a2f298e6f85ff2b02f0f2b62169fadf23">    9</a></span>    uint32_t *<a class="code hl_variable" href="struct_sprite.html#a2f298e6f85ff2b02f0f2b62169fadf23">colors</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_sprite.html#a66b2ef8398a8bbb0f5816f22a7b138da">   10</a></span>    uint32_t <a class="code hl_variable" href="struct_sprite.html#a66b2ef8398a8bbb0f5816f22a7b138da">color</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_sprite.html#a1e76f5cdb8e59fbd4bc0130350acdbfa">   11</a></span>    uint8_t <a class="code hl_variable" href="struct_sprite.html#a1e76f5cdb8e59fbd4bc0130350acdbfa">pressed</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_sprite.html#af6d3062751bd565decb1a2cd3b63bdb2">   12</a></span>    int32_t <a class="code hl_variable" href="struct_sprite.html#af6d3062751bd565decb1a2cd3b63bdb2">x</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_sprite.html#af64066d134a77e01b3d6eb8da813627a">   13</a></span>    int32_t <a class="code hl_variable" href="struct_sprite.html#af64066d134a77e01b3d6eb8da813627a">y</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>} <a class="code hl_struct" href="struct_sprite.html">Sprite</a>; </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_struct" href="struct_sprite.html">Sprite</a> *<a class="code hl_function" href="sprite_8h.html#acb93792ebc27a32413e0b31624c6d9b1">create_sprite_xpm</a>(xpm_map_t sprite);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> <a class="code hl_function" href="sprite_8h.html#a607cfeb4f019a84c346eb3bce9da0420">destroy_sprite</a>(<a class="code hl_struct" href="struct_sprite.html">Sprite</a> *sprite);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="mouse_8h.html">driver/mouse/mouse.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_sprite.html">    7</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_sprite.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">    8</a></span>    uint16_t <a class="code hl_variable" href="struct_sprite.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">height</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_sprite.html#ad0eab1042455a2067c812ab8071d5376">    9</a></span>    uint16_t <a class="code hl_variable" href="struct_sprite.html#ad0eab1042455a2067c812ab8071d5376">width</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_sprite.html#a2f298e6f85ff2b02f0f2b62169fadf23">   10</a></span>    uint32_t *<a class="code hl_variable" href="struct_sprite.html#a2f298e6f85ff2b02f0f2b62169fadf23">colors</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_sprite.html#a66b2ef8398a8bbb0f5816f22a7b138da">   11</a></span>    uint32_t <a class="code hl_variable" href="struct_sprite.html#a66b2ef8398a8bbb0f5816f22a7b138da">color</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_sprite.html#a1e76f5cdb8e59fbd4bc0130350acdbfa">   12</a></span>    uint8_t <a class="code hl_variable" href="struct_sprite.html#a1e76f5cdb8e59fbd4bc0130350acdbfa">pressed</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_sprite.html#af6d3062751bd565decb1a2cd3b63bdb2">   13</a></span>    int32_t <a class="code hl_variable" href="struct_sprite.html#af6d3062751bd565decb1a2cd3b63bdb2">x</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_sprite.html#af64066d134a77e01b3d6eb8da813627a">   14</a></span>    int32_t <a class="code hl_variable" href="struct_sprite.html#af64066d134a77e01b3d6eb8da813627a">y</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>} <a class="code hl_struct" href="struct_sprite.html">Sprite</a>; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_struct" href="struct_sprite.html">Sprite</a> *<a class="code hl_function" href="sprite_8h.html#acb93792ebc27a32413e0b31624c6d9b1">create_sprite_xpm</a>(xpm_map_t sprite);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="sprite_8h.html#a607cfeb4f019a84c346eb3bce9da0420">destroy_sprite</a>(<a class="code hl_struct" href="struct_sprite.html">Sprite</a> *sprite);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">bool</span> <a class="code hl_function" href="sprite_8h.html#a473f58fac6aebbcc5b8ee0c4ecb6547e">is_mouse_in_sprite</a>(<a class="code hl_struct" href="struct_sprite.html">Sprite</a> *sprite);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agraphics_8h_html"><div class="ttname"><a href="graphics_8h.html">graphics.h</a></div></div>
-<div class="ttc" id="asprite_8h_html_a607cfeb4f019a84c346eb3bce9da0420"><div class="ttname"><a href="sprite_8h.html#a607cfeb4f019a84c346eb3bce9da0420">destroy_sprite</a></div><div class="ttdeci">void destroy_sprite(Sprite *sprite)</div><div class="ttdoc">Deallocates sprite memory.</div><div class="ttdef"><b>Definition:</b> sprite.c:30</div></div>
-<div class="ttc" id="asprite_8h_html_acb93792ebc27a32413e0b31624c6d9b1"><div class="ttname"><a href="sprite_8h.html#acb93792ebc27a32413e0b31624c6d9b1">create_sprite_xpm</a></div><div class="ttdeci">Sprite * create_sprite_xpm(xpm_map_t sprite)</div><div class="ttdoc">Create a sprite xpm object Allocates memory for a sprite.</div><div class="ttdef"><b>Definition:</b> sprite.c:9</div></div>
-<div class="ttc" id="astruct_sprite_html"><div class="ttname"><a href="struct_sprite.html">Sprite</a></div><div class="ttdef"><b>Definition:</b> sprite.h:6</div></div>
-<div class="ttc" id="astruct_sprite_html_a1e76f5cdb8e59fbd4bc0130350acdbfa"><div class="ttname"><a href="struct_sprite.html#a1e76f5cdb8e59fbd4bc0130350acdbfa">Sprite::pressed</a></div><div class="ttdeci">uint8_t pressed</div><div class="ttdef"><b>Definition:</b> sprite.h:11</div></div>
-<div class="ttc" id="astruct_sprite_html_a2f298e6f85ff2b02f0f2b62169fadf23"><div class="ttname"><a href="struct_sprite.html#a2f298e6f85ff2b02f0f2b62169fadf23">Sprite::colors</a></div><div class="ttdeci">uint32_t * colors</div><div class="ttdef"><b>Definition:</b> sprite.h:9</div></div>
-<div class="ttc" id="astruct_sprite_html_a66b2ef8398a8bbb0f5816f22a7b138da"><div class="ttname"><a href="struct_sprite.html#a66b2ef8398a8bbb0f5816f22a7b138da">Sprite::color</a></div><div class="ttdeci">uint32_t color</div><div class="ttdef"><b>Definition:</b> sprite.h:10</div></div>
-<div class="ttc" id="astruct_sprite_html_a81c9f8d0b8c3b49d770be14dbe9f0d37"><div class="ttname"><a href="struct_sprite.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">Sprite::height</a></div><div class="ttdeci">uint16_t height</div><div class="ttdef"><b>Definition:</b> sprite.h:7</div></div>
-<div class="ttc" id="astruct_sprite_html_ad0eab1042455a2067c812ab8071d5376"><div class="ttname"><a href="struct_sprite.html#ad0eab1042455a2067c812ab8071d5376">Sprite::width</a></div><div class="ttdeci">uint16_t width</div><div class="ttdef"><b>Definition:</b> sprite.h:8</div></div>
-<div class="ttc" id="astruct_sprite_html_af64066d134a77e01b3d6eb8da813627a"><div class="ttname"><a href="struct_sprite.html#af64066d134a77e01b3d6eb8da813627a">Sprite::y</a></div><div class="ttdeci">int32_t y</div><div class="ttdef"><b>Definition:</b> sprite.h:13</div></div>
-<div class="ttc" id="astruct_sprite_html_af6d3062751bd565decb1a2cd3b63bdb2"><div class="ttname"><a href="struct_sprite.html#af6d3062751bd565decb1a2cd3b63bdb2">Sprite::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition:</b> sprite.h:12</div></div>
+<div class="ttc" id="amouse_8h_html"><div class="ttname"><a href="mouse_8h.html">mouse.h</a></div></div>
+<div class="ttc" id="asprite_8h_html_a473f58fac6aebbcc5b8ee0c4ecb6547e"><div class="ttname"><a href="sprite_8h.html#a473f58fac6aebbcc5b8ee0c4ecb6547e">is_mouse_in_sprite</a></div><div class="ttdeci">bool is_mouse_in_sprite(Sprite *sprite)</div><div class="ttdef"><b>Definition:</b> sprite.c:39</div></div>
+<div class="ttc" id="asprite_8h_html_a607cfeb4f019a84c346eb3bce9da0420"><div class="ttname"><a href="sprite_8h.html#a607cfeb4f019a84c346eb3bce9da0420">destroy_sprite</a></div><div class="ttdeci">void destroy_sprite(Sprite *sprite)</div><div class="ttdoc">Deallocates sprite memory.</div><div class="ttdef"><b>Definition:</b> sprite.c:32</div></div>
+<div class="ttc" id="asprite_8h_html_acb93792ebc27a32413e0b31624c6d9b1"><div class="ttname"><a href="sprite_8h.html#acb93792ebc27a32413e0b31624c6d9b1">create_sprite_xpm</a></div><div class="ttdeci">Sprite * create_sprite_xpm(xpm_map_t sprite)</div><div class="ttdoc">Create a sprite xpm object Allocates memory for a sprite.</div><div class="ttdef"><b>Definition:</b> sprite.c:11</div></div>
+<div class="ttc" id="astruct_sprite_html"><div class="ttname"><a href="struct_sprite.html">Sprite</a></div><div class="ttdef"><b>Definition:</b> sprite.h:7</div></div>
+<div class="ttc" id="astruct_sprite_html_a1e76f5cdb8e59fbd4bc0130350acdbfa"><div class="ttname"><a href="struct_sprite.html#a1e76f5cdb8e59fbd4bc0130350acdbfa">Sprite::pressed</a></div><div class="ttdeci">uint8_t pressed</div><div class="ttdef"><b>Definition:</b> sprite.h:12</div></div>
+<div class="ttc" id="astruct_sprite_html_a2f298e6f85ff2b02f0f2b62169fadf23"><div class="ttname"><a href="struct_sprite.html#a2f298e6f85ff2b02f0f2b62169fadf23">Sprite::colors</a></div><div class="ttdeci">uint32_t * colors</div><div class="ttdef"><b>Definition:</b> sprite.h:10</div></div>
+<div class="ttc" id="astruct_sprite_html_a66b2ef8398a8bbb0f5816f22a7b138da"><div class="ttname"><a href="struct_sprite.html#a66b2ef8398a8bbb0f5816f22a7b138da">Sprite::color</a></div><div class="ttdeci">uint32_t color</div><div class="ttdef"><b>Definition:</b> sprite.h:11</div></div>
+<div class="ttc" id="astruct_sprite_html_a81c9f8d0b8c3b49d770be14dbe9f0d37"><div class="ttname"><a href="struct_sprite.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">Sprite::height</a></div><div class="ttdeci">uint16_t height</div><div class="ttdef"><b>Definition:</b> sprite.h:8</div></div>
+<div class="ttc" id="astruct_sprite_html_ad0eab1042455a2067c812ab8071d5376"><div class="ttname"><a href="struct_sprite.html#ad0eab1042455a2067c812ab8071d5376">Sprite::width</a></div><div class="ttdeci">uint16_t width</div><div class="ttdef"><b>Definition:</b> sprite.h:9</div></div>
+<div class="ttc" id="astruct_sprite_html_af64066d134a77e01b3d6eb8da813627a"><div class="ttname"><a href="struct_sprite.html#af64066d134a77e01b3d6eb8da813627a">Sprite::y</a></div><div class="ttdeci">int32_t y</div><div class="ttdef"><b>Definition:</b> sprite.h:14</div></div>
+<div class="ttc" id="astruct_sprite_html_af6d3062751bd565decb1a2cd3b63bdb2"><div class="ttname"><a href="struct_sprite.html#af6d3062751bd565decb1a2cd3b63bdb2">Sprite::x</a></div><div class="ttdeci">int32_t x</div><div class="ttdef"><b>Definition:</b> sprite.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
