@@ -45,6 +45,9 @@ Sprite *code_guessed;
 Sprite *code_not_guessed;
 Sprite *madeira;
 Sprite *frase_menu;
+Sprite *press_s;
+Sprite *instructions;
+
 
 Position* ball_positions;
 PositionSmall* small_ball_positions;
@@ -204,6 +207,8 @@ void setup_sprites() {
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
     frase_menu = create_sprite_xpm((xpm_map_t) frase_menu_xpm);
+    press_s = create_sprite_xpm((xpm_map_t) press_s_xpm);
+    instructions = create_sprite_xpm((xpm_map_t) instructions_xpm);
 
 }
 
@@ -236,6 +241,9 @@ void destroy_sprites() {
     destroy_sprite(code_not_guessed);
     destroy_sprite(madeira);
     destroy_sprite(frase_menu);
+    destroy_sprite(press_s);
+    destroy_sprite(instructions);
+    
 }
 
 /**
@@ -569,6 +577,7 @@ bool is_mouse_in_ball_box(uint8_t i) {
     return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
 }
 
+
 /**
  * @brief Checks if the mouse is inside the start button
  * @return true The mouse is inside the button
@@ -576,6 +585,16 @@ bool is_mouse_in_ball_box(uint8_t i) {
  */
 bool is_mouse_in_start() {
     return mouse_info.x >= 280 && mouse_info.x <= 400 && mouse_info.y >= 231 && mouse_info.y <= 289;
+}
+
+
+bool is_mouse_in_press_S() {
+    return mouse_info.x >= mode_info.XResolution/2 - 313/2 && mouse_info.x <= mode_info.XResolution/2 - 313/2 +313 && mouse_info.y >= mode_info.YResolution/2 + 85 + 29 && mouse_info.y <= mode_info.YResolution/2 + 85 + 29;
+}
+
+bool is_mouse_in_instructions(){
+    return mouse_info.x >=mode_info.XResolution/2 - 400/2 && mouse_info.x <= mode_info.XResolution/2 - 400/2 + 400 && mouse_info.y >= mode_info.YResolution/2 + 45/2 + 45 && mouse_info.y <= mode_info.YResolution/2 + 45/2 + 45;
+
 }
 
 /**
