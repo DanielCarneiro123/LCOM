@@ -62,7 +62,6 @@ int8_t curr_turn = -1;
 uint8_t player_no = 0;
 uint8_t hide_code = 0;
 int timer_interrupts = 0;
-uint8_t code_done;
 
 /**
  * @brief Updates the menu state \n 
@@ -299,21 +298,17 @@ void update_timer_state() {
 void update_sp_state() {
     sp_ih();
     if (new_data) {
-        
-        if (code_done == 0) {
-            if ((sp_data & BIT(7)) && (sp_data & BIT(6))) {
-                code_colors[3] = color_table[sp_data & 0xF];
-                code_done = 1
-            }
-            else if (!(sp_data & BIT(7)) && (sp_data & BIT(6))) {
-                code_colors[1] = color_table[sp_data & 0xF];
-            }
-            else if ((sp_data & BIT(7)) && !(sp_data & BIT(6))) {
-                code_colors[2] = color_table[sp_data & 0xF];
-            }
-            else {
-                code_colors[0] = color_table[sp_data & 0xF];
-            }
+        if ((sp_data & BIT(7)) && (sp_data & BIT(6))) {
+            code_colors[3] = color_table[sp_data & 0xF];
+        }
+        else if (!(sp_data & BIT(7)) && (sp_data & BIT(6))) {
+            code_colors[1] = color_table[sp_data & 0xF];
+        }
+        else if ((sp_data & BIT(7)) && !(sp_data & BIT(6))) {
+            code_colors[2] = color_table[sp_data & 0xF];
+        }
+        else {
+            code_colors[0] = color_table[sp_data & 0xF];
         }
         if (sp_data == SP_END_TURN) {
             activeTurn = true;
@@ -762,7 +757,6 @@ void remove_small_ball() {
 void resetTable(){
     curr_turn = -1;
     hide_code = 0;
-    code_done = 0;
     player_one_won = 0;
     player_two_cheating = 0;
     if (player_no == 1){
