@@ -11,11 +11,6 @@ typedef struct {
 } Position;
 
 typedef enum {
-    RUNNING,
-    EXIT,
-} SystemState;
-
-typedef enum {
     START,
     GAME,
     END

@@ -10,7 +10,7 @@
 #include "view/view.h"
 #include "config.h"
 
-extern SystemState systemState;
+extern uint8_t running;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
@@ -77,7 +77,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
   int ipc_status;
   message msg;
-  while (systemState == RUNNING) {
+  while (running) {
     
     if (driver_receive(ANY, &msg, &ipc_status)) {
       printf("Error");

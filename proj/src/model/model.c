@@ -3,7 +3,7 @@
 // Variáveis externas importantes à construção e manipulação do modelo
 extern uint8_t scancode;
 extern uint8_t byte_index;
-SystemState systemState = RUNNING;
+uint8_t running = 1;
 MenuState menuState = START;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
@@ -447,7 +447,7 @@ void update_keyboard_state() {
     (kbc_ih)();
     switch (scancode) {
         case Q_KEY:
-            systemState = EXIT;
+            running = 0;
             break;
         case S_KEY:
             if (menuState == GAME) break;
@@ -659,7 +659,7 @@ void menu_selection() {
     }
 
     if (is_mouse_in_sprite(exit_menu)){
-        systemState = EXIT;
+        running = 0;
     }      
     
     //ball_positions[balls].x = mouse_info.x - ball->width/2;
