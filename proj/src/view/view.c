@@ -1,7 +1,7 @@
 #include "view.h"
 
 uint8_t *main_frame_buffer;
-uint8_t *drawing_frame_buffer;
+uint8_t *back_buffer;
 uint32_t frame_buffer_size;
 extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
@@ -71,8 +71,8 @@ uint32_t time_colors[24] = {COLOR_TIME1, COLOR_TIME2, COLOR_TIME3, COLOR_TIME4, 
 int set_frame_buffers(uint16_t mode) {
     if (set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
-    drawing_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
-    if (drawing_frame_buffer == NULL) return 1;
+    back_buffer = (uint8_t *) malloc(frame_buffer_size);
+    if (back_buffer == NULL) return 1;
     return 0;
 }
 
@@ -81,7 +81,7 @@ int set_frame_buffers(uint16_t mode) {
  * Copies the contents of the secondary buffer to the main buffer
  */
 void copy_buffer() {
-    memcpy(main_frame_buffer, drawing_frame_buffer, frame_buffer_size);
+    memcpy(main_frame_buffer, back_buffer, frame_buffer_size);
 }
 
 /**
@@ -136,7 +136,7 @@ void draw_final_code() {
  */
 void draw_initial_menu() {
     set_background_color();
-    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
+    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
     draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
     draw_sprite_xpm(instructions, mode_info.XResolution/2 - 258/2, mode_info.YResolution/2 + 45/2);
@@ -156,7 +156,7 @@ void draw_initial_menu() {
  */
 void draw_game_menu() {
     set_background_color();
-    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
+    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color);
     Sprite* drawing_board = player_no == 1 ? board : board2;
     draw_sprite_xpm(drawing_board, mode_info.XResolution/2 - board->width/2, 0);
     bg_size = 1;
@@ -175,7 +175,7 @@ void draw_game_menu() {
 void draw_finish_menu() {
     bg_size = 0;
     set_background_color();
-    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
+    fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color);
     
     if (player_one_won == 1){
         
@@ -232,7 +232,7 @@ void draw_code() {
  */
 void draw_lid(){
     if (hide_code) {
-        fill_rectangle(186, 0, 230, 59, GREEN, drawing_frame_buffer);
+        fill_rectangle(186, 0, 230, 59, GREEN);
     }
 }
 
@@ -241,7 +241,7 @@ void draw_lid(){
  * Draws the background behind the now hidden lid
  */
 void clean_lid(){
-    fill_rectangle(186, 0, 230, 59, bg_color, drawing_frame_buffer);
+    fill_rectangle(186, 0, 230, 59, bg_color);
     for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, 186 - background[i]->x, 0 - background[i]->y, 59, 230);
                 
 }
@@ -328,7 +328,7 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
         current_color = sprite->colors[w + h*width];
         if (current_color == TRANSPARENT) continue;
         if (x + w < 0 || y + h < 0) continue;
-        if (paint_pixel(x + w, y + h, color, drawing_frame_buffer) != 0) return 1;
+        if (paint_pixel(x + w, y + h, color) != 0) return 1;
       }
     }
     return 0; 
@@ -362,30 +362,30 @@ void draw_mouse() {
 void clean_mouse() {
     switch (menuState) {
         case START:
-            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color);
             for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             break;
        case GAME:
             if (mouse_info.ball_color == 0) {
-                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color);
                 for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             }
             else {
                 if (mouse_info.ball_color <= 2 && mouse_info.ball_color > 0) {
-                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color);
                     for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
                 }
                 else {
-                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color, drawing_frame_buffer);
+                    fill_rectangle(ball->x, ball->y, ball->width, ball->height, bg_color);
                     for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, ball->x - background[i]->x, ball->y - background[i]->y, ball->height, ball->width);
                 }
             }
             if(player_no == 2 && hide_code){
-                fill_rectangle(186, 0, 230, 59, GREEN, drawing_frame_buffer);
+                fill_rectangle(186, 0, 230, 59, GREEN);
             }
             break;
         case END:
-            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color);
             for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             break;
 
@@ -413,7 +413,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     for (uint32_t i = 0; i < num_pixels; i++) {
       current_color = sprite->colors[i];
       if (current_color != TRANSPARENT) {
-        if (paint_pixel(x, y, current_color, drawing_frame_buffer)) return 1;
+        if (paint_pixel(x, y, current_color)) return 1;
       }
       x = (x + 1) % (width + initial_x);
       if (x == 0) {
@@ -455,7 +455,7 @@ int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, 
     else {
         current_color = sprite->colors[xdraw + ydraw * sprite->width];
         if (current_color != TRANSPARENT) 
-            if (paint_pixel(x + xdraw, y + ydraw, current_color, drawing_frame_buffer)) return 1;
+            if (paint_pixel(x + xdraw, y + ydraw, current_color)) return 1;
         xdraw++;
         if (xdraw == initial_x + width) {
             ydraw++;
@@ -477,13 +477,13 @@ int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, 
  */
 void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
     if (sprite == ball) {
-        fill_rectangle(positions[k].x, positions[k].y, sprite->width, sprite->height, bg_color, drawing_frame_buffer);
+        fill_rectangle(positions[k].x, positions[k].y, sprite->width, sprite->height, bg_color);
         for (int i = 0; i < bg_size; i++) {
             draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, positions[k].x - background[i]->x, positions[k].y - background[i]->y, sprite->height, sprite->width);
         }
     }
     else if (sprite == small_ball) {
-        fill_rectangle(small_ball_positions[k].x, small_ball_positions[k].y, sprite->width, sprite->height, bg_color, drawing_frame_buffer);
+        fill_rectangle(small_ball_positions[k].x, small_ball_positions[k].y, sprite->width, sprite->height, bg_color);
         for (int i = 0; i < bg_size; i++) {
             draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, small_ball_positions[k].x - background[i]->x, small_ball_positions[k].y - background[i]->y, sprite->height, sprite->width);
         }
