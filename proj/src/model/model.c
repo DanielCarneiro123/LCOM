@@ -265,7 +265,6 @@ void destroy_sprites() {
     destroy_sprite(masterminix);
     destroy_sprite(start);
     destroy_sprite(exit_menu);
-    //destroy_sprite(masterminix);
     destroy_sprite(um);
     destroy_sprite(dois);
     destroy_sprite(tres);
@@ -366,14 +365,7 @@ void update_sp_state() {
                 ball_positions[index].color = color_table[sp_data & 0x1f];
             }
         }
-        /*else if(sp_data & BIT(5)){
-            printf("\n\nINDEX IS %d", sp_data & 0x1F);
-            printf("\nCOLOR IS %d\n\n", color_table[sp_data & 0x1F]);
-            ball_positions[(curr_turn+1) * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
-        }
-        else{
-            small_ball_positions[(curr_turn+1) * 4 + (sp_data >> 6)].color =  color_table[sp_data & 0x1F];
-        }*/
+    
     }
 
     new_data = false;
@@ -662,11 +654,6 @@ void menu_selection() {
         running = 0;
     }      
     
-    //ball_positions[balls].x = mouse_info.x - ball->width/2;
-    //ball_positions[balls].y = mouse_info.y - ball->height/2;
-    //ball_positions[balls].color = mouse_info.ball_color;
-
-    //balls++;
 }
 
 /**
@@ -697,11 +684,8 @@ void pick_box_ball() {
             return;       
         }
     }
-    //ball_positions[balls].x = mouse_info.x - ball->width/2;
-    //ball_positions[balls].y = mouse_info.y - ball->height/2;
-    //ball_positions[balls].color = mouse_info.ball_color;
 
-    //balls++;
+
 }
 
 /**
@@ -780,6 +764,8 @@ void remove_small_ball() {
 void resetTable(){
     curr_turn = -1;
     hide_code = 0;
+    player_one_won = 0;
+    player_two_cheating = 0;
     if (player_no == 1){
         activeTurn = false;
     }
