@@ -110,7 +110,23 @@ void draw_new_frame() {
     draw_small_balls();
     draw_numbers_and_balls_in_box();
     draw_lid();
+    draw_final_code();
     draw_mouse();
+}
+
+void draw_final_code() {
+    if (menuState != END) return;
+    for (uint i = 0; i < 4; i++) {
+        uint32_t curr_color;
+        if (player_no == 1) {
+            curr_color = code_colors[i];
+        }
+        else {
+            curr_color = code_positions[i].color;
+            printf("\n\n code_positions color %d\n\n", code_positions[i].color);
+        }
+        draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, curr_color);
+    }
 }
 
 /**
@@ -161,11 +177,7 @@ void draw_finish_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     
     if (player_one_won == 1){
-        for (uint i = 0; i < 4; i++) {
-            draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, code_colors[i]);
-            background[bg_size] = ball;
-            bg_size ++;
-        }
+        
         draw_sprite_xpm(code_guessed, mode_info.XResolution/2 - 190, mode_info.YResolution/4 - 27);
         background[bg_size] = code_guessed;
         bg_size ++;
@@ -174,15 +186,26 @@ void draw_finish_menu() {
         draw_sprite_xpm(code_not_guessed, mode_info.XResolution/2 - 282, mode_info.YResolution/2 - 80);
         background[bg_size] = code_not_guessed;
         bg_size ++;
-        for (uint i = 0; i < 4; i++) {
-            draw_ball(ball, 295 + i*56, 470, code_colors[i]);
-            background[bg_size] = ball;
-            bg_size ++;}
+        
     }
     if (player_two_cheating == 1){
         draw_sprite_xpm(madeira, mode_info.XResolution/2 - 100, mode_info.YResolution/2);
         background[bg_size] = madeira;
         bg_size ++;
+    }
+
+    for (uint i = 0; i < 4; i++) {
+        uint32_t curr_color;
+        if (player_no == 1) {
+            curr_color = code_colors[i];
+        }
+        else {
+            curr_color = code_positions[i].color;
+            printf("\n\n code_positions color %d\n\n", code_positions[i].color);
+            draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, code_positions[i].color);
+        }
+        //draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, curr_color);
+    
     }
 
     draw_sprite_xpm(press_s, mode_info.XResolution/2 - 313/2, mode_info.YResolution - 52);
@@ -362,11 +385,8 @@ void clean_mouse() {
             }
             break;
         case END:
-                fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
-                for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
-                for (uint i = 0; i < 4; i++) {
-                draw_ball(ball, 300 + i*56,  mode_info.YResolution/2 - 50, code_colors[i]);
-                }
+            fill_rectangle(mouse->x, mouse->y, mouse->width, mouse->height, bg_color, drawing_frame_buffer);
+            for (int i = 0; i < bg_size; i++) draw_partial_sprite_xpm(background[i], background[i]->x, background[i]->y, mouse->x - background[i]->x, mouse->y - background[i]->y, mouse->height, mouse->width);
             break;
 
     }

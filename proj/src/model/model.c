@@ -75,7 +75,7 @@ int timer_interrupts = 0;
  */
 void update_menu_state(MenuState new_state) {
     firstFrame = true;
-    if (new_state == END) resetTable();
+    if (new_state == GAME && menuState == END) resetTable();
     menuState = new_state;
 }
 
