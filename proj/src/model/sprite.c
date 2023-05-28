@@ -1,5 +1,7 @@
 #include "sprite.h"
 
+extern MouseInfo mouse_info;
+
 /**
  * @brief Create a sprite xpm object
  * Allocates memory for a sprite
@@ -32,4 +34,8 @@ void destroy_sprite(Sprite *sprite) {
     if (sprite->colors != NULL) free(sprite->colors);
     free(sprite);
     sprite = NULL;
+}
+
+bool is_mouse_in_sprite(Sprite *sprite) {
+  return mouse_info.x >= sprite->x && mouse_info.x <= (sprite->x + sprite->width) && mouse_info.y >= sprite->y && mouse_info.y <= (sprite->y + sprite->height);
 }

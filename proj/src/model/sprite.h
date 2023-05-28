@@ -2,6 +2,7 @@
 #define _LCOM_SPRITE_H_
 
 #include "driver/video/graphics.h"
+#include "driver/mouse/mouse.h"
 
 typedef struct {
     uint16_t height;
@@ -15,5 +16,6 @@ typedef struct {
 
 Sprite *create_sprite_xpm(xpm_map_t sprite);
 void destroy_sprite(Sprite *sprite);
+bool is_mouse_in_sprite(Sprite *sprite);
 
 #endif
