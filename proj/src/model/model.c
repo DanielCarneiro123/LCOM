@@ -46,7 +46,6 @@ Sprite *code_not_guessed;
 Sprite *madeira;
 Sprite *frase_menu;
 Sprite *press_s;
-Sprite *instructions;
 Sprite *player_cheated;
 
 
@@ -248,8 +247,6 @@ int setup_sprites() {
     if (frase_menu == NULL) return 1;
     press_s = create_sprite_xpm((xpm_map_t) press_s_xpm);
     if (press_s == NULL) return 1;
-    instructions = create_sprite_xpm((xpm_map_t) instructions_xpm);
-    if (instructions == NULL) return 1;
     player_cheated = create_sprite_xpm((xpm_map_t) player_cheated_xpm);
     if (player_cheated == NULL) return 1;
 
@@ -285,7 +282,6 @@ void destroy_sprites() {
     destroy_sprite(madeira);
     destroy_sprite(frase_menu);
     destroy_sprite(press_s);
-    destroy_sprite(instructions);
     destroy_sprite(player_cheated);
 }
 
@@ -479,9 +475,6 @@ void update_keyboard_state() {
         case EIGHT_KEY:
             update_mouse_color(color_table[10]);
             break;     
-        case ZERO_KEY:
-            update_mouse_color(0);
-            break;
         case W_KEY:
             update_mouse_color(2);
             break;

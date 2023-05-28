@@ -38,7 +38,6 @@
 #include "xpm/frase_menu.xpm"
 #include "xpm/press_s.xpm"
 #include "xpm/madeira.xpm"
-#include "xpm/instructions.xpm"
 #include "xpm/player_cheated.xpm"
 #include "view/view.h"
 #include "game_constants.h"

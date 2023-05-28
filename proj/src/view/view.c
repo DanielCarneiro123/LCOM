@@ -54,7 +54,6 @@ extern Sprite *code_not_guessed;
 extern Sprite *madeira;
 extern Sprite *frase_menu;
 extern Sprite *press_s;
-extern Sprite *instructions;
 extern Sprite *player_cheated;
 
 
@@ -143,14 +142,12 @@ void draw_initial_menu() {
     fill_rectangle(0, 0, mode_info.XResolution, mode_info.YResolution, bg_color, drawing_frame_buffer);
     draw_sprite_xpm(masterminix, mode_info.XResolution/2 - 200, mode_info.YResolution/2 - 180);
     draw_sprite_xpm(start, mode_info.XResolution/2 - 60, mode_info.YResolution/2 - 40);
-    draw_sprite_xpm(instructions, mode_info.XResolution/2 - 258/2, mode_info.YResolution/2 + 45/2);
     draw_sprite_xpm(exit_menu, mode_info.XResolution/2 - 37, mode_info.YResolution/2 + 85);
     draw_sprite_xpm(frase_menu, mode_info.XResolution/2 - 325, mode_info.YResolution - 54);
-    bg_size = 5;
+    bg_size = 4;
     background[1] = masterminix;
     background[2] = start;
-    background[3] = instructions;
-    background[4] = exit_menu;
+    background[3] = exit_menu;
     background[0] = frase_menu;
 }
 
