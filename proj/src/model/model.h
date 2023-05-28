@@ -36,14 +36,14 @@
 #include "xpm/code_guessed.xpm"
 #include "xpm/code_not_guessed.xpm"
 #include "xpm/frase_menu.xpm"
+#include "xpm/press_s.xpm"
 #include "xpm/madeira.xpm"
+#include "xpm/instructions.xpm"
 #include "view/view.h"
 #include "game_constants.h"
 #include "model/sprite.h"
 #include "config.h"
 #include "data_structures.h"
-
-
 
 void update_timer_state();
 void update_keyboard_state();
