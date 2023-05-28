@@ -505,7 +505,7 @@ void update_mouse_state() {
 
 
 void click_hide_code_button() {
-    if (is_mouse_in_hide_code_button() && player_no == 2) {
+    if (is_mouse_in_sprite(toggle9) && player_no == 2) {
         if(hide_code){
             hide_code = 0;
             clean_lid();
@@ -579,39 +579,6 @@ bool is_mouse_in_ball_box(uint8_t i) {
     return mouse_info.x >= ball_box_positions[i].x && mouse_info.x <= ball_box_positions[i].x + ball->width && mouse_info.y >= ball_box_positions[i].y && mouse_info.y <= ball_box_positions[i].y + ball->height;
 }
 
-
-/**
- * @brief Checks if the mouse is inside the start button
- * @return true The mouse is inside the button
- * @return false The mouse is not inside the button
- */
-bool is_mouse_in_start() {
-    return mouse_info.x >= 280 && mouse_info.x <= 400 && mouse_info.y >= 231 && mouse_info.y <= 289;
-}
-
-
-bool is_mouse_in_press_S() {
-    return mouse_info.x >= mode_info.XResolution/2 - 313/2 && mouse_info.x <= mode_info.XResolution/2 - 313/2 +313 && mouse_info.y >= mode_info.YResolution/2 + 85 + 29 && mouse_info.y <= mode_info.YResolution/2 + 85 + 29;
-}
-
-bool is_mouse_in_instructions(){
-    return mouse_info.x >=mode_info.XResolution/2 - 400/2 && mouse_info.x <= mode_info.XResolution/2 - 400/2 + 400 && mouse_info.y >= mode_info.YResolution/2 + 45/2 + 45 && mouse_info.y <= mode_info.YResolution/2 + 45/2 + 45;
-
-}
-
-/**
- * @brief Checks if the mouse is inside the exit button
- * @return true The mouse is inside the button
- * @return false The mouse is not inside the button
- */
-bool is_mouse_in_exit() {
-    return mouse_info.x >= 326 && mouse_info.x <= 400 && mouse_info.y >= 326 && mouse_info.y <= 355;
-}
-
-bool is_mouse_in_hide_code_button(){
-    return mouse_info.x >= 2 && mouse_info.x <= 132 && mouse_info.y >= 5 && mouse_info.y <= 55;
-}
-
 /**
  * @brief Places a ball
  * This function returns before doing anything if the player's turn isn't active or if the player is not in the game menu
@@ -644,14 +611,14 @@ void place_ball(Position* positions, uint8_t n) {
  */
 void menu_selection() {
     if (menuState != START) return;
-    if (is_mouse_in_start()) {
+    if (is_mouse_in_sprite(start)) {
         test_player_no();
         setup_code_positions();
         update_menu_state(GAME);
         return; 
     }
 
-    if (is_mouse_in_exit()){
+    if (is_mouse_in_sprite(exit_menu)){
         systemState = EXIT;
     }      
     
