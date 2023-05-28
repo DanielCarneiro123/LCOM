@@ -1,9 +1,8 @@
 #include "mouse.h"
 
-// Variáveis globais do módulo
-int hook_id_mouse = 2;        // um valor qualquer [0..7], desde que seja diferente do teclado e do timer
-uint8_t byte_index = 0;       // [0..2]
-uint8_t mouse_byte;         // o byte mais recente lido
+int hook_id_mouse = 2;   
+uint8_t byte_index = 0;    
+uint8_t mouse_byte;        
 MouseInfo mouse_info = {0, 0, 0, 100, 100};
 MouseInfo mouse_buffer;
 extern vbe_mode_info_t mode_info;
@@ -88,20 +87,13 @@ int (mouse_write)(uint8_t command) {
   uint8_t attempts = 10;
   uint8_t mouse_response;
 
-  // Enquanto houver tentativas e a resposta não for satisfatória
   do {
     attempts--;
-    // Ativar do modo D4 do i8042
-    if (write_KBC_command(0x64, 0xD4))
-      return 1;
-    // O comando para o rato é escrito na porta 0x60
-    if (write_KBC_command(0x60, command))
-      return 1;
+    if (write_KBC_command(0x64, 0xD4)) return 1;
+    if (write_KBC_command(0x60, command)) return 1;
     tickdelay(micros_to_ticks(20000));
-    // Ler a resposta do rato pela porta 0x60
-    if (read_KBC_output(0x60, &mouse_response, 1))
-      return 1;
-  } while (mouse_response != 0xFA && attempts);       
+    if (read_KBC_output(0x60, &mouse_response, 1)) return 1;
+  } while (mouse_response != MOUSE_ACK && attempts);       
 
   return 0;
 }

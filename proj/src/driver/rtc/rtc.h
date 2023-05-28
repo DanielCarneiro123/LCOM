@@ -4,30 +4,27 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
-// Macros
 #define RTC_MASK            5
 #define IRQ_RTC             8
 #define REGISTER_INPUT      0x70
 #define REGISTER_OUTPUT     0x71
 
-#define REGISTER_A   10
-#define REGISTER_B   11
+#define REGISTER_A          10
+#define REGISTER_B          11
 
-#define SECONDS    0
-#define MINUTES    2
-#define HOURS      4   
+#define SECONDS             0
+#define MINUTES             2
+#define HOURS               4   
 
 #define BINARY              BIT(2)
 #define UPDATING            BIT(7)
 
-// Estrutura que reune todos os dados importantes
 typedef struct {
     uint8_t hours;
     uint8_t minutes;
     uint8_t seconds;
 } rtc_info;
 
-// Functions
 int rtc_setup();
 int rtc_read(uint8_t rregister, uint8_t *status);
 int rtc_write(uint8_t wregister, uint8_t data);

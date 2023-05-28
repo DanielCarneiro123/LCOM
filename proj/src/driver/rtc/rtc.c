@@ -1,8 +1,7 @@
 #include "rtc.h"
 
-// Variáveis globais
-int rtc_hook_id = RTC_MASK; // Máscara constante = 5
-rtc_info time_info;   // Estrutura que irá conter toda a informação
+int rtc_hook_id = RTC_MASK; 
+rtc_info time_info; 
 
 /**
  * @brief Sets up the RTC for use
@@ -68,20 +67,16 @@ uint8_t rtc_is_updating() {
  */
 int rtc_update_time() {
     
-    // Se o RTC estiver ocupado a atualizar os registos não devemos ler dados
     if (rtc_is_updating()) return 1;
     uint8_t time;
 
     rtc_info time_buffer;
-    // Seconds
     if (rtc_read(SECONDS, &time)) return 1;
     time_buffer.seconds = time;
 
-    // Minutes
     if (rtc_read(MINUTES, &time)) return 1;
     time_buffer.minutes = time;
 
-    // Hours
     if (rtc_read(HOURS, &time)) return 1;
     time_buffer.hours = time;
 
