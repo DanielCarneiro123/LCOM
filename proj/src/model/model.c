@@ -439,6 +439,7 @@ void update_keyboard_state() {
             break;
         case G_KEY:
             if (menuState == GAME) break;
+            if (player_no == 2 && menuState == END) break;
             test_player_no();
             setup_code_positions();
             update_menu_state(GAME);
