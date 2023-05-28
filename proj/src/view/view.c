@@ -193,7 +193,7 @@ void draw_finish_menu() {
         bg_size ++;
     }
     if (player_two_cheating == 1){
-        draw_sprite_xpm(player_cheated, mode_info.XResolution/2 - 667/2, mode_info.YResolution/2 + 25);
+        draw_sprite_xpm(player_cheated, mode_info.XResolution/2 - 467/2, mode_info.YResolution/2 + 35);
         background[bg_size] = player_cheated;
         bg_size ++;
     }
