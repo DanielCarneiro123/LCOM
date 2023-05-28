@@ -18,6 +18,7 @@
 
 #define BINARY              BIT(2)
 #define UPDATING            BIT(7)
+#define HOUR_MODE           BIT(1)
 
 typedef struct {
     uint8_t hours;
@@ -29,7 +30,9 @@ int rtc_setup();
 int rtc_read(uint8_t rregister, uint8_t *status);
 int rtc_write(uint8_t wregister, uint8_t data);
 uint8_t rtc_is_updating();
-int rtc_set_binary();
+int rtc_get_binary();
+int rtc_get_hours();
+uint8_t convert_output(uint8_t output);
 int rtc_update_time();
 
 #endif

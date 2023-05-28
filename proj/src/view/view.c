@@ -497,7 +497,6 @@ void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
  * @brief Set the background color according to current hour
  */
 void set_background_color() {
-    printf("\n\n%d h\n\n", time_info.hours);
     bg_color = time_colors[time_info.hours];
 }
 

@@ -44,7 +44,7 @@ int setup() {
   if (mouse_write(ENABLE_STREAM) != 0) return 1;
   if (mouse_write(ENABLE_REMOTE) != 0) return 1;
 
-  rtc_setup();
+  if (rtc_setup()) return 1;
   if (sp_setup()) return 1;
 
   return 0;
