@@ -242,7 +242,7 @@ int setup_sprites() {
     if (frase_menu == NULL) return 1;
     press_s = create_sprite((xpm_map_t) press_s_xpm);
     if (press_s == NULL) return 1;
-    player_cheated = create_sprite_xpm((xpm_map_t) player_cheated_xpm);
+    player_cheated = create_sprite((xpm_map_t) player_cheated_xpm);
     if (player_cheated == NULL) return 1;
 
     return 0;
