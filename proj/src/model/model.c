@@ -47,6 +47,7 @@ Sprite *madeira;
 Sprite *frase_menu;
 Sprite *press_s;
 Sprite *instructions;
+Sprite *player_cheated;
 
 
 Position* ball_positions;
@@ -249,6 +250,9 @@ int setup_sprites() {
     if (press_s == NULL) return 1;
     instructions = create_sprite_xpm((xpm_map_t) instructions_xpm);
     if (instructions == NULL) return 1;
+    player_cheated = create_sprite_xpm((xpm_map_t) player_cheated_xpm);
+    if (player_cheated == NULL) return 1;
+
     return 0;
 }
 
@@ -282,7 +286,7 @@ void destroy_sprites() {
     destroy_sprite(frase_menu);
     destroy_sprite(press_s);
     destroy_sprite(instructions);
-    
+    destroy_sprite(player_cheated);
 }
 
 /**

@@ -39,11 +39,13 @@
 #include "xpm/press_s.xpm"
 #include "xpm/madeira.xpm"
 #include "xpm/instructions.xpm"
+#include "xpm/player_cheated.xpm"
 #include "view/view.h"
 #include "game_constants.h"
 #include "model/sprite.h"
 #include "config.h"
 #include "data_structures.h"
+
 
 void update_timer_state();
 void update_keyboard_state();

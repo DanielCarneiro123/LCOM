@@ -55,6 +55,8 @@ extern Sprite *madeira;
 extern Sprite *frase_menu;
 extern Sprite *press_s;
 extern Sprite *instructions;
+extern Sprite *player_cheated;
+
 
 
 bool firstFrame = true;
@@ -191,8 +193,8 @@ void draw_finish_menu() {
         bg_size ++;
     }
     if (player_two_cheating == 1){
-        draw_sprite_xpm(madeira, mode_info.XResolution/2 - 100, mode_info.YResolution/2);
-        background[bg_size] = madeira;
+        draw_sprite_xpm(player_cheated, mode_info.XResolution/2 - 667/2, mode_info.YResolution/2 + 25);
+        background[bg_size] = player_cheated;
         bg_size ++;
     }
 
