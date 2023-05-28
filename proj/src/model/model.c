@@ -435,10 +435,6 @@ void update_keyboard_state() {
         case Q_KEY:
             running = 0;
             break;
-        case S_KEY:
-            if (menuState == GAME) break;
-            update_menu_state(START);
-            break;
         case G_KEY:
             if (menuState == GAME) break;
             test_player_no();
