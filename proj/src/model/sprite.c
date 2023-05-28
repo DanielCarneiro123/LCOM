@@ -8,7 +8,7 @@ extern MouseInfo mouse_info;
  * @param sprite xpm of sprite to create
  * @return Sprite* Pointer to new sprite
  */
-Sprite *create_sprite_xpm(xpm_map_t sprite){
+Sprite *create_sprite(xpm_map_t sprite){
 
   Sprite *sp = (Sprite *) malloc (sizeof(Sprite));
   if(sp == NULL) return NULL;

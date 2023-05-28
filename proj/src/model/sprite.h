@@ -12,7 +12,7 @@ typedef struct {
     int32_t y;
 } Sprite; 
 
-Sprite *create_sprite_xpm(xpm_map_t sprite);
+Sprite *create_sprite(xpm_map_t sprite);
 void destroy_sprite(Sprite *sprite);
 bool is_mouse_in_sprite(Sprite *sprite);
 
