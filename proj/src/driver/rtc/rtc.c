@@ -6,7 +6,7 @@ uint8_t is_binary;
 uint8_t full_hours;
 
 /**
- * @brief Sets up the RTC for use
+ * @brief Sets up the RTC for use \n 
  * Gets the counting mode, the hour format, and fills the time struct for the first time
  * @return 1 on failure, 0 otherwise
  */
@@ -20,7 +20,7 @@ int rtc_setup() {
 
 /**
  * @brief Gets the counting mode
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int rtc_get_binary() {
     uint8_t status;
@@ -32,7 +32,7 @@ int rtc_get_binary() {
 
 /**
  * @brief Gets the hour format
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int rtc_get_hours() {
     uint8_t status;
@@ -46,7 +46,7 @@ int rtc_get_hours() {
  * @brief Reads a byte from the RTC
  * @param rregister Register to read from
  * @param status Address of byte in which to place output
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int rtc_read(uint8_t rregister, uint8_t *status) {
     if (status == NULL) return 1;
@@ -59,7 +59,7 @@ int rtc_read(uint8_t rregister, uint8_t *status) {
  * @brief Writes a byte to the RTC
  * @param wregister Register to write to
  * @param data Byte to write
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int rtc_write(uint8_t wregister, uint8_t data) {
     if (sys_outb(REGISTER_INPUT, wregister)) return 1;
@@ -69,7 +69,7 @@ int rtc_write(uint8_t wregister, uint8_t data) {
 
 /**
  * @brief Checks whether the RTC is updating
- * @return uint8_t 0 if not updating, 1 if updating 
+ * @return 0 if not updating, 1 if updating 
  */
 uint8_t rtc_is_updating() {
     uint8_t status;
@@ -80,7 +80,7 @@ uint8_t rtc_is_updating() {
 /**
  * @brief Converts BCD to binary if need be
  * @param output Output of the RTC
- * @return uint8_t Converted output
+ * @return Converted output
  */
 uint8_t convert_output(uint8_t output) {
     uint8_t result = 0;
@@ -97,7 +97,7 @@ uint8_t convert_output(uint8_t output) {
 /**
  * @brief Converts hours to 0-23 format if need be, including BCD conversion
  * @param hours Output of the RTC
- * @return uint8_t Converted output
+ * @return Converted output
  */
 uint8_t convert_hours(uint8_t hours) {
     if (full_hours) {
@@ -126,9 +126,9 @@ uint8_t convert_hours(uint8_t hours) {
 }
 
 /**
- * @brief Updates the values in the time info struct
+ * @brief Updates the values in the time info struct \n 
  * A buffer struct is used while filling in the values in case an error occurs midway. At the end its contents are copied to the main struct
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int rtc_update_time() {
     

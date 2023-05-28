@@ -9,7 +9,7 @@ extern uint8_t* back_buffer;
  * @brief Sets the VM's graphic mode
  * Sets the VM's graphic mode through the VBE's 00h function
  * @param submode Mode to set
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (set_graphic_mode)(uint16_t submode) {
     reg86_t reg86;
@@ -27,7 +27,7 @@ int (set_graphic_mode)(uint16_t submode) {
  * @brief Gets the information of a given VBE mode
  * @param mode Mode to get information on
  * @param mode_info Struct to be filled with the information
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int get_mode_info(uint16_t mode, vbe_mode_info_t *mode_info) {
     memset(mode_info, 0, sizeof(*mode_info));
@@ -39,7 +39,7 @@ int get_mode_info(uint16_t mode, vbe_mode_info_t *mode_info) {
  * @brief Maps the frame buffer to the process' address spac
  * @param mode Mode to use
  * @param frame_buffer Pointer to frame buffer to be used
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (set_frame_buffer)(uint16_t mode, uint8_t** frame_buffer) {
     get_mode_info(mode, &mode_info);
@@ -60,22 +60,22 @@ int (set_frame_buffer)(uint16_t mode, uint8_t** frame_buffer) {
 }
 
 /**
- * @brief Calculates the index of a pixel
+ * @brief Calculates the index of a pixel \n 
  * Calculates the index of a pixel, independently of the current mode
  * @param x x coordinate of pixel
  * @param y y coordinate of pxel
- * @return uint32_t Index of pixel
+ * @return Index of pixel
  */
 uint32_t pixel_index(uint16_t x, uint16_t y) {
     return y * mode_info.XResolution + x;
 }
 
 /**
- * @brief Calculates the offset of a pixel 
+ * @brief Calculates the offset of a pixel \n 
  * Calculates the offset of a pixel on the frame buffer
  * @param x x coordinate of pixel
  * @param y y coordinate of pixel
- * @return uint32_t Offset of pixel
+ * @return Offset of pixel
  */
 uint32_t frame_buffer_index(uint16_t x, uint16_t y) {
     return pixel_index(x, y) * bpp;
@@ -87,7 +87,7 @@ uint32_t frame_buffer_index(uint16_t x, uint16_t y) {
  * @param x x coordinate of pixel
  * @param y y coordinate of pixel
  * @param color color of pixel
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (paint_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 0;
@@ -106,7 +106,7 @@ int (paint_pixel)(uint16_t x, uint16_t y, uint32_t color) {
  * @param x2 x of second point
  * @param y2 y of second point
  * @param color Color of line
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color) {
     if (x1 == x2) {
@@ -132,14 +132,14 @@ int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t col
 }
 
 /**
- * @brief Fills a rectangle with a given color
+ * @brief Fills a rectangle with a given color \n 
  * Fills a rectanglt with a given color on the frame buffer
  * @param x x of top-left corner
  * @param y y of top-right corner
  * @param width Width of rectangle
  * @param height Height of rectangle
  * @param color Color of rectangle
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int fill_rectangle(int32_t x, int32_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int32_t i = x; i < x + width; i++) {

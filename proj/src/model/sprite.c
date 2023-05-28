@@ -3,10 +3,10 @@
 extern MouseInfo mouse_info;
 
 /**
- * @brief Create a sprite xpm object
+ * @brief Create a sprite xpm object \n 
  * Allocates memory for a sprite
  * @param sprite xpm of sprite to create
- * @return Sprite* Pointer to new sprite
+ * @return Pointer to new sprite
  */
 Sprite *create_sprite(xpm_map_t sprite){
 
@@ -27,7 +27,7 @@ Sprite *create_sprite(xpm_map_t sprite){
 }
 
 /**
- * @brief Deallocates sprite memory
+ * @brief Deallocates sprite memory \n 
  * @param sprite Sprite to delete
  */
 void destroy_sprite(Sprite *sprite) {

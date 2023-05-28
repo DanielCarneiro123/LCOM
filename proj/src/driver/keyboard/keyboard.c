@@ -6,10 +6,10 @@ uint8_t scancode = 0;
 bool error = false;
 
 /**
- * @brief Subscribes to the keyboard's interrupts in exclusive mode
+ * @brief Subscribes to the keyboard's interrupts in exclusive mode \n 
  * Subscribes to the keyboard's interrupts with the bit mask defined in hook_id_kbd
  * @param bit_no Bit mask for which the subscription takes place
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int keyboard_subscribe_interrupts(uint8_t *bit_no) {
   if (bit_no == NULL) return 1;
@@ -20,7 +20,7 @@ int keyboard_subscribe_interrupts(uint8_t *bit_no) {
 
 /**
  * @brief Unsubscribes from the keyboard's interrupts
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int keyboard_unsubscribe_interrupts() {
   if (sys_irqrmpolicy(&hook_id_kbd)) return 1;
@@ -28,7 +28,7 @@ int keyboard_unsubscribe_interrupts() {
 }
 
 /**
- * @brief Interrupt handler for the keyboard
+ * @brief Interrupt handler for the keyboard \n 
  * Reads a scancode from the KBC
  */
 void (kbc_ih)() {

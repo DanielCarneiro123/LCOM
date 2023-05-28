@@ -9,10 +9,10 @@ extern vbe_mode_info_t mode_info;
 bool mouse_error = false;
 
 /**
- * @brief Subscribes to the mouse's interrupts
+ * @brief Subscribes to the mouse's interrupts \n 
  * Subscribes to the mouse's interrupts in exclusive mode with the bit mask defined in hook_id_mouse
  * @param bit_no Bit mask for which the subscription takes place
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int mouse_subscribe_interrupts(uint8_t *bit_no) {
   if (bit_no == NULL) return 1;
@@ -22,8 +22,8 @@ int mouse_subscribe_interrupts(uint8_t *bit_no) {
 }
 
 /**
- * @brief Unsubscribes from the mouse's interrupts
- * @return int 1 on failure, 0 otherwise
+ * @brief Unsubscribes from the mouse's interrupts \n 
+ * @return 1 on failure, 0 otherwise
  */
 int mouse_unsubscribe_interrupts() {
   if (sys_irqrmpolicy(&hook_id_mouse)) return 1;
@@ -31,7 +31,7 @@ int mouse_unsubscribe_interrupts() {
 }
 
 /**
- * @brief Interrupt handler for the mouse
+ * @brief Interrupt handler for the mouse \n 
  * Reads a mouse byte from the KBC
  */
 void (mouse_ih)() {
@@ -40,10 +40,10 @@ void (mouse_ih)() {
 }
 
 /**
- * @brief Updates the buffer mouse struct
+ * @brief Updates the buffer mouse struct \n 
  * A second struct is used as a buffer, and its contents are copied to the main struct after each packet
  */
-void mouse_update_buffer() {
+void (mouse_update_buffer)() {
   if (byte_index == 0 && (mouse_byte & FIRST_BYTE)) { 
     mouse_buffer.right_click = mouse_byte & MOUSE_RB;
     mouse_buffer.left_click = mouse_byte & MOUSE_LB;
@@ -64,7 +64,7 @@ void mouse_update_buffer() {
 }
 
 /**
- * @brief Updates the main mouse struct
+ * @brief Updates the main mouse struct \n 
  * Copies the contents of the buffer struct to the main struct
  */
 void (mouse_sync_info)(){
@@ -80,8 +80,9 @@ void (mouse_sync_info)(){
 }
 
 /**
- * @brief Writes a command to the mouse
+ * @brief Writes a command to the mouse \n 
  * The command is sent until too many attempts are made or until an ACK response is obtained
+ * @return 1 on failure, 0 otherwise
  */
 int (mouse_write)(uint8_t command) {
   uint8_t attempts = 10;

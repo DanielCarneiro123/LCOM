@@ -21,9 +21,12 @@ int (main)(int argc, char *argv[]) {
   return 0;
 }
 
+/**
+ * @brief Sets up the devices and objects \n 
+ * Allocates memory for objects, subscribes to interrupts and sets graphic mode
+ * @return 1 on failure, 0 otherwise
+ */
 int setup() {
-
-
   if (timer_set_frequency(TIMER, GAME_FREQUENCY) != 0) return 1;
   if (set_frame_buffers(0x115) != 0) return 1;
   if (set_graphic_mode(0x115) != 0) return 1;
@@ -50,6 +53,11 @@ int setup() {
   return 0;
 }
 
+/**
+ * @brief Tears down the program \n 
+ * Deallocates heap memory, unsubscribes from interrupts, returns to text mode
+ * @return 1 on failure, 0 otherwise
+ */
 int teardown() {
 
   if (vg_exit() != 0) return 1;
@@ -69,6 +77,13 @@ int teardown() {
   return 0;
 }
 
+/**
+ * @brief Main loop \n 
+ * Main loop of the game
+ * @param argc Command line argument count
+ * @param argv Command line arguments
+ * @return 1 on failure, 0 otherwise
+ */
 int (proj_main_loop)(int argc, char *argv[]) {
 
   if (setup()) return teardown();

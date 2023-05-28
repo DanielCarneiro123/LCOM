@@ -7,9 +7,9 @@ bool new_data = false;
 extern uint32_t color_table[];
 
 /**
- * @brief Sets up the serial port for use
+ * @brief Sets up the serial port for use \n 
  * Sets the bit rate, the interrupts to be used, disables the fifo, and sets the char sizes
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (sp_setup)() {
     if (sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, DIVISOR_LATCH_BIT)) return 1;
@@ -23,10 +23,10 @@ int (sp_setup)() {
 }
 
 /**
- * @brief Subscribes to the serial port's interrupts
+ * @brief Subscribes to the serial port's interrupts \n 
  * Subscribes to the serial port's interrupts in exclusive mode with the bit mask defined in hook_id_sp
  * @param bit_no Bit mask for which the subscription takes place
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (sp_subscribe_interrupts)(uint8_t *bit_no) {
   if (bit_no == NULL) return 1;
@@ -45,10 +45,10 @@ int (sp_unsubscribe_interrupts)() {
 }
 
 /**
- * @brief Reads the LSR
+ * @brief Reads the LSR \n 
  * Reads the serial port's LSR to determine its current status
  * @param lsr Address of byte in which to put LSR
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (read_lsr)(uint8_t *lsr) {
     if (lsr == NULL) return 1;
@@ -56,9 +56,9 @@ int (read_lsr)(uint8_t *lsr) {
 }
 
 /**
- * @brief Reads data from the SP
+ * @brief Reads data from the SP \n 
  * Reads data from the SP. If everything went well, an ACK byte is sent, otherwise a NACK byte is sent
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (read_sp_data)() {
     int attempts = SP_ATTEMPTS;
@@ -82,10 +82,10 @@ int (read_sp_data)() {
 }
 
 /**
- * @brief Writes a byte to the SP
+ * @brief Writes a byte to the SP \n 
  * Writes a byte to the SP if the THR is empty
  * @param data Data to sent
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int (write_sp_data)(uint8_t data) {
     int attempts = SP_ATTEMPTS;
@@ -107,7 +107,7 @@ int (write_sp_data)(uint8_t data) {
 }
 
 /**
- * @brief Interrupt handler for the serial port
+ * @brief Interrupt handler for the serial port \n 
  * Reads the IIR and uses it to the determine which functions to execute
  */
 void (sp_ih)() {
@@ -134,7 +134,7 @@ void (sp_ih)() {
  * @param position Position of ball modified
  * @param color Color of ball modified (irrelevant for removing a ball)
  * @param remove 1 if ball is removed, 0 is placed
- * @return uint8_t 
+ * @return Byte to transmit
  */
 uint8_t (prepare_move_byte)(uint8_t position, uint32_t color, uint8_t remove) {
 

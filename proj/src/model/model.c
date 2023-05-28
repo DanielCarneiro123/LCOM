@@ -64,7 +64,7 @@ uint8_t hide_code = 0;
 int timer_interrupts = 0;
 
 /**
- * @brief Updates the menu state
+ * @brief Updates the menu state \n 
  * This function is used instead of simply assigning the new state to avoid repeating code that needs to go along with updating said state
  * @param new_state State to transition to
  */
@@ -75,9 +75,9 @@ void update_menu_state(MenuState new_state) {
 }
 
 /**
- * @brief Set up the box balls positions object
+ * @brief Set up the box balls positions object \n 
  * Allocates memory for the balls that the player can pick up
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int setup_box_balls_positions() {
     ball_box_positions = 0;
@@ -92,9 +92,9 @@ int setup_box_balls_positions() {
 }
 
 /**
- * @brief Set up the box small balls positions object
+ * @brief Set up the box small balls positions object \n 
  * Allocates memory for the small balls that the player can pick up
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int setup_box_small_balls_positions() {
     small_ball_box_positions = 0;
@@ -109,9 +109,9 @@ int setup_box_small_balls_positions() {
 }
 
 /**
- * @brief Set up the positions object
+ * @brief Set up the positions object \n 
  * Allocates memory for the balls that the player will place
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int setup_positions() {
     balls = 0;
@@ -126,9 +126,9 @@ int setup_positions() {
 }
 
 /**
- * @brief Set up the code positions object
+ * @brief Set up the code positions object \n 
  * Allocates memory for the balls in the code
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int setup_code_positions() {
     if (player_no == 1) {
@@ -147,9 +147,9 @@ int setup_code_positions() {
 }
 
 /**
- * @brief Set up the small positions object
+ * @brief Set up the small positions object \n 
  * Allocates memory for the small balls that the player will place
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int setup_small_positions() {
     small_ball_positions = malloc(sizeof(PositionSmall) * 36);
@@ -187,9 +187,9 @@ void destroy_code_positions() {
 }
 
 /**
- * @brief Creates sprite objects
+ * @brief Creates sprite objects \n 
  * Allocates memory for every sprite that the game will need
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int setup_sprites() {
     mouse = create_sprite((xpm_map_t) mouse_xpm);
@@ -281,7 +281,7 @@ void destroy_sprites() {
 }
 
 /**
- * @brief Updates the state of the i8254 timer
+ * @brief Updates the state of the i8254 timer \n 
  * Beyond incrementing the internal counter, this function also sets the pace of queue updates, RTC updates, and buffer copying
  */
 void update_timer_state() {
@@ -292,7 +292,7 @@ void update_timer_state() {
 }
 
 /**
- * @brief Updates the state of the UART serial port
+ * @brief Updates the state of the UART serial port \n 
  * This function runs the serial port's interrupt handler, then deals with any data that might have been recieved
  */
 void update_sp_state() {
@@ -366,7 +366,7 @@ void update_sp_state() {
 }
 
 /**
- * @brief Function used when placing a ball
+ * @brief Function used when placing a ball \n 
  * This function contains all the logic tied to placing balls (differentiating players 1 from 2, etc) so that it can be called with no need for external conditions
  */
 void place_move() {
@@ -383,7 +383,7 @@ void place_move() {
 }
 
 /**
- * @brief Function used when removing a ball
+ * @brief Function used when removing a ball \n 
  * This function contains all the logic tied to removing balls (differentiating players 1 from 2, etc) so that it can be called with no need for external conditions
  */
 void remove_move() {
@@ -408,7 +408,7 @@ void update_rtc_state() {
 }
 
 /**
- * @brief Decides player numbers
+ * @brief Decides player numbers \n 
  * This function runs when the actual game begins. The first player to enter the game menu is player 1, the other is player 2.
  */
 void test_player_no() {
@@ -425,7 +425,7 @@ void test_player_no() {
 }
 
 /**
- * @brief Updates the state of the keyboard
+ * @brief Updates the state of the keyboard \n 
  * This function runs the interrupt handler, and then runs code based on which key was pressed
  */
 void update_keyboard_state() {
@@ -502,7 +502,7 @@ void update_keyboard_state() {
 }
 
 /**
- * @brief Updates the state of the mouse
+ * @brief Updates the state of the mouse \n 
  * This function runs the interrupt handler, updates the mouse info at the end of each packet, and runs code according to the button the player is pressing
  */
 void update_mouse_state() {
@@ -540,7 +540,7 @@ void click_hide_code_button() {
 }
 
 /**
- * @brief Updates the color of the ball being held
+ * @brief Updates the color of the ball being held \n 
  * This function is used instead of simply assigning the new color to avoid repeating the condition that this can only happen in the game menu
  * @param color new color to be used
  */
@@ -551,7 +551,7 @@ void update_mouse_color(uint32_t color) {
 }
 
 /**
- * @brief Tries to mark a turn as finished
+ * @brief Tries to mark a turn as finished \n 
  * This function checks if all balls for the current turn have been filled (irrelevant for small balls)
  * @param positions Array of balls to check (use ball_positions in the case of small balls)
  */
@@ -599,10 +599,10 @@ bool is_mouse_in_ball_box(uint8_t i) {
 }
 
 /**
- * @brief Places a ball
+ * @brief Places a ball \n 
  * This function returns before doing anything if the player's turn isn't active or if the player is not in the game menu
  * @param positions Position array to place on
- * @param n Number of balls in array
+ * @param Number of balls in array
  */
 void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
@@ -621,7 +621,7 @@ void place_ball(Position* positions, uint8_t n) {
 }
 
 /**
- * @brief Selects menu options
+ * @brief Selects menu options \n 
  * This function is run when on the initial menu and the player presses the left mouse button
  */
 void menu_selection() {
@@ -655,7 +655,7 @@ void end_menu_selection() {
 }
 
 /**
- * @brief Picks a small ball from the box
+ * @brief Picks a small ball from the box \n 
  * Picks a black/white small ball from the box
  */
 void pick_small_ball() {
@@ -670,7 +670,7 @@ void pick_small_ball() {
 }
 
 /**
- * @brief Picks a ball from the box
+ * @brief Picks a ball from the box \n 
  * Picks a large ball from the box
  */
 void pick_box_ball() {
@@ -687,7 +687,7 @@ void pick_box_ball() {
 }
 
 /**
- * @brief Places a small ball
+ * @brief Places a small ball \n 
  * This function returns before doing anything if the player's turn isn't active or if the player is not in the game menu
  * @param positions Small position array to place on
  * @param n Number of balls in array
@@ -709,7 +709,7 @@ void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
 }
 
 /**
- * @brief Removes a ball from the board if the mouse is inside it
+ * @brief Removes a ball from the board if the mouse is inside it \n 
  * Checks every ball in the array until finding one that can be removed
  * @param positions Array to check in
  * @param n Number of balls in array
@@ -731,8 +731,8 @@ void remove_ball(Position* positions, uint8_t n) {
 }
 
 /**
- * @brief Removes a small ball from the board if the mouse is inside it
- * Checks every ball in the array until finding one that can be removed
+ * @brief Removes a small ball from the board if the mouse is inside it \n 
+ * Checks every ball in the array until finding one that can be removed \n 
  * This function doesn't need any arguments because, unlike for large balls, there is only one case in which small balls can be removed
  */
 void remove_small_ball() {
@@ -750,7 +750,7 @@ void remove_small_ball() {
 }
 
 /**
- * @brief Resets the game state
+ * @brief Resets the game state \n 
  * Resets global variables so that the game may be replayed
  */
 void resetTable(){
@@ -778,7 +778,7 @@ void resetTable(){
 }
 
 /**
- * @brief Pushes endgame data
+ * @brief Pushes endgame data \n 
  * Pushes all relevant data to player 1 when the game ends
  */
 void push_code() {

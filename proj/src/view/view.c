@@ -62,10 +62,10 @@ uint32_t bg_color;
 uint32_t time_colors[24] = {COLOR_TIME1, COLOR_TIME2, COLOR_TIME3, COLOR_TIME4, COLOR_TIME5, COLOR_TIME6, COLOR_TIME7, COLOR_TIME8, COLOR_TIME9, COLOR_TIME10, COLOR_TIME11, COLOR_TIME12, COLOR_TIME13, COLOR_TIME14, COLOR_TIME15, COLOR_TIME16, COLOR_TIME17, COLOR_TIME18, COLOR_TIME19, COLOR_TIME20, COLOR_TIME21, COLOR_TIME22, COLOR_TIME23, COLOR_TIME24};
  
 /**
- * @brief Prepares the frame buffers
+ * @brief Prepares the frame buffers \n 
  * Allocates the main frame buffer in VRAM and the secondary buffer in the process' address space
  * @param mode Mode to be used
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int set_frame_buffers(uint16_t mode) {
     if (set_frame_buffer(mode, &main_frame_buffer)) return 1;
@@ -76,7 +76,7 @@ int set_frame_buffers(uint16_t mode) {
 }
 
 /**
- * @brief Double buffering function
+ * @brief Double buffering function \n 
  * Copies the contents of the secondary buffer to the main buffer
  */
 void copy_buffer() {
@@ -84,7 +84,7 @@ void copy_buffer() {
 }
 
 /**
- * @brief Draws a frame
+ * @brief Draws a frame \n 
  * Draws the next frame on the frame buffer according to the game's state
  */
 void draw_new_frame() {
@@ -130,7 +130,7 @@ void draw_final_code() {
 }
 
 /**
- * @brief Draws the initial menu
+ * @brief Draws the initial menu \n 
  * Draws the initial menu and sets background
  */
 void draw_initial_menu() {
@@ -148,7 +148,7 @@ void draw_initial_menu() {
 }
 
 /**
- * @brief Draws the game menu
+ * @brief Draws the game menu \n 
  * Draws the game menu and sets background
  */
 void draw_game_menu() {
@@ -166,7 +166,7 @@ void draw_game_menu() {
 }
 
 /**
- * @brief Draws the final menu
+ * @brief Draws the final menu \n 
  * Draws the final menu and sets background
  */
 void draw_finish_menu() {
@@ -200,7 +200,6 @@ void draw_finish_menu() {
             curr_color = code_positions[i].color;
             draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, code_positions[i].color);
         }
-        //draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, curr_color);
     }
 
     draw_sprite_xpm(start, mode_info.XResolution/4 - 120/2, mode_info.YResolution - 50);
@@ -213,7 +212,7 @@ void draw_finish_menu() {
 }
 
 /**
- * @brief Draws the code
+ * @brief Draws the code \n 
  * Only applies to player 2, when in the game menu
  */
 void draw_code() {  
@@ -224,7 +223,7 @@ void draw_code() {
 }
 
 /**
- * @brief Draws the lid
+ * @brief Draws the lid \n 
  * Only applies to player 2, when in the game menu
  */
 void draw_lid(){
@@ -234,7 +233,7 @@ void draw_lid(){
 }
 
 /**
- * @brief Cleans the lid
+ * @brief Cleans the lid \n 
  * Draws the background behind the now hidden lid
  */
 void clean_lid(){
@@ -243,20 +242,8 @@ void clean_lid(){
                 
 }
 
-/*
-void toggle_code_view(){
-    if(hide_code){
-        fill_rectangle(186, 0, 230, 59, GREEN, drawing_frame_buffer);
-    }
-
-    else {
-        clean_lid();
-        }
-}
-*/
-
 /**
- * @brief Draws the balls that the player can pick up
+ * @brief Draws the balls that the player can pick up \n 
  * If the player is not in the game menu, this function returns without doing anything
  */
 void draw_numbers_and_balls_in_box(){
@@ -279,7 +266,7 @@ void draw_numbers_and_balls_in_box(){
 }
 
 /**
- * @brief Draws the large balls
+ * @brief Draws the large balls \n 
  * Draws the balls from the ball_positions array
  */
 void draw_balls() {
@@ -290,7 +277,7 @@ void draw_balls() {
 }
 
 /**
- * @brief Draws the small balls
+ * @brief Draws the small balls \n 
  * Draws the small balls from the small_ball_positions array
  */
 void draw_small_balls() {
@@ -301,13 +288,13 @@ void draw_small_balls() {
 }
 
 /**
- * @brief Draws a ball
+ * @brief Draws a ball \n 
  * Puts a ball in the frame buffer, it can be any color
  * @param sprite Sprite to draw (ball or small_ball)
  * @param x x coordinate to draw ball in
  * @param y y coordinate to draw ball in
  * @param color Color to be used (for small balls, 0 is transparent, 1 is black, 2 is white)
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
     if (color == TRANSPARENT || (sprite == small_ball && color == 0)) return 0;
@@ -334,7 +321,7 @@ int draw_ball(Sprite *sprite, int x, int y, uint32_t color) {
 
 
 /**
- * @brief Draws the mouse
+ * @brief Draws the mouse \n 
  * Draws a cursor, and a ball behind it in case the player is holding one
  */
 void draw_mouse() {
@@ -353,7 +340,7 @@ void draw_mouse() {
 }
 
 /**
- * @brief Cleans the previous position the mouse was in
+ * @brief Cleans the previous position the mouse was in \n 
  * Redraws the background, layer by layer, in the mouse's position during the previous frame
  */
 void clean_mouse() {
@@ -390,12 +377,12 @@ void clean_mouse() {
 }
 
 /**
- * @brief Draws a sprite
+ * @brief Draws a sprite \n 
  * Draws the entirety of a sprite object's colors on the frame buffer
  * @param sprite Sprite to be drawn
  * @param x x coordinate to draw in
  * @param y y coordinate to draw in
- * @return int 
+ * @return 1 on failure, 0 otherwise
  */
 int draw_sprite_xpm(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
@@ -423,7 +410,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
 }
 
 /**
- * @brief Draws a sprite partially
+ * @brief Draws a sprite partially \n 
  * This function is used when redrawing the background behind moving/cleaned objects, thus avoiding the need to redraw the entire frame buffer per frame
  * @param sprite Sprite to be partially drawn
  * @param x x coordinate in which to draw sprite
@@ -432,7 +419,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
  * @param ydraw y coordinate from which to start painting pixels (relative to the sprite, that is, 0 equates to the parameter passed for "y")
  * @param height Height of fragment to be drawn
  * @param width Width of fragment to be drawn
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, int height, int width) {
   //if (xdraw + width < x || ydraw + height < y) return 0; 
@@ -466,7 +453,7 @@ int draw_partial_sprite_xpm(Sprite *sprite, int x, int y, int xdraw, int ydraw, 
 }
 
 /**
- * @brief Cleans a ball from the frame buffer after it is removed
+ * @brief Cleans a ball from the frame buffer after it is removed \n 
  * Redraws the background behind the removed ball
  * @param k Index of ball to be cleaned
  * @param sprite Sprite of ball (ball or small_ball)

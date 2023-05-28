@@ -10,7 +10,7 @@ bool is_writing = false;
 /**
  * @brief Pushes a byte to the queue
  * @param byte Byte to push
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int push(uint8_t byte) {
     if (size >= 16) return 1;
@@ -31,9 +31,9 @@ bool has_byte() {
 }
 
 /**
- * @brief Pops a byte from the queue
+ * @brief Pops a byte from the queue \n 
  * After the byte is popped, instead of moving everything one byte to the left, the head of the queue is moved one byte to the right
- * @return uint8_t Popped byte
+ * @return Popped byte
  */
 uint8_t pop() {
     if (size == 0) return 0;
@@ -46,9 +46,9 @@ uint8_t pop() {
 }
 
 /**
- * @brief Updates the queue
+ * @brief Updates the queue \n 
  * If the serial port is ready for data and a byte is not being sent, the top byte is sent
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int update_queue() {
     if (ready && !is_writing) {
@@ -62,9 +62,9 @@ int update_queue() {
 }
 
 /**
- * @brief Retries to send the last byte
+ * @brief Retries to send the last byte \n 
  * Is used when there was an error sending the last byte
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int retry() {
     if (is_writing) {

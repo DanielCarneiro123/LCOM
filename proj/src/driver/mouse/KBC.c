@@ -2,10 +2,10 @@
 #include "i8042.h"
 
 /**
- * @brief Reads the KBC's status
+ * @brief Reads the KBC's status \n 
  * Reads the KBC's status and places it in a byte passed by pointer
  * @param status Address of byte in which to store status
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int read_KBC_status(uint8_t* status) {
     if (status == NULL) return 1;
@@ -13,12 +13,12 @@ int read_KBC_status(uint8_t* status) {
 }
 
 /**
- * @brief Reads the KBC's output
+ * @brief Reads the KBC's output \n 
  * Reads the KBC's output, either from the mouse or from the keyboard
  * @param port Port to read from
  * @param output Address of byte in which to store output
  * @param mouse 1 if reading mouse, 0 if reading keyboard
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse) {
     int attempts = MAX_ATTEMPTS;
@@ -63,11 +63,11 @@ int read_KBC_output_poll(uint8_t port, uint8_t *output) {
 }
 
 /**
- * @brief Writes a command to the KBC
+ * @brief Writes a command to the KBC \n 
  * Writes a command to the KBC in a given port
  * @param port Port to write in
  * @param commandByte Command to write
- * @return int 1 on failure, 0 otherwise
+ * @return 1 on failure, 0 otherwise
  */
 int write_KBC_command(uint8_t port, uint8_t commandByte) {
     int attempts = MAX_ATTEMPTS;
