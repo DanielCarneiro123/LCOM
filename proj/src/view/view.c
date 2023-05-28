@@ -206,9 +206,11 @@ void draw_finish_menu() {
         background[bg_size] = start;
         bg_size ++;
 
-    draw_sprite_xpm(exit_menu, 3 * mode_info.XResolution/4 - 74/2, mode_info.YResolution - 50);
-        background[bg_size] = exit_menu;
-        bg_size ++;
+    if (player_no == 1) {
+        draw_sprite_xpm(exit_menu, 3 * mode_info.XResolution/4 - 74/2, mode_info.YResolution - 50);
+            background[bg_size] = exit_menu;
+            bg_size ++;
+    }        
 }
 
 /**

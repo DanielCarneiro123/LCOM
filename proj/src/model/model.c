@@ -333,6 +333,8 @@ void update_sp_state() {
         else if (sp_data == SP_TEST_PLAYER) {}
         else if (sp_data == SP_RESET_GAME) {
             resetTable();
+            printf("\n\nI AM HERE\n\n");
+            update_menu_state(GAME);
         }
         else if (sp_data & BIT(4)) {
             if (sp_data & BIT(0)) player_one_won = 1;
@@ -640,9 +642,12 @@ void menu_selection() {
     
 }
 
+/**
+ * @brief Selects menu options for final menu
+ */
 void end_menu_selection() {
     if (menuState != END) return;
-    if (is_mouse_in_sprite(start)) {
+    if (player_no == 1 && is_mouse_in_sprite(start)) {
         test_player_no();
         setup_code_positions();
         update_menu_state(GAME);
