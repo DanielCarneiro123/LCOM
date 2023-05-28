@@ -80,6 +80,6 @@ void menu_selection();
 void pick_small_ball();
 void click_hide_code_button();
 void resetTable();
-
+void end_menu_selection();
 
 #endif

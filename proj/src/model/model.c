@@ -527,6 +527,7 @@ void update_mouse_state() {
         byte_index = 0;
         if (mouse_info.left_click){
             menu_selection();
+            end_menu_selection();
             pick_box_ball();
             place_move(); 
             pick_small_ball();
@@ -647,6 +648,21 @@ void place_ball(Position* positions, uint8_t n) {
  */
 void menu_selection() {
     if (menuState != START) return;
+    if (is_mouse_in_sprite(start)) {
+        test_player_no();
+        setup_code_positions();
+        update_menu_state(GAME);
+        return; 
+    }
+
+    if (is_mouse_in_sprite(exit_menu)){
+        running = 0;
+    }      
+    
+}
+
+void end_menu_selection() {
+    if (menuState != END) return;
     if (is_mouse_in_sprite(start)) {
         test_player_no();
         setup_code_positions();
