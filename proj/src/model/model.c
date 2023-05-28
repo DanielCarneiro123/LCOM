@@ -55,7 +55,7 @@ Position* code_positions;
 uint8_t balls;
 bool activeTurn;
 int colorArr[8] = {LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
-uint32_t color_table[11] = {0, 1, 2, LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
+uint32_t color_table[COLOR_AMOUNT] = {0, 1, 2, LIGHTBLUE, GREEN, YELLOW, DARKBLUE, RED, PINK, ORANGE, PURPLE};
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 uint8_t hide_code = 0;
@@ -109,7 +109,7 @@ void setup_box_small_balls_positions() {
 void setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
-    for (int i = 0; i < 9 * 4; i++) {
+    for (int i = 0; i < BALL_AMOUNT; i++) {
         ball_positions[i].x = 190 + (i % 4) * 56;
         ball_positions[i].y = 66 + (i / 4) * 60;
         ball_positions[i].color = TRANSPARENT;
@@ -126,7 +126,7 @@ void setup_code_positions() {
         code_positions = NULL;
     }
     else {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < ROW_SIZE; i++) {
             code_positions[i].x = 190 + i * 56;
             code_positions[i].y = 6;
             code_positions[i].color = TRANSPARENT;
@@ -140,8 +140,8 @@ void setup_code_positions() {
  */
 void setup_small_positions() {
     small_ball_positions = malloc(sizeof(PositionSmall) * 36);
-    for (int j = 0; j < 9; j++) {
-            for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < ROW_NO; j++) {
+            for (int i = 0; i < ROW_SIZE; i++) {
                 small_ball_positions[j*4+i].x = 416 + (i % 2) * 26;
                 small_ball_positions[j*4+i].y = (j*61) + (60 + (i / 2) * 30);
                 if (j > 5) small_ball_positions[j*4+i].y -= 2;
@@ -277,7 +277,7 @@ void update_sp_state() {
         else if (sp_data == SP_TEST_PLAYER) {}
         
         else if (player_no == 1) {
-            uint8_t index = (curr_turn) * 4 + (sp_data >> 6);
+            uint8_t index = (curr_turn) * ROW_SIZE + (sp_data >> 6);
             if (sp_data & BIT(5)) {
                 small_ball_positions[index].color = 0;
                 clean_ball(index, small_ball, NULL);
@@ -287,7 +287,7 @@ void update_sp_state() {
             }
         }
         else if (player_no == 2) {
-            uint8_t index = (curr_turn+1) * 4 + (sp_data >> 6);
+            uint8_t index = (curr_turn+1) * ROW_SIZE + (sp_data >> 6);
             if (sp_data & BIT(5)) {
                 ball_positions[index].color = TRANSPARENT;
                 clean_ball(index, ball, ball_positions);
@@ -316,12 +316,12 @@ void update_sp_state() {
 void place_move() {
     switch (player_no) {
         case 1:
-            place_ball(ball_positions, 9*4);
+            place_ball(ball_positions, BALL_AMOUNT);
             break;
         case 2:
             if (hide_code) return;
-            if (curr_turn == -1) place_ball(code_positions, 4);
-            else place_small_ball(small_ball_positions, 36);
+            if (curr_turn == -1) place_ball(code_positions, ROW_SIZE);
+            else place_small_ball(small_ball_positions, BALL_AMOUNT);
             break;    
     } 
 }
@@ -333,10 +333,10 @@ void place_move() {
 void remove_move() {
     switch (player_no) {
         case 1:
-            remove_ball(ball_positions, 9*4);
+            remove_ball(ball_positions, BALL_AMOUNT);
             break;
         case 2:
-            if (curr_turn == -1) remove_ball(code_positions, 4);
+            if (curr_turn == -1) remove_ball(code_positions, ROW_SIZE);
             else remove_small_ball();
             break;    
     } 
@@ -507,9 +507,11 @@ void update_mouse_color(uint32_t color) {
  * @param positions Array of balls to check (use ball_positions in the case of small balls)
  */
 void finish_turn(Position* positions) {
-    for (int i = curr_turn * 4; i < (curr_turn + 1) * 4; i++) {
-        if (positions[i].color == TRANSPARENT) {
-            return;
+    if (player_no == 1) {
+        for (int i = curr_turn * ROW_SIZE; i < (curr_turn + 1) * ROW_SIZE; i++) {
+            if (positions[i].color == TRANSPARENT) {
+                return;
+            }
         }
     }
     if (menuState == GAME && activeTurn) {
@@ -583,7 +585,7 @@ void place_ball(Position* positions, uint8_t n) {
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
     printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
     printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
-    for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
+    for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
@@ -668,7 +670,7 @@ void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
     printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
     printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
-    for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
+    for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = mouse_info.ball_color;
@@ -690,7 +692,7 @@ void remove_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
-    for (int i = turn_offset * 4; i < (turn_offset + 1) * 4; i++) {
+    for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = TRANSPARENT;
@@ -711,7 +713,7 @@ void remove_ball(Position* positions, uint8_t n) {
 void remove_small_ball() {
     if (menuState != GAME) return;
     if (!activeTurn) return;
-    for (int i = 0; i < 9 * 4; i++) {
+    for (int i = 0; i < BALL_AMOUNT; i++) {
         if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = 0;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
@@ -736,14 +738,14 @@ void resetTable(){
     else if (player_no == 2){
         activeTurn = true;
     }
-    for (int i = 0; i < 9*4; i++){
+    for (int i = 0; i < BALL_AMOUNT; i++){
         ball_positions[i].color = TRANSPARENT;
     }
-    for (int i = 0; i < 9*4; i++){
+    for (int i = 0; i < BALL_AMOUNT; i++){
         small_ball_positions[i].color = 0;
     }
     if (player_no == 2) {
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < ROW_SIZE; i++){
             code_positions[i].color = TRANSPARENT;
         }
     }    
@@ -755,7 +757,7 @@ void resetTable(){
  */
 void push_code() {
     push(SP_FINISH_GAME);
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < ROW_SIZE; i++) {
         uint8_t byte = prepare_move_byte(i, code_positions[i].color, 0);
         push(byte);
     }
