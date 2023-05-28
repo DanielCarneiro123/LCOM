@@ -11,9 +11,9 @@ uint8_t full_hours;
  * @return 1 on failure, 0 otherwise
  */
 int rtc_setup() {
-    time_info.hours = 0;
+    uint8_t has_hours = 1;
     if (rtc_get_binary()) return 1;
-    if (rtc_get_hours()) return 1;
+    while (has_hours == 1) has_hours = rtc_update_time(); 
     if (rtc_update_time()) return 1;
     return 0;
 }
