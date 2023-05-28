@@ -24,7 +24,7 @@ typedef struct {
     uint8_t hours;
     uint8_t minutes;
     uint8_t seconds;
-} rtc_info;
+} RTCInfo;
 
 int rtc_setup();
 int rtc_read(uint8_t rregister, uint8_t *status);

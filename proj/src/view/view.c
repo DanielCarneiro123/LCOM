@@ -6,7 +6,7 @@ uint32_t frame_buffer_size;
 extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
-extern rtc_info time_info;
+extern RTCInfo time_info;
 extern MenuState menuState;
 extern uint8_t balls;
 extern Position* ball_positions;

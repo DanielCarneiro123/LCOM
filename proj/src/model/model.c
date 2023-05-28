@@ -6,7 +6,7 @@ uint8_t running = 1;
 MenuState menuState = START;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
-extern rtc_info time_info;
+extern RTCInfo time_info;
 extern bool firstFrame;
 extern uint8_t sp_data;
 extern bool new_data;

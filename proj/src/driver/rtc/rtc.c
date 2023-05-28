@@ -1,7 +1,7 @@
 #include "rtc.h"
 
 int rtc_hook_id = RTC_MASK; 
-rtc_info time_info; 
+RTCInfo time_info; 
 uint8_t is_binary;
 uint8_t full_hours;
 
@@ -135,7 +135,7 @@ int rtc_update_time() {
     if (rtc_is_updating()) return 1;
     uint8_t time;
 
-    rtc_info time_buffer;
+    RTCInfo time_buffer;
     if (rtc_read(SECONDS, &time)) return 1;
     time_buffer.seconds = convert_output(time);
 
