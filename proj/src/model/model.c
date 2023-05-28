@@ -1,13 +1,12 @@
 #include "model.h"
 
-// Variáveis externas importantes à construção e manipulação do modelo
 extern uint8_t scancode;
 extern uint8_t byte_index;
 uint8_t running = 1;
 MenuState menuState = START;
 extern MouseInfo mouse_info;
 extern vbe_mode_info_t mode_info;
-extern rtc_info time_info;
+extern RTCInfo time_info;
 extern bool firstFrame;
 extern uint8_t sp_data;
 extern bool new_data;
@@ -15,8 +14,6 @@ extern bool is_writing;
 extern uint8_t player_one_won;
 extern uint8_t player_two_cheating;
 
-
-// Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
 Sprite *hand;
 Sprite *button1;
@@ -64,8 +61,6 @@ uint32_t code_colors[4];
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 uint8_t hide_code = 0;
-
-// Contador de interrupções do timer
 int timer_interrupts = 0;
 
 /**
@@ -197,55 +192,55 @@ void destroy_code_positions() {
  * @return int 1 on failure, 0 otherwise
  */
 int setup_sprites() {
-    mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
+    mouse = create_sprite((xpm_map_t) mouse_xpm);
     if (mouse == NULL) return 1;
-    board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
+    board = create_sprite((xpm_map_t) mastermind_boardV1_xpm);
     if (board == NULL) return 1;
-    board2 = create_sprite_xpm((xpm_map_t) mastermind_boardV2_xpm);
+    board2 = create_sprite((xpm_map_t) mastermind_boardV2_xpm);
     if (board2 == NULL) return 1;
-    ball = create_sprite_xpm((xpm_map_t) ball_xpm);
+    ball = create_sprite((xpm_map_t) ball_xpm);
     if (ball == NULL) return 1;
-    small_ball = create_sprite_xpm((xpm_map_t) small_ball_xpm);
+    small_ball = create_sprite((xpm_map_t) small_ball_xpm);
     if (small_ball == NULL) return 1;
-    hand = create_sprite_xpm((xpm_map_t) hand_xpm);
+    hand = create_sprite((xpm_map_t) hand_xpm);
     if (hand == NULL) return 1;
-    masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
+    masterminix = create_sprite((xpm_map_t) masterminix_xpm);
     if (masterminix == NULL) return 1;
-    start = create_sprite_xpm((xpm_map_t) start_xpm);
+    start = create_sprite((xpm_map_t) start_xpm);
     if (start == NULL) return 1;
-    exit_menu = create_sprite_xpm((xpm_map_t) exit_xpm);
+    exit_menu = create_sprite((xpm_map_t) exit_xpm);
     if (exit_menu == NULL) return 1;
-    um = create_sprite_xpm((xpm_map_t) um_xpm);
+    um = create_sprite((xpm_map_t) um_xpm);
     if (um == NULL) return 1;
-    dois = create_sprite_xpm((xpm_map_t) dois_xpm);
+    dois = create_sprite((xpm_map_t) dois_xpm);
     if (dois == NULL) return 1;
-    tres = create_sprite_xpm((xpm_map_t) tres_xpm);
+    tres = create_sprite((xpm_map_t) tres_xpm);
     if (tres == NULL) return 1;
-    quatro = create_sprite_xpm((xpm_map_t) quatro_xpm);
+    quatro = create_sprite((xpm_map_t) quatro_xpm);
     if (quatro == NULL) return 1;
-    cinco = create_sprite_xpm((xpm_map_t) cinco_xpm);
+    cinco = create_sprite((xpm_map_t) cinco_xpm);
     if (cinco == NULL) return 1;
-    seis = create_sprite_xpm((xpm_map_t) seis_xpm);
+    seis = create_sprite((xpm_map_t) seis_xpm);
     if (seis == NULL) return 1;
-    sete = create_sprite_xpm((xpm_map_t) sete_xpm);
+    sete = create_sprite((xpm_map_t) sete_xpm);
     if (sete == NULL) return 1;
-    oito = create_sprite_xpm((xpm_map_t) oito_xpm);
+    oito = create_sprite((xpm_map_t) oito_xpm);
     if (oito == NULL) return 1;
-    w = create_sprite_xpm((xpm_map_t) w_xpm);
+    w = create_sprite((xpm_map_t) w_xpm);
     if (w == NULL) return 1;
-    r = create_sprite_xpm((xpm_map_t) r_xpm);
+    r = create_sprite((xpm_map_t) r_xpm);
     if (r == NULL) return 1;
-    toggle9 = create_sprite_xpm((xpm_map_t) toggle9_xpm);
+    toggle9 = create_sprite((xpm_map_t) toggle9_xpm);
     if (toggle9 == NULL) return 1;
-    code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
+    code_guessed = create_sprite((xpm_map_t) code_guessed_xpm);
     if (code_guessed == NULL) return 1;
-    code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
+    code_not_guessed = create_sprite((xpm_map_t) code_not_guessed_xpm);
     if (code_not_guessed == NULL) return 1;
-    madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
+    madeira = create_sprite((xpm_map_t) madeira_xpm);
     if (madeira == NULL) return 1;
-    frase_menu = create_sprite_xpm((xpm_map_t) frase_menu_xpm);
+    frase_menu = create_sprite((xpm_map_t) frase_menu_xpm);
     if (frase_menu == NULL) return 1;
-    press_s = create_sprite_xpm((xpm_map_t) press_s_xpm);
+    press_s = create_sprite((xpm_map_t) press_s_xpm);
     if (press_s == NULL) return 1;
     player_cheated = create_sprite_xpm((xpm_map_t) player_cheated_xpm);
     if (player_cheated == NULL) return 1;
@@ -339,7 +334,6 @@ void update_sp_state() {
         }
         else if (sp_data == SP_TEST_PLAYER) {}
         else if (sp_data & BIT(4)) {
-            printf("\n\n palavraQualquer%d\n\n", sp_data);
             if (sp_data & BIT(0)) player_one_won = 1;
             if (sp_data & BIT(1)) player_two_cheating = 1;
             update_menu_state(END);
@@ -428,7 +422,6 @@ void test_player_no() {
         activeTurn = false;
         push(SP_TEST_PLAYER);
     }
-    printf("\n\n\nI AM %d\n\n\n", player_no);
 }
 
 /**
@@ -546,10 +539,6 @@ void click_hide_code_button() {
     }
 }
 
-// Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
-// muda o estado do botão no mesmo quadrante
-// Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
-
 /**
  * @brief Updates the color of the ball being held
  * This function is used instead of simply assigning the new color to avoid repeating the condition that this can only happen in the game menu
@@ -619,16 +608,12 @@ void place_ball(Position* positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     if (mouse_info.ball_color < 3) return;
-    printf("\n\n I AM HERE WITH %d", activeTurn);
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
-    printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
-    printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
     for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 0);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             if (positions != code_positions) push(byte);
             return;
         }
@@ -711,16 +696,12 @@ void place_small_ball(PositionSmall* small_ball_positions, uint8_t n) {
     if (menuState != GAME) return;
     if (!activeTurn) return;
     if (!(mouse_info.ball_color == 1 || mouse_info.ball_color == 2)) return;
-    printf("\n\n I AM HERE WITH %d", activeTurn);
     int8_t turn_offset = curr_turn == -1 ? 0 : curr_turn;
-    printf("\n\n\nCurrent turn: %d\n\n\n", curr_turn);
-    printf("\n\n\nTurn Offset: %d\n\n\n", turn_offset);
     for (int i = turn_offset * ROW_SIZE; i < (turn_offset + 1) * ROW_SIZE; i++) {
         if (i >= n) return;
         if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = mouse_info.ball_color;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 0);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             push(byte);
             return;
         }
@@ -742,7 +723,6 @@ void remove_ball(Position* positions, uint8_t n) {
         if (is_mouse_in_ball(i, positions)) {
             positions[i].color = TRANSPARENT;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             if (positions != code_positions) push(byte);
             clean_ball(i, ball, positions);
             break;
@@ -762,7 +742,6 @@ void remove_small_ball() {
         if (is_mouse_in_small_ball(i, small_ball_positions)) {
             small_ball_positions[i].color = 0;
             uint8_t byte = prepare_move_byte(i%4, mouse_info.ball_color, 1);
-            printf("\n\n\nABOUT TO WRITE %d\n\n\n", byte);
             push(byte);
             clean_ball(i, small_ball, NULL);
             break;

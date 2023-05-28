@@ -1,5 +1,0 @@
-<map id="copy_buffer" name="copy_buffer">
-<area shape="rect" id="node1" title="Double buffering function Copies the contents of the secondary buffer to the main buffer." alt="" coords="342,5,429,32"/>
-<area shape="rect" id="node2" href="$model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="162,5,294,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>

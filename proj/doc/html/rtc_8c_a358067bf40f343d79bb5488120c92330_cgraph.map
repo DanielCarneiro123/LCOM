@@ -1,0 +1,4 @@
+<map id="convert_hours" name="convert_hours">
+<area shape="rect" id="node1" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="155,5,260,32"/>
+</map>

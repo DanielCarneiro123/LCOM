@@ -1,6 +1,0 @@
-<map id="timer_get_conf" name="timer_get_conf">
-<area shape="rect" id="node1" title="Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointe..." alt="" coords="449,5,556,32"/>
-<area shape="rect" id="node2" href="$timer_8c.html#aca1506be74dfc71c6f90772ca269c619" title="Sets the timer&#39;s frequency Sets the timer&#39;s frequency to a given value passed to the function." alt="" coords="263,5,401,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="162,5,215,32"/>
-<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>

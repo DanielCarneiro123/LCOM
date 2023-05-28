@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Masterminix: src/model/model.c File Reference</title>
+<title>Masterminix: C:/Users/Afonso/Desktop/MINIX-LCOM/shared/g2/proj/src/model/model.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -162,6 +162,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a77a605867b767ce9eb771f5780c6028a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a77a605867b767ce9eb771f5780c6028a">menu_selection</a> ()</td></tr>
 <tr class="memdesc:a77a605867b767ce9eb771f5780c6028a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects menu options This function is run when on the initial menu and the player presses the left mouse button.  <br /></td></tr>
 <tr class="separator:a77a605867b767ce9eb771f5780c6028a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e460b741b377cd6c1864dae5a239a62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a3e460b741b377cd6c1864dae5a239a62">end_menu_selection</a> ()</td></tr>
+<tr class="separator:a3e460b741b377cd6c1864dae5a239a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0293b3c6abf79e47f9445d93ca8dd17e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a0293b3c6abf79e47f9445d93ca8dd17e">pick_small_ball</a> ()</td></tr>
 <tr class="memdesc:a0293b3c6abf79e47f9445d93ca8dd17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Picks a small ball from the box Picks a black/white small ball from the box.  <br /></td></tr>
 <tr class="separator:a0293b3c6abf79e47f9445d93ca8dd17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,6 +274,8 @@ Variables</h2></td></tr>
 <tr class="separator:ab1cb8299aaa932c11586096aa36138bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700dac065ff05582537a15411bf9ce63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a700dac065ff05582537a15411bf9ce63">instructions</a></td></tr>
 <tr class="separator:a700dac065ff05582537a15411bf9ce63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7e73a6c2165244b4e29840db5d02e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a7b7e73a6c2165244b4e29840db5d02e4">player_cheated</a></td></tr>
+<tr class="separator:a7b7e73a6c2165244b4e29840db5d02e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326f2375a635d6897e2fc45b5a37e0ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_position.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a326f2375a635d6897e2fc45b5a37e0ac">ball_positions</a></td></tr>
 <tr class="separator:a326f2375a635d6897e2fc45b5a37e0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37c618e36b7e4f0e813a5bb48a24543a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_position_small.html">PositionSmall</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="model_8c.html#a37c618e36b7e4f0e813a5bb48a24543a">small_ball_positions</a></td></tr>
@@ -414,6 +418,37 @@ Here is the call graph for this function:</div>
 <map name="amodel_8c_a8fdbc6c7bfca3ef4a8800a3cdc19d932_cgraph" id="amodel_8c_a8fdbc6c7bfca3ef4a8800a3cdc19d932_cgraph">
 <area shape="rect" title="Deallocates memory used for sprites." alt="" coords="5,5,116,32"/>
 <area shape="rect" href="sprite_8c.html#a607cfeb4f019a84c346eb3bce9da0420" title="Deallocates sprite memory." alt="" coords="164,5,267,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3e460b741b377cd6c1864dae5a239a62" name="a3e460b741b377cd6c1864dae5a239a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e460b741b377cd6c1864dae5a239a62">&#9670;&#160;</a></span>end_menu_selection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end_menu_selection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="model_8c_a3e460b741b377cd6c1864dae5a239a62_cgraph.png" border="0" usemap="#amodel_8c_a3e460b741b377cd6c1864dae5a239a62_cgraph" alt=""/></div>
+<map name="amodel_8c_a3e460b741b377cd6c1864dae5a239a62_cgraph" id="amodel_8c_a3e460b741b377cd6c1864dae5a239a62_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,146,108"/>
+<area shape="rect" href="sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e" title=" " alt="" coords="201,5,334,32"/>
+<area shape="rect" href="model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object Allocates memory for the balls in the code." alt="" coords="194,56,341,83"/>
+<area shape="rect" href="model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers This function runs when the actual game begins. The first player to enter the ..." alt="" coords="214,107,321,133"/>
+<area shape="rect" href="model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state This function is used instead of simply assigning the new state to avoid repea..." alt="" coords="200,157,335,184"/>
+<area shape="rect" href="queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="405,107,454,133"/>
+<area shape="rect" href="model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state Resets global variables so that the game may be replayed." alt="" coords="389,157,470,184"/>
 </map>
 </div>
 
@@ -1073,7 +1108,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="model_8c_ada323a9c88824838e2729c070449cbd6_cgraph.png" border="0" usemap="#amodel_8c_ada323a9c88824838e2729c070449cbd6_cgraph" alt=""/></div>
 <map name="amodel_8c_ada323a9c88824838e2729c070449cbd6_cgraph" id="amodel_8c_ada323a9c88824838e2729c070449cbd6_cgraph">
 <area shape="rect" title="Creates sprite objects Allocates memory for every sprite that the game will need." alt="" coords="5,5,105,32"/>
-<area shape="rect" href="sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Create a sprite xpm object Allocates memory for a sprite." alt="" coords="153,5,281,32"/>
+<area shape="rect" href="sprite_8c.html#aae80caea55cdac82b8d4cf8b22a226e2" title="Create a sprite xpm object Allocates memory for a sprite." alt="" coords="153,5,249,32"/>
 </map>
 </div>
 
@@ -1259,55 +1294,56 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="model_8c_aa577e78e2462033d486b5d8fa64c7bec_cgraph.png" border="0" usemap="#amodel_8c_aa577e78e2462033d486b5d8fa64c7bec_cgraph" alt=""/></div>
 <map name="amodel_8c_aa577e78e2462033d486b5d8fa64c7bec_cgraph" id="amodel_8c_aa577e78e2462033d486b5d8fa64c7bec_cgraph">
-<area shape="rect" title="Updates the state of the mouse This function runs the interrupt handler, updates the mouse info at th..." alt="" coords="5,883,148,909"/>
-<area shape="rect" href="model_8c.html#a1479abf62f95907d182f1af46aa669f8" title=" " alt="" coords="196,503,353,529"/>
+<area shape="rect" title="Updates the state of the mouse This function runs the interrupt handler, updates the mouse info at th..." alt="" coords="5,933,148,960"/>
+<area shape="rect" href="model_8c.html#a1479abf62f95907d182f1af46aa669f8" title=" " alt="" coords="196,756,353,783"/>
 <area shape="rect" href="view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws a frame Draws the next frame on the frame buffer according to the game&#39;s state." alt="" coords="416,296,533,323"/>
-<area shape="rect" href="model_8c.html#a77a605867b767ce9eb771f5780c6028a" title="Selects menu options This function is run when on the initial menu and the player presses the left mo..." alt="" coords="218,604,331,631"/>
-<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Interrupt handler for the mouse Reads a mouse byte from the KBC." alt="" coords="236,1009,313,1036"/>
-<area shape="rect" href="mouse_8c.html#aa832040dd305ba3a8401cc3a4e6a4cc4" title="Updates the main mouse struct Copies the contents of the buffer struct to the main struct." alt="" coords="213,1060,336,1087"/>
-<area shape="rect" href="mouse_8c.html#a173708d175f74dd2b99f7398b3c15a15" title="Updates the buffer mouse struct A second struct is used as a buffer, and its contents are copied to t..." alt="" coords="202,1111,347,1137"/>
-<area shape="rect" href="model_8c.html#abdd1188cf76ab339e06430695730e44f" title="Picks a ball from the box Picks a large ball from the box." alt="" coords="224,908,325,935"/>
-<area shape="rect" href="model_8c.html#a0293b3c6abf79e47f9445d93ca8dd17e" title="Picks a small ball from the box Picks a black/white small ball from the box." alt="" coords="219,959,330,985"/>
-<area shape="rect" href="model_8c.html#a933a0ee51b61bea202604faa0dc7d5b5" title="Function used when placing a ball This function contains all the logic tied to placing balls (differe..." alt="" coords="230,857,319,884"/>
-<area shape="rect" href="model_8c.html#a39975a512705f9a2a8edcd540a62c0c6" title="Function used when removing a ball This function contains all the logic tied to removing balls (diffe..." alt="" coords="225,756,324,783"/>
+<area shape="rect" href="model_8c.html#a3e460b741b377cd6c1864dae5a239a62" title=" " alt="" coords="204,883,345,909"/>
+<area shape="rect" href="model_8c.html#a77a605867b767ce9eb771f5780c6028a" title="Selects menu options This function is run when on the initial menu and the player presses the left mo..." alt="" coords="218,933,331,960"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Interrupt handler for the mouse Reads a mouse byte from the KBC." alt="" coords="236,1111,313,1137"/>
+<area shape="rect" href="mouse_8c.html#aa832040dd305ba3a8401cc3a4e6a4cc4" title="Updates the main mouse struct Copies the contents of the buffer struct to the main struct." alt="" coords="213,1161,336,1188"/>
+<area shape="rect" href="mouse_8c.html#a173708d175f74dd2b99f7398b3c15a15" title="Updates the buffer mouse struct A second struct is used as a buffer, and its contents are copied to t..." alt="" coords="202,1212,347,1239"/>
+<area shape="rect" href="model_8c.html#abdd1188cf76ab339e06430695730e44f" title="Picks a ball from the box Picks a large ball from the box." alt="" coords="224,1009,325,1036"/>
+<area shape="rect" href="model_8c.html#a0293b3c6abf79e47f9445d93ca8dd17e" title="Picks a small ball from the box Picks a black/white small ball from the box." alt="" coords="219,1060,330,1087"/>
+<area shape="rect" href="model_8c.html#a933a0ee51b61bea202604faa0dc7d5b5" title="Function used when placing a ball This function contains all the logic tied to placing balls (differe..." alt="" coords="230,807,319,833"/>
+<area shape="rect" href="model_8c.html#a39975a512705f9a2a8edcd540a62c0c6" title="Function used when removing a ball This function contains all the logic tied to removing balls (diffe..." alt="" coords="225,680,324,707"/>
 <area shape="rect" href="view_8c.html#a92191be6515c8689bfaa61b022080023" title="Cleans the lid Draws the background behind the now hidden lid." alt="" coords="644,579,716,605"/>
-<area shape="rect" href="sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e" title=" " alt="" coords="408,503,541,529"/>
+<area shape="rect" href="sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e" title=" " alt="" coords="408,832,541,859"/>
 <area shape="rect" href="view_8c.html#ad0aab3c62c41de83d18a7788a3ae212a" title="Draws a sprite partially This function is used when redrawing the background behind moving/cleaned ob..." alt="" coords="812,553,973,580"/>
 <area shape="rect" href="graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="846,452,939,479"/>
 <area shape="rect" href="graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="1021,389,1104,416"/>
 <area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="1152,389,1282,416"/>
 <area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="1330,389,1416,416"/>
 <area shape="rect" href="view_8c.html#a90b49506151d9c99fb46fc80c94e8310" title="Cleans the previous position the mouse was in Redraws the background, layer by layer,..." alt="" coords="631,528,729,555"/>
-<area shape="rect" href="view_8c.html#ad213086ef081c77ee69fc98186c1e861" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="639,107,721,133"/>
-<area shape="rect" href="view_8c.html#ab70482e00c488d5d0edf45ac41a0675a" title="Draws the code Only applies to player 2, when in the game menu." alt="" coords="638,157,722,184"/>
-<area shape="rect" href="view_8c.html#a0bc562b1d9afd2858b557869ce04d88f" title="Draws the balls in the end menu." alt="" coords="623,5,737,32"/>
+<area shape="rect" href="view_8c.html#ad213086ef081c77ee69fc98186c1e861" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="639,5,721,32"/>
+<area shape="rect" href="view_8c.html#ab70482e00c488d5d0edf45ac41a0675a" title="Draws the code Only applies to player 2, when in the game menu." alt="" coords="638,56,722,83"/>
+<area shape="rect" href="view_8c.html#a0bc562b1d9afd2858b557869ce04d88f" title="Draws the balls in the end menu." alt="" coords="623,107,737,133"/>
 <area shape="rect" href="view_8c.html#a4ef1021932b3491a17530d73f0a0d0f8" title="Draws the final menu Draws the final menu and sets background." alt="" coords="618,325,742,352"/>
-<area shape="rect" href="view_8c.html#a0a9f56467341cbe24bd981d4b9960fdd" title="Draws the game menu Draws the game menu and sets background." alt="" coords="617,376,743,403"/>
-<area shape="rect" href="view_8c.html#a2e293823f22abda1c98f45d8035282d8" title="Draws the initial menu Draws the initial menu and sets background." alt="" coords="618,427,742,453"/>
+<area shape="rect" href="view_8c.html#a0a9f56467341cbe24bd981d4b9960fdd" title="Draws the game menu Draws the game menu and sets background." alt="" coords="617,427,743,453"/>
+<area shape="rect" href="view_8c.html#a2e293823f22abda1c98f45d8035282d8" title="Draws the initial menu Draws the initial menu and sets background." alt="" coords="618,376,742,403"/>
 <area shape="rect" href="view_8c.html#a670ef1b26fcda05a6f21a1e6a71482f9" title="Draws the lid Only applies to player 2, when in the game menu." alt="" coords="646,477,714,504"/>
 <area shape="rect" href="view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the mouse Draws a cursor, and a ball behind it in case the player is holding one." alt="" coords="633,208,727,235"/>
 <area shape="rect" href="view_8c.html#afc027cc34fe47988c744e96b61b8651d" title="Draws the balls that the player can pick up If the player is not in the game menu,..." alt="" coords="596,259,764,301"/>
-<area shape="rect" href="view_8c.html#a81d5a92020094f67e9de783cd29aea6e" title="Draws the small balls Draws the small balls from the small_ball_positions array." alt="" coords="620,56,740,83"/>
+<area shape="rect" href="view_8c.html#a81d5a92020094f67e9de783cd29aea6e" title="Draws the small balls Draws the small balls from the small_ball_positions array." alt="" coords="620,157,740,184"/>
 <area shape="rect" href="view_8c.html#aa047908abc31e4b0b12ab393908b52d0" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="855,183,930,209"/>
 <area shape="rect" href="view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws a sprite Draws the entirety of a sprite object&#39;s colors on the frame buffer." alt="" coords="833,325,952,352"/>
 <area shape="rect" href="view_8c.html#a958c1e44555e3972bef87ab253dab40c" title="Set the background color according to current hour." alt="" coords="818,376,967,403"/>
-<area shape="rect" href="model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object Allocates memory for the balls in the code." alt="" coords="401,553,548,580"/>
-<area shape="rect" href="model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers This function runs when the actual game begins. The first player to enter the ..." alt="" coords="422,655,528,681"/>
-<area shape="rect" href="model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state This function is used instead of simply assigning the new state to avoid repea..." alt="" coords="407,604,542,631"/>
+<area shape="rect" href="model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object Allocates memory for the balls in the code." alt="" coords="401,883,548,909"/>
+<area shape="rect" href="model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers This function runs when the actual game begins. The first player to enter the ..." alt="" coords="422,933,528,960"/>
+<area shape="rect" href="model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state This function is used instead of simply assigning the new state to avoid repea..." alt="" coords="407,984,542,1011"/>
 <area shape="rect" href="queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="655,731,705,757"/>
-<area shape="rect" href="model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state Resets global variables so that the game may be replayed." alt="" coords="639,629,721,656"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="413,1060,536,1087"/>
-<area shape="rect" href="keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="618,1085,742,1112"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="847,1060,938,1087"/>
-<area shape="rect" href="model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c" title="Checks if the mouse is inside a given ball position." alt="" coords="619,832,741,859"/>
-<area shape="rect" href="model_8c.html#a2270e09b63279e79f4cae557c1e44da6" title="Updates the color of the ball being held This function is used instead of simply assigning the new co..." alt="" coords="404,959,545,985"/>
-<area shape="rect" href="model_8c.html#a9886a994428876ec845dcbbc8fde06d8" title="Checks if the mouse is inside a given small ball position." alt="" coords="600,883,760,909"/>
-<area shape="rect" href="model_8c.html#a61b20c44a2ce92fa54eec29769ec99d6" title="Places a ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or if the..." alt="" coords="435,807,514,833"/>
-<area shape="rect" href="model_8c.html#af3e25debba4cb88350105fb76d713db9" title="Places a small ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or ..." alt="" coords="416,857,533,884"/>
-<area shape="rect" href="sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="613,781,747,808"/>
-<area shape="rect" href="model_8c.html#ad0d2c57b88c1209234b4620359aa60f7" title="Removes a ball from the board if the mouse is inside it Checks every ball in the array until finding ..." alt="" coords="430,705,519,732"/>
-<area shape="rect" href="model_8c.html#a25d36ce066829ed49feede36a95fc6d2" title="Removes a small ball from the board if the mouse is inside it Checks every ball in the array until fi..." alt="" coords="411,756,538,783"/>
-<area shape="rect" href="view_8c.html#a20cb8bd15061b1c1c9b030522e97e495" title="Cleans a ball from the frame buffer after it is removed Redraws the background behind the removed bal..." alt="" coords="640,680,720,707"/>
+<area shape="rect" href="model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state Resets global variables so that the game may be replayed." alt="" coords="639,984,721,1011"/>
+<area shape="rect" href="keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="413,1187,536,1213"/>
+<area shape="rect" href="keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="618,1212,742,1239"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="847,1187,938,1213"/>
+<area shape="rect" href="model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c" title="Checks if the mouse is inside a given ball position." alt="" coords="619,781,741,808"/>
+<area shape="rect" href="model_8c.html#a2270e09b63279e79f4cae557c1e44da6" title="Updates the color of the ball being held This function is used instead of simply assigning the new co..." alt="" coords="404,1085,545,1112"/>
+<area shape="rect" href="model_8c.html#a9886a994428876ec845dcbbc8fde06d8" title="Checks if the mouse is inside a given small ball position." alt="" coords="600,832,760,859"/>
+<area shape="rect" href="model_8c.html#a61b20c44a2ce92fa54eec29769ec99d6" title="Places a ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or if the..." alt="" coords="435,731,514,757"/>
+<area shape="rect" href="model_8c.html#af3e25debba4cb88350105fb76d713db9" title="Places a small ball This function returns before doing anything if the player&#39;s turn isn&#39;t active or ..." alt="" coords="416,781,533,808"/>
+<area shape="rect" href="sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b" title="Prepares a byte to be sent." alt="" coords="613,680,747,707"/>
+<area shape="rect" href="model_8c.html#ad0d2c57b88c1209234b4620359aa60f7" title="Removes a ball from the board if the mouse is inside it Checks every ball in the array until finding ..." alt="" coords="430,629,519,656"/>
+<area shape="rect" href="model_8c.html#a25d36ce066829ed49feede36a95fc6d2" title="Removes a small ball from the board if the mouse is inside it Checks every ball in the array until fi..." alt="" coords="411,680,538,707"/>
+<area shape="rect" href="view_8c.html#a20cb8bd15061b1c1c9b030522e97e495" title="Cleans a ball from the frame buffer after it is removed Redraws the background behind the removed bal..." alt="" coords="640,629,720,656"/>
 </map>
 </div>
 
@@ -1334,11 +1370,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="model_8c_a1a2176ba0e79afd72c7bc2bf91b978f3_cgraph.png" border="0" usemap="#amodel_8c_a1a2176ba0e79afd72c7bc2bf91b978f3_cgraph" alt=""/></div>
 <map name="amodel_8c_a1a2176ba0e79afd72c7bc2bf91b978f3_cgraph" id="amodel_8c_a1a2176ba0e79afd72c7bc2bf91b978f3_cgraph">
-<area shape="rect" title="Updates the RTC time info." alt="" coords="5,31,124,57"/>
-<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="172,31,286,57"/>
-<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="334,5,443,32"/>
-<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="491,31,560,57"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="608,31,698,57"/>
+<area shape="rect" title="Updates the RTC time info." alt="" coords="5,81,124,108"/>
+<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="172,81,286,108"/>
+<area shape="rect" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="338,5,439,32"/>
+<area shape="rect" href="rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="491,44,597,71"/>
+<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="334,107,443,133"/>
+<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="510,120,578,147"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="645,120,735,147"/>
 </map>
 </div>
 
@@ -1410,18 +1448,20 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="model_8c_a2e7983abedd3fae94a24b4775a97210f_cgraph.png" border="0" usemap="#amodel_8c_a2e7983abedd3fae94a24b4775a97210f_cgraph" alt=""/></div>
 <map name="amodel_8c_a2e7983abedd3fae94a24b4775a97210f_cgraph" id="amodel_8c_a2e7983abedd3fae94a24b4775a97210f_cgraph">
-<area shape="rect" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="5,69,138,96"/>
-<area shape="rect" href="view_8c.html#a4aaef992ac0c47fae4b43683cc3a7d95" title="Double buffering function Copies the contents of the secondary buffer to the main buffer." alt="" coords="201,19,289,45"/>
-<area shape="rect" href="queue_8c.html#a93191533323a04cdbf5a52eac95a871e" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="194,69,296,96"/>
-<area shape="rect" href="model_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the RTC time info." alt="" coords="186,132,304,159"/>
+<area shape="rect" title="Updates the state of the i8254 timer Beyond incrementing the internal counter, this function also set..." alt="" coords="5,88,138,115"/>
+<area shape="rect" href="view_8c.html#a4aaef992ac0c47fae4b43683cc3a7d95" title="Double buffering function Copies the contents of the secondary buffer to the main buffer." alt="" coords="201,37,289,64"/>
+<area shape="rect" href="queue_8c.html#a93191533323a04cdbf5a52eac95a871e" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="194,88,296,115"/>
+<area shape="rect" href="model_8c.html#a1a2176ba0e79afd72c7bc2bf91b978f3" title="Updates the RTC time info." alt="" coords="186,151,304,177"/>
 <area shape="rect" href="queue_8c.html#ae42954dc097acfb9eda61eccf848ddce" title="Checks if the queue has a byte available." alt="" coords="372,5,446,32"/>
 <area shape="rect" href="queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9" title="Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the lef..." alt="" coords="388,56,430,83"/>
 <area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="359,107,460,133"/>
-<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="672,107,740,133"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="788,132,878,159"/>
-<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="352,157,466,184"/>
-<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="514,157,624,184"/>
-<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="672,157,740,184"/>
+<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="691,88,758,115"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="825,176,915,203"/>
+<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="352,176,466,203"/>
+<area shape="rect" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="518,125,620,152"/>
+<area shape="rect" href="rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="672,151,777,177"/>
+<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="514,227,624,253"/>
+<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="690,227,759,253"/>
 </map>
 </div>
 
@@ -1974,6 +2014,20 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="struct_sprite.html">Sprite</a>* oito</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b7e73a6c2165244b4e29840db5d02e4" name="a7b7e73a6c2165244b4e29840db5d02e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7e73a6c2165244b4e29840db5d02e4">&#9670;&#160;</a></span>player_cheated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_sprite.html">Sprite</a>* player_cheated</td>
         </tr>
       </table>
 </div><div class="memdoc">

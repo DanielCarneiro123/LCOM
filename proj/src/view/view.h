@@ -3,7 +3,7 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
-#include "config.h"
+#include "model/game_constants.h"
 #include "driver/video/graphics.h"
 #include "driver/mouse/mouse.h"
 #include "driver/rtc/rtc.h"

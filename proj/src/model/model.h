@@ -42,7 +42,6 @@
 #include "view/view.h"
 #include "game_constants.h"
 #include "model/sprite.h"
-#include "config.h"
 #include "data_structures.h"
 
 

@@ -48,7 +48,6 @@ void check_player_two_cheating() {
             code_used[i] = 1;
         }
     }
-    printf("\n\n right place %d",right_place);
 
     for (uint8_t i = 0; i < 4; i++) {
         if (used[i]) continue;
@@ -63,16 +62,13 @@ void check_player_two_cheating() {
             }
         }
     }
-    printf("\n\n wrong place %d",wrong_place);
 
     for (uint8_t i = 0; i < 4; i++) {
-        printf("\n\n ball_color %d",small_ball_positions[curr_turn * 4 + i].color);
         if (small_ball_positions[curr_turn * 4 + i].color == 1) right_place--;
         if (small_ball_positions[curr_turn * 4 + i].color == 2) wrong_place--;
     }
 
     if ((right_place != 0) || (wrong_place != 0)) {
         player_two_cheating = 1;
-        printf("\n\nPLAYER TWO GOT IT WRONG\n\n");
     }
 }

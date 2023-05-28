@@ -5,16 +5,14 @@
 #include "driver/mouse/mouse.h"
 
 typedef struct {
-    uint16_t height;
-    uint16_t width;
-    uint32_t *colors;
-    uint32_t color;
-    uint8_t pressed;
-    int32_t x;
-    int32_t y;
+    uint16_t height; /** Height of sprite in pixels */
+    uint16_t width; /** Width of sprite in pixels */
+    uint32_t *colors; /** Color map of sprite */
+    int32_t x; /** Current x coordinate of sprite */
+    int32_t y; /** Current y coordinate of sprite */
 } Sprite; 
 
-Sprite *create_sprite_xpm(xpm_map_t sprite);
+Sprite *create_sprite(xpm_map_t sprite);
 void destroy_sprite(Sprite *sprite);
 bool is_mouse_in_sprite(Sprite *sprite);
 

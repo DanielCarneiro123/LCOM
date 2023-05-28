@@ -3,6 +3,7 @@
 #include <math.h>
 
 uint8_t bpp;
+extern uint8_t* back_buffer;
 
 /**
  * @brief Sets the VM's graphic mode
@@ -17,7 +18,6 @@ int (set_graphic_mode)(uint16_t submode) {
     reg86.ax = VBE_MODE_SET;             
     reg86.bx = submode | VBE_LINEAR_FB;     
     if (sys_int86(&reg86) != 0) {     
-        printf("Set graphic mode failed\n");
         return 1;
     }
     return 0;
@@ -87,15 +87,14 @@ uint32_t frame_buffer_index(uint16_t x, uint16_t y) {
  * @param x x coordinate of pixel
  * @param y y coordinate of pixel
  * @param color color of pixel
- * @param frame_buffer frame buffer to draw in
  * @return int 1 on failure, 0 otherwise
  */
-int (paint_pixel)(uint16_t x, uint16_t y, uint32_t color, uint8_t* frame_buffer) {
+int (paint_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     if (x >= mode_info.XResolution || y >= mode_info.YResolution) return 0;
     
     uint32_t index = frame_buffer_index(x, y);
 
-    if (memcpy(&frame_buffer[index], &color, bpp) == NULL) return 1;
+    if (memcpy(&back_buffer[index], &color, bpp) == NULL) return 1;
 
     return 0;
 }
@@ -107,16 +106,15 @@ int (paint_pixel)(uint16_t x, uint16_t y, uint32_t color, uint8_t* frame_buffer)
  * @param x2 x of second point
  * @param y2 y of second point
  * @param color Color of line
- * @param frame_buffer Frame buffer to draw in
  * @return int 1 on failure, 0 otherwise
  */
-int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color, uint8_t* frame_buffer) {
+int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color) {
     if (x1 == x2) {
         uint16_t min = new_min(y1, y2);
         uint16_t max = new_max(y1, y2);
 
         for (uint16_t i = min; i <= max; i++) {
-            if (paint_pixel(x1, i, color, frame_buffer)) return 1;
+            if (paint_pixel(x1, i, color)) return 1;
         }
         return 0;
     }
@@ -125,7 +123,7 @@ int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t col
         uint16_t max = new_max(x1, x2);
 
         for (uint16_t i = min; i <= max; i++) {
-            if (paint_pixel(i, y1, color, frame_buffer)) return 1;
+            if (paint_pixel(i, y1, color)) return 1;
         }
         return 0;
     }
@@ -141,14 +139,13 @@ int (draw_line)(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t col
  * @param width Width of rectangle
  * @param height Height of rectangle
  * @param color Color of rectangle
- * @param frame_buffer Frame buffer to draw in
  * @return int 1 on failure, 0 otherwise
  */
-int fill_rectangle(int32_t x, int32_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t* frame_buffer) {
+int fill_rectangle(int32_t x, int32_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int32_t i = x; i < x + width; i++) {
         for (int32_t j = y; j < y + height; j++) {
             if (i < 0 || j < 0) continue;
-            if (paint_pixel(i, j, color, frame_buffer)) return 1;
+            if (paint_pixel(i, j, color)) return 1;
         }
     }
     return 0;
