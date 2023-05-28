@@ -62,8 +62,6 @@ uint32_t code_colors[4];
 int8_t curr_turn = -1;
 uint8_t player_no = 0;
 uint8_t hide_code = 0;
-
-// Contador de interrupções do timer
 int timer_interrupts = 0;
 
 /**
@@ -547,10 +545,6 @@ void click_hide_code_button() {
         }
     }
 }
-
-// Se o rato tiver o botão esquerdo pressionado (mouse_info.left_click) então
-// muda o estado do botão no mesmo quadrante
-// Senão, todos os botões voltam a não estar pressionados (buttonX->pressed = 0;)
 
 /**
  * @brief Updates the color of the ball being held

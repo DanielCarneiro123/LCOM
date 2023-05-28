@@ -19,8 +19,6 @@
 #define new_max(x,y) (((x) >= (y)) ? (x) : (y))
 #define new_min(x,y) (((x) <= (y)) ? (x) : (y))
 
-// Colors
-
 #define WHITE 0xffffff
 #define RED 0xff0000
 #define ORANGE 0xd17b4f
