@@ -33,7 +33,7 @@ uint8_t rtc_is_updating();
 int rtc_get_binary();
 int rtc_get_hours();
 uint8_t convert_output(uint8_t output);
-uint8_t convert_hours(uint8_T hours);
+uint8_t convert_hours(uint8_t hours);
 int rtc_update_time();
 
 #endif
