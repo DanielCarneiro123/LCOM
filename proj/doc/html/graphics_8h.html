@@ -92,24 +92,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ac50005645b76a08eff8126607633420f"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#ac50005645b76a08eff8126607633420f">set_frame_buffer</a> (uint16_t mode, uint8_t **frame_buffer)</td></tr>
 <tr class="memdesc:ac50005645b76a08eff8126607633420f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the frame buffer to the process' address spac.  <br /></td></tr>
 <tr class="separator:ac50005645b76a08eff8126607633420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d33f8d40697e2a626b879be5c43b682"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a5d33f8d40697e2a626b879be5c43b682">paint_pixel</a> (uint16_t x, uint16_t y, uint32_t color, uint8_t *frame_buffer)</td></tr>
-<tr class="memdesc:a5d33f8d40697e2a626b879be5c43b682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally instead of with an error (this is useful for drawing sprites that are partially out of the screen)  <br /></td></tr>
-<tr class="separator:a5d33f8d40697e2a626b879be5c43b682"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c829cd1bed2e2233a29802835102589"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a7c829cd1bed2e2233a29802835102589">fill_rectangle</a> (int32_t x, int32_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t *frame_buffer)</td></tr>
-<tr class="memdesc:a7c829cd1bed2e2233a29802835102589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer.  <br /></td></tr>
-<tr class="separator:a7c829cd1bed2e2233a29802835102589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c354cc1435291d3fe364802e3efd44"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a87c354cc1435291d3fe364802e3efd44">paint_pixel</a> (uint16_t x, uint16_t y, uint32_t color)</td></tr>
+<tr class="memdesc:a87c354cc1435291d3fe364802e3efd44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally instead of with an error (this is useful for drawing sprites that are partially out of the screen)  <br /></td></tr>
+<tr class="separator:a87c354cc1435291d3fe364802e3efd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ccb2b6c6a8cf3e7db9cbd91efe0683b"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a1ccb2b6c6a8cf3e7db9cbd91efe0683b">fill_rectangle</a> (int32_t x, int32_t y, uint16_t width, uint16_t height, uint32_t color)</td></tr>
+<tr class="memdesc:a1ccb2b6c6a8cf3e7db9cbd91efe0683b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a rectangle with a given color <br  />
+ Fills a rectanglt with a given color on the frame buffer.  <br /></td></tr>
+<tr class="separator:a1ccb2b6c6a8cf3e7db9cbd91efe0683b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7ce43c7a878b1009f12e2947ad4c1ad"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#ac7ce43c7a878b1009f12e2947ad4c1ad">get_mode_info</a> (uint16_t mode, vbe_mode_info_t *<a class="el" href="mouse_8c.html#a9fcc2243068f8e628648febc0909c509">mode_info</a>)</td></tr>
 <tr class="memdesc:ac7ce43c7a878b1009f12e2947ad4c1ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the information of a given VBE mode.  <br /></td></tr>
 <tr class="separator:ac7ce43c7a878b1009f12e2947ad4c1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13f935577d3b1fa2c00db8f33740247d"><td class="memItemLeft" align="right" valign="top">uint32_t()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a13f935577d3b1fa2c00db8f33740247d">frame_buffer_index</a> (uint16_t x, uint16_t y)</td></tr>
-<tr class="memdesc:a13f935577d3b1fa2c00db8f33740247d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer.  <br /></td></tr>
+<tr class="memdesc:a13f935577d3b1fa2c00db8f33740247d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the offset of a pixel <br  />
+ Calculates the offset of a pixel on the frame buffer.  <br /></td></tr>
 <tr class="separator:a13f935577d3b1fa2c00db8f33740247d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a776fb569623532f0b017220d34795521"><td class="memItemLeft" align="right" valign="top">uint32_t()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a776fb569623532f0b017220d34795521">pixel_index</a> (uint16_t x, uint16_t y)</td></tr>
-<tr class="memdesc:a776fb569623532f0b017220d34795521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode.  <br /></td></tr>
+<tr class="memdesc:a776fb569623532f0b017220d34795521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the index of a pixel <br  />
+ Calculates the index of a pixel, independently of the current mode.  <br /></td></tr>
 <tr class="separator:a776fb569623532f0b017220d34795521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2568d56df9c17aa240c2a5bd55265de"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#ad2568d56df9c17aa240c2a5bd55265de">draw_line</a> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color, uint8_t *frame_buffer)</td></tr>
-<tr class="memdesc:ad2568d56df9c17aa240c2a5bd55265de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a horizontal or vertical line on the frame buffer.  <br /></td></tr>
-<tr class="separator:ad2568d56df9c17aa240c2a5bd55265de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6e1632cf6ae2e2915cf89fa7439bc3"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphics_8h.html#a5a6e1632cf6ae2e2915cf89fa7439bc3">draw_line</a> (uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color)</td></tr>
+<tr class="memdesc:a5a6e1632cf6ae2e2915cf89fa7439bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a horizontal or vertical line on the frame buffer.  <br /></td></tr>
+<tr class="separator:a5a6e1632cf6ae2e2915cf89fa7439bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -117,8 +120,8 @@ Variables</h2></td></tr>
 <tr class="separator:a9fcc2243068f8e628648febc0909c509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad2568d56df9c17aa240c2a5bd55265de" name="ad2568d56df9c17aa240c2a5bd55265de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2568d56df9c17aa240c2a5bd55265de">&#9670;&#160;</a></span>draw_line()</h2>
+<a id="a5a6e1632cf6ae2e2915cf89fa7439bc3" name="a5a6e1632cf6ae2e2915cf89fa7439bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6e1632cf6ae2e2915cf89fa7439bc3">&#9670;&#160;</a></span>draw_line()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,13 +154,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>frame_buffer</em>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,27 +172,26 @@ Variables</h2></td></tr>
     <tr><td class="paramname">x2</td><td>x of second point </td></tr>
     <tr><td class="paramname">y2</td><td>y of second point </td></tr>
     <tr><td class="paramname">color</td><td>Color of line </td></tr>
-    <tr><td class="paramname">frame_buffer</td><td>Frame buffer to draw in </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="graphics_8h_ad2568d56df9c17aa240c2a5bd55265de_cgraph.png" border="0" usemap="#agraphics_8h_ad2568d56df9c17aa240c2a5bd55265de_cgraph" alt=""/></div>
-<map name="agraphics_8h_ad2568d56df9c17aa240c2a5bd55265de_cgraph" id="agraphics_8h_ad2568d56df9c17aa240c2a5bd55265de_cgraph">
+<div class="center"><img src="graphics_8h_a5a6e1632cf6ae2e2915cf89fa7439bc3_cgraph.png" border="0" usemap="#agraphics_8h_a5a6e1632cf6ae2e2915cf89fa7439bc3_cgraph" alt=""/></div>
+<map name="agraphics_8h_a5a6e1632cf6ae2e2915cf89fa7439bc3_cgraph" id="agraphics_8h_a5a6e1632cf6ae2e2915cf89fa7439bc3_cgraph">
 <area shape="rect" title="Draws a horizontal or vertical line on the frame buffer." alt="" coords="5,5,81,32"/>
-<area shape="rect" href="graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="129,5,212,32"/>
-<area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="260,5,389,32"/>
-<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="437,5,524,32"/>
+<area shape="rect" href="graphics_8c.html#a87c354cc1435291d3fe364802e3efd44" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="129,5,212,32"/>
+<area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel &#160;&#160;Calculates the offset of a pixel on the frame buffer." alt="" coords="260,5,389,32"/>
+<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel &#160;&#160;Calculates the index of a pixel, independently of the current mode." alt="" coords="437,5,524,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a7c829cd1bed2e2233a29802835102589" name="a7c829cd1bed2e2233a29802835102589"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c829cd1bed2e2233a29802835102589">&#9670;&#160;</a></span>fill_rectangle()</h2>
+<a id="a1ccb2b6c6a8cf3e7db9cbd91efe0683b" name="a1ccb2b6c6a8cf3e7db9cbd91efe0683b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ccb2b6c6a8cf3e7db9cbd91efe0683b">&#9670;&#160;</a></span>fill_rectangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,13 +224,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>frame_buffer</em>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -244,7 +234,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer. </p>
+<p>Fills a rectangle with a given color <br  />
+ Fills a rectanglt with a given color on the frame buffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x of top-left corner </td></tr>
@@ -252,20 +243,19 @@ Here is the call graph for this function:</div>
     <tr><td class="paramname">width</td><td>Width of rectangle </td></tr>
     <tr><td class="paramname">height</td><td>Height of rectangle </td></tr>
     <tr><td class="paramname">color</td><td>Color of rectangle </td></tr>
-    <tr><td class="paramname">frame_buffer</td><td>Frame buffer to draw in </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="graphics_8h_a7c829cd1bed2e2233a29802835102589_cgraph.png" border="0" usemap="#agraphics_8h_a7c829cd1bed2e2233a29802835102589_cgraph" alt=""/></div>
-<map name="agraphics_8h_a7c829cd1bed2e2233a29802835102589_cgraph" id="agraphics_8h_a7c829cd1bed2e2233a29802835102589_cgraph">
-<area shape="rect" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="5,5,99,32"/>
-<area shape="rect" href="graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="147,5,230,32"/>
-<area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="278,5,407,32"/>
-<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="455,5,542,32"/>
+<div class="center"><img src="graphics_8h_a1ccb2b6c6a8cf3e7db9cbd91efe0683b_cgraph.png" border="0" usemap="#agraphics_8h_a1ccb2b6c6a8cf3e7db9cbd91efe0683b_cgraph" alt=""/></div>
+<map name="agraphics_8h_a1ccb2b6c6a8cf3e7db9cbd91efe0683b_cgraph" id="agraphics_8h_a1ccb2b6c6a8cf3e7db9cbd91efe0683b_cgraph">
+<area shape="rect" title="Fills a rectangle with a given color &#160;&#160;Fills a rectanglt with a given color on the frame buffer." alt="" coords="5,5,99,32"/>
+<area shape="rect" href="graphics_8c.html#a87c354cc1435291d3fe364802e3efd44" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="147,5,230,32"/>
+<area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel &#160;&#160;Calculates the offset of a pixel on the frame buffer." alt="" coords="278,5,407,32"/>
+<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel &#160;&#160;Calculates the index of a pixel, independently of the current mode." alt="" coords="455,5,542,32"/>
 </map>
 </div>
 
@@ -297,7 +287,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer. </p>
+<p>Calculates the offset of a pixel <br  />
+ Calculates the offset of a pixel on the frame buffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x coordinate of pixel </td></tr>
@@ -305,14 +296,14 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint32_t Offset of pixel </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Offset of pixel </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="graphics_8h_a13f935577d3b1fa2c00db8f33740247d_cgraph.png" border="0" usemap="#agraphics_8h_a13f935577d3b1fa2c00db8f33740247d_cgraph" alt=""/></div>
 <map name="agraphics_8h_a13f935577d3b1fa2c00db8f33740247d_cgraph" id="agraphics_8h_a13f935577d3b1fa2c00db8f33740247d_cgraph">
-<area shape="rect" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="5,5,135,32"/>
-<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="183,5,269,32"/>
+<area shape="rect" title="Calculates the offset of a pixel &#160;&#160;Calculates the offset of a pixel on the frame buffer." alt="" coords="5,5,135,32"/>
+<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel &#160;&#160;Calculates the index of a pixel, independently of the current mode." alt="" coords="183,5,269,32"/>
 </map>
 </div>
 
@@ -352,12 +343,12 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
-<a id="a5d33f8d40697e2a626b879be5c43b682" name="a5d33f8d40697e2a626b879be5c43b682"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d33f8d40697e2a626b879be5c43b682">&#9670;&#160;</a></span>paint_pixel()</h2>
+<a id="a87c354cc1435291d3fe364802e3efd44" name="a87c354cc1435291d3fe364802e3efd44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87c354cc1435291d3fe364802e3efd44">&#9670;&#160;</a></span>paint_pixel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,13 +369,7 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>frame_buffer</em>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -400,19 +385,18 @@ Here is the call graph for this function:</div>
     <tr><td class="paramname">x</td><td>x coordinate of pixel </td></tr>
     <tr><td class="paramname">y</td><td>y coordinate of pixel </td></tr>
     <tr><td class="paramname">color</td><td>color of pixel </td></tr>
-    <tr><td class="paramname">frame_buffer</td><td>frame buffer to draw in </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="graphics_8h_a5d33f8d40697e2a626b879be5c43b682_cgraph.png" border="0" usemap="#agraphics_8h_a5d33f8d40697e2a626b879be5c43b682_cgraph" alt=""/></div>
-<map name="agraphics_8h_a5d33f8d40697e2a626b879be5c43b682_cgraph" id="agraphics_8h_a5d33f8d40697e2a626b879be5c43b682_cgraph">
+<div class="center"><img src="graphics_8h_a87c354cc1435291d3fe364802e3efd44_cgraph.png" border="0" usemap="#agraphics_8h_a87c354cc1435291d3fe364802e3efd44_cgraph" alt=""/></div>
+<map name="agraphics_8h_a87c354cc1435291d3fe364802e3efd44_cgraph" id="agraphics_8h_a87c354cc1435291d3fe364802e3efd44_cgraph">
 <area shape="rect" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="5,5,89,32"/>
-<area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="137,5,266,32"/>
-<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="314,5,400,32"/>
+<area shape="rect" href="graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel &#160;&#160;Calculates the offset of a pixel on the frame buffer." alt="" coords="137,5,266,32"/>
+<area shape="rect" href="graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel &#160;&#160;Calculates the index of a pixel, independently of the current mode." alt="" coords="314,5,400,32"/>
 </map>
 </div>
 
@@ -444,7 +428,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode. </p>
+<p>Calculates the index of a pixel <br  />
+ Calculates the index of a pixel, independently of the current mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>x coordinate of pixel </td></tr>
@@ -452,7 +437,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint32_t Index of pixel </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Index of pixel </dd></dl>
 
 </div>
 </div>
@@ -490,7 +475,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -526,7 +511,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>

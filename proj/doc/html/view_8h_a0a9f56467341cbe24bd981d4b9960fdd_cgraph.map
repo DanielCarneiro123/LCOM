@@ -1,9 +1,9 @@
 <map id="draw_game_menu" name="draw_game_menu">
-<area shape="rect" id="node1" title="Draws the game menu Draws the game menu and sets background." alt="" coords="5,56,132,83"/>
-<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws a sprite Draws the entirety of a sprite object&#39;s colors on the frame buffer." alt="" coords="194,5,314,32"/>
-<area shape="rect" id="node6" href="$graphics_8c.html#aa72b6f1daff144bd0c1594f69165f15c" title="Fills a rectangle with a given color Fills a rectanglt with a given color on the frame buffer." alt="" coords="207,56,301,83"/>
+<area shape="rect" id="node1" title="Draws the game menu &#160;&#160;Draws the game menu and sets background." alt="" coords="5,56,132,83"/>
+<area shape="rect" id="node2" href="$view_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Draws a sprite &#160;&#160;Draws the entirety of a sprite object&#39;s colors on the frame buffer." alt="" coords="194,5,314,32"/>
+<area shape="rect" id="node6" href="$graphics_8c.html#a4a908aca81b8f45279ea9a5d5eb81549" title="Fills a rectangle with a given color &#160;&#160;Fills a rectanglt with a given color on the frame buffer." alt="" coords="207,56,301,83"/>
 <area shape="rect" id="node7" href="$view_8c.html#a958c1e44555e3972bef87ab253dab40c" title="Set the background color according to current hour." alt="" coords="180,107,328,133"/>
-<area shape="rect" id="node3" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="376,31,459,57"/>
-<area shape="rect" id="node4" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="507,31,637,57"/>
-<area shape="rect" id="node5" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="685,31,771,57"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a87c354cc1435291d3fe364802e3efd44" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="376,31,459,57"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel &#160;&#160;Calculates the offset of a pixel on the frame buffer." alt="" coords="507,31,637,57"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel &#160;&#160;Calculates the index of a pixel, independently of the current mode." alt="" coords="685,31,771,57"/>
 </map>

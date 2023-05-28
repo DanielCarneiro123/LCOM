@@ -93,16 +93,19 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af2c04fa8e97ffa748fd3f612886a92a7"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#af2c04fa8e97ffa748fd3f612886a92a7">timer_set_frequency</a> (uint8_t timer, uint32_t freq)</td></tr>
-<tr class="memdesc:af2c04fa8e97ffa748fd3f612886a92a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the timer's frequency Sets the timer's frequency to a given value passed to the function.  <br /></td></tr>
+<tr class="memdesc:af2c04fa8e97ffa748fd3f612886a92a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the timer's frequency <br  />
+ Sets the timer's frequency to a given value passed to the function.  <br /></td></tr>
 <tr class="separator:af2c04fa8e97ffa748fd3f612886a92a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32021da0bb62eb144e5d81fc37a5dfb8"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a32021da0bb62eb144e5d81fc37a5dfb8">timer_subscribe_ints</a> (uint8_t *bit_no)</td></tr>
-<tr class="memdesc:a32021da0bb62eb144e5d81fc37a5dfb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to timer 0's interrupts Subscribes to the timer's interrupts with the bit mask defined in hook_id_timer.  <br /></td></tr>
+<tr class="memdesc:a32021da0bb62eb144e5d81fc37a5dfb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to timer 0's interrupts <br  />
+ Subscribes to the timer's interrupts with the bit mask defined in hook_id_timer.  <br /></td></tr>
 <tr class="separator:a32021da0bb62eb144e5d81fc37a5dfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c3923005ce2d5cbf1f93fadebd77eeb"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a0c3923005ce2d5cbf1f93fadebd77eeb">timer_unsubscribe_ints</a> ()</td></tr>
 <tr class="memdesc:a0c3923005ce2d5cbf1f93fadebd77eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ubsubscribes from the timer's interrupts.  <br /></td></tr>
 <tr class="separator:a0c3923005ce2d5cbf1f93fadebd77eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a703c60b40c8c49607d6ecb6fef82d27a"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a703c60b40c8c49607d6ecb6fef82d27a">timer_get_conf</a> (uint8_t timer, uint8_t *st)</td></tr>
-<tr class="memdesc:a703c60b40c8c49607d6ecb6fef82d27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointer parameter.  <br /></td></tr>
+<tr class="memdesc:a703c60b40c8c49607d6ecb6fef82d27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the configuration from a timer <br  />
+ Reads the configuration from a timer and returns it via a pointer parameter.  <br /></td></tr>
 <tr class="separator:a703c60b40c8c49607d6ecb6fef82d27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -147,7 +150,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointer parameter. </p>
+<p>Reads the configuration from a timer <br  />
+ Reads the configuration from a timer and returns it via a pointer parameter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timer</td><td>Timer to read (0, 1, 2) </td></tr>
@@ -155,13 +159,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="timer_8h_a703c60b40c8c49607d6ecb6fef82d27a_cgraph.png" border="0" usemap="#atimer_8h_a703c60b40c8c49607d6ecb6fef82d27a_cgraph" alt=""/></div>
 <map name="atimer_8h_a703c60b40c8c49607d6ecb6fef82d27a_cgraph" id="atimer_8h_a703c60b40c8c49607d6ecb6fef82d27a_cgraph">
-<area shape="rect" title="Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointe..." alt="" coords="5,5,112,32"/>
+<area shape="rect" title="Reads the configuration from a timer &#160;&#160;Reads the configuration from a timer and returns it via a poin..." alt="" coords="5,5,112,32"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="160,5,250,32"/>
 </map>
 </div>
@@ -194,7 +198,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the timer's frequency Sets the timer's frequency to a given value passed to the function. </p>
+<p>Sets the timer's frequency <br  />
+ Sets the timer's frequency to a given value passed to the function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timer</td><td>Timer to update (0, 1, 2) </td></tr>
@@ -202,14 +207,14 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="timer_8h_af2c04fa8e97ffa748fd3f612886a92a7_cgraph.png" border="0" usemap="#atimer_8h_af2c04fa8e97ffa748fd3f612886a92a7_cgraph" alt=""/></div>
 <map name="atimer_8h_af2c04fa8e97ffa748fd3f612886a92a7_cgraph" id="atimer_8h_af2c04fa8e97ffa748fd3f612886a92a7_cgraph">
-<area shape="rect" title="Sets the timer&#39;s frequency Sets the timer&#39;s frequency to a given value passed to the function." alt="" coords="5,56,144,83"/>
-<area shape="rect" href="timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title="Reads the configuration from a timer Reads the configuration from a timer and returns it via a pointe..." alt="" coords="192,5,298,32"/>
+<area shape="rect" title="Sets the timer&#39;s frequency &#160;&#160;Sets the timer&#39;s frequency to a given value passed to the function." alt="" coords="5,56,144,83"/>
+<area shape="rect" href="timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title="Reads the configuration from a timer &#160;&#160;Reads the configuration from a timer and returns it via a poin..." alt="" coords="192,5,298,32"/>
 <area shape="rect" href="utils_8c.html#a81621440b3d65680979425e39aa8c789" title="Gets the LSB from a byte." alt="" coords="197,56,293,83"/>
 <area shape="rect" href="utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title="Gets the MSB from a byte." alt="" coords="195,107,295,133"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="346,5,436,32"/>
@@ -234,14 +239,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Subscribes to timer 0's interrupts Subscribes to the timer's interrupts with the bit mask defined in hook_id_timer. </p>
+<p>Subscribes to timer 0's interrupts <br  />
+ Subscribes to the timer's interrupts with the bit mask defined in hook_id_timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bit_no</td><td>Bit mask for which the subscription takes place </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -261,7 +267,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Ubsubscribes from the timer's interrupts. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>

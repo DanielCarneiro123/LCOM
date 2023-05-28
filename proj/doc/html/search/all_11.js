@@ -3,7 +3,7 @@ var searchData=
   ['s_5fkey_0',['S_KEY',['../keyboard_2i8042_8h.html#a38916d959d471a2781d390910271b6b5',1,'i8042.h']]],
   ['scancode_1',['scancode',['../model_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c'],['../keyboard_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c']]],
   ['scratchpad_5foffset_2',['SCRATCHPAD_OFFSET',['../_u_a_r_t_8h.html#a836ae1945dbd61b83a9b7378c53c8c4b',1,'UART.h']]],
-  ['seconds_3',['seconds',['../structrtc__info.html#a46729a903be1a03cdb248fb48d84d4f5',1,'rtc_info']]],
+  ['seconds_3',['seconds',['../struct_r_t_c_info.html#a46729a903be1a03cdb248fb48d84d4f5',1,'RTCInfo']]],
   ['seconds_4',['SECONDS',['../rtc_8h.html#a48fcf4f2eeef6769d588168d4ac2ab0e',1,'rtc.h']]],
   ['seis_5',['seis',['../model_8c.html#a6c5c0b799d9ccf6d8f8a35cbea45c8dd',1,'seis():&#160;model.c'],['../view_8c.html#a6c5c0b799d9ccf6d8f8a35cbea45c8dd',1,'seis():&#160;model.c']]],
   ['set_5fbackground_5fcolor_6',['set_background_color',['../view_8c.html#a958c1e44555e3972bef87ab253dab40c',1,'set_background_color():&#160;view.c'],['../view_8h.html#a958c1e44555e3972bef87ab253dab40c',1,'set_background_color():&#160;view.c']]],
@@ -45,6 +45,6 @@ var searchData=
   ['sprite_42',['Sprite',['../struct_sprite.html',1,'']]],
   ['sprite_2ec_43',['sprite.c',['../sprite_8c.html',1,'']]],
   ['sprite_2eh_44',['sprite.h',['../sprite_8h.html',1,'']]],
-  ['start_45',['start',['../model_8c.html#a76454a7d013e0b6d5feb29b0ced6429e',1,'start():&#160;model.c'],['../view_8c.html#a76454a7d013e0b6d5feb29b0ced6429e',1,'start():&#160;model.c']]],
-  ['start_46',['START',['../data__structures_8h.html#aa3041ae4242c0dd57a126d17505443b2a13d000b4d7dc70d90239b7430d1eb6b2',1,'data_structures.h']]]
+  ['start_45',['START',['../data__structures_8h.html#aa3041ae4242c0dd57a126d17505443b2a13d000b4d7dc70d90239b7430d1eb6b2',1,'data_structures.h']]],
+  ['start_46',['start',['../model_8c.html#a76454a7d013e0b6d5feb29b0ced6429e',1,'start():&#160;model.c'],['../view_8c.html#a76454a7d013e0b6d5feb29b0ced6429e',1,'start():&#160;model.c']]]
 ];

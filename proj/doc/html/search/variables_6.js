@@ -7,5 +7,5 @@ var searchData=
   ['hook_5fid_5fmouse_4',['hook_id_mouse',['../mouse_8c.html#a0b0da21bbdff62b7b28e9af7ec3d0d76',1,'mouse.c']]],
   ['hook_5fid_5fsp_5',['hook_id_sp',['../sp_8c.html#acf27fa6e2afefff73656248a78bf14bc',1,'sp.c']]],
   ['hook_5fid_5ftimer_6',['hook_id_timer',['../timer_8c.html#a7f3d11d35385878045b6b6a2ec438ba8',1,'timer.c']]],
-  ['hours_7',['hours',['../structrtc__info.html#a00a531a34a1d603329df5778f1203ab6',1,'rtc_info']]]
+  ['hours_7',['hours',['../struct_r_t_c_info.html#a00a531a34a1d603329df5778f1203ab6',1,'RTCInfo']]]
 ];

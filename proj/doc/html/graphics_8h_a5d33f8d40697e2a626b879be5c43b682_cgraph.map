@@ -1,5 +1,0 @@
-<map id="paint_pixel" name="paint_pixel">
-<area shape="rect" id="node1" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="5,5,89,32"/>
-<area shape="rect" id="node2" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="137,5,266,32"/>
-<area shape="rect" id="node3" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="314,5,400,32"/>
-</map>

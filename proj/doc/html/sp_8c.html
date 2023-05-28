@@ -84,25 +84,31 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a13c01867b9c145b09c600ffe7521455b"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#a13c01867b9c145b09c600ffe7521455b">sp_setup</a> ()</td></tr>
-<tr class="memdesc:a13c01867b9c145b09c600ffe7521455b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the serial port for use Sets the bit rate, the interrupts to be used, disables the fifo, and sets the char sizes.  <br /></td></tr>
+<tr class="memdesc:a13c01867b9c145b09c600ffe7521455b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the serial port for use <br  />
+ Sets the bit rate, the interrupts to be used, disables the fifo, and sets the char sizes.  <br /></td></tr>
 <tr class="separator:a13c01867b9c145b09c600ffe7521455b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa02100c8273995fd125d3ee9d7a0b45d"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#aa02100c8273995fd125d3ee9d7a0b45d">sp_subscribe_interrupts</a> (uint8_t *bit_no)</td></tr>
-<tr class="memdesc:aa02100c8273995fd125d3ee9d7a0b45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to the serial port's interrupts Subscribes to the serial port's interrupts in exclusive mode with the bit mask defined in hook_id_sp.  <br /></td></tr>
+<tr class="memdesc:aa02100c8273995fd125d3ee9d7a0b45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to the serial port's interrupts <br  />
+ Subscribes to the serial port's interrupts in exclusive mode with the bit mask defined in hook_id_sp.  <br /></td></tr>
 <tr class="separator:aa02100c8273995fd125d3ee9d7a0b45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a552cfbe43f5bd3b63c79ca505337dd57"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#a552cfbe43f5bd3b63c79ca505337dd57">sp_unsubscribe_interrupts</a> ()</td></tr>
 <tr class="memdesc:a552cfbe43f5bd3b63c79ca505337dd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes from the serial port's interrupts.  <br /></td></tr>
 <tr class="separator:a552cfbe43f5bd3b63c79ca505337dd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa078e540a7187163ee055cd9146418e8"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8">read_lsr</a> (uint8_t *lsr)</td></tr>
-<tr class="memdesc:aa078e540a7187163ee055cd9146418e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the LSR Reads the serial port's LSR to determine its current status.  <br /></td></tr>
+<tr class="memdesc:aa078e540a7187163ee055cd9146418e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the LSR <br  />
+ Reads the serial port's LSR to determine its current status.  <br /></td></tr>
 <tr class="separator:aa078e540a7187163ee055cd9146418e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1828b4e634a545966d2713b2b1cece04"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#a1828b4e634a545966d2713b2b1cece04">read_sp_data</a> ()</td></tr>
-<tr class="memdesc:a1828b4e634a545966d2713b2b1cece04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the SP Reads data from the SP. If everything went well, an ACK byte is sent, otherwise a NACK byte is sent.  <br /></td></tr>
+<tr class="memdesc:a1828b4e634a545966d2713b2b1cece04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the SP <br  />
+ Reads data from the SP. If everything went well, an ACK byte is sent, otherwise a NACK byte is sent.  <br /></td></tr>
 <tr class="separator:a1828b4e634a545966d2713b2b1cece04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43839d46a93b9b908ad5003db25ca7a6"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6">write_sp_data</a> (uint8_t data)</td></tr>
-<tr class="memdesc:a43839d46a93b9b908ad5003db25ca7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte to the SP Writes a byte to the SP if the THR is empty.  <br /></td></tr>
+<tr class="memdesc:a43839d46a93b9b908ad5003db25ca7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte to the SP <br  />
+ Writes a byte to the SP if the THR is empty.  <br /></td></tr>
 <tr class="separator:a43839d46a93b9b908ad5003db25ca7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36885f3a76f83885f4562feb8d4bd74"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#af36885f3a76f83885f4562feb8d4bd74">sp_ih</a> ()</td></tr>
-<tr class="memdesc:af36885f3a76f83885f4562feb8d4bd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the serial port Reads the IIR and uses it to the determine which functions to execute.  <br /></td></tr>
+<tr class="memdesc:af36885f3a76f83885f4562feb8d4bd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the serial port <br  />
+ Reads the IIR and uses it to the determine which functions to execute.  <br /></td></tr>
 <tr class="separator:af36885f3a76f83885f4562feb8d4bd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d2bd0542461a1b90fa33deb4dfb2b1b"><td class="memItemLeft" align="right" valign="top">uint8_t()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp_8c.html#a9d2bd0542461a1b90fa33deb4dfb2b1b">prepare_move_byte</a> (uint8_t position, uint32_t color, uint8_t remove)</td></tr>
 <tr class="memdesc:a9d2bd0542461a1b90fa33deb4dfb2b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares a byte to be sent.  <br /></td></tr>
@@ -163,7 +169,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Byte to transmit </dd></dl>
 
 </div>
 </div>
@@ -183,20 +189,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads the LSR Reads the serial port's LSR to determine its current status. </p>
+<p>Reads the LSR <br  />
+ Reads the serial port's LSR to determine its current status. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lsr</td><td>Address of byte in which to put LSR </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sp_8c_aa078e540a7187163ee055cd9146418e8_cgraph.png" border="0" usemap="#asp_8c_aa078e540a7187163ee055cd9146418e8_cgraph" alt=""/></div>
 <map name="asp_8c_aa078e540a7187163ee055cd9146418e8_cgraph" id="asp_8c_aa078e540a7187163ee055cd9146418e8_cgraph">
-<area shape="rect" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="5,5,73,32"/>
+<area shape="rect" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="5,5,73,32"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="121,5,211,32"/>
 </map>
 </div>
@@ -218,17 +225,18 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Reads data from the SP Reads data from the SP. If everything went well, an ACK byte is sent, otherwise a NACK byte is sent. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<p>Reads data from the SP <br  />
+ Reads data from the SP. If everything went well, an ACK byte is sent, otherwise a NACK byte is sent. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sp_8c_a1828b4e634a545966d2713b2b1cece04_cgraph.png" border="0" usemap="#asp_8c_a1828b4e634a545966d2713b2b1cece04_cgraph" alt=""/></div>
 <map name="asp_8c_a1828b4e634a545966d2713b2b1cece04_cgraph" id="asp_8c_a1828b4e634a545966d2713b2b1cece04_cgraph">
-<area shape="rect" title="Reads data from the SP Reads data from the SP. If everything went well, an ACK byte is sent,..." alt="" coords="5,22,105,49"/>
-<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="302,22,369,49"/>
+<area shape="rect" title="Reads data from the SP &#160;&#160;Reads data from the SP. If everything went well, an ACK byte is sent,..." alt="" coords="5,22,105,49"/>
+<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="302,22,369,49"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="417,48,508,74"/>
-<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="153,22,254,49"/>
+<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="153,22,254,49"/>
 </map>
 </div>
 
@@ -249,17 +257,18 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Interrupt handler for the serial port Reads the IIR and uses it to the determine which functions to execute. </p>
+<p>Interrupt handler for the serial port <br  />
+ Reads the IIR and uses it to the determine which functions to execute. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sp_8c_af36885f3a76f83885f4562feb8d4bd74_cgraph.png" border="0" usemap="#asp_8c_af36885f3a76f83885f4562feb8d4bd74_cgraph" alt=""/></div>
 <map name="asp_8c_af36885f3a76f83885f4562feb8d4bd74_cgraph" id="asp_8c_af36885f3a76f83885f4562feb8d4bd74_cgraph">
-<area shape="rect" title="Interrupt handler for the serial port Reads the IIR and uses it to the determine which functions to e..." alt="" coords="5,100,58,127"/>
-<area shape="rect" href="sp_8c.html#a1828b4e634a545966d2713b2b1cece04" title="Reads data from the SP Reads data from the SP. If everything went well, an ACK byte is sent,..." alt="" coords="106,50,205,76"/>
+<area shape="rect" title="Interrupt handler for the serial port &#160;&#160;Reads the IIR and uses it to the determine which functions to..." alt="" coords="5,100,58,127"/>
+<area shape="rect" href="sp_8c.html#a1828b4e634a545966d2713b2b1cece04" title="Reads data from the SP &#160;&#160;Reads data from the SP. If everything went well, an ACK byte is sent,..." alt="" coords="106,50,205,76"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="518,75,608,102"/>
-<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="402,24,470,51"/>
-<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="253,24,354,51"/>
+<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="402,24,470,51"/>
+<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="253,24,354,51"/>
 </map>
 </div>
 
@@ -280,8 +289,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Sets up the serial port for use Sets the bit rate, the interrupts to be used, disables the fifo, and sets the char sizes. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<p>Sets up the serial port for use <br  />
+ Sets the bit rate, the interrupts to be used, disables the fifo, and sets the char sizes. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -301,14 +311,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Subscribes to the serial port's interrupts Subscribes to the serial port's interrupts in exclusive mode with the bit mask defined in hook_id_sp. </p>
+<p>Subscribes to the serial port's interrupts <br  />
+ Subscribes to the serial port's interrupts in exclusive mode with the bit mask defined in hook_id_sp. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bit_no</td><td>Bit mask for which the subscription takes place </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -348,21 +359,22 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Writes a byte to the SP Writes a byte to the SP if the THR is empty. </p>
+<p>Writes a byte to the SP <br  />
+ Writes a byte to the SP if the THR is empty. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>Data to sent </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sp_8c_a43839d46a93b9b908ad5003db25ca7a6_cgraph.png" border="0" usemap="#asp_8c_a43839d46a93b9b908ad5003db25ca7a6_cgraph" alt=""/></div>
 <map name="asp_8c_a43839d46a93b9b908ad5003db25ca7a6_cgraph" id="asp_8c_a43839d46a93b9b908ad5003db25ca7a6_cgraph">
-<area shape="rect" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="5,5,107,32"/>
-<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="155,5,222,32"/>
+<area shape="rect" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="5,5,107,32"/>
+<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="155,5,222,32"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="270,5,360,32"/>
 </map>
 </div>

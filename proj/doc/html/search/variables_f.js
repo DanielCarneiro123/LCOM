@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scancode_0',['scancode',['../keyboard_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c'],['../model_8c.html#aa1de7a5557e9d96b83cf03f73c92163f',1,'scancode():&#160;keyboard.c']]],
-  ['seconds_1',['seconds',['../structrtc__info.html#a46729a903be1a03cdb248fb48d84d4f5',1,'rtc_info']]],
+  ['seconds_1',['seconds',['../struct_r_t_c_info.html#a46729a903be1a03cdb248fb48d84d4f5',1,'RTCInfo']]],
   ['seis_2',['seis',['../model_8c.html#a6c5c0b799d9ccf6d8f8a35cbea45c8dd',1,'seis():&#160;model.c'],['../view_8c.html#a6c5c0b799d9ccf6d8f8a35cbea45c8dd',1,'seis():&#160;model.c']]],
   ['sete_3',['sete',['../model_8c.html#a609b1835a6a7fdc462529225f038a693',1,'sete():&#160;model.c'],['../view_8c.html#a609b1835a6a7fdc462529225f038a693',1,'sete():&#160;model.c']]],
   ['small_5fball_4',['small_ball',['../model_8c.html#ad90bdd4f68e0b56d9cef57b006a7df23',1,'small_ball():&#160;model.c'],['../view_8c.html#ad90bdd4f68e0b56d9cef57b006a7df23',1,'small_ball():&#160;model.c']]],

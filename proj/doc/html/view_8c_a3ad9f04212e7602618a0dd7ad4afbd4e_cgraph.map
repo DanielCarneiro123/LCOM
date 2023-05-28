@@ -1,5 +1,5 @@
 <map id="set_frame_buffers" name="set_frame_buffers">
-<area shape="rect" id="node1" title="Prepares the frame buffers Allocates the main frame buffer in VRAM and the secondary buffer in the pr..." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node1" title="Prepares the frame buffers &#160;&#160;Allocates the main frame buffer in VRAM and the secondary buffer in the ..." alt="" coords="5,5,129,32"/>
 <area shape="rect" id="node2" href="$graphics_8c.html#ac50005645b76a08eff8126607633420f" title="Maps the frame buffer to the process&#39; address spac." alt="" coords="177,5,293,32"/>
 <area shape="rect" id="node3" href="$graphics_8c.html#a4aa23812c97d2d1612e4053512560161" title="Gets the information of a given VBE mode." alt="" coords="341,5,446,32"/>
 </map>

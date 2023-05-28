@@ -1,5 +1,5 @@
 <map id="write_sp_data" name="write_sp_data">
-<area shape="rect" id="node1" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="5,5,107,32"/>
-<area shape="rect" id="node2" href="$sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="155,5,222,32"/>
+<area shape="rect" id="node1" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node2" href="$sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="155,5,222,32"/>
 <area shape="rect" id="node3" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="270,5,360,32"/>
 </map>

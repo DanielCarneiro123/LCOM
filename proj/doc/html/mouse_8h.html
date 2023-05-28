@@ -101,22 +101,28 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a25ed04b56945b02629171e15a8f23c3f"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a25ed04b56945b02629171e15a8f23c3f">mouse_subscribe_interrupts</a> (uint8_t *bit_no)</td></tr>
-<tr class="memdesc:a25ed04b56945b02629171e15a8f23c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to the mouse's interrupts Subscribes to the mouse's interrupts in exclusive mode with the bit mask defined in hook_id_mouse.  <br /></td></tr>
+<tr class="memdesc:a25ed04b56945b02629171e15a8f23c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to the mouse's interrupts <br  />
+ Subscribes to the mouse's interrupts in exclusive mode with the bit mask defined in hook_id_mouse.  <br /></td></tr>
 <tr class="separator:a25ed04b56945b02629171e15a8f23c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaf9bbdd3ddda1b50021f21c37df1c9c"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#adaf9bbdd3ddda1b50021f21c37df1c9c">mouse_unsubscribe_interrupts</a> ()</td></tr>
-<tr class="memdesc:adaf9bbdd3ddda1b50021f21c37df1c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes from the mouse's interrupts.  <br /></td></tr>
+<tr class="memdesc:adaf9bbdd3ddda1b50021f21c37df1c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes from the mouse's interrupts <br  />
+.  <br /></td></tr>
 <tr class="separator:adaf9bbdd3ddda1b50021f21c37df1c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a210374b50462acdedab00df64d5cea3c"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a210374b50462acdedab00df64d5cea3c">mouse_ih</a> ()</td></tr>
-<tr class="memdesc:a210374b50462acdedab00df64d5cea3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the mouse Reads a mouse byte from the KBC.  <br /></td></tr>
+<tr class="memdesc:a210374b50462acdedab00df64d5cea3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt handler for the mouse <br  />
+ Reads a mouse byte from the KBC.  <br /></td></tr>
 <tr class="separator:a210374b50462acdedab00df64d5cea3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c7facbad912260596985460110784a"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a34c7facbad912260596985460110784a">mouse_update_buffer</a> ()</td></tr>
-<tr class="memdesc:a34c7facbad912260596985460110784a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the buffer mouse struct A second struct is used as a buffer, and its contents are copied to the main struct after each packet.  <br /></td></tr>
+<tr class="memdesc:a34c7facbad912260596985460110784a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the buffer mouse struct <br  />
+ A second struct is used as a buffer, and its contents are copied to the main struct after each packet.  <br /></td></tr>
 <tr class="separator:a34c7facbad912260596985460110784a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa832040dd305ba3a8401cc3a4e6a4cc4"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#aa832040dd305ba3a8401cc3a4e6a4cc4">mouse_sync_info</a> ()</td></tr>
-<tr class="memdesc:aa832040dd305ba3a8401cc3a4e6a4cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the main mouse struct Copies the contents of the buffer struct to the main struct.  <br /></td></tr>
+<tr class="memdesc:aa832040dd305ba3a8401cc3a4e6a4cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the main mouse struct <br  />
+ Copies the contents of the buffer struct to the main struct.  <br /></td></tr>
 <tr class="separator:aa832040dd305ba3a8401cc3a4e6a4cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1703c3c5b61eef30d724b15cafd1d75e"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a1703c3c5b61eef30d724b15cafd1d75e">mouse_write</a> (uint8_t command)</td></tr>
-<tr class="memdesc:a1703c3c5b61eef30d724b15cafd1d75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a command to the mouse The command is sent until too many attempts are made or until an ACK response is obtained.  <br /></td></tr>
+<tr class="memdesc:a1703c3c5b61eef30d724b15cafd1d75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a command to the mouse <br  />
+ The command is sent until too many attempts are made or until an ACK response is obtained.  <br /></td></tr>
 <tr class="separator:a1703c3c5b61eef30d724b15cafd1d75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -150,13 +156,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Interrupt handler for the mouse Reads a mouse byte from the KBC. </p>
+<p>Interrupt handler for the mouse <br  />
+ Reads a mouse byte from the KBC. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="mouse_8h_a210374b50462acdedab00df64d5cea3c_cgraph.png" border="0" usemap="#amouse_8h_a210374b50462acdedab00df64d5cea3c_cgraph" alt=""/></div>
 <map name="amouse_8h_a210374b50462acdedab00df64d5cea3c_cgraph" id="amouse_8h_a210374b50462acdedab00df64d5cea3c_cgraph">
-<area shape="rect" title="Interrupt handler for the mouse Reads a mouse byte from the KBC." alt="" coords="5,31,83,57"/>
+<area shape="rect" title="Interrupt handler for the mouse &#160;&#160;Reads a mouse byte from the KBC." alt="" coords="5,31,83,57"/>
 <area shape="rect" href="keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="131,31,254,57"/>
 <area shape="rect" href="keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="302,5,425,32"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="473,31,564,57"/>
@@ -181,14 +188,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Subscribes to the mouse's interrupts Subscribes to the mouse's interrupts in exclusive mode with the bit mask defined in hook_id_mouse. </p>
+<p>Subscribes to the mouse's interrupts <br  />
+ Subscribes to the mouse's interrupts in exclusive mode with the bit mask defined in hook_id_mouse. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bit_no</td><td>Bit mask for which the subscription takes place </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -207,7 +215,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the main mouse struct Copies the contents of the buffer struct to the main struct. </p>
+<p>Updates the main mouse struct <br  />
+ Copies the contents of the buffer struct to the main struct. </p>
 
 </div>
 </div>
@@ -226,8 +235,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Unsubscribes from the mouse's interrupts. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<p>Unsubscribes from the mouse's interrupts <br  />
+. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -246,7 +256,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the buffer mouse struct A second struct is used as a buffer, and its contents are copied to the main struct after each packet. </p>
+<p>Updates the buffer mouse struct <br  />
+ A second struct is used as a buffer, and its contents are copied to the main struct after each packet. </p>
 
 </div>
 </div>
@@ -266,13 +277,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Writes a command to the mouse The command is sent until too many attempts are made or until an ACK response is obtained. </p>
+<p>Writes a command to the mouse <br  />
+ The command is sent until too many attempts are made or until an ACK response is obtained. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="mouse_8h_a1703c3c5b61eef30d724b15cafd1d75e_cgraph.png" border="0" usemap="#amouse_8h_a1703c3c5b61eef30d724b15cafd1d75e_cgraph" alt=""/></div>
 <map name="amouse_8h_a1703c3c5b61eef30d724b15cafd1d75e_cgraph" id="amouse_8h_a1703c3c5b61eef30d724b15cafd1d75e_cgraph">
-<area shape="rect" title="Writes a command to the mouse The command is sent until too many attempts are made or until an ACK re..." alt="" coords="5,31,100,57"/>
+<area shape="rect" title="Writes a command to the mouse &#160;&#160;The command is sent until too many attempts are made or until an ACK ..." alt="" coords="5,31,100,57"/>
 <area shape="rect" href="keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="159,56,283,83"/>
 <area shape="rect" href="keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="148,5,294,32"/>
 <area shape="rect" href="keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="342,5,465,32"/>

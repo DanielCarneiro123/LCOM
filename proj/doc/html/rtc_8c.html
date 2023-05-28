@@ -84,7 +84,8 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a99c770b400026bc59e3c80a22615ad50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a99c770b400026bc59e3c80a22615ad50">rtc_setup</a> ()</td></tr>
-<tr class="memdesc:a99c770b400026bc59e3c80a22615ad50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the first time.  <br /></td></tr>
+<tr class="memdesc:a99c770b400026bc59e3c80a22615ad50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the RTC for use <br  />
+ Gets the counting mode, the hour format, and fills the time struct for the first time.  <br /></td></tr>
 <tr class="separator:a99c770b400026bc59e3c80a22615ad50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab450160a2bbbcf835ef30c4b593edc16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ab450160a2bbbcf835ef30c4b593edc16">rtc_get_binary</a> ()</td></tr>
 <tr class="memdesc:ab450160a2bbbcf835ef30c4b593edc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the counting mode.  <br /></td></tr>
@@ -108,15 +109,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a358067bf40f343d79bb5488120c92330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts hours to 0-23 format if need be, including BCD conversion.  <br /></td></tr>
 <tr class="separator:a358067bf40f343d79bb5488120c92330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11">rtc_update_time</a> ()</td></tr>
-<tr class="memdesc:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the values in the time info struct A buffer struct is used while filling in the values in case an error occurs midway. At the end its contents are copied to the main struct.  <br /></td></tr>
+<tr class="memdesc:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the values in the time info struct <br  />
+ A buffer struct is used while filling in the values in case an error occurs midway. At the end its contents are copied to the main struct.  <br /></td></tr>
 <tr class="separator:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a6c52a1d32571a429369253ce7c3a3d7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a6c52a1d32571a429369253ce7c3a3d7a">rtc_hook_id</a> = <a class="el" href="rtc_8h.html#ab54f2d18b47b47a59f718e16099446e8">RTC_MASK</a></td></tr>
 <tr class="separator:a6c52a1d32571a429369253ce7c3a3d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f685878070a1cd39fac59df72bb3e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrtc__info.html">rtc_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ac2f685878070a1cd39fac59df72bb3e4">time_info</a></td></tr>
-<tr class="separator:ac2f685878070a1cd39fac59df72bb3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f7f25fe8d5aba9345b33e9f6c61982"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_t_c_info.html">RTCInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#af3f7f25fe8d5aba9345b33e9f6c61982">time_info</a></td></tr>
+<tr class="separator:af3f7f25fe8d5aba9345b33e9f6c61982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a993a641b9153ad2682138dc1d48fe372"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a993a641b9153ad2682138dc1d48fe372">is_binary</a></td></tr>
 <tr class="separator:a993a641b9153ad2682138dc1d48fe372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a264b22d42d02f175ae98ea17edefd279"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a264b22d42d02f175ae98ea17edefd279">full_hours</a></td></tr>
@@ -146,7 +148,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t Converted output </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Converted output </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -182,7 +184,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t Converted output </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Converted output </dd></dl>
 
 </div>
 </div>
@@ -202,7 +204,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets the counting mode. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -232,7 +234,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets the hour format. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -262,7 +264,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Checks whether the RTC is updating. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t 0 if not updating, 1 if updating </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if not updating, 1 if updating </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -310,7 +312,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -338,16 +340,17 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the first time. </p>
+<p>Sets up the RTC for use <br  />
+ Gets the counting mode, the hour format, and fills the time struct for the first time. </p>
 <dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="rtc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph.png" border="0" usemap="#artc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph" alt=""/></div>
 <map name="artc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph" id="artc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph">
-<area shape="rect" title="Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the fi..." alt="" coords="5,56,81,83"/>
+<area shape="rect" title="Sets up the RTC for use &#160;&#160;Gets the counting mode, the hour format, and fills the time struct for the ..." alt="" coords="5,56,81,83"/>
 <area shape="rect" href="rtc_8c.html#ab450160a2bbbcf835ef30c4b593edc16" title="Gets the counting mode." alt="" coords="134,5,238,32"/>
-<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="129,81,243,108"/>
+<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct &#160;&#160;A buffer struct is used while filling in the values in c..." alt="" coords="129,81,243,108"/>
 <area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="467,31,535,57"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="602,31,692,57"/>
 <area shape="rect" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="295,132,396,159"/>
@@ -373,14 +376,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the values in the time info struct A buffer struct is used while filling in the values in case an error occurs midway. At the end its contents are copied to the main struct. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<p>Updates the values in the time info struct <br  />
+ A buffer struct is used while filling in the values in case an error occurs midway. At the end its contents are copied to the main struct. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="rtc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph.png" border="0" usemap="#artc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph" alt=""/></div>
 <map name="artc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph" id="artc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph">
-<area shape="rect" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="5,81,120,108"/>
+<area shape="rect" title="Updates the values in the time info struct &#160;&#160;A buffer struct is used while filling in the values in c..." alt="" coords="5,81,120,108"/>
 <area shape="rect" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="172,5,273,32"/>
 <area shape="rect" href="rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="325,44,430,71"/>
 <area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="168,107,277,133"/>
@@ -425,7 +429,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -472,14 +476,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ac2f685878070a1cd39fac59df72bb3e4" name="ac2f685878070a1cd39fac59df72bb3e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2f685878070a1cd39fac59df72bb3e4">&#9670;&#160;</a></span>time_info</h2>
+<a id="af3f7f25fe8d5aba9345b33e9f6c61982" name="af3f7f25fe8d5aba9345b33e9f6c61982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3f7f25fe8d5aba9345b33e9f6c61982">&#9670;&#160;</a></span>time_info</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrtc__info.html">rtc_info</a> time_info</td>
+          <td class="memname"><a class="el" href="struct_r_t_c_info.html">RTCInfo</a> time_info</td>
         </tr>
       </table>
 </div><div class="memdoc">

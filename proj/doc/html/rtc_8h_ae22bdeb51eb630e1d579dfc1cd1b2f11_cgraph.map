@@ -1,5 +1,5 @@
 <map id="rtc_update_time" name="rtc_update_time">
-<area shape="rect" id="node1" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="5,81,120,108"/>
+<area shape="rect" id="node1" title="Updates the values in the time info struct &#160;&#160;A buffer struct is used while filling in the values in c..." alt="" coords="5,81,120,108"/>
 <area shape="rect" id="node2" href="$rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="172,5,273,32"/>
 <area shape="rect" id="node3" href="$rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="325,44,430,71"/>
 <area shape="rect" id="node4" href="$rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="168,107,277,133"/>

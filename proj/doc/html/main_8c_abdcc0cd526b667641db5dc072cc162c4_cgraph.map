@@ -1,15 +1,15 @@
 <map id="teardown" name="teardown">
-<area shape="rect" id="node1" title=" " alt="" coords="5,216,79,243"/>
+<area shape="rect" id="node1" title="Tears down the program &#160;&#160;Deallocates heap memory, unsubscribes from interrupts, returns to text mode." alt="" coords="5,216,79,243"/>
 <area shape="rect" id="node2" href="$model_8c.html#a99f258154f26a4988afe4e7474bd01f2" title="Deallocates memory for code balls." alt="" coords="147,5,305,32"/>
 <area shape="rect" id="node3" href="$model_8c.html#a8ecd0abe9f05463c2b5e175a7ab86127" title="Deallocates memory for placed balls." alt="" coords="164,56,288,83"/>
 <area shape="rect" id="node4" href="$model_8c.html#a69755ac1cd6bef2cc9f98ba4dd6d0fbf" title="Deallocates memory for placed small balls." alt="" coords="145,107,307,133"/>
 <area shape="rect" id="node5" href="$model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Deallocates memory used for sprites." alt="" coords="171,157,281,184"/>
 <area shape="rect" id="node7" href="$keyboard_8c.html#a608e970c5d30257d983bc07f80e0ec7a" title="Unsubscribes from the keyboard&#39;s interrupts." alt="" coords="150,208,302,251"/>
-<area shape="rect" id="node8" href="$mouse_8c.html#ab5aea74fab2149347d51c2111ae29805" title="Unsubscribes from the mouse&#39;s interrupts." alt="" coords="127,275,325,301"/>
-<area shape="rect" id="node9" href="$mouse_8c.html#a1703c3c5b61eef30d724b15cafd1d75e" title="Writes a command to the mouse The command is sent until too many attempts are made or until an ACK re..." alt="" coords="179,325,273,352"/>
+<area shape="rect" id="node8" href="$mouse_8c.html#ab5aea74fab2149347d51c2111ae29805" title="Unsubscribes from the mouse&#39;s interrupts &#160;." alt="" coords="127,275,325,301"/>
+<area shape="rect" id="node9" href="$mouse_8c.html#a1703c3c5b61eef30d724b15cafd1d75e" title="Writes a command to the mouse &#160;&#160;The command is sent until too many attempts are made or until an ACK ..." alt="" coords="179,325,273,352"/>
 <area shape="rect" id="node14" href="$sp_8c.html#a552cfbe43f5bd3b63c79ca505337dd57" title="Unsubscribes from the serial port&#39;s interrupts." alt="" coords="139,376,313,403"/>
 <area shape="rect" id="node15" href="$timer_8c.html#a0c3923005ce2d5cbf1f93fadebd77eeb" title="Ubsubscribes from the timer&#39;s interrupts." alt="" coords="148,427,304,453"/>
-<area shape="rect" id="node6" href="$sprite_8c.html#a607cfeb4f019a84c346eb3bce9da0420" title="Deallocates sprite memory." alt="" coords="395,157,498,184"/>
+<area shape="rect" id="node6" href="$sprite_8c.html#a607cfeb4f019a84c346eb3bce9da0420" title="Deallocates sprite memory &#160;." alt="" coords="395,157,498,184"/>
 <area shape="rect" id="node10" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="385,351,508,377"/>
 <area shape="rect" id="node13" href="$keyboard_2_k_b_c_8c.html#af493e7c2f3767eac8d5fe67b86efda01" title=" " alt="" coords="373,300,519,327"/>
 <area shape="rect" id="node11" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="567,300,691,327"/>

@@ -1,5 +1,5 @@
 <map id="finish_turn" name="finish_turn">
-<area shape="rect" id="node1" title="Tries to mark a turn as finished This function checks if all balls for the current turn have been fil..." alt="" coords="5,31,86,57"/>
-<area shape="rect" id="node2" href="$board__logic_8c.html#a2f8b5cca5d8704bc7dca5adb94a8ac62" title="Checks if player two gave wrong instructions to player 1 This function compares the instructions that..." alt="" coords="134,5,315,32"/>
+<area shape="rect" id="node1" title="Tries to mark a turn as finished &#160;&#160;This function checks if all balls for the current turn have been f..." alt="" coords="5,31,86,57"/>
+<area shape="rect" id="node2" href="$board__logic_8c.html#a2f8b5cca5d8704bc7dca5adb94a8ac62" title="Checks if player two gave wrong instructions to player 1 &#160;&#160;This function compares the instructions th..." alt="" coords="134,5,315,32"/>
 <area shape="rect" id="node3" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="200,56,249,83"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="draw_balls" name="draw_balls">
-<area shape="rect" id="node1" title="Draws the large balls Draws the balls from the ball_positions array." alt="" coords="5,5,88,32"/>
-<area shape="rect" id="node2" href="$view_8c.html#aa047908abc31e4b0b12ab393908b52d0" title="Draws a ball Puts a ball in the frame buffer, it can be any color." alt="" coords="136,5,211,32"/>
-<area shape="rect" id="node3" href="$graphics_8c.html#a5d33f8d40697e2a626b879be5c43b682" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="259,5,342,32"/>
-<area shape="rect" id="node4" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel Calculates the offset of a pixel on the frame buffer." alt="" coords="390,5,520,32"/>
-<area shape="rect" id="node5" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel Calculates the index of a pixel, independently of the current mode." alt="" coords="568,5,654,32"/>
+<area shape="rect" id="node1" title="Draws the large balls &#160;&#160;Draws the balls from the ball_positions array." alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node2" href="$view_8c.html#aa047908abc31e4b0b12ab393908b52d0" title="Draws a ball &#160;&#160;Puts a ball in the frame buffer, it can be any color." alt="" coords="136,5,211,32"/>
+<area shape="rect" id="node3" href="$graphics_8c.html#a87c354cc1435291d3fe364802e3efd44" title="Paints a pixel in the frame buffer If the pixel is out of bounds, the function returns normally inste..." alt="" coords="259,5,342,32"/>
+<area shape="rect" id="node4" href="$graphics_8c.html#a79bb2a288d109ff8ac020cae3ff80b0b" title="Calculates the offset of a pixel &#160;&#160;Calculates the offset of a pixel on the frame buffer." alt="" coords="390,5,520,32"/>
+<area shape="rect" id="node5" href="$graphics_8c.html#a6af3d1de756cf09c97356ec7f7084a33" title="Calculates the index of a pixel &#160;&#160;Calculates the index of a pixel, independently of the current mode." alt="" coords="568,5,654,32"/>
 </map>

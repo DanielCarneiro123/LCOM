@@ -1,8 +1,8 @@
 <map id="update_queue" name="update_queue">
-<area shape="rect" id="node1" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="5,56,108,83"/>
+<area shape="rect" id="node1" title="Updates the queue &#160;&#160;If the serial port is ready for data and a byte is not being sent,..." alt="" coords="5,56,108,83"/>
 <area shape="rect" id="node2" href="$queue_8c.html#ae42954dc097acfb9eda61eccf848ddce" title="Checks if the queue has a byte available." alt="" coords="169,5,244,32"/>
-<area shape="rect" id="node3" href="$queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9" title="Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the lef..." alt="" coords="185,56,228,83"/>
-<area shape="rect" id="node4" href="$sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="156,107,257,133"/>
-<area shape="rect" id="node5" href="$sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="305,107,372,133"/>
+<area shape="rect" id="node3" href="$queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9" title="Pops a byte from the queue &#160;&#160;After the byte is popped, instead of moving everything one byte to the l..." alt="" coords="185,56,228,83"/>
+<area shape="rect" id="node4" href="$sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="156,107,257,133"/>
+<area shape="rect" id="node5" href="$sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="305,107,372,133"/>
 <area shape="rect" id="node6" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="420,107,511,133"/>
 </map>

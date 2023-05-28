@@ -90,13 +90,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae42954dc097acfb9eda61eccf848ddce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the queue has a byte available.  <br /></td></tr>
 <tr class="separator:ae42954dc097acfb9eda61eccf848ddce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49a91e509626c5f4c84e39cad959e3d9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9">pop</a> ()</td></tr>
-<tr class="memdesc:a49a91e509626c5f4c84e39cad959e3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the left, the head of the queue is moved one byte to the right.  <br /></td></tr>
+<tr class="memdesc:a49a91e509626c5f4c84e39cad959e3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops a byte from the queue <br  />
+ After the byte is popped, instead of moving everything one byte to the left, the head of the queue is moved one byte to the right.  <br /></td></tr>
 <tr class="separator:a49a91e509626c5f4c84e39cad959e3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93191533323a04cdbf5a52eac95a871e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8c.html#a93191533323a04cdbf5a52eac95a871e">update_queue</a> ()</td></tr>
-<tr class="memdesc:a93191533323a04cdbf5a52eac95a871e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the queue If the serial port is ready for data and a byte is not being sent, the top byte is sent.  <br /></td></tr>
+<tr class="memdesc:a93191533323a04cdbf5a52eac95a871e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the queue <br  />
+ If the serial port is ready for data and a byte is not being sent, the top byte is sent.  <br /></td></tr>
 <tr class="separator:a93191533323a04cdbf5a52eac95a871e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a964ae1d02fbe54c9d3985786ce66c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="queue_8c.html#ae6a964ae1d02fbe54c9d3985786ce66c">retry</a> ()</td></tr>
-<tr class="memdesc:ae6a964ae1d02fbe54c9d3985786ce66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retries to send the last byte Is used when there was an error sending the last byte.  <br /></td></tr>
+<tr class="memdesc:ae6a964ae1d02fbe54c9d3985786ce66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retries to send the last byte <br  />
+ Is used when there was an error sending the last byte.  <br /></td></tr>
 <tr class="separator:ae6a964ae1d02fbe54c9d3985786ce66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -146,8 +149,9 @@ false The queue is empty </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the left, the head of the queue is moved one byte to the right. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t Popped byte </dd></dl>
+<p>Pops a byte from the queue <br  />
+ After the byte is popped, instead of moving everything one byte to the left, the head of the queue is moved one byte to the right. </p>
+<dl class="section return"><dt>Returns</dt><dd>Popped byte </dd></dl>
 
 </div>
 </div>
@@ -174,7 +178,7 @@ false The queue is empty </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 
 </div>
 </div>
@@ -193,16 +197,17 @@ false The queue is empty </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Retries to send the last byte Is used when there was an error sending the last byte. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<p>Retries to send the last byte <br  />
+ Is used when there was an error sending the last byte. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="queue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_cgraph.png" border="0" usemap="#aqueue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_cgraph" alt=""/></div>
 <map name="aqueue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_cgraph" id="aqueue_8c_ae6a964ae1d02fbe54c9d3985786ce66c_cgraph">
-<area shape="rect" title="Retries to send the last byte Is used when there was an error sending the last byte." alt="" coords="5,5,53,32"/>
-<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="101,5,202,32"/>
-<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="250,5,317,32"/>
+<area shape="rect" title="Retries to send the last byte &#160;&#160;Is used when there was an error sending the last byte." alt="" coords="5,5,53,32"/>
+<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="101,5,202,32"/>
+<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="250,5,317,32"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="365,5,456,32"/>
 </map>
 </div>
@@ -224,18 +229,19 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the queue If the serial port is ready for data and a byte is not being sent, the top byte is sent. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<p>Updates the queue <br  />
+ If the serial port is ready for data and a byte is not being sent, the top byte is sent. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="queue_8c_a93191533323a04cdbf5a52eac95a871e_cgraph.png" border="0" usemap="#aqueue_8c_a93191533323a04cdbf5a52eac95a871e_cgraph" alt=""/></div>
 <map name="aqueue_8c_a93191533323a04cdbf5a52eac95a871e_cgraph" id="aqueue_8c_a93191533323a04cdbf5a52eac95a871e_cgraph">
-<area shape="rect" title="Updates the queue If the serial port is ready for data and a byte is not being sent,..." alt="" coords="5,56,108,83"/>
+<area shape="rect" title="Updates the queue &#160;&#160;If the serial port is ready for data and a byte is not being sent,..." alt="" coords="5,56,108,83"/>
 <area shape="rect" href="queue_8c.html#ae42954dc097acfb9eda61eccf848ddce" title="Checks if the queue has a byte available." alt="" coords="169,5,244,32"/>
-<area shape="rect" href="queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9" title="Pops a byte from the queue After the byte is popped, instead of moving everything one byte to the lef..." alt="" coords="185,56,228,83"/>
-<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP Writes a byte to the SP if the THR is empty." alt="" coords="156,107,257,133"/>
-<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR Reads the serial port&#39;s LSR to determine its current status." alt="" coords="305,107,372,133"/>
+<area shape="rect" href="queue_8c.html#a49a91e509626c5f4c84e39cad959e3d9" title="Pops a byte from the queue &#160;&#160;After the byte is popped, instead of moving everything one byte to the l..." alt="" coords="185,56,228,83"/>
+<area shape="rect" href="sp_8c.html#a43839d46a93b9b908ad5003db25ca7a6" title="Writes a byte to the SP &#160;&#160;Writes a byte to the SP if the THR is empty." alt="" coords="156,107,257,133"/>
+<area shape="rect" href="sp_8c.html#aa078e540a7187163ee055cd9146418e8" title="Reads the LSR &#160;&#160;Reads the serial port&#39;s LSR to determine its current status." alt="" coords="305,107,372,133"/>
 <area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="420,107,511,133"/>
 </map>
 </div>
