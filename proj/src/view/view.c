@@ -114,6 +114,9 @@ void draw_new_frame() {
     draw_mouse();
 }
 
+/**
+ * @brief Draws the balls in the end menu 
+ */
 void draw_final_code() {
     if (menuState != END) return;
     for (uint i = 0; i < 4; i++) {
