@@ -14,7 +14,8 @@ var searchData=
   ['sp_5fnack_11',['SP_NACK',['../comm__bytes_8h.html#ac3d18a5267d30b631275ddd88241cb93',1,'comm_bytes.h']]],
   ['sp_5foverrun_5ferror_12',['SP_OVERRUN_ERROR',['../_u_a_r_t_8h.html#a24f80420a660799fd0a1ed4d675167e7',1,'UART.h']]],
   ['sp_5fparity_5ferror_13',['SP_PARITY_ERROR',['../_u_a_r_t_8h.html#a00b35641a95b9ec72e861378c73257e6',1,'UART.h']]],
-  ['sp_5ftest_5fplayer_14',['SP_TEST_PLAYER',['../comm__bytes_8h.html#a6029bcb44c01424ddac85cfb2b113f26',1,'comm_bytes.h']]],
-  ['sp_5fwait_15',['SP_WAIT',['../_u_a_r_t_8h.html#a0feeb3011dc2abf52651a42694d9ba89',1,'UART.h']]],
-  ['speaker_5fctrl_16',['SPEAKER_CTRL',['../i8254_8h.html#a51b3a5e3d4811ca063fe25e35560ab40',1,'i8254.h']]]
+  ['sp_5freset_5fgame_14',['SP_RESET_GAME',['../comm__bytes_8h.html#acd3d68c009e9d170156211013ebd193f',1,'comm_bytes.h']]],
+  ['sp_5ftest_5fplayer_15',['SP_TEST_PLAYER',['../comm__bytes_8h.html#a6029bcb44c01424ddac85cfb2b113f26',1,'comm_bytes.h']]],
+  ['sp_5fwait_16',['SP_WAIT',['../_u_a_r_t_8h.html#a0feeb3011dc2abf52651a42694d9ba89',1,'UART.h']]],
+  ['speaker_5fctrl_17',['SPEAKER_CTRL',['../i8254_8h.html#a51b3a5e3d4811ca063fe25e35560ab40',1,'i8254.h']]]
 ];

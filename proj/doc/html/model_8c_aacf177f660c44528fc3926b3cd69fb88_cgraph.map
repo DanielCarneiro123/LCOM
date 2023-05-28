@@ -3,12 +3,12 @@
 <area shape="rect" id="node2" href="$view_8c.html#a92191be6515c8689bfaa61b022080023" title="Cleans the lid &#160;&#160;Draws the background behind the now hidden lid." alt="" coords="682,579,754,605"/>
 <area shape="rect" id="node8" href="$view_8c.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Draws a frame &#160;&#160;Draws the next frame on the frame buffer according to the game&#39;s state." alt="" coords="437,300,554,327"/>
 <area shape="rect" id="node23" href="$model_8c.html#a56ee478ae538f5921f74c01ff5ea4282" title="Tries to mark a turn as finished &#160;&#160;This function checks if all balls for the current turn have been f..." alt="" coords="243,883,324,909"/>
-<area shape="rect" id="node26" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Interrupt handler for the keyboard &#160;&#160;Reads a scancode from the KBC." alt="" coords="254,933,313,960"/>
+<area shape="rect" id="node26" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="Interrupt handler for the keyboard &#160;&#160;Reads a scancode from the KBC." alt="" coords="254,984,313,1011"/>
 <area shape="rect" id="node30" href="$model_8c.html#a933a0ee51b61bea202604faa0dc7d5b5" title="Function used when placing a ball &#160;&#160;This function contains all the logic tied to placing balls (diffe..." alt="" coords="239,781,328,808"/>
 <area shape="rect" id="node36" href="$model_8c.html#a39975a512705f9a2a8edcd540a62c0c6" title="Function used when removing a ball &#160;&#160;This function contains all the logic tied to removing balls (dif..." alt="" coords="234,680,333,707"/>
-<area shape="rect" id="node40" href="$model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object &#160;&#160;Allocates memory for the balls in the code." alt="" coords="210,984,357,1011"/>
-<area shape="rect" id="node41" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers &#160;&#160;This function runs when the actual game begins. The first player to enter th..." alt="" coords="230,832,337,859"/>
-<area shape="rect" id="node42" href="$model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state &#160;&#160;This function is used instead of simply assigning the new state to avoid rep..." alt="" coords="216,1035,351,1061"/>
+<area shape="rect" id="node40" href="$model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object &#160;&#160;Allocates memory for the balls in the code." alt="" coords="210,1035,357,1061"/>
+<area shape="rect" id="node41" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers &#160;&#160;This function runs when the actual game begins. The first player to enter th..." alt="" coords="230,933,337,960"/>
+<area shape="rect" id="node42" href="$model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state &#160;&#160;This function is used instead of simply assigning the new state to avoid rep..." alt="" coords="216,832,351,859"/>
 <area shape="rect" id="node44" href="$model_8c.html#a2270e09b63279e79f4cae557c1e44da6" title="Updates the color of the ball being held &#160;&#160;This function is used instead of simply assigning the new ..." alt="" coords="213,1085,354,1112"/>
 <area shape="rect" id="node3" href="$view_8c.html#ad0aab3c62c41de83d18a7788a3ae212a" title="Draws a sprite partially &#160;&#160;This function is used when redrawing the background behind moving/cleaned ..." alt="" coords="850,553,1011,580"/>
 <area shape="rect" id="node7" href="$graphics_8c.html#a4a908aca81b8f45279ea9a5d5eb81549" title="Fills a rectangle with a given color &#160;&#160;Fills a rectanglt with a given color on the frame buffer." alt="" coords="884,452,977,479"/>
@@ -31,9 +31,9 @@
 <area shape="rect" id="node16" href="$view_8c.html#a958c1e44555e3972bef87ab253dab40c" title="Set the background color according to current hour." alt="" coords="856,376,1005,403"/>
 <area shape="rect" id="node24" href="$board__logic_8c.html#a2f8b5cca5d8704bc7dca5adb94a8ac62" title="Checks if player two gave wrong instructions to player 1 &#160;&#160;This function compares the instructions th..." alt="" coords="405,933,586,960"/>
 <area shape="rect" id="node25" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="693,832,743,859"/>
-<area shape="rect" id="node27" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="434,984,557,1011"/>
-<area shape="rect" id="node28" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="656,1009,780,1036"/>
-<area shape="rect" id="node29" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="885,984,976,1011"/>
+<area shape="rect" id="node27" href="$keyboard_2_k_b_c_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="434,1035,557,1061"/>
+<area shape="rect" id="node28" href="$keyboard_2_k_b_c_8c.html#a505885e4583b96e3a35a8d627b71a2f0" title=" " alt="" coords="656,1060,780,1087"/>
+<area shape="rect" id="node29" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="885,1035,976,1061"/>
 <area shape="rect" id="node31" href="$model_8c.html#a61b20c44a2ce92fa54eec29769ec99d6" title="Places a ball &#160;&#160;This function returns before doing anything if the player&#39;s turn isn&#39;t active or if t..." alt="" coords="456,781,535,808"/>
 <area shape="rect" id="node34" href="$model_8c.html#af3e25debba4cb88350105fb76d713db9" title="Places a small ball &#160;&#160;This function returns before doing anything if the player&#39;s turn isn&#39;t active o..." alt="" coords="437,731,554,757"/>
 <area shape="rect" id="node32" href="$model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c" title="Checks if the mouse is inside a given ball position." alt="" coords="657,781,779,808"/>
@@ -42,5 +42,5 @@
 <area shape="rect" id="node37" href="$model_8c.html#ad0d2c57b88c1209234b4620359aa60f7" title="Removes a ball from the board if the mouse is inside it &#160;&#160;Checks every ball in the array until findin..." alt="" coords="451,680,540,707"/>
 <area shape="rect" id="node39" href="$model_8c.html#a25d36ce066829ed49feede36a95fc6d2" title="Removes a small ball from the board if the mouse is inside it &#160;&#160;Checks every ball in the array until ..." alt="" coords="432,629,559,656"/>
 <area shape="rect" id="node38" href="$view_8c.html#a20cb8bd15061b1c1c9b030522e97e495" title="Cleans a ball from the frame buffer after it is removed &#160;&#160;Redraws the background behind the removed b..." alt="" coords="678,629,758,656"/>
-<area shape="rect" id="node43" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state &#160;&#160;Resets global variables so that the game may be replayed." alt="" coords="455,1035,536,1061"/>
+<area shape="rect" id="node43" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state &#160;&#160;Resets global variables so that the game may be replayed." alt="" coords="455,832,536,859"/>
 </map>

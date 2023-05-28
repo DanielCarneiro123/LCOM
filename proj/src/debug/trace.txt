@@ -1,7 +1,7 @@
 @lcflib.a:2019, lcf_start
   proj_main_loop(argc, argv)
-> proj_main_loop(1, ["1", NULL])
-  @main.c:27, setup
+> proj_main_loop(1, ["2", NULL])
+  @main.c:30, setup
     timer_set_frequency(TIMER, GAME_FREQUENCY)
   > timer_set_frequency(0, 60)
     @/home/lcom/labs/g2/proj/src/driver/timer/timer.c:23, timer_set_frequency
@@ -33,145 +33,141 @@
       sys_outb(0x40 + timer, msb)
     > sys_outb(0x40, 0x4d = 0b01001101)
   < timer_set_frequency(0, 60) -> (ret: 0)
-  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:33, get_mode_info
+  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:34, get_mode_info
     vbe_get_mode_info(mode, mode_info)
-  > vbe_get_mode_info(0x115, addr: 0x839fd30)
-  < vbe_get_mode_info(0x115, addr: 0x839fd30 [0xe0000000, 800x600, 8:8:8 (24) <1.37329 MiB>]) -> (ret: 0)
-  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:53, set_frame_buffer
+  > vbe_get_mode_info(0x115, addr: 0x839ed00)
+  < vbe_get_mode_info(0x115, addr: 0x839ed00 [0xe0000000, 800x600, 8:8:8 (24) <1.37329 MiB>]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:54, set_frame_buffer
     sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)
   > sys_privctl(SELF, SYS_PRIV_ADD_MEM, addr: 0xeffff6e0 [0xe0000000 - 0xe015f900 <1.37329 MiB>])
   < sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses) -> (ret: 0)
-  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:55, set_frame_buffer
+  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:56, set_frame_buffer
     vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size)
   < vm_map_phys(SELF, addr: 0xe0000000, 1.37329 MiB) -> (ret: 0xef89b000)
-  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:19, set_graphic_mode
+  @/home/lcom/labs/g2/proj/src/driver/video/graphics.c:20, set_graphic_mode
     sys_int86(&reg86)
   > sys_int86(addr: 0xeffff6c8 [AX: 4f02, BX: 4115, CX: 0000, DX: 0000, ES: 0000, DI: 0000])
   < sys_int86(addr: 0xeffff6c8 [AX: 004f, BX: 4115, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8377234, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8377234, XPM_8_8_8_8, addr: 0xeffff6d8 [12x19 : 912 bytes]) -> (ret: 0x83a6000)
+  > xpm_load(addr: 0x8376250, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8376250, XPM_8_8_8_8, addr: 0xeffff6d8 [12x19 : 912 bytes]) -> (ret: 0x83a5000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8377290, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8377290, XPM_8_8_8_8, addr: 0xeffff6d8 [429x600 : 1029600 bytes]) -> (ret: 0x852f000)
+  > xpm_load(addr: 0x83762ac, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83762ac, XPM_8_8_8_8, addr: 0xeffff6d8 [429x600 : 1029600 bytes]) -> (ret: 0x852e000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x837cbb8, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x837cbb8, XPM_8_8_8_8, addr: 0xeffff6d8 [429x600 : 1029600 bytes]) -> (ret: 0x862b000)
+  > xpm_load(addr: 0x837bbd4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x837bbd4, XPM_8_8_8_8, addr: 0xeffff6d8 [429x600 : 1029600 bytes]) -> (ret: 0x862a000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83820d4, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83820d4, XPM_8_8_8_8, addr: 0xeffff6d8 [50x50 : 10000 bytes]) -> (ret: 0x83a8000)
+  > xpm_load(addr: 0x83810f0, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83810f0, XPM_8_8_8_8, addr: 0xeffff6d8 [50x50 : 10000 bytes]) -> (ret: 0x83a7000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83821a8, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83821a8, XPM_8_8_8_8, addr: 0xeffff6d8 [25x25 : 2500 bytes]) -> (ret: 0x83ab000)
+  > xpm_load(addr: 0x83811c4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83811c4, XPM_8_8_8_8, addr: 0xeffff6d8 [25x25 : 2500 bytes]) -> (ret: 0x83aa000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382218, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382218, XPM_8_8_8_8, addr: 0xeffff6d8 [16x16 : 1024 bytes]) -> (ret: 0x83a6400)
+  > xpm_load(addr: 0x8381234, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381234, XPM_8_8_8_8, addr: 0xeffff6d8 [16x16 : 1024 bytes]) -> (ret: 0x83a5400)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382270, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382270, XPM_8_8_8_8, addr: 0xeffff6d8 [400x52 : 83200 bytes]) -> (ret: 0x8516000)
+  > xpm_load(addr: 0x838128c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x838128c, XPM_8_8_8_8, addr: 0xeffff6d8 [400x52 : 83200 bytes]) -> (ret: 0x8515000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x838234c, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x838234c, XPM_8_8_8_8, addr: 0xeffff6d8 [120x29 : 13920 bytes]) -> (ret: 0x83ac000)
+  > xpm_load(addr: 0x8381368, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381368, XPM_8_8_8_8, addr: 0xeffff6d8 [120x29 : 13920 bytes]) -> (ret: 0x83ab000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83823cc, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83823cc, XPM_8_8_8_8, addr: 0xeffff6d8 [74x29 : 8584 bytes]) -> (ret: 0x83b0000)
+  > xpm_load(addr: 0x83813e8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83813e8, XPM_8_8_8_8, addr: 0xeffff6d8 [74x29 : 8584 bytes]) -> (ret: 0x83af000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x838244c, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x838244c, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b3000)
+  > xpm_load(addr: 0x8381468, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381468, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b2000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83824a8, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83824a8, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b3800)
+  > xpm_load(addr: 0x83814c4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83814c4, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b2800)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382504, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382504, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b4000)
+  > xpm_load(addr: 0x8381520, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381520, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b3000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382560, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382560, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b4800)
+  > xpm_load(addr: 0x838157c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x838157c, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b3800)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83825bc, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83825bc, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a7000)
+  > xpm_load(addr: 0x83815d8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83815d8, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83a6000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382618, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382618, XPM_8_8_8_8, addr: 0xeffff6d8 [15x19 : 1140 bytes]) -> (ret: 0x83a7800)
+  > xpm_load(addr: 0x8381634, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381634, XPM_8_8_8_8, addr: 0xeffff6d8 [15x19 : 1140 bytes]) -> (ret: 0x83a6800)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382670, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382670, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b5000)
+  > xpm_load(addr: 0x838168c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x838168c, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b4000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83826cc, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83826cc, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b5800)
+  > xpm_load(addr: 0x83816e8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83816e8, XPM_8_8_8_8, addr: 0xeffff6d8 [15x20 : 1200 bytes]) -> (ret: 0x83b4800)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382728, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382728, XPM_8_8_8_8, addr: 0xeffff6d8 [20x18 : 1440 bytes]) -> (ret: 0x852b000)
+  > xpm_load(addr: 0x8381744, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381744, XPM_8_8_8_8, addr: 0xeffff6d8 [20x18 : 1440 bytes]) -> (ret: 0x852a000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x838277c, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x838277c, XPM_8_8_8_8, addr: 0xeffff6d8 [20x21 : 1680 bytes]) -> (ret: 0x852b800)
+  > xpm_load(addr: 0x8381798, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381798, XPM_8_8_8_8, addr: 0xeffff6d8 [20x21 : 1680 bytes]) -> (ret: 0x852a800)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83827dc, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83827dc, XPM_8_8_8_8, addr: 0xeffff6d8 [173x32 : 22144 bytes]) -> (ret: 0x8727000)
+  > xpm_load(addr: 0x83817f8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83817f8, XPM_8_8_8_8, addr: 0xeffff6d8 [173x45 : 31140 bytes]) -> (ret: 0x8726000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382868, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382868, XPM_8_8_8_8, addr: 0xeffff6d8 [380x52 : 79040 bytes]) -> (ret: 0x872d000)
+  > xpm_load(addr: 0x83818b8, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83818b8, XPM_8_8_8_8, addr: 0xeffff6d8 [380x52 : 79040 bytes]) -> (ret: 0x872e000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382944, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382944, XPM_8_8_8_8, addr: 0xeffff6d8 [564x52 : 117312 bytes]) -> (ret: 0x8741000)
+  > xpm_load(addr: 0x8381994, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381994, XPM_8_8_8_8, addr: 0xeffff6d8 [564x52 : 117312 bytes]) -> (ret: 0x8742000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8382a20, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8382a20, XPM_8_8_8_8, addr: 0xeffff6d8 [230x61 : 56120 bytes]) -> (ret: 0x875e000)
+  > xpm_load(addr: 0x8381a70, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8381a70, XPM_8_8_8_8, addr: 0xeffff6d8 [230x61 : 56120 bytes]) -> (ret: 0x875f000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8383034, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8383034, XPM_8_8_8_8, addr: 0xeffff6d8 [650x31 : 80600 bytes]) -> (ret: 0x876c000)
+  > xpm_load(addr: 0x8382084, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x8382084, XPM_8_8_8_8, addr: 0xeffff6d8 [650x31 : 80600 bytes]) -> (ret: 0x876d000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83830bc, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83830bc, XPM_8_8_8_8, addr: 0xeffff6d8 [313x35 : 43820 bytes]) -> (ret: 0x8780000)
+  > xpm_load(addr: 0x838210c, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x838210c, XPM_8_8_8_8, addr: 0xeffff6d8 [313x35 : 43820 bytes]) -> (ret: 0x8781000)
   @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
     xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x8383154, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x8383154, XPM_8_8_8_8, addr: 0xeffff6d8 [253x29 : 29348 bytes]) -> (ret: 0x878b000)
-  @/home/lcom/labs/g2/proj/src/model//sprite.c:17, create_sprite
-    xpm_load(sprite, XPM_8_8_8_8, &img)
-  > xpm_load(addr: 0x83831d4, XPM_8_8_8_8, addr: 0xeffff6d8)
-  < xpm_load(addr: 0x83831d4, XPM_8_8_8_8, addr: 0xeffff6d8 [467x37 : 69116 bytes]) -> (ret: 0x8793000)
+  > xpm_load(addr: 0x83821a4, XPM_8_8_8_8, addr: 0xeffff6d8)
+  < xpm_load(addr: 0x83821a4, XPM_8_8_8_8, addr: 0xeffff6d8 [467x37 : 69116 bytes]) -> (ret: 0x878c000)
   @/home/lcom/labs/g2/proj/src/driver/timer/timer.c:52, timer_subscribe_ints
     sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id_timer)
-  > sys_irqsetpolicy(0, 1, addr: 0x8383f58 [0])
-  < sys_irqsetpolicy(0, 1, addr: 0x8383f58 [10]) -> (ret: 0)
+  > sys_irqsetpolicy(0, 1, addr: 0x8382f28 [0])
+  < sys_irqsetpolicy(0, 1, addr: 0x8382f28 [10]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/keyboard/keyboard.c:17, keyboard_subscribe_interrupts
     sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_kbd)
-  > sys_irqsetpolicy(1, 3, addr: 0x83771cc [1])
-  < sys_irqsetpolicy(1, 3, addr: 0x83771cc [11]) -> (ret: 0)
+  > sys_irqsetpolicy(1, 3, addr: 0x83761e8 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x83761e8 [11]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:20, mouse_subscribe_interrupts
     sys_irqsetpolicy(IRQ_MOUSE, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_mouse)
-  > sys_irqsetpolicy(12, 3, addr: 0x83771d0 [2])
-  < sys_irqsetpolicy(12, 3, addr: 0x83771d0 [12]) -> (ret: 0)
+  > sys_irqsetpolicy(12, 3, addr: 0x83761ec [2])
+  < sys_irqsetpolicy(12, 3, addr: 0x83761ec [12]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/serialport/sp.c:34, sp_subscribe_interrupts
     sys_irqsetpolicy(COM2_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_sp)
-  > sys_irqsetpolicy(3, 3, addr: 0x83832dc [6])
-  < sys_irqsetpolicy(3, 3, addr: 0x83832dc [13]) -> (ret: 0)
+  > sys_irqsetpolicy(3, 3, addr: 0x83822ac [6])
+  < sys_irqsetpolicy(3, 3, addr: 0x83822ac [13]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x64, addr: 0xeffff698)
@@ -186,9 +182,9 @@
   @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:56, write_KBC_command
     sys_outb(port, commandByte)
   > sys_outb(0x60, 0xea = 0b11101010)
-  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:94, mouse_write
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
     micros_to_ticks(20000)
-  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:94, mouse_write
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
     tickdelay(micros_to_ticks(20000))
   > tickdelay(1 [16.7 ms])
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
@@ -213,9 +209,9 @@
   @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:56, write_KBC_command
     sys_outb(port, commandByte)
   > sys_outb(0x60, 0xf4 = 0b11110100)
-  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:94, mouse_write
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
     micros_to_ticks(20000)
-  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:94, mouse_write
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
     tickdelay(micros_to_ticks(20000))
   > tickdelay(1 [16.7 ms])
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
@@ -226,74 +222,69 @@
     sys_inb(port, &big_value)
   > sys_inb(0x60, addr: 0xeffff69c)
   < sys_inb(0x60, addr: 0xeffff69c [0xfa = 0b11111010])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x0b = 0b00001011)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff6cc)
-  < sys_inb(0x71, addr: 0xeffff6cc [0x00 = 0b00000000])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff6cc [0x02 = 0b00000010])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x0a = 0b00001010)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
   < sys_inb(0x71, addr: 0xeffff69c [0x26 = 0b00100110])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x00 = 0b00000000)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
-  < sys_inb(0x71, addr: 0xeffff69c [0x23 = 0b00100011])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff69c [0x24 = 0b00100100])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x02 = 0b00000010)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
-  < sys_inb(0x71, addr: 0xeffff69c [0x15 = 0b00010101])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff69c [0x36 = 0b00110110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x04 = 0b00000100)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
-  < sys_inb(0x71, addr: 0xeffff69c [0x84 = 0b10000100])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff69c [0x23 = 0b00100011])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x0a = 0b00001010)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
   < sys_inb(0x71, addr: 0xeffff69c [0x26 = 0b00100110])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x00 = 0b00000000)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
-  < sys_inb(0x71, addr: 0xeffff69c [0x23 = 0b00100011])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff69c [0x24 = 0b00100100])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x02 = 0b00000010)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
-  < sys_inb(0x71, addr: 0xeffff69c [0x15 = 0b00010101])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff69c [0x36 = 0b00110110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x04 = 0b00000100)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff69c)
-  < sys_inb(0x71, addr: 0xeffff69c [0x84 = 0b10000100])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:18, rtc_setup
-    printf("\n\n%d h", time_info.hours)
-    "
-
-15 h"
+  < sys_inb(0x71, addr: 0xeffff69c [0x23 = 0b00100011])
   @/home/lcom/labs/g2/proj/src/driver/serialport/sp.c:15, sp_setup
     sys_outb(COM2_BASE + LINE_CONTROL_OFFSET, DIVISOR_LATCH_BIT)
   > sys_outb(0x2fb, 0x80 = 0b10000000)
@@ -312,421 +303,305 @@
   @/home/lcom/labs/g2/proj/src/driver/serialport/sp.c:21, sp_setup
     sys_outb(COM2_BASE + INTERRUPT_ENABLE_OFFSET, IER_DATA_AVAILABLE | IER_THR_EMPTY)
   > sys_outb(0x2f9, 0x03 = 0b00000011)
-  @main.c:82, proj_main_loop
+  @main.c:97, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000001000101]>)
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x0a = 0b00001010)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff6e4)
   < sys_inb(0x71, addr: 0xeffff6e4 [0x26 = 0b00100110])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
-    sys_outb(REGISTER_INPUT, rregister)
-  > sys_outb(0x70, 0x00 = 0b00000000)
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x71, addr: 0xeffff6e4)
-  < sys_inb(0x71, addr: 0xeffff6e4 [0x23 = 0b00100011])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
-    sys_outb(REGISTER_INPUT, rregister)
-  > sys_outb(0x70, 0x02 = 0b00000010)
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x71, addr: 0xeffff6e4)
-  < sys_inb(0x71, addr: 0xeffff6e4 [0x15 = 0b00010101])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
-    sys_outb(REGISTER_INPUT, rregister)
-  > sys_outb(0x70, 0x04 = 0b00000100)
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x71, addr: 0xeffff6e4)
-  < sys_inb(0x71, addr: 0xeffff6e4 [0x84 = 0b10000100])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x2fa, addr: 0xeffff6f0)
-  < sys_inb(0x2fa, addr: 0xeffff6f0 [0x02 = 0b00000010])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x2fa, addr: 0xeffff6f0)
-  < sys_inb(0x2fa, addr: 0xeffff6f0 [0x01 = 0b00000001])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x64, addr: 0xeffff6b8)
-  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    micros_to_ticks(WAIT_KBC)
-  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
-    tickdelay(micros_to_ticks(WAIT_KBC))
-  > tickdelay(1 [16.7 ms])
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
-    driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
-  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
-    sys_outb(REGISTER_INPUT, rregister)
-  > sys_outb(0x70, 0x0a = 0b00001010)
-  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
-    sys_inb(port, &big_value)
-  > sys_inb(0x71, addr: 0xeffff6e4)
-  < sys_inb(0x71, addr: 0xeffff6e4 [0x26 = 0b00100110])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x00 = 0b00000000)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff6e4)
   < sys_inb(0x71, addr: 0xeffff6e4 [0x24 = 0b00100100])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x02 = 0b00000010)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff6e4)
-  < sys_inb(0x71, addr: 0xeffff6e4 [0x15 = 0b00010101])
-  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:54, rtc_read
+  < sys_inb(0x71, addr: 0xeffff6e4 [0x36 = 0b00110110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
     sys_outb(REGISTER_INPUT, rregister)
   > sys_outb(0x70, 0x04 = 0b00000100)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x71, addr: 0xeffff6e4)
-  < sys_inb(0x71, addr: 0xeffff6e4 [0x84 = 0b10000100])
-  @main.c:82, proj_main_loop
+  < sys_inb(0x71, addr: 0xeffff6e4 [0x23 = 0b00100011])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x2fa, addr: 0xeffff6e8)
+  < sys_inb(0x2fa, addr: 0xeffff6e8 [0x02 = 0b00000010])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x2fa, addr: 0xeffff6e8)
+  < sys_inb(0x2fa, addr: 0xeffff6e8 [0x01 = 0b00000001])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6b8)
+  < sys_inb(0x64, addr: 0xeffff6b8 [0x1c = 0b00011100])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    micros_to_ticks(WAIT_KBC)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:26, read_KBC_output
+    tickdelay(micros_to_ticks(WAIT_KBC))
+  > tickdelay(1 [16.7 ms])
+  @main.c:97, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
+  @main.c:97, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
+  @main.c:97, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
+  @main.c:97, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:82, proj_main_loop
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff798)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
@@ -738,25 +613,25 @@
     sys_inb(port, &big_value)
   > sys_inb(0x60, addr: 0xeffff6cc)
   < sys_inb(0x60, addr: 0xeffff6cc [0x10 = 0b00010000])
-  @main.c:55, .txt
+  @main.c:63, .txt
     vg_exit()
   < vg_exit() -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/timer/timer.c:61, timer_unsubscribe_ints
     sys_irqrmpolicy(&hook_id_timer)
-  > sys_irqrmpolicy(addr: 0x8383f58 [10])
-  < sys_irqrmpolicy(addr: 0x8383f58 [10]) -> (ret: 0)
+  > sys_irqrmpolicy(addr: 0x8382f28 [10])
+  < sys_irqrmpolicy(addr: 0x8382f28 [10]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/keyboard/keyboard.c:26, keyboard_unsubscribe_interrupts
     sys_irqrmpolicy(&hook_id_kbd)
-  > sys_irqrmpolicy(addr: 0x83771cc [11])
-  < sys_irqrmpolicy(addr: 0x83771cc [11]) -> (ret: 0)
+  > sys_irqrmpolicy(addr: 0x83761e8 [11])
+  < sys_irqrmpolicy(addr: 0x83761e8 [11]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:29, mouse_unsubscribe_interrupts
     sys_irqrmpolicy(&hook_id_mouse)
-  > sys_irqrmpolicy(addr: 0x83771d0 [12])
-  < sys_irqrmpolicy(addr: 0x83771d0 [12]) -> (ret: 0)
+  > sys_irqrmpolicy(addr: 0x83761ec [12])
+  < sys_irqrmpolicy(addr: 0x83761ec [12]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver/serialport/sp.c:43, sp_unsubscribe_interrupts
     sys_irqrmpolicy(&hook_id_sp)
-  > sys_irqrmpolicy(addr: 0x83832dc [13])
-  < sys_irqrmpolicy(addr: 0x83832dc [13]) -> (ret: 0)
+  > sys_irqrmpolicy(addr: 0x83822ac [13])
+  < sys_irqrmpolicy(addr: 0x83822ac [13]) -> (ret: 0)
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
     sys_inb(port, &big_value)
   > sys_inb(0x64, addr: 0xeffff6c0)
@@ -771,9 +646,9 @@
   @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:56, write_KBC_command
     sys_outb(port, commandByte)
   > sys_outb(0x60, 0xf5 = 0b11110101)
-  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:94, mouse_write
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
     micros_to_ticks(20000)
-  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:94, mouse_write
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
     tickdelay(micros_to_ticks(20000))
   > tickdelay(1 [16.7 ms])
   @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
@@ -784,4 +659,696 @@
     sys_inb(port, &big_value)
   > sys_inb(0x60, addr: 0xeffff6c4)
   < sys_inb(0x60, addr: 0xeffff6c4 [0x90 = 0b10010000])
-< proj_main_loop(1, ["1", NULL]) -> (ret: 1)
+< proj_main_loop(1, ["2", NULL]) -> (ret: 1)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x0a = 0b00001010)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x26 = 0b00100110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x24 = 0b00100100])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x02 = 0b00000010)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x36 = 0b00110110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x04 = 0b00000100)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x23 = 0b00100011])
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x0a = 0b00001010)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x26 = 0b00100110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x25 = 0b00100101])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x02 = 0b00000010)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x36 = 0b00110110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x04 = 0b00000100)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x23 = 0b00100011])
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x0a = 0b00001010)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x26 = 0b00100110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x00 = 0b00000000)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x26 = 0b00100110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x02 = 0b00000010)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x36 = 0b00110110])
+  @/home/lcom/labs/g2/proj/src/driver/rtc/rtc.c:53, rtc_read
+    sys_outb(REGISTER_INPUT, rregister)
+  > sys_outb(0x70, 0x04 = 0b00000100)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x71, addr: 0xeffff6f4)
+  < sys_inb(0x71, addr: 0xeffff6f4 [0x23 = 0b00100011])
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:97, le.txt
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6dc)
+  < sys_inb(0x64, addr: 0xeffff6dc [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x60, addr: 0xeffff6dc)
+  < sys_inb(0x60, addr: 0xeffff6dc [0x10 = 0b00010000])
+  @main.c:63, dev/console.txt
+    vg_exit()
+  < vg_exit() -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/driver/timer/timer.c:61, timer_unsubscribe_ints
+    sys_irqrmpolicy(&hook_id_timer)
+  > sys_irqrmpolicy(addr: 0x8382f28 [10])
+  < sys_irqrmpolicy(addr: 0x8382f28 [10]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/keyboard.c:26, keyboard_unsubscribe_interrupts
+    sys_irqrmpolicy(&hook_id_kbd)
+  > sys_irqrmpolicy(addr: 0x83761e8 [11])
+  < sys_irqrmpolicy(addr: 0x83761e8 [11]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:29, mouse_unsubscribe_interrupts
+    sys_irqrmpolicy(&hook_id_mouse)
+  > sys_irqrmpolicy(addr: 0x83761ec [12])
+  < sys_irqrmpolicy(addr: 0x83761ec [12]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/driver/serialport/sp.c:43, sp_unsubscribe_interrupts
+    sys_irqrmpolicy(&hook_id_sp)
+  > sys_irqrmpolicy(addr: 0x83822ac [13])
+  < sys_irqrmpolicy(addr: 0x83822ac [13]) -> (ret: 0)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6d0)
+  < sys_inb(0x64, addr: 0xeffff6d0 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:56, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x64, 0xd4 = 0b11010100)
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6d0)
+  < sys_inb(0x64, addr: 0xeffff6d0 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/driver/keyboard/KBC.c:56, write_KBC_command
+    sys_outb(port, commandByte)
+  > sys_outb(0x60, 0xf5 = 0b11110101)
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
+    micros_to_ticks(20000)
+  @/home/lcom/labs/g2/proj/src/driver/mouse/mouse.c:95, mouse_write
+    tickdelay(micros_to_ticks(20000))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x64, addr: 0xeffff6d4)
+  < sys_inb(0x64, addr: 0xeffff6d4 [0x1d = 0b00011101])
+  @/home/lcom/labs/g2/proj/src/driver//utils.c:38, util_sys_inb
+    sys_inb(port, &big_value)
+  > sys_inb(0x60, addr: 0xeffff6d4)
+  < sys_inb(0x60, addr: 0xeffff6d4 [0x90 = 0b10010000])
+< le.txt(0, [NULL]) -> (ret: 1)

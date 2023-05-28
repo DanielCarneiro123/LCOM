@@ -2,8 +2,8 @@
 <area shape="rect" id="node1" title="Selects menu options &#160;&#160;This function is run when on the initial menu and the player presses the left ..." alt="" coords="5,81,118,108"/>
 <area shape="rect" id="node2" href="$sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e" title=" " alt="" coords="173,5,306,32"/>
 <area shape="rect" id="node3" href="$model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object &#160;&#160;Allocates memory for the balls in the code." alt="" coords="166,56,313,83"/>
-<area shape="rect" id="node4" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers &#160;&#160;This function runs when the actual game begins. The first player to enter th..." alt="" coords="186,107,293,133"/>
+<area shape="rect" id="node4" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers &#160;&#160;This function runs when the actual game begins. The first player to enter th..." alt="" coords="361,107,467,133"/>
 <area shape="rect" id="node6" href="$model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state &#160;&#160;This function is used instead of simply assigning the new state to avoid rep..." alt="" coords="172,157,307,184"/>
-<area shape="rect" id="node5" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="377,107,426,133"/>
-<area shape="rect" id="node7" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state &#160;&#160;Resets global variables so that the game may be replayed." alt="" coords="361,157,442,184"/>
+<area shape="rect" id="node5" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="515,132,565,159"/>
+<area shape="rect" id="node7" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state &#160;&#160;Resets global variables so that the game may be replayed." alt="" coords="374,157,455,184"/>
 </map>

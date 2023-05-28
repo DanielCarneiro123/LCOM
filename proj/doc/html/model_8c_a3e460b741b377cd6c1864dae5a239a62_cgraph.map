@@ -1,9 +1,9 @@
 <map id="end_menu_selection" name="end_menu_selection">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,146,108"/>
+<area shape="rect" id="node1" title="Selects menu options for final menu." alt="" coords="5,81,146,108"/>
 <area shape="rect" id="node2" href="$sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e" title=" " alt="" coords="201,5,334,32"/>
 <area shape="rect" id="node3" href="$model_8c.html#afcad5e92ac1001cae03f5093aa380d7f" title="Set up the code positions object &#160;&#160;Allocates memory for the balls in the code." alt="" coords="194,56,341,83"/>
-<area shape="rect" id="node4" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers &#160;&#160;This function runs when the actual game begins. The first player to enter th..." alt="" coords="214,107,321,133"/>
+<area shape="rect" id="node4" href="$model_8c.html#af39bfbbc6a711bdc3b9e363c9dee315f" title="Decides player numbers &#160;&#160;This function runs when the actual game begins. The first player to enter th..." alt="" coords="389,107,495,133"/>
 <area shape="rect" id="node6" href="$model_8c.html#a7d70fb3b55e06f2ad41aeff929b55398" title="Updates the menu state &#160;&#160;This function is used instead of simply assigning the new state to avoid rep..." alt="" coords="200,157,335,184"/>
-<area shape="rect" id="node5" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="405,107,454,133"/>
-<area shape="rect" id="node7" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state &#160;&#160;Resets global variables so that the game may be replayed." alt="" coords="389,157,470,184"/>
+<area shape="rect" id="node5" href="$queue_8c.html#a17650dad9c45c1299a01df7cc7a0013f" title="Pushes a byte to the queue." alt="" coords="543,132,593,159"/>
+<area shape="rect" id="node7" href="$model_8c.html#a602ef82bc923f206d84e59f4c4fd0500" title="Resets the game state &#160;&#160;Resets global variables so that the game may be replayed." alt="" coords="402,157,483,184"/>
 </map>
