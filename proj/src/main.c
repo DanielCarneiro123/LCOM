@@ -87,10 +87,10 @@ int (proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
-          if (msg.m_notify.interrupts & TIMER_MASK)    update_timer_state();
+          if (msg.m_notify.interrupts & TIMER_MASK) update_timer_state();
           if (msg.m_notify.interrupts & KEYBOARD_MASK) update_keyboard_state();
-          if (msg.m_notify.interrupts & SP_MASK)        update_sp_state();
-          if (msg.m_notify.interrupts & MOUSE_MASK)    update_mouse_state();
+          if (msg.m_notify.interrupts & SP_MASK) update_sp_state();
+          if (msg.m_notify.interrupts & MOUSE_MASK) update_mouse_state();
         }
     }
   }
