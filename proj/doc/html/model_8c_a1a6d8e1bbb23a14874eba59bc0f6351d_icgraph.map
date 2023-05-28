@@ -1,5 +1,0 @@
-<map id="push_code" name="push_code">
-<area shape="rect" id="node1" title="Pushes endgame data Pushes all relevant data to player 2 when the game ends." alt="" coords="327,5,411,32"/>
-<area shape="rect" id="node2" href="$model_8c.html#a20f2e60644e274c6174042672460ddde" title="Updates the state of the UART serial port This function runs the serial port&#39;s interrupt handler,..." alt="" coords="162,5,279,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>

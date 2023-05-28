@@ -1,8 +1,0 @@
-<map id="write_KBC_command" name="write_KBC_command">
-<area shape="rect" id="node1" title="Writes a command to the KBC Writes a command to the KBC in a given port." alt="" coords="452,31,599,57"/>
-<area shape="rect" id="node2" href="$keyboard_8c.html#a30aab366321c5fcad9b30c3afc1c3d4a" title=" " alt="" coords="283,5,404,32"/>
-<area shape="rect" id="node3" href="$mouse_8c.html#a1703c3c5b61eef30d724b15cafd1d75e" title="Writes a command to the mouse The command is sent until too many attempts are made or until an ACK re..." alt="" coords="297,56,391,83"/>
-<area shape="rect" id="node4" href="$main_8c.html#a099d48038e444c2f3e69904477527798" title=" " alt="" coords="172,31,225,57"/>
-<area shape="rect" id="node6" href="$main_8c.html#abdcc0cd526b667641db5dc072cc162c4" title=" " alt="" coords="162,81,235,108"/>
-<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,114,83"/>
-</map>

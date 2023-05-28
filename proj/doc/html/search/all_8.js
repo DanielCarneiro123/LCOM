@@ -15,9 +15,10 @@ var searchData=
   ['irq_5fkeyboard_12',['IRQ_KEYBOARD',['../keyboard_2i8042_8h.html#a8092843c014fad609c1b01a4604a44a3',1,'IRQ_KEYBOARD():&#160;i8042.h'],['../mouse_2i8042_8h.html#a8092843c014fad609c1b01a4604a44a3',1,'IRQ_KEYBOARD():&#160;i8042.h']]],
   ['irq_5fmouse_13',['IRQ_MOUSE',['../mouse_2i8042_8h.html#a32ffe73ffc337fbec467ea02948591af',1,'i8042.h']]],
   ['irq_5frtc_14',['IRQ_RTC',['../rtc_8h.html#a910ac5f2c1b4016e433f9832358a1816',1,'rtc.h']]],
-  ['is_5fmouse_5fin_5fball_15',['is_mouse_in_ball',['../model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c',1,'is_mouse_in_ball(uint8_t i, Position *positions):&#160;model.c'],['../model_8h.html#a554f4a171142380aa5dcd6dbdf81e71c',1,'is_mouse_in_ball(uint8_t i, Position *positions):&#160;model.c']]],
-  ['is_5fmouse_5fin_5fball_5fbox_16',['is_mouse_in_ball_box',['../model_8c.html#acc265442e8471442fac79b410ea092bb',1,'model.c']]],
-  ['is_5fmouse_5fin_5fsmall_5fball_17',['is_mouse_in_small_ball',['../model_8c.html#a9886a994428876ec845dcbbc8fde06d8',1,'is_mouse_in_small_ball(uint8_t i, PositionSmall *small_ball_positions):&#160;model.c'],['../model_8h.html#a9886a994428876ec845dcbbc8fde06d8',1,'is_mouse_in_small_ball(uint8_t i, PositionSmall *small_ball_positions):&#160;model.c']]],
-  ['is_5fmouse_5fin_5fsprite_18',['is_mouse_in_sprite',['../sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e',1,'is_mouse_in_sprite(Sprite *sprite):&#160;sprite.c'],['../sprite_8h.html#a473f58fac6aebbcc5b8ee0c4ecb6547e',1,'is_mouse_in_sprite(Sprite *sprite):&#160;sprite.c']]],
-  ['is_5fwriting_19',['is_writing',['../queue_8c.html#a80ba10e9e6933b42cf8d8ff08cba802a',1,'is_writing():&#160;queue.c'],['../model_8c.html#a80ba10e9e6933b42cf8d8ff08cba802a',1,'is_writing():&#160;queue.c']]]
+  ['is_5fbinary_15',['is_binary',['../rtc_8c.html#a993a641b9153ad2682138dc1d48fe372',1,'rtc.c']]],
+  ['is_5fmouse_5fin_5fball_16',['is_mouse_in_ball',['../model_8c.html#a554f4a171142380aa5dcd6dbdf81e71c',1,'is_mouse_in_ball(uint8_t i, Position *positions):&#160;model.c'],['../model_8h.html#a554f4a171142380aa5dcd6dbdf81e71c',1,'is_mouse_in_ball(uint8_t i, Position *positions):&#160;model.c']]],
+  ['is_5fmouse_5fin_5fball_5fbox_17',['is_mouse_in_ball_box',['../model_8c.html#acc265442e8471442fac79b410ea092bb',1,'model.c']]],
+  ['is_5fmouse_5fin_5fsmall_5fball_18',['is_mouse_in_small_ball',['../model_8c.html#a9886a994428876ec845dcbbc8fde06d8',1,'is_mouse_in_small_ball(uint8_t i, PositionSmall *small_ball_positions):&#160;model.c'],['../model_8h.html#a9886a994428876ec845dcbbc8fde06d8',1,'is_mouse_in_small_ball(uint8_t i, PositionSmall *small_ball_positions):&#160;model.c']]],
+  ['is_5fmouse_5fin_5fsprite_19',['is_mouse_in_sprite',['../sprite_8c.html#a473f58fac6aebbcc5b8ee0c4ecb6547e',1,'is_mouse_in_sprite(Sprite *sprite):&#160;sprite.c'],['../sprite_8h.html#a473f58fac6aebbcc5b8ee0c4ecb6547e',1,'is_mouse_in_sprite(Sprite *sprite):&#160;sprite.c']]],
+  ['is_5fwriting_20',['is_writing',['../queue_8c.html#a80ba10e9e6933b42cf8d8ff08cba802a',1,'is_writing():&#160;queue.c'],['../model_8c.html#a80ba10e9e6933b42cf8d8ff08cba802a',1,'is_writing():&#160;queue.c']]]
 ];

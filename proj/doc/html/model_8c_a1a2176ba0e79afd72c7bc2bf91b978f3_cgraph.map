@@ -1,7 +1,9 @@
 <map id="update_rtc_state" name="update_rtc_state">
-<area shape="rect" id="node1" title="Updates the RTC time info." alt="" coords="5,31,124,57"/>
-<area shape="rect" id="node2" href="$rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="172,31,286,57"/>
-<area shape="rect" id="node3" href="$rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="334,5,443,32"/>
-<area shape="rect" id="node4" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="491,31,560,57"/>
-<area shape="rect" id="node5" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="608,31,698,57"/>
+<area shape="rect" id="node1" title="Updates the RTC time info." alt="" coords="5,81,124,108"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="172,81,286,108"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="338,5,439,32"/>
+<area shape="rect" id="node4" href="$rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="491,44,597,71"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="334,107,443,133"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="510,120,578,147"/>
+<area shape="rect" id="node7" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="645,120,735,147"/>
 </map>

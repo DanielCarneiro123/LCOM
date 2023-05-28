@@ -8,6 +8,7 @@ var searchData=
   ['hook_5fid_5fmouse_5',['hook_id_mouse',['../mouse_8c.html#a0b0da21bbdff62b7b28e9af7ec3d0d76',1,'mouse.c']]],
   ['hook_5fid_5fsp_6',['hook_id_sp',['../sp_8c.html#acf27fa6e2afefff73656248a78bf14bc',1,'sp.c']]],
   ['hook_5fid_5ftimer_7',['hook_id_timer',['../timer_8c.html#a7f3d11d35385878045b6b6a2ec438ba8',1,'timer.c']]],
-  ['hours_8',['hours',['../structrtc__info.html#a00a531a34a1d603329df5778f1203ab6',1,'rtc_info']]],
-  ['hours_9',['HOURS',['../rtc_8h.html#a212d0f839f6f7ca43ccde311f93d5892',1,'rtc.h']]]
+  ['hour_5fmode_8',['HOUR_MODE',['../rtc_8h.html#ac993fc823d0859734758cd258dda496b',1,'rtc.h']]],
+  ['hours_9',['hours',['../structrtc__info.html#a00a531a34a1d603329df5778f1203ab6',1,'rtc_info']]],
+  ['hours_10',['HOURS',['../rtc_8h.html#a212d0f839f6f7ca43ccde311f93d5892',1,'rtc.h']]]
 ];

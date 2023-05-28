@@ -1,9 +1,10 @@
 <map id="rtc_setup" name="rtc_setup">
-<area shape="rect" id="node1" title="Sets up the RTC for use Sets the counting mode to binary and fills the time struct for the first time..." alt="" coords="5,54,81,81"/>
-<area shape="rect" id="node2" href="$rtc_8c.html#a34483cc44ddc76788d74fcce5c940a44" title="Sets the counting mode to binary." alt="" coords="134,29,238,56"/>
-<area shape="rect" id="node6" href="$rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="129,80,243,106"/>
-<area shape="rect" id="node3" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="448,80,517,106"/>
-<area shape="rect" id="node5" href="$rtc_8c.html#ab803bc9a1b1b88f8d618e3ace57d6ab4" title="Writes a byte to the RTC." alt="" coords="311,29,381,56"/>
-<area shape="rect" id="node4" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="565,80,655,106"/>
-<area shape="rect" id="node7" href="$rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="291,130,400,157"/>
+<area shape="rect" id="node1" title="Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the fi..." alt="" coords="5,56,81,83"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#ab450160a2bbbcf835ef30c4b593edc16" title="Gets the counting mode." alt="" coords="134,5,238,32"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="129,81,243,108"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="467,31,535,57"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="602,31,692,57"/>
+<area shape="rect" id="node6" href="$rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="295,132,396,159"/>
+<area shape="rect" id="node7" href="$rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="448,157,554,184"/>
+<area shape="rect" id="node8" href="$rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="291,81,400,108"/>
 </map>

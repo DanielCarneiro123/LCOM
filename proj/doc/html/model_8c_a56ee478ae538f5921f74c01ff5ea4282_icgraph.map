@@ -1,5 +1,0 @@
-<map id="finish_turn" name="finish_turn">
-<area shape="rect" id="node1" title="Tries to mark a turn as finished This function checks if all balls for the current turn have been fil..." alt="" coords="366,5,446,32"/>
-<area shape="rect" id="node2" href="$model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Updates the state of the keyboard This function runs the interrupt handler, and then runs code based ..." alt="" coords="162,5,318,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>

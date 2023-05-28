@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Masterminix: src/driver/rtc/rtc.c File Reference</title>
+<title>Masterminix: C:/Users/Afonso/Desktop/MINIX-LCOM/shared/g2/proj/src/driver/rtc/rtc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,11 +84,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a99c770b400026bc59e3c80a22615ad50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a99c770b400026bc59e3c80a22615ad50">rtc_setup</a> ()</td></tr>
-<tr class="memdesc:a99c770b400026bc59e3c80a22615ad50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the RTC for use Sets the counting mode to binary and fills the time struct for the first time.  <br /></td></tr>
+<tr class="memdesc:a99c770b400026bc59e3c80a22615ad50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the first time.  <br /></td></tr>
 <tr class="separator:a99c770b400026bc59e3c80a22615ad50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34483cc44ddc76788d74fcce5c940a44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a34483cc44ddc76788d74fcce5c940a44">rtc_set_binary</a> ()</td></tr>
-<tr class="memdesc:a34483cc44ddc76788d74fcce5c940a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the counting mode to binary.  <br /></td></tr>
-<tr class="separator:a34483cc44ddc76788d74fcce5c940a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab450160a2bbbcf835ef30c4b593edc16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ab450160a2bbbcf835ef30c4b593edc16">rtc_get_binary</a> ()</td></tr>
+<tr class="memdesc:ab450160a2bbbcf835ef30c4b593edc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the counting mode.  <br /></td></tr>
+<tr class="separator:ab450160a2bbbcf835ef30c4b593edc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad4489ada77a47cb3b68064c2044b842"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#aad4489ada77a47cb3b68064c2044b842">rtc_get_hours</a> ()</td></tr>
+<tr class="memdesc:aad4489ada77a47cb3b68064c2044b842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hour format.  <br /></td></tr>
+<tr class="separator:aad4489ada77a47cb3b68064c2044b842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50c2f2e6339abb08699d54688a1a32c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9">rtc_read</a> (uint8_t rregister, uint8_t *status)</td></tr>
 <tr class="memdesc:a50c2f2e6339abb08699d54688a1a32c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a byte from the RTC.  <br /></td></tr>
 <tr class="separator:a50c2f2e6339abb08699d54688a1a32c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,6 +101,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ab2f3d3184182b2533e9156e9079dae63"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63">rtc_is_updating</a> ()</td></tr>
 <tr class="memdesc:ab2f3d3184182b2533e9156e9079dae63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the RTC is updating.  <br /></td></tr>
 <tr class="separator:ab2f3d3184182b2533e9156e9079dae63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639b9a711156522238015ef875638267"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a639b9a711156522238015ef875638267">convert_output</a> (uint8_t output)</td></tr>
+<tr class="memdesc:a639b9a711156522238015ef875638267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts BCD to binary if need be.  <br /></td></tr>
+<tr class="separator:a639b9a711156522238015ef875638267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358067bf40f343d79bb5488120c92330"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330">convert_hours</a> (uint8_t hours)</td></tr>
+<tr class="memdesc:a358067bf40f343d79bb5488120c92330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts hours to 0-23 format if need be, including BCD conversion.  <br /></td></tr>
+<tr class="separator:a358067bf40f343d79bb5488120c92330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11">rtc_update_time</a> ()</td></tr>
 <tr class="memdesc:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the values in the time info struct A buffer struct is used while filling in the values in case an error occurs midway. At the end its contents are copied to the main struct.  <br /></td></tr>
 <tr class="separator:ae22bdeb51eb630e1d579dfc1cd1b2f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,8 +117,135 @@ Variables</h2></td></tr>
 <tr class="separator:a6c52a1d32571a429369253ce7c3a3d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2f685878070a1cd39fac59df72bb3e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrtc__info.html">rtc_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#ac2f685878070a1cd39fac59df72bb3e4">time_info</a></td></tr>
 <tr class="separator:ac2f685878070a1cd39fac59df72bb3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993a641b9153ad2682138dc1d48fe372"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a993a641b9153ad2682138dc1d48fe372">is_binary</a></td></tr>
+<tr class="separator:a993a641b9153ad2682138dc1d48fe372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a264b22d42d02f175ae98ea17edefd279"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc_8c.html#a264b22d42d02f175ae98ea17edefd279">full_hours</a></td></tr>
+<tr class="separator:a264b22d42d02f175ae98ea17edefd279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a358067bf40f343d79bb5488120c92330" name="a358067bf40f343d79bb5488120c92330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358067bf40f343d79bb5488120c92330">&#9670;&#160;</a></span>convert_hours()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t convert_hours </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>hours</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts hours to 0-23 format if need be, including BCD conversion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hours</td><td>Output of the RTC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Converted output </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_a358067bf40f343d79bb5488120c92330_cgraph.png" border="0" usemap="#artc_8c_a358067bf40f343d79bb5488120c92330_cgraph" alt=""/></div>
+<map name="artc_8c_a358067bf40f343d79bb5488120c92330_cgraph" id="artc_8c_a358067bf40f343d79bb5488120c92330_cgraph">
+<area shape="rect" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="5,5,107,32"/>
+<area shape="rect" href="rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="155,5,260,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a639b9a711156522238015ef875638267" name="a639b9a711156522238015ef875638267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a639b9a711156522238015ef875638267">&#9670;&#160;</a></span>convert_output()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t convert_output </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts BCD to binary if need be. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Output of the RTC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Converted output </dd></dl>
+
+</div>
+</div>
+<a id="ab450160a2bbbcf835ef30c4b593edc16" name="ab450160a2bbbcf835ef30c4b593edc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab450160a2bbbcf835ef30c4b593edc16">&#9670;&#160;</a></span>rtc_get_binary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rtc_get_binary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the counting mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_ab450160a2bbbcf835ef30c4b593edc16_cgraph.png" border="0" usemap="#artc_8c_ab450160a2bbbcf835ef30c4b593edc16_cgraph" alt=""/></div>
+<map name="artc_8c_ab450160a2bbbcf835ef30c4b593edc16_cgraph" id="artc_8c_ab450160a2bbbcf835ef30c4b593edc16_cgraph">
+<area shape="rect" title="Gets the counting mode." alt="" coords="5,5,109,32"/>
+<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="157,5,225,32"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="273,5,363,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad4489ada77a47cb3b68064c2044b842" name="aad4489ada77a47cb3b68064c2044b842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad4489ada77a47cb3b68064c2044b842">&#9670;&#160;</a></span>rtc_get_hours()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rtc_get_hours </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the hour format. </p>
+<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="rtc_8c_aad4489ada77a47cb3b68064c2044b842_cgraph.png" border="0" usemap="#artc_8c_aad4489ada77a47cb3b68064c2044b842_cgraph" alt=""/></div>
+<map name="artc_8c_aad4489ada77a47cb3b68064c2044b842_cgraph" id="artc_8c_aad4489ada77a47cb3b68064c2044b842_cgraph">
+<area shape="rect" title="Gets the hour format." alt="" coords="5,5,106,32"/>
+<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="154,5,222,32"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="270,5,360,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ab2f3d3184182b2533e9156e9079dae63" name="ab2f3d3184182b2533e9156e9079dae63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2f3d3184182b2533e9156e9079dae63">&#9670;&#160;</a></span>rtc_is_updating()</h2>
 
@@ -187,37 +323,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a34483cc44ddc76788d74fcce5c940a44" name="a34483cc44ddc76788d74fcce5c940a44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34483cc44ddc76788d74fcce5c940a44">&#9670;&#160;</a></span>rtc_set_binary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_set_binary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the counting mode to binary. </p>
-<dl class="section return"><dt>Returns</dt><dd>int 1 on failure, 0 otherwise </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="rtc_8c_a34483cc44ddc76788d74fcce5c940a44_cgraph.png" border="0" usemap="#artc_8c_a34483cc44ddc76788d74fcce5c940a44_cgraph" alt=""/></div>
-<map name="artc_8c_a34483cc44ddc76788d74fcce5c940a44_cgraph" id="artc_8c_a34483cc44ddc76788d74fcce5c940a44_cgraph">
-<area shape="rect" title="Sets the counting mode to binary." alt="" coords="5,31,109,57"/>
-<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="158,5,226,32"/>
-<area shape="rect" href="rtc_8c.html#ab803bc9a1b1b88f8d618e3ace57d6ab4" title="Writes a byte to the RTC." alt="" coords="157,56,227,83"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="275,5,365,32"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a99c770b400026bc59e3c80a22615ad50" name="a99c770b400026bc59e3c80a22615ad50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99c770b400026bc59e3c80a22615ad50">&#9670;&#160;</a></span>rtc_setup()</h2>
 
@@ -233,20 +338,21 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Sets up the RTC for use Sets the counting mode to binary and fills the time struct for the first time. </p>
+<p>Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the first time. </p>
 <dl class="section return"><dt>Returns</dt><dd>1 on failure, 0 otherwise </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="rtc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph.png" border="0" usemap="#artc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph" alt=""/></div>
 <map name="artc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph" id="artc_8c_a99c770b400026bc59e3c80a22615ad50_cgraph">
-<area shape="rect" title="Sets up the RTC for use Sets the counting mode to binary and fills the time struct for the first time..." alt="" coords="5,54,81,81"/>
-<area shape="rect" href="rtc_8c.html#a34483cc44ddc76788d74fcce5c940a44" title="Sets the counting mode to binary." alt="" coords="134,29,238,56"/>
-<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="129,80,243,106"/>
-<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="448,80,517,106"/>
-<area shape="rect" href="rtc_8c.html#ab803bc9a1b1b88f8d618e3ace57d6ab4" title="Writes a byte to the RTC." alt="" coords="311,29,381,56"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="565,80,655,106"/>
-<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="291,130,400,157"/>
+<area shape="rect" title="Sets up the RTC for use Gets the counting mode, the hour format, and fills the time struct for the fi..." alt="" coords="5,56,81,83"/>
+<area shape="rect" href="rtc_8c.html#ab450160a2bbbcf835ef30c4b593edc16" title="Gets the counting mode." alt="" coords="134,5,238,32"/>
+<area shape="rect" href="rtc_8c.html#ae22bdeb51eb630e1d579dfc1cd1b2f11" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="129,81,243,108"/>
+<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="467,31,535,57"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="602,31,692,57"/>
+<area shape="rect" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="295,132,396,159"/>
+<area shape="rect" href="rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="448,157,554,184"/>
+<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="291,81,400,108"/>
 </map>
 </div>
 
@@ -274,10 +380,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="rtc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph.png" border="0" usemap="#artc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph" alt=""/></div>
 <map name="artc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph" id="artc_8c_ae22bdeb51eb630e1d579dfc1cd1b2f11_cgraph">
-<area shape="rect" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="5,31,120,57"/>
-<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="168,5,277,32"/>
-<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="325,31,393,57"/>
-<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="441,31,532,57"/>
+<area shape="rect" title="Updates the values in the time info struct A buffer struct is used while filling in the values in cas..." alt="" coords="5,81,120,108"/>
+<area shape="rect" href="rtc_8c.html#a358067bf40f343d79bb5488120c92330" title="Converts hours to 0&#45;23 format if need be, including BCD conversion." alt="" coords="172,5,273,32"/>
+<area shape="rect" href="rtc_8c.html#a639b9a711156522238015ef875638267" title="Converts BCD to binary if need be." alt="" coords="325,44,430,71"/>
+<area shape="rect" href="rtc_8c.html#ab2f3d3184182b2533e9156e9079dae63" title="Checks whether the RTC is updating." alt="" coords="168,107,277,133"/>
+<area shape="rect" href="rtc_8c.html#a50c2f2e6339abb08699d54688a1a32c9" title="Reads a byte from the RTC." alt="" coords="344,120,412,147"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title="Wrapper to sys_inb Allows sys_inb to be used with a uint8_t value instead of uint32_t." alt="" coords="478,120,569,147"/>
 </map>
 </div>
 
@@ -322,6 +430,34 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a264b22d42d02f175ae98ea17edefd279" name="a264b22d42d02f175ae98ea17edefd279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a264b22d42d02f175ae98ea17edefd279">&#9670;&#160;</a></span>full_hours</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t full_hours</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a993a641b9153ad2682138dc1d48fe372" name="a993a641b9153ad2682138dc1d48fe372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a993a641b9153ad2682138dc1d48fe372">&#9670;&#160;</a></span>is_binary</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t is_binary</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6c52a1d32571a429369253ce7c3a3d7a" name="a6c52a1d32571a429369253ce7c3a3d7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c52a1d32571a429369253ce7c3a3d7a">&#9670;&#160;</a></span>rtc_hook_id</h2>
 

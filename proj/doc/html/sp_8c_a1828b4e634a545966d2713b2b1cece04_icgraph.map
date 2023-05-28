@@ -1,6 +1,0 @@
-<map id="read_sp_data" name="read_sp_data">
-<area shape="rect" id="node1" title="Reads data from the SP Reads data from the SP. If everything went well, an ACK byte is sent,..." alt="" coords="427,5,527,32"/>
-<area shape="rect" id="node2" href="$sp_8c.html#af36885f3a76f83885f4562feb8d4bd74" title="Interrupt handler for the serial port Reads the IIR and uses it to the determine which functions to e..." alt="" coords="327,5,379,32"/>
-<area shape="rect" id="node3" href="$model_8c.html#a20f2e60644e274c6174042672460ddde" title="Updates the state of the UART serial port This function runs the serial port&#39;s interrupt handler,..." alt="" coords="162,5,279,32"/>
-<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,114,32"/>
-</map>
