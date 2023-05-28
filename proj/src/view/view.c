@@ -186,7 +186,7 @@ void draw_finish_menu() {
         bg_size ++;
     }
     if (player_one_won == 0){
-        draw_sprite_xpm(code_not_guessed, mode_info.XResolution/2 - 282, mode_info.YResolution/2 - 80);
+        draw_sprite_xpm(code_not_guessed, mode_info.XResolution/2 - 282, mode_info.YResolution/4 - 27);
         background[bg_size] = code_not_guessed;
         bg_size ++;
     }
@@ -209,11 +209,11 @@ void draw_finish_menu() {
         //draw_ball(ball, 300 + i*56, mode_info.YResolution/2 - 50, curr_color);
     }
 
-    draw_sprite_xpm(start, mode_info.XResolution/4 - 120/2, mode_info.YResolution - 40);
+    draw_sprite_xpm(start, mode_info.XResolution/4 - 120/2, mode_info.YResolution - 50);
         background[bg_size] = start;
         bg_size ++;
 
-    draw_sprite_xpm(exit_menu, 3 * mode_info.XResolution/4 - 74/2, mode_info.YResolution - 40);
+    draw_sprite_xpm(exit_menu, 3 * mode_info.XResolution/4 - 74/2, mode_info.YResolution - 50);
         background[bg_size] = exit_menu;
         bg_size ++;
 }
