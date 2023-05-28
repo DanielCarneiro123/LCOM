@@ -61,6 +61,7 @@ bool firstFrame = true;
 Sprite *background[6];
 uint8_t bg_size;
 uint32_t bg_color;
+uint32_t time_colors[24] = {COLOR_TIME1, COLOR_TIME2, COLOR_TIME3, COLOR_TIME4, COLOR_TIME5, COLOR_TIME6, COLOR_TIME7, COLOR_TIME8, COLOR_TIME9, COLOR_TIME10, COLOR_TIME11, COLOR_TIME12, COLOR_TIME13, COLOR_TIME14, COLOR_TIME15, COLOR_TIME16, COLOR_TIME17, COLOR_TIME18, COLOR_TIME19, COLOR_TIME20, COLOR_TIME21, COLOR_TIME22, COLOR_TIME23, COLOR_TIME24};
  
 /**
  * @brief Prepares the frame buffers
@@ -473,77 +474,7 @@ void clean_ball(uint8_t k, Sprite* sprite, Position* positions) {
  * @brief Set the background color according to current hour
  */
 void set_background_color() {
-    if (time_info.hours == 0) {
-        bg_color = COLOR_TIME1;
-    }else if (time_info.hours == 1) {
-        bg_color = COLOR_TIME2;
-    } 
-    else if (time_info.hours == 2) {
-        bg_color = COLOR_TIME3;
-    }
-    else if (time_info.hours == 3) {
-        bg_color = COLOR_TIME4;
-    }
-    else if (time_info.hours == 4) {
-        bg_color = COLOR_TIME5;
-    }
-    else if (time_info.hours == 5) {
-        bg_color = COLOR_TIME6;
-    }
-    else if (time_info.hours == 6) {
-        bg_color = COLOR_TIME7;
-    }
-    else if (time_info.hours == 7) {
-        bg_color = COLOR_TIME8;
-    }
-    else if (time_info.hours == 8) {
-        bg_color = COLOR_TIME9;
-    }
-    else if (time_info.hours == 9) {
-        bg_color = COLOR_TIME10;
-    }
-    else if (time_info.hours == 10) {
-        bg_color = COLOR_TIME11;
-    }
-    else if (time_info.hours == 11) {
-        bg_color = COLOR_TIME12;
-    }
-    else if (time_info.hours == 12) {
-        bg_color = COLOR_TIME13;
-    }
-    else if (time_info.hours == 13) {
-        bg_color = COLOR_TIME14;
-    }
-    else if (time_info.hours == 14) {
-        bg_color = COLOR_TIME15;
-    }
-    else if (time_info.hours == 15) {
-        bg_color = COLOR_TIME16;
-    }
-    else if (time_info.hours == 16) {
-        bg_color = COLOR_TIME17;
-    }
-    else if (time_info.hours == 17) {
-        bg_color = COLOR_TIME18;
-    }
-    else if (time_info.hours == 18) {
-        bg_color = COLOR_TIME19;
-    }
-    else if (time_info.hours == 19) {
-        bg_color = COLOR_TIME20;
-    }
-    else if (time_info.hours == 20) {
-        bg_color = COLOR_TIME21;
-    }
-    else if (time_info.hours == 21) {
-        bg_color = COLOR_TIME22;
-    }
-    else if (time_info.hours == 22) {
-        bg_color = COLOR_TIME23;
-    }
-    else {
-        bg_color = COLOR_TIME24;
-    } 
+    bg_color = time_colors[time_info.hours];
     printf("\n\n\nTIME %d \n\n\n", time_info.hours);
     printf("\n\n\nBACKGROUND COLOR %d \n\n\n", bg_color);
 }

@@ -410,15 +410,15 @@ void update_keyboard_state() {
             systemState = EXIT;
             break;
         case S_KEY:
+            if (menuState == GAME) break;
             update_menu_state(START);
             break;
         case G_KEY:
+            if (menuState == GAME) break;
             test_player_no();
             setup_code_positions();
             update_menu_state(GAME);
             break;
-        case E_KEY:
-            update_menu_state(END);
         case ONE_KEY:
             update_mouse_color(color_table[3]);
             break;
