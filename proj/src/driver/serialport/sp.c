@@ -112,7 +112,6 @@ int (write_sp_data)(uint8_t data) {
  */
 void (sp_ih)() {
     uint8_t iir;
-    uint8_t count = 0;
     while (true) {
         util_sys_inb(COM2_BASE + INTERRUPT_IDENT_OFFSET, &iir);
         if (iir & IIR_NO_PENDING) break;
