@@ -28,11 +28,11 @@ int setup() {
   if (set_frame_buffers(VIDEO_MODE) != 0) return 1;
   if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
 
-  setup_sprites();
-  setup_positions();
-  setup_small_positions();
-  setup_box_balls_positions();
-  setup_box_small_balls_positions();
+  if (setup_sprites()) return 1;
+  if (setup_positions()) return 1;
+  if (setup_small_positions()) return 1;
+  if (setup_box_balls_positions()) return 1;
+  if (setup_box_small_balls_positions()) return 1;
 
   uint8_t timer_byte, keyboard_byte, mouse_byte, sp_byte;
 
@@ -59,19 +59,19 @@ int teardown() {
   destroy_small_positions();
   destroy_code_positions();
 
-  if (timer_unsubscribe_ints() != 0) return 1;
-  if (keyboard_unsubscribe_interrupts() != 0) return 1;
-  if (mouse_unsubscribe_interrupts() != 0) return 1;
-  if (sp_unsubscribe_interrupts() != 0) return 1;
+  if (timer_unsubscribe_ints()) return 1;
+  if (keyboard_unsubscribe_interrupts()) return 1;
+  if (mouse_unsubscribe_interrupts()) return 1;
+  if (sp_unsubscribe_interrupts()) return 1;
 
-  if (mouse_write(DISABLE_STREAM) != 0) return 1;
+  if (mouse_write(DISABLE_STREAM)) return 1;
 
   return 0;
 }
 
 int (proj_main_loop)(int argc, char *argv[]) {
 
-  if (setup() != 0) return teardown();
+  if (setup()) return teardown();
 
   draw_new_frame();
 
@@ -79,7 +79,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
   message msg;
   while (systemState == RUNNING) {
     
-    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+    if (driver_receive(ANY, &msg, &ipc_status)) {
       printf("Error");
       continue;
     }
@@ -95,7 +95,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
     }
   }
   
-  if (teardown() != 0) return 1;
+  if (teardown()) return 1;
 
   return 0;
 }

@@ -82,77 +82,92 @@ void update_menu_state(MenuState new_state) {
 /**
  * @brief Set up the box balls positions object
  * Allocates memory for the balls that the player can pick up
+ * @return int 1 on failure, 0 otherwise
  */
-void setup_box_balls_positions() {
+int setup_box_balls_positions() {
     ball_box_positions = 0;
     ball_box_positions = malloc(sizeof(Position) * 8 );
+    if (ball_box_positions == NULL) return 1;
     for (int j = 0; j < 8; j++) {
         ball_box_positions[j].x = 500;
         ball_box_positions[j].y = 77 + (j % 8) * 65;
         ball_box_positions[j].color = TRANSPARENT;
     }  
+    return 0;
 }
 
 /**
  * @brief Set up the box small balls positions object
  * Allocates memory for the small balls that the player can pick up
+ * @return int 1 on failure, 0 otherwise
  */
-void setup_box_small_balls_positions() {
+int setup_box_small_balls_positions() {
     small_ball_box_positions = 0;
     small_ball_box_positions = malloc(sizeof(PositionSmall) * 2 );
+    if (small_ball_box_positions == NULL) return 1;
     for (int j = 0; j < 2; j++) {
         small_ball_box_positions[j].x = 500 + (j % 2) * 36;
         small_ball_box_positions[j].y = 20;
         small_ball_box_positions[j].color = 0;
     }  
+    return 0;
 }
 
 /**
  * @brief Set up the positions object
  * Allocates memory for the balls that the player will place
+ * @return int 1 on failure, 0 otherwise
  */
-void setup_positions() {
+int setup_positions() {
     balls = 0;
     ball_positions = malloc(sizeof(Position) * 9 * 4);
+    if (ball_positions == NULL) return 1;
     for (int i = 0; i < BALL_AMOUNT; i++) {
         ball_positions[i].x = 190 + (i % 4) * 56;
         ball_positions[i].y = 66 + (i / 4) * 60;
         ball_positions[i].color = TRANSPARENT;
     }
+    return 0;
 }
 
 /**
  * @brief Set up the code positions object
  * Allocates memory for the balls in the code
+ * @return int 1 on failure, 0 otherwise
  */
-void setup_code_positions() {
-    code_positions = malloc(sizeof(Position) * 4);
+int setup_code_positions() {
     if (player_no == 1) {
         code_positions = NULL;
     }
     else {
+        code_positions = malloc(sizeof(Position) * 4);
+        if (code_positions == NULL) return 1;
         for (int i = 0; i < ROW_SIZE; i++) {
             code_positions[i].x = 190 + i * 56;
             code_positions[i].y = 6;
             code_positions[i].color = TRANSPARENT;
         }
     }
+    return 0;
 }
 
 /**
  * @brief Set up the small positions object
  * Allocates memory for the small balls that the player will place
+ * @return int 1 on failure, 0 otherwise
  */
-void setup_small_positions() {
+int setup_small_positions() {
     small_ball_positions = malloc(sizeof(PositionSmall) * 36);
+    if (small_ball_positions == NULL) return 1;
     for (int j = 0; j < ROW_NO; j++) {
-            for (int i = 0; i < ROW_SIZE; i++) {
-                small_ball_positions[j*4+i].x = 416 + (i % 2) * 26;
-                small_ball_positions[j*4+i].y = (j*61) + (60 + (i / 2) * 30);
-                if (j > 5) small_ball_positions[j*4+i].y -= 2;
-                small_ball_positions[j*4+i].color = 0;
-            }
-        }  
+        for (int i = 0; i < ROW_SIZE; i++) {
+            small_ball_positions[j * 4 + i].x = 416 + (i % 2) * 26;
+            small_ball_positions[j * 4 + i].y = (j * 61) + (60 + (i / 2) * 30);
+            if (j > 5) small_ball_positions[j * 4 + i].y -= 2;
+            small_ball_positions[j * 4 + i].color = 0;
+        }
+    }
+    return 0;
 }
 
 /**
@@ -173,43 +188,68 @@ void destroy_small_positions() {
  * @brief Deallocates memory for code balls
  */
 void destroy_code_positions() {
-    free(code_positions);
+    if (player_no == 2) free(code_positions);
 }
 
 /**
  * @brief Creates sprite objects
  * Allocates memory for every sprite that the game will need
+ * @return int 1 on failure, 0 otherwise
  */
-void setup_sprites() {
+int setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
+    if (mouse == NULL) return 1;
     board = create_sprite_xpm((xpm_map_t) mastermind_boardV1_xpm);
+    if (board == NULL) return 1;
     board2 = create_sprite_xpm((xpm_map_t) mastermind_boardV2_xpm);
+    if (board2 == NULL) return 1;
     ball = create_sprite_xpm((xpm_map_t) ball_xpm);
+    if (ball == NULL) return 1;
     small_ball = create_sprite_xpm((xpm_map_t) small_ball_xpm);
-
+    if (small_ball == NULL) return 1;
     hand = create_sprite_xpm((xpm_map_t) hand_xpm);
-    //smile = create_sprite_xpm((xpm_map_t) smile_xpm);
+    if (hand == NULL) return 1;
     masterminix = create_sprite_xpm((xpm_map_t) masterminix_xpm);
+    if (masterminix == NULL) return 1;
     start = create_sprite_xpm((xpm_map_t) start_xpm);
+    if (start == NULL) return 1;
     exit_menu = create_sprite_xpm((xpm_map_t) exit_xpm);
+    if (exit_menu == NULL) return 1;
     um = create_sprite_xpm((xpm_map_t) um_xpm);
+    if (um == NULL) return 1;
     dois = create_sprite_xpm((xpm_map_t) dois_xpm);
+    if (dois == NULL) return 1;
     tres = create_sprite_xpm((xpm_map_t) tres_xpm);
+    if (tres == NULL) return 1;
     quatro = create_sprite_xpm((xpm_map_t) quatro_xpm);
+    if (quatro == NULL) return 1;
     cinco = create_sprite_xpm((xpm_map_t) cinco_xpm);
+    if (cinco == NULL) return 1;
     seis = create_sprite_xpm((xpm_map_t) seis_xpm);
+    if (seis == NULL) return 1;
     sete = create_sprite_xpm((xpm_map_t) sete_xpm);
+    if (sete == NULL) return 1;
     oito = create_sprite_xpm((xpm_map_t) oito_xpm);
+    if (oito == NULL) return 1;
     w = create_sprite_xpm((xpm_map_t) w_xpm);
+    if (w == NULL) return 1;
     r = create_sprite_xpm((xpm_map_t) r_xpm);
+    if (r == NULL) return 1;
     toggle9 = create_sprite_xpm((xpm_map_t) toggle9_xpm);
+    if (toggle9 == NULL) return 1;
     code_guessed = create_sprite_xpm((xpm_map_t) code_guessed_xpm);
+    if (code_guessed == NULL) return 1;
     code_not_guessed = create_sprite_xpm((xpm_map_t) code_not_guessed_xpm);
+    if (code_not_guessed == NULL) return 1;
     madeira = create_sprite_xpm((xpm_map_t) madeira_xpm);
+    if (madeira == NULL) return 1;
     frase_menu = create_sprite_xpm((xpm_map_t) frase_menu_xpm);
+    if (frase_menu == NULL) return 1;
     press_s = create_sprite_xpm((xpm_map_t) press_s_xpm);
+    if (press_s == NULL) return 1;
     instructions = create_sprite_xpm((xpm_map_t) instructions_xpm);
-
+    if (instructions == NULL) return 1;
+    return 0;
 }
 
 /**
