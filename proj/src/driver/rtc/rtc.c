@@ -7,7 +7,7 @@ uint8_t full_hours;
 
 /**
  * @brief Sets up the RTC for use
- * Sets the counting mode to binary and fills the time struct for the first time
+ * Gets the counting mode, the hour format, and fills the time struct for the first time
  * @return 1 on failure, 0 otherwise
  */
 int rtc_setup() {
@@ -19,7 +19,7 @@ int rtc_setup() {
 }
 
 /**
- * @brief Sets the counting mode to binary
+ * @brief Gets the counting mode
  * @return int 1 on failure, 0 otherwise
  */
 int rtc_get_binary() {
@@ -30,6 +30,10 @@ int rtc_get_binary() {
     return 0;
 }
 
+/**
+ * @brief Gets the hour format
+ * @return int 1 on failure, 0 otherwise
+ */
 int rtc_get_hours() {
     uint8_t status;
     if (rtc_read(REGISTER_B, &status)) return 1;
@@ -73,6 +77,11 @@ uint8_t rtc_is_updating() {
 	return !!(status & UPDATING);
 }
 
+/**
+ * @brief Converts BCD to binary if need be
+ * @param output Output of the RTC
+ * @return uint8_t Converted output
+ */
 uint8_t convert_output(uint8_t output) {
     uint8_t result = 0;
     if (is_binary == 0) {
@@ -85,6 +94,11 @@ uint8_t convert_output(uint8_t output) {
     return result;
 }
 
+/**
+ * @brief Converts hours to 0-23 format if need be, including BCD conversion
+ * @param hours Output of the RTC
+ * @return uint8_t Converted output
+ */
 uint8_t convert_hours(uint8_t hours) {
     if (full_hours) {
         hours = convert_output(hours);
